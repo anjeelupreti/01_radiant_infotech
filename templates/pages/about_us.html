@@ -1,0 +1,213 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block title %}About Us - Radiant Infotech Nepal | 360 Digital Solutions{% endblock %}
+
+{% block body_class %}about-page{% endblock %}
+
+{% block content %}
+
+<!-- Page Title -->
+<div class="page-title dark-background" data-aos="fade" style="background-image: url({% static 'img/construction/showcase-2.webp' %});">
+  <div class="container position-relative">
+    <h1>About Us</h1>
+    <p>Radiant InfoTech Nepal (P.) Ltd. can help turn ideas into action. Providing technology solutions for 15 years, serving small and medium-sized businesses, institutions, and government agencies in and out of Nepal.</p>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li class="current">About Us</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<!-- About Section -->
+<section id="about" class="about section">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row align-items-center">
+      <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right" data-aos-delay="200">
+        <div class="content">
+          <h2 class="section-heading mb-4">Welcome to Radiant Infotech Nepal</h2>
+          <p class="lead-text mb-4">Radiant InfoTech Nepal (P.) Ltd. can help turn ideas into action. Providing technology solutions for 15 years, RITN has been serving small and medium-sized businesses, institutions, and government agencies in and out of the Nepal.</p>
+          <p class="description-text mb-5">Like many service providers, RITN's background and expertise is fully on web development, tailored Software Development providing a full range of Web & Desktop Solutions. We believe that Information technologies will greatly shape our new way of thinking and doing. It breaks our traditional boundaries of time and space, enabling us to bring information and content globally and instantly. Growing rapidly both on technology and in popularity, many things done in the old ways are changing their course to the electronic way.</p>
+          <p class="description-text mb-5">With our experiences, we serve best in the field of Information technology with our strengths in programming in different languages such as ASP, Java (J2EE), PHP and database designing and implementation in different Database management systems such as MSSQL Server, MySQL, Oracle, etc. and Website Design, Hosting & domain name Registration. Unlike most others, we also have in-depth knowledge and experience in Networking & hardware maintenance and support; especially we serve the corporate clients.</p>
+          <p class="description-text mb-5"><strong>We believe:</strong> "Rule number one: The customer is always right. Rule number two: If the customer is wrong, see rule number one!" - Steve Leonard</p>
+
+          <div class="stats-grid">
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="350">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+              <div class="stat-number">98%</div>
+              <div class="stat-label">Client Satisfaction</div>
+            </div>
+          </div>
+
+          <div class="cta-section" data-aos="fade-up" data-aos-delay="450">
+            <a href="{% url 'services' %}" class="cta-link">
+              Explore Our Services
+              <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="200">
+        <div class="image-section">
+          <div class="main-image">
+            <img src="{% static 'img/construction/project-4.webp' %}" alt="Radiant Infotech Nepal team" class="img-fluid">
+          </div>
+          <div class="floating-badge" data-aos="zoom-in" data-aos-delay="500">
+            <div class="badge-content">
+              <i class="bi bi-award"></i>
+              <div class="badge-text">
+                <span class="badge-title">Authorized G Suite</span>
+                <span class="badge-subtitle">Cloud Partner for Nepal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Company Story Section -->
+<section id="company-story" class="section light-background">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title text-center" data-aos="fade-up">
+      <h2>Our Journey</h2>
+      <p>From a small team of innovators to a trusted technology partner in Nepal</p>
+    </div>
+    
+    <div class="row mt-5">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <div class="story-content">
+          <h3>How We Started</h3>
+          <p>Radiant Infotech Nepal began in 2003 with a simple mission: to provide comprehensive technology solutions to businesses in Nepal. What started as a small team of passionate developers has grown into a full-service technology company serving small and medium-sized businesses, institutions, and government agencies in and out of Nepal.</p>
+          <p>Our journey has been marked by continuous innovation, strategic partnerships including being an Authorized G Suite Cloud Partner for Nepal, and an unwavering commitment to quality. We've evolved with the technological landscape, embracing new paradigms while maintaining our core values of honesty, fairness, quality, dedication, and results.</p>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+        <div class="story-content">
+          <h3>Where We're Going</h3>
+          <p>Today, we stand at the forefront of digital transformation in Nepal, helping businesses navigate the complexities of modern technology. Our expertise spans web development, software development, graphic design, multimedia, SEO, and digital signature solutions.</p>
+          <p>We envision a future where technology seamlessly integrates with business processes in Nepal, and we're committed to being the trusted partner that makes that vision a reality for our clients. RITN is built on founding principles of honesty, fairness, quality, dedication, and results.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission & Vision Section -->
+<section id="mission-vision" class="section">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body p-5 text-center">
+            <div class="icon-wrapper mb-4">
+              <i class="bi bi-bullseye" style="font-size: 3rem; color: var(--accent-color);"></i>
+            </div>
+            <h3 class="mb-3">Our Mission</h3>
+            <p class="mb-0">We measure our success by your satisfaction. Our goal is to help people, businesses, organizations, and governments to develop solid, functional, and beneficial information sharing & implementation of various commercial, social and economical concepts through web technology.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body p-5 text-center">
+            <div class="icon-wrapper mb-4">
+              <i class="bi bi-eye" style="font-size: 3rem; color: var(--accent-color);"></i>
+            </div>
+            <h3 class="mb-3">Our Vision</h3>
+            <p class="mb-0">To be the leading technology solutions provider in Nepal, known for technological excellence, unwavering integrity, and transformative impact on businesses. We work with our clients for the long-term to help achieve their goals through quality and value.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section id="why-choose-us" class="section light-background">
+  <div class="container">
+    <div class="section-title text-center" data-aos="fade-up">
+      <h2>Why Choose Radiant Infotech Nepal</h2>
+      <p>What sets us apart in the digital solutions landscape of Nepal</p>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-box text-center p-4">
+          <div class="feature-icon mb-3">
+            <i class="bi bi-code-square" style="font-size: 2.5rem; color: var(--accent-color);"></i>
+          </div>
+          <h4>Web Development</h4>
+          <p>Expertise in ASP, Java (J2EE), PHP and database designing in MSSQL Server, MySQL, Oracle for comprehensive web solutions.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-box text-center p-4">
+          <div class="feature-icon mb-3">
+            <i class="bi bi-pencil" style="font-size: 2.5rem; color: var(--accent-color);"></i>
+          </div>
+          <h4>Graphic Designing</h4>
+          <p>Professional logo design, brochure design, and flex design services that make your brand stand out.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="feature-box text-center p-4">
+          <div class="feature-icon mb-3">
+            <i class="bi bi-google" style="font-size: 2.5rem; color: var(--accent-color);"></i>
+          </div>
+          <h4>G Suite Cloud Partner</h4>
+          <p>Authorized G Suite Cloud Partner for Nepal, providing enterprise-grade productivity tools for your business.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="feature-box text-center p-4">
+          <div class="feature-icon mb-3">
+            <i class="bi bi-pen" style="font-size: 2.5rem; color: var(--accent-color);"></i>
+          </div>
+          <h4>Digital Signature</h4>
+          <p>Secure digital signature solutions for modern businesses, ensuring authenticity and legal compliance.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="feature-box text-center p-4">
+          <div class="feature-icon mb-3">
+            <i class="bi bi-wifi" style="font-size: 2.5rem; color: var(--accent-color);"></i>
+          </div>
+          <h4>Networking & Hardware</h4>
+          <p>In-depth knowledge and experience in Networking & hardware maintenance and support, especially for corporate clients.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="600">
+        <div class="feature-box text-center p-4">
+          <div class="feature-icon mb-3">
+            <i class="bi bi-search" style="font-size: 2.5rem; color: var(--accent-color);"></i>
+          </div>
+          <h4>SEO & Multimedia</h4>
+          <p>Comprehensive SEO services and multimedia development to enhance your online presence and engagement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="call-to-action section">
+  <div class="container text-center" data-aos="fade-up">
+    <h2 class="mb-4">Ready to Transform Your Business?</h2>
+    <p class="mb-4">Let's discuss how our technology solutions can help you achieve your goals. Online support available if you have any query.</p>
+    <a href="{% url 'contact_us' %}" class="btn btn-primary btn-lg">Get in Touch</a>
+  </div>
+</section>
+
+{% endblock %}

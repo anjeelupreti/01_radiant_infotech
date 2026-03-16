@@ -1,0 +1,82 @@
+{% load static %}
+
+<footer id="footer" class="footer dark-background">
+    <div class="container">
+      <div class="row gy-5">
+
+        <div class="col-lg-4">
+          <div class="footer-brand">
+            <a href="{% url 'home' %}" class="logo d-flex align-items-center mb-3">
+              <span class="sitename">Radiant Infotech</span>
+            </a>
+            <p class="tagline">Empowering businesses through innovative software development and secure digital signature solutions.</p>
+
+            <div class="social-links mt-4">
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="footer-links-grid">
+            <div class="row">
+              <div class="col-6 col-md-4">
+                <h5>Company</h5>
+                <ul class="list-unstyled">
+                  <li><a href="{% url 'about_us' %}">About Us</a></li>
+                  <li><a href="#">Our Team</a></li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="#">Blog</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-md-4">
+                <h5>Services</h5>
+                <ul class="list-unstyled">
+                  <li><a href="{% url 'services' %}#software-development">Software Development</a></li>
+                  <li><a href="{% url 'services' %}#digital-signature">Digital Signature</a></li>
+                  <li><a href="{% url 'services' %}#mobile-apps">Mobile Apps</a></li>
+                  <li><a href="{% url 'services' %}#cloud-solutions">Cloud Solutions</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-md-4">
+                <h5>Support</h5>
+                <ul class="list-unstyled">
+                  <li><a href="{% url 'home' %}">FAQ</a></li>
+                  <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+                  <li><a href="{% url 'home' %}">Privacy Policy</a></li> 
+                  <li><a href="{% url 'home' %}">Terms of Service</a></li> 
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2">
+          <div class="footer-cta">
+            <h5>Let's Connect</h5>
+            <a href="{% url 'contact_us' %}" class="btn btn-outline">Get in Touch</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="footer-bottom-content">
+              <p class="mb-0">© {% now "Y" %} <span class="sitename">Radiant Infotech</span>. All rights reserved.</p>
+              <div class="credits">
+                Developed by <a href="https://bootstrapmade.com/" target="_blank" rel="noopener">Anjeel Upreti</a> | 
+                Powered by <a href="https://www.djangoproject.com/" target="_blank" rel="noopener">Django</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</footer>

@@ -1,0 +1,18 @@
+from django.urls import path 
+from .views import *
+
+urlpatterns = [
+    # Homepage
+    path('', home, name='home'), 
+    path('about_us/', about_us, name='about_us'), 
+    path('services/', services, name='services'), 
+    path('gallery/', gallery, name='gallery'), 
+    path('career/', career, name='career'), 
+
+    path('contact_us', contact_us, name='contact_us'),
+
+
+
+    # Contact form submission
+    path('contact-submit/', contact_submit, name='contact_submit'),
+]

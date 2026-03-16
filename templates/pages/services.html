@@ -1,0 +1,247 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block title %}Services - Radiant Infotech | Software Development & Digital Signature Solutions{% endblock %}
+
+{% block body_class %}services-page{% endblock %}
+
+{% block content %}
+
+<!-- Page Title -->
+<div class="page-title dark-background" data-aos="fade" style="background-image: url({% static 'img/construction/showcase-2.webp' %});">
+  <div class="container position-relative">
+    <h1>Our Services</h1>
+    <p>Comprehensive software development and digital signature solutions tailored to transform your business operations.</p>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li class="current">Services</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<!-- Services Section -->
+<section id="services" class="services section light-background">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="services-grid">
+
+      <div class="service-item" data-aos="fade-up" data-aos-delay="150">
+        <div class="service-number">01</div>
+        <div class="service-icon">
+          <i class="bi bi-code-square"></i>
+        </div>
+        <h3>Custom Software Development</h3>
+        <p>Tailored software solutions designed to address your unique business challenges, built with modern technologies and best practices for scalability and performance.</p>
+        <a href="#" class="service-cta">
+          <span>Explore Service</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-number">02</div>
+        <div class="service-icon">
+          <i class="bi bi-pen"></i>
+        </div>
+        <h3>Digital Signature Solutions</h3>
+        <p>Legally compliant, secure digital signature platforms that streamline document workflows, reduce paper usage, and accelerate business processes.</p>
+        <a href="#" class="service-cta">
+          <span>Explore Service</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="service-item featured" data-aos="fade-up" data-aos-delay="250">
+        <div class="featured-badge">Popular</div>
+        <div class="service-number">03</div>
+        <div class="service-icon">
+          <i class="bi bi-phone"></i>
+        </div>
+        <h3>Mobile App Development</h3>
+        <p>Native and cross-platform mobile applications that deliver exceptional user experiences and help you connect with your customers on the go.</p>
+        <a href="{% url 'contact_us' %}" class="service-cta">
+          <span>Get Quote</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="service-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-number">04</div>
+        <div class="service-icon">
+          <i class="bi bi-cloud"></i>
+        </div>
+        <h3>Cloud Solutions</h3>
+        <p>Scalable cloud infrastructure, migration services, and cloud-native application development to enhance flexibility and reduce operational costs.</p>
+        <a href="#" class="service-cta">
+          <span>Explore Service</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="service-item" data-aos="fade-up" data-aos-delay="350">
+        <div class="service-number">05</div>
+        <div class="service-icon">
+          <i class="bi bi-shield-lock"></i>
+        </div>
+        <h3>Cybersecurity & Compliance</h3>
+        <p>Comprehensive security assessments, implementation of security protocols, and compliance consulting to protect your digital assets.</p>
+        <a href="#" class="service-cta">
+          <span>Explore Service</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="service-item" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-number">06</div>
+        <div class="service-icon">
+          <i class="bi bi-diagram-3"></i>
+        </div>
+        <h3>IT Consulting</h3>
+        <p>Strategic technology consulting to help you make informed decisions, optimize your IT infrastructure, and align technology with business goals.</p>
+        <a href="#" class="service-cta">
+          <span>Explore Service</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Detailed Services Section -->
+<section id="services-alt" class="services-alt section">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row g-5">
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-item">
+          <div class="service-visual">
+            <img src="#" alt="Web Development" class="img-fluid">
+          </div>
+          <div class="service-content">
+            <h3>Web Development</h3>
+            <p>From simple websites to complex web applications, we build responsive, high-performance solutions using modern frameworks like Django, React, and Vue.js. Our web development services ensure your online presence is robust, scalable, and engaging.</p>
+            <a href="#" class="service-link">
+              <span>Learn More</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+        <div class="service-item">
+          <div class="service-visual">
+            <img src="{% static 'img/construction/project-7.webp' %}" alt="Digital Signature Platform" class="img-fluid">
+          </div>
+          <div class="service-content">
+            <h3>Digital Signature Platform</h3>
+            <p>Our enterprise-grade digital signature solution offers legally binding e-signatures with advanced authentication, audit trails, and integration capabilities. Streamline your document workflows while ensuring compliance with global regulations.</p>
+            <a href="#" class="service-link">
+              <span>Learn More</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-item">
+          <div class="service-visual">
+            <img src="#" alt="Enterprise Solutions" class="img-fluid">
+          </div>
+          <div class="service-content">
+            <h3>Enterprise Solutions</h3>
+            <p>Comprehensive enterprise software solutions including ERP, CRM, and custom business applications designed to optimize operations, enhance productivity, and drive growth for large organizations.</p>
+            <a href="#" class="service-link">
+              <span>Learn More</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="350">
+        <div class="service-item">
+          <div class="service-visual">
+            <img src="#" alt="UI/UX Design" class="img-fluid">
+          </div>
+          <div class="service-content">
+            <h3>UI/UX Design</h3>
+            <p>User-centered design services that create intuitive, engaging digital experiences. From wireframing to prototyping and user testing, we ensure your applications are not only functional but also delightful to use.</p>
+            <a href="#" class="service-link">
+              <span>Learn More</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row mt-5" data-aos="fade-up" data-aos-delay="400">
+      <div class="col-lg-12 text-center">
+        <div class="cta-section">
+          <h4>Ready to transform your business with technology?</h4>
+          <p>Get in touch with our team to discuss your requirements and receive a personalized quote for your project.</p>
+          <a href="{% url 'contact_us' %}" class="btn-primary">
+            <span>Get Free Quote</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Technology Stack Section -->
+<section class="section light-background">
+  <div class="container">
+    <div class="section-title text-center" data-aos="fade-up">
+      <h2>Our Technology Stack</h2>
+      <p>We work with cutting-edge technologies to deliver robust solutions</p>
+    </div>
+
+    <div class="row mt-5 text-center">
+      <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="tech-item p-3">
+          <i class="bi bi-filetype-py" style="font-size: 3rem; color: var(--accent-color);"></i>
+          <p class="mt-2 fw-bold">Python/Django</p>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="zoom-in" data-aos-delay="150">
+        <div class="tech-item p-3">
+          <i class="bi bi-filetype-js" style="font-size: 3rem; color: var(--accent-color);"></i>
+          <p class="mt-2 fw-bold">JavaScript/React</p>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="tech-item p-3">
+          <i class="bi bi-phone" style="font-size: 3rem; color: var(--accent-color);"></i>
+          <p class="mt-2 fw-bold">Flutter/React Native</p>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="zoom-in" data-aos-delay="250">
+        <div class="tech-item p-3">
+          <i class="bi bi-cloud" style="font-size: 3rem; color: var(--accent-color);"></i>
+          <p class="mt-2 fw-bold">AWS/Azure/GCP</p>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="tech-item p-3">
+          <i class="bi bi-database" style="font-size: 3rem; color: var(--accent-color);"></i>
+          <p class="mt-2 fw-bold">PostgreSQL/MongoDB</p>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="zoom-in" data-aos-delay="350">
+        <div class="tech-item p-3">
+          <i class="bi bi-shield-lock" style="font-size: 3rem; color: var(--accent-color);"></i>
+          <p class="mt-2 fw-bold">Blockchain/Smart Contracts</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
