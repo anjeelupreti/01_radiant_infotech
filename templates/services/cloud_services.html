@@ -1,0 +1,339 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block title %}Cloud Services | Radiant Infotech{% endblock %}
+{% block description %}Radiant Infotech provides reliable cloud infrastructure, migration, and managed cloud services for businesses across Nepal — secure, scalable, and cost-effective.{% endblock %}
+{% block body_class %}service-details-page{% endblock %}
+
+{% block page_title %}
+<div class="page-title dark-background" data-aos="fade"
+     style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80');">
+  <div class="container position-relative">
+    <h1>Cloud Services</h1>
+    <p>Secure, scalable, and cost-efficient cloud solutions tailored to your business needs.</p>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'services' %}">Our Services</a></li>
+        <li class="current">Cloud Services</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="service-details section">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-lg-8" data-aos="fade-up">
+
+        <div class="service-header mb-5">
+          <div class="row align-items-center gy-4">
+            <div class="col-md-7">
+              <h1 class="service-title">Cloud Solutions <br><span style="color:var(--accent-color);">That Work for You</span></h1>
+              <p class="service-subtitle">We help businesses move to the cloud, manage their infrastructure, and optimise costs — so you can focus on your work while we keep your systems running reliably and securely.</p>
+            </div>
+            <div class="col-md-5">
+              <div class="service-stats">
+                <div class="stat-item">
+                  <div class="stat-number">99.9%</div>
+                  <div class="stat-label">Uptime SLA</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">50+</div>
+                  <div class="stat-label">Deployments Done</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">24/7</div>
+                  <div class="stat-label">Monitoring</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-overview">
+          <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=900&q=80"
+               alt="Cloud Services — Radiant Infotech" class="service-image" data-aos="zoom-in">
+          <div class="overview-grid" data-aos="fade-up" data-aos-delay="100">
+            <div class="overview-item">
+              <i class="bi bi-cloud-fill"></i>
+              <h3>Cloud Migration</h3>
+              <p>We plan and execute smooth migrations from on-premise infrastructure to AWS, Google Cloud, or DigitalOcean — with minimal downtime and zero data loss.</p>
+            </div>
+            <div class="overview-item">
+              <i class="bi bi-shield-lock-fill"></i>
+              <h3>Security & Compliance</h3>
+              <p>Firewalls, VPCs, IAM policies, encrypted storage, and regular security audits ensure your cloud environment stays protected at every layer.</p>
+            </div>
+            <div class="overview-item">
+              <i class="bi bi-bar-chart-line-fill"></i>
+              <h3>Scalable Infrastructure</h3>
+              <p>Auto-scaling groups, load balancers, and containerised deployments mean your systems scale up under load and scale down to save costs.</p>
+            </div>
+            <div class="overview-item">
+              <i class="bi bi-arrow-repeat"></i>
+              <h3>Backup & Recovery</h3>
+              <p>Automated daily backups, disaster recovery planning, and documented runbooks ensure your business can recover quickly from any incident.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="capabilities-section" data-aos="fade-up">
+          <h2>What We Offer</h2>
+          <ul class="custom-tabs nav nav-tabs" id="cloudTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#cloud-services" type="button">Services</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#cloud-platforms" type="button">Platforms</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#cloud-process" type="button">Our Process</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#cloud-faq" type="button">FAQ</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="cloudTabContent">
+
+            <div class="tab-pane fade show active" id="cloud-services" role="tabpanel">
+              <h4>Our Cloud Services</h4>
+              <p>End-to-end cloud services covering every stage of your cloud journey:</p>
+              <ul class="capability-features">
+                <li><strong>Cloud Migration</strong> — Move your existing servers, databases, and applications to the cloud safely and efficiently</li>
+                <li><strong>Cloud Hosting & Deployment</strong> — Deploy and manage web apps, APIs, and databases on scalable cloud infrastructure</li>
+                <li><strong>Managed Cloud Services</strong> — Ongoing server management, monitoring, patching, and incident response</li>
+                <li><strong>DevOps & CI/CD Pipelines</strong> — Automated build, test, and deploy pipelines using GitHub Actions, GitLab CI, or Jenkins</li>
+                <li><strong>Containerisation & Orchestration</strong> — Docker and Kubernetes deployments for consistent, portable application environments</li>
+                <li><strong>Cloud Cost Optimisation</strong> — Audit your existing cloud spend and implement rightsizing, reserved instances, and savings plans</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="cloud-platforms" role="tabpanel">
+              <h4>Cloud Platforms We Work With</h4>
+              <p>We are experienced across all major cloud providers and supporting tools:</p>
+              <ul class="capability-features">
+                <li><strong>Amazon Web Services (AWS)</strong> — EC2, S3, RDS, Lambda, CloudFront, Route 53, VPC, IAM</li>
+                <li><strong>Google Cloud Platform (GCP)</strong> — Compute Engine, Cloud Run, Cloud SQL, Firebase, GKE</li>
+                <li><strong>DigitalOcean</strong> — Droplets, Managed Databases, Spaces, App Platform — cost-effective for SMEs</li>
+                <li><strong>Containerisation</strong> — Docker, Docker Compose, Kubernetes (K8s)</li>
+                <li><strong>CI/CD</strong> — GitHub Actions, GitLab CI, Jenkins, CircleCI</li>
+                <li><strong>Monitoring & Logging</strong> — Grafana, Prometheus, ELK Stack, AWS CloudWatch, UptimeRobot</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="cloud-process" role="tabpanel">
+              <h4>Our Cloud Engagement Process</h4>
+              <p>A structured approach that minimises risk and delivers results:</p>
+              <ul class="capability-features">
+                <li><strong>Step 1 — Assessment:</strong> Audit your current infrastructure, identify pain points, and define cloud goals</li>
+                <li><strong>Step 2 — Architecture Design:</strong> Design a cloud architecture tailored to your workload, budget, and compliance requirements</li>
+                <li><strong>Step 3 — Migration / Setup:</strong> Execute the migration or fresh deployment with staged cutover to minimise downtime</li>
+                <li><strong>Step 4 — Security Hardening:</strong> Configure firewalls, IAM roles, encryption, and access controls</li>
+                <li><strong>Step 5 — Monitoring Setup:</strong> Alerting, dashboards, and logging configured so issues are caught before they become outages</li>
+                <li><strong>Step 6 — Ongoing Management:</strong> Monthly managed service packages for patching, backups, and incident support</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="cloud-faq" role="tabpanel">
+              <h4>Frequently Asked Questions</h4>
+              <div class="accordion accordion-flush" id="cloudFaq">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq1">
+                      Which cloud provider do you recommend?
+                    </button>
+                  </h2>
+                  <div id="cfaq1" class="accordion-collapse collapse" data-bs-parent="#cloudFaq">
+                    <div class="accordion-body">It depends on your needs and budget. AWS is the most feature-rich and widely used. DigitalOcean is excellent value for SMEs and startups. GCP is strong for data and ML workloads. We'll recommend the right fit after reviewing your requirements.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq2">
+                      Will there be downtime during migration?
+                    </button>
+                  </h2>
+                  <div id="cfaq2" class="accordion-collapse collapse" data-bs-parent="#cloudFaq">
+                    <div class="accordion-body">We plan migrations carefully to minimise or eliminate downtime. For critical systems we use staged migrations and blue-green deployments to switch traffic over with zero interruption to your users.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq3">
+                      Do you manage the cloud after setup?
+                    </button>
+                  </h2>
+                  <div id="cfaq3" class="accordion-collapse collapse" data-bs-parent="#cloudFaq">
+                    <div class="accordion-body">Yes. We offer monthly managed cloud service plans covering server monitoring, OS patching, backup verification, security updates, and on-call incident response so you never have to worry about your infrastructure.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq4">
+                      Can you help reduce our existing cloud bill?
+                    </button>
+                  </h2>
+                  <div id="cfaq4" class="accordion-collapse collapse" data-bs-parent="#cloudFaq">
+                    <div class="accordion-body">Yes. Cloud cost optimisation is one of our most requested engagements. We audit your current usage, identify over-provisioned resources, and implement savings plans, reserved instances, and autoscaling policies that typically reduce bills by 20–40%.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="project-showcase" data-aos="fade-up">
+          <h2>Cloud Projects in Action</h2>
+          <div class="showcase-grid">
+            <div class="showcase-item large">
+              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=80" alt="Cloud Infrastructure">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">Infrastructure</span>
+                  <h4>AWS Cloud Migration & Setup</h4>
+                  <a href="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1400&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?w=600&q=80" alt="DevOps Pipeline">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">DevOps</span>
+                  <h4>CI/CD Pipeline Automation</h4>
+                  <a href="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?w=1200&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80" alt="Monitoring Dashboard">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">Monitoring</span>
+                  <h4>Grafana Observability Stack</h4>
+                  <a href="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <img src="https://images.unsplash.com/photo-1597852074816-d57796d30f28?w=600&q=80" alt="Containerisation">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">Containerisation</span>
+                  <h4>Docker & Kubernetes Deployment</h4>
+                  <a href="https://images.unsplash.com/photo-1597852074816-d57796d30f28?w=1200&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-sidebar">
+
+          <div class="quick-info-card">
+            <div class="info-header">
+              <h3>Service Info</h3>
+              <span class="info-badge">Available</span>
+            </div>
+            <div class="info-content">
+              <div class="info-row">
+                <span class="label">Service Type</span>
+                <span class="value">Cloud Services</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Providers</span>
+                <span class="value">AWS, GCP, DigitalOcean</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Uptime SLA</span>
+                <span class="value">99.9%</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Monitoring</span>
+                <span class="value">24/7 Automated Alerts</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Office Hours</span>
+                <span class="value">Sun–Fri, 9am–6pm</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-card">
+            <h3>Get a Cloud Consultation</h3>
+            <p>Tell us about your infrastructure and we'll get back to you within 24 hours.</p>
+            <div class="consultation-form">
+              <div class="form-group">
+                <input type="text" placeholder="Your Full Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Email Address" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" placeholder="Phone Number">
+              </div>
+              <div class="form-group">
+                <select>
+                  <option value="" disabled selected>Service Required</option>
+                  <option>Cloud Migration</option>
+                  <option>Cloud Hosting & Deployment</option>
+                  <option>Managed Cloud Services</option>
+                  <option>DevOps & CI/CD</option>
+                  <option>Containerisation & Kubernetes</option>
+                  <option>Cloud Cost Optimisation</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea rows="3" placeholder="Brief description of your infrastructure or requirements"></textarea>
+              </div>
+              <button type="submit" class="btn-submit">
+                <i class="bi bi-send me-2"></i> Send Inquiry
+              </button>
+            </div>
+          </div>
+
+          <div class="expertise-highlights">
+            <h4>Why Choose Radiant Infotech?</h4>
+            <div class="expertise-grid">
+              <div class="expertise-item">
+                <i class="bi bi-cloud-fill"></i>
+                <span>Multi-Cloud</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-shield-lock-fill"></i>
+                <span>Secure Setup</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-bar-chart-line-fill"></i>
+                <span>99.9% Uptime</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-currency-dollar"></i>
+                <span>Cost Optimised</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-headset"></i>
+                <span>24/7 Monitoring</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span>Naxal, KTM</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

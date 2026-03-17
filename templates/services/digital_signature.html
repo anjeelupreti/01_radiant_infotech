@@ -1,0 +1,339 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block title %}Digital Signature Solutions | Radiant Infotech{% endblock %}
+{% block description %}Radiant Infotech provides legally compliant Digital Signature Certificate (DSC) solutions for document authorization, e-tendering, MCA filings, and secure digital workflows across Nepal.{% endblock %}
+{% block body_class %}service-details-page{% endblock %}
+
+{% block page_title %}
+<div class="page-title dark-background" data-aos="fade"
+     style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80');">
+  <div class="container position-relative">
+    <h1>Digital Signature</h1>
+    <p>Secure, legally compliant digital signature solutions for modern businesses.</p>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'services' %}">Our Services</a></li>
+        <li class="current">Digital Signature</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="service-details section">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-lg-8" data-aos="fade-up">
+
+        <div class="service-header mb-5">
+          <div class="row align-items-center gy-4">
+            <div class="col-md-7">
+              <h1 class="service-title">Digital Signature <br><span style="color:var(--accent-color);">Certificate Solutions</span></h1>
+              <p class="service-subtitle">We issue and manage Digital Signature Certificates (DSC) that provide legally recognised, tamper-proof authentication for your documents and online transactions — helping your business operate with full compliance and confidence.</p>
+            </div>
+            <div class="col-md-5">
+              <div class="service-stats">
+                <div class="stat-item">
+                  <div class="stat-number">500+</div>
+                  <div class="stat-label">DSCs Issued</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">100%</div>
+                  <div class="stat-label">Legally Valid</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">24hr</div>
+                  <div class="stat-label">Issuance Time</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-overview">
+          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=900&q=80"
+               alt="Digital Signature Solutions" class="service-image" data-aos="zoom-in">
+          <div class="overview-grid" data-aos="fade-up" data-aos-delay="100">
+            <div class="overview-item">
+              <i class="bi bi-shield-lock-fill"></i>
+              <h3>PKI-Based Security</h3>
+              <p>Our DSCs use Public Key Infrastructure (PKI) technology to ensure every signed document is cryptographically sealed — any tampering is instantly detectable.</p>
+            </div>
+            <div class="overview-item">
+              <i class="bi bi-file-earmark-check-fill"></i>
+              <h3>Legal Compliance</h3>
+              <p>All certificates comply with Nepal's Electronic Transaction Act and are accepted for e-government filings, e-tendering, MCA submissions, and banking.</p>
+            </div>
+            <div class="overview-item">
+              <i class="bi bi-clock-history"></i>
+              <h3>Fast Issuance</h3>
+              <p>From application to activation in under 24 hours — minimal paperwork, guided process, with dedicated support at every step.</p>
+            </div>
+            <div class="overview-item">
+              <i class="bi bi-people-fill"></i>
+              <h3>For Every Use Case</h3>
+              <p>Individual, organisational, DGFT, and document signer certificates available — for freelancers, SMEs, enterprises, and government offices.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="capabilities-section" data-aos="fade-up">
+          <h2>What We Offer</h2>
+          <ul class="custom-tabs nav nav-tabs" id="dscTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#types" type="button">Certificate Types</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#uses" type="button">Use Cases</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#process" type="button">Our Process</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#faq" type="button">FAQ</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="dscTabContent">
+
+            <div class="tab-pane fade show active" id="types" role="tabpanel">
+              <h4>Available Certificate Classes</h4>
+              <p>We provide all major DSC classes to suit your specific compliance needs:</p>
+              <ul class="capability-features">
+                <li><strong>Class 3 Individual DSC</strong> — For professionals, freelancers, and individuals needing strong identity authentication</li>
+                <li><strong>Class 3 Organisation DSC</strong> — For companies filing returns, participating in tenders, or signing contracts</li>
+                <li><strong>Document Signer Certificate</strong> — For automated, high-volume PDF/document signing workflows</li>
+                <li><strong>SSL/TLS Certificates</strong> — Secure your web applications and APIs with trusted certificates</li>
+                <li><strong>Code Signing Certificates</strong> — Authenticate software distributions and prevent tampering</li>
+                <li><strong>Encrypted Email Certificates (S/MIME)</strong> — Digitally sign and encrypt email communications</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="uses" role="tabpanel">
+              <h4>Where Digital Signatures Are Used</h4>
+              <p>Digital signatures are now essential across nearly every sector in Nepal:</p>
+              <ul class="capability-features">
+                <li>E-tendering and government procurement portals</li>
+                <li>MCA (Ministry of Corporate Affairs) ROC filings</li>
+                <li>Income tax e-filing and audit reports</li>
+                <li>Banking — loan agreements, account opening, KYC</li>
+                <li>Legal documents — MoUs, contracts, NDAs</li>
+                <li>HR — appointment letters, payroll, policy acknowledgements</li>
+                <li>Healthcare — prescription records, patient consent forms</li>
+                <li>Real estate — property sale deeds and registrations</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="process" role="tabpanel">
+              <h4>How We Issue Your DSC</h4>
+              <p>Our streamlined 4-step process gets your certificate issued quickly and hassle-free:</p>
+              <ul class="capability-features">
+                <li><strong>Step 1 — Application:</strong> Fill out our online form or visit our Naxal, Kathmandu office</li>
+                <li><strong>Step 2 — Document Verification:</strong> Submit your ID proof, address proof, and organisation documents</li>
+                <li><strong>Step 3 — Video KYC:</strong> Quick identity verification via video call, available for remote applicants</li>
+                <li><strong>Step 4 — Certificate Delivery:</strong> DSC issued on USB token or downloadable within 24 hours</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="faq" role="tabpanel">
+              <h4>Frequently Asked Questions</h4>
+              <div class="accordion accordion-flush" id="dscFaq">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                      How long is a Digital Signature Certificate valid?
+                    </button>
+                  </h2>
+                  <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#dscFaq">
+                    <div class="accordion-body">DSCs are issued with 1-year or 2-year validity. We send renewal reminders well before expiry so your operations are never interrupted.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                      Is a Digital Signature legally valid in Nepal?
+                    </button>
+                  </h2>
+                  <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#dscFaq">
+                    <div class="accordion-body">Yes. Digital signatures are legally recognised under Nepal's Electronic Transaction Act (ETA) 2063. Documents signed with a valid DSC carry the same legal weight as a handwritten signature.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                      Can I apply remotely without visiting your office?
+                    </button>
+                  </h2>
+                  <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#dscFaq">
+                    <div class="accordion-body">Yes. Remote applications are fully supported via our online portal with a Video KYC session. Contact us and we will guide you through every step.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                      What documents do I need to apply?
+                    </button>
+                  </h2>
+                  <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#dscFaq">
+                    <div class="accordion-body">For individuals: a government-issued photo ID and address proof. For organisations: additionally provide your company registration certificate and an authorisation letter.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="project-showcase" data-aos="fade-up">
+          <h2>Digital Signature in Action</h2>
+          <div class="showcase-grid">
+            <div class="showcase-item large">
+              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&q=80" alt="E-tendering">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">E-Tendering</span>
+                  <h4>Government Procurement Signing</h4>
+                  <a href="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1400&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Legal Contracts">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">Legal Documents</span>
+                  <h4>Contract &amp; Agreement Signing</h4>
+                  <a href="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&q=80" alt="Banking">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">Banking &amp; Finance</span>
+                  <h4>Secure Financial Document Auth</h4>
+                  <a href="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=600&q=80" alt="HR Workflows">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">HR Workflows</span>
+                  <h4>Employee Document Management</h4>
+                  <a href="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=1200&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-sidebar">
+
+          <div class="quick-info-card">
+            <div class="info-header">
+              <h3>Service Info</h3>
+              <span class="info-badge">Available</span>
+            </div>
+            <div class="info-content">
+              <div class="info-row">
+                <span class="label">Service Type</span>
+                <span class="value">Digital Signature</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Delivery Time</span>
+                <span class="value">Within 24 hrs</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Validity</span>
+                <span class="value">1 or 2 Years</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Format</span>
+                <span class="value">USB Token / Download</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Office Hours</span>
+                <span class="value">Sun–Fri, 9am–6pm</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-card">
+            <h3>Request Your DSC</h3>
+            <p>Fill in your details and our team will reach out within a few hours.</p>
+            <div class="consultation-form">
+              <div class="form-group">
+                <input type="text" placeholder="Your Full Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Email Address" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" placeholder="Phone Number">
+              </div>
+              <div class="form-group">
+                <select>
+                  <option value="" disabled selected>Select Certificate Type</option>
+                  <option>Class 3 Individual DSC</option>
+                  <option>Class 3 Organisation DSC</option>
+                  <option>Document Signer Certificate</option>
+                  <option>SSL / TLS Certificate</option>
+                  <option>Code Signing Certificate</option>
+                  <option>S/MIME Email Certificate</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea rows="3" placeholder="Any specific requirements?"></textarea>
+              </div>
+              <button type="submit" class="btn-submit">
+                <i class="bi bi-send me-2"></i> Submit Request
+              </button>
+            </div>
+          </div>
+
+          <div class="expertise-highlights">
+            <h4>Why Choose Radiant Infotech?</h4>
+            <div class="expertise-grid">
+              <div class="expertise-item">
+                <i class="bi bi-patch-check-fill"></i>
+                <span>Certified RA</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-lightning-charge-fill"></i>
+                <span>Fast Issuance</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-headset"></i>
+                <span>Dedicated Support</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-shield-fill-check"></i>
+                <span>Legally Valid</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-arrow-repeat"></i>
+                <span>Easy Renewal</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span>Naxal, KTM</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

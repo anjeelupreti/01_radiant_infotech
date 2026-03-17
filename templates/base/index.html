@@ -4,13 +4,28 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  
-  <title>{% block title %}Radiant Infotech - 360 Digital Solutions{% endblock %}</title>
-  
-  <meta name="description" content="{% block description %}Radiant Infotech provides professional software development and digital signature solutions for businesses.{% endblock %}">
-  <meta name="keywords" content="{% block keywords %}software development, digital signature, web development, mobile apps, e-signature{% endblock %}">
 
-  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <title>{% block title %}Radiant Infotech Pvt Ltd — 360° IT & Digital Solutions{% endblock %}</title>
+
+  <meta name="description" content="{% block description %}Radiant Infotech Nepal (P.) Ltd. — 15+ years of delivering web development, software solutions, digital signature, cloud services, networking, and graphic design for businesses, institutions, and government agencies across Nepal.{% endblock %}">
+  <meta name="keywords" content="{% block keywords %}IT company Nepal, web development Nepal, software development Nepal, digital signature Nepal, G Suite partner Nepal, mobile app development, cloud solutions Nepal, networking hardware Nepal, SEO Nepal, graphic design Nepal, Radiant Infotech{% endblock %}">
+
+  <meta name="author" content="Radiant Infotech Nepal (P.) Ltd.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% block og_title %}Radiant Infotech Nepal — 360° IT & Digital Solutions{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}15+ years of trusted IT solutions — web development, software, digital signature, cloud, networking, and more for businesses across Nepal.{% endblock %}">
+  <meta property="og:image" content="{% block og_image %}{% static 'img/og-image.png' %}{% endblock %}">
+  <meta property="og:url" content="{% block og_url %}https://www.radiantinfotech.com.np/{% endblock %}">
+  <meta property="og:site_name" content="Radiant Infotech Nepal">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% block twitter_title %}Radiant Infotech Nepal — 360° IT & Digital Solutions{% endblock %}">
+  <meta name="twitter:description" content="{% block twitter_description %}15+ years of trusted IT solutions — web development, software, digital signature, cloud, networking, and more for businesses across Nepal.{% endblock %}">
+  <meta name="twitter:image" content="{% block twitter_image %}{% static 'img/og-image.png' %}{% endblock %}">
+
+  <link href="{% static 'img/favicon.png' %}" rel="icon" type="image/png">
   <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -24,24 +39,36 @@
   <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
   <link href="{% static 'css/main.css' %}" rel="stylesheet">
-  
+
+  <style>
+    body:not(.page-home) .main {
+      padding-top: 72px;
+    }
+    body.page-home .main {
+      padding-top: 0;
+    }
+  </style>
+
   {% block extra_css %}{% endblock %}
 </head>
 
 <body class="{% block body_class %}index-page{% endblock %}">
 
   <main class="main">
+
     {% include 'base/header.html' %}
-    {% block content %}
-    
-    {% endblock %}
+
+    {% block page_title %}{% endblock %}
+
+    {% block content %}{% endblock %}
+
     {% include 'base/footer.html' %}
 
-    
-    
   </main>
 
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
   <div id="preloader"></div>
 
@@ -52,7 +79,8 @@
   <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
 
   <script src="{% static 'js/main.js' %}"></script>
-  
+
   {% block extra_js %}{% endblock %}
+
 </body>
 </html>

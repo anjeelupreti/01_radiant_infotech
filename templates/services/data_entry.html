@@ -1,0 +1,339 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block title %}Data Entry Services | Radiant Infotech{% endblock %}
+{% block description %}Radiant Infotech provides accurate, fast, and confidential data entry services for businesses across Nepal — from digitisation and form processing to database management and data cleansing.{% endblock %}
+{% block body_class %}service-details-page{% endblock %}
+
+{% block page_title %}
+<div class="page-title dark-background" data-aos="fade"
+     style="background-image: url('https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1920&q=80');">
+  <div class="container position-relative">
+    <h1>Data Entry</h1>
+    <p>Accurate, fast, and fully confidential data entry services for businesses of every size.</p>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'services' %}">Our Services</a></li>
+        <li class="current">Data Entry</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="service-details section">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-lg-8" data-aos="fade-up">
+
+        <div class="service-header mb-5">
+          <div class="row align-items-center gy-4">
+            <div class="col-md-7">
+              <h1 class="service-title">Data Entry <br><span style="color:var(--accent-color);">Accurate & On Time</span></h1>
+              <p class="service-subtitle">We handle high-volume data entry tasks with precision and speed — freeing your team from repetitive work so they can focus on what matters most to your business.</p>
+            </div>
+            <div class="col-md-5">
+              <div class="service-stats">
+                <div class="stat-item">
+                  <div class="stat-number">99.9%</div>
+                  <div class="stat-label">Accuracy Rate</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">1M+</div>
+                  <div class="stat-label">Records Processed</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">100%</div>
+                  <div class="stat-label">Confidential</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-overview">
+          <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=900&q=80"
+               alt="Data Entry Services — Radiant Infotech" class="service-image" data-aos="zoom-in">
+          <div class="overview-grid" data-aos="fade-up" data-aos-delay="100">
+            <div class="overview-item">
+              <i class="bi bi-check2-circle"></i>
+              <h3>High Accuracy</h3>
+              <p>Our trained data entry team maintains a 99.9% accuracy rate through double-verification and quality control checks on every project we handle.</p>
+            </div>
+            <div class="overview-item">
+              <i class="bi bi-lock-fill"></i>
+              <h3>Fully Confidential</h3>
+              <p>All data is handled under strict confidentiality agreements. We follow industry-standard data security practices and sign NDAs on request.</p>
+            </div>
+            <div class="overview-item">
+              <i class="bi bi-lightning-charge-fill"></i>
+              <h3>Fast Turnaround</h3>
+              <p>We scale our team to meet your deadlines — whether it's a one-time bulk project or an ongoing daily processing requirement.</p>
+            </div>
+            <div class="overview-item">
+              <i class="bi bi-table"></i>
+              <h3>Any Format</h3>
+              <p>We work with paper documents, scanned images, PDFs, spreadsheets, online forms, and databases — delivering output in whatever format you need.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="capabilities-section" data-aos="fade-up">
+          <h2>What We Offer</h2>
+          <ul class="custom-tabs nav nav-tabs" id="dataTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#data-services" type="button">Services</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#data-formats" type="button">Formats & Tools</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#data-process" type="button">Our Process</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#data-faq" type="button">FAQ</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="dataTabContent">
+
+            <div class="tab-pane fade show active" id="data-services" role="tabpanel">
+              <h4>Our Data Entry Services</h4>
+              <p>We handle a wide range of data entry and data processing tasks:</p>
+              <ul class="capability-features">
+                <li><strong>Document Digitisation</strong> — Convert paper records, handwritten documents, and scanned files into structured digital formats</li>
+                <li><strong>Form & Survey Processing</strong> — Extract and organise data from physical or digital forms, questionnaires, and surveys</li>
+                <li><strong>Database Entry & Management</strong> — Populate, update, and maintain databases with clean, structured data</li>
+                <li><strong>Data Cleansing & Deduplication</strong> — Identify and remove errors, duplicates, and inconsistencies from existing datasets</li>
+                <li><strong>Product Data Entry</strong> — E-commerce product listings including descriptions, pricing, images, and category mapping</li>
+                <li><strong>Invoice & Financial Data Entry</strong> — Accurate entry of invoices, receipts, purchase orders, and financial records</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="data-formats" role="tabpanel">
+              <h4>Formats & Tools We Work With</h4>
+              <p>We accept data in any form and deliver in your preferred output format:</p>
+              <ul class="capability-features">
+                <li><strong>Input Formats:</strong> Paper documents, scanned PDFs, images (JPG/PNG), Word documents, Excel files, CSV, XML, JSON</li>
+                <li><strong>Output Formats:</strong> Excel / CSV, Google Sheets, SQL database, XML, JSON, PDF, or any custom format you specify</li>
+                <li><strong>Spreadsheet Tools:</strong> Microsoft Excel, Google Sheets, LibreOffice Calc</li>
+                <li><strong>Database Tools:</strong> MySQL, PostgreSQL, Microsoft Access, Airtable</li>
+                <li><strong>OCR & Scanning:</strong> Adobe Acrobat, ABBYY FineReader for document recognition and conversion</li>
+                <li><strong>Collaboration:</strong> Secure file transfer via email, Google Drive, Dropbox, or SFTP based on your preference</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="data-process" role="tabpanel">
+              <h4>Our Data Entry Process</h4>
+              <p>A reliable, quality-controlled process from intake to final delivery:</p>
+              <ul class="capability-features">
+                <li><strong>Step 1 — Requirement Review:</strong> We review your source data, volume, output requirements, and deadline to provide an accurate quote</li>
+                <li><strong>Step 2 — NDA & Confidentiality:</strong> Non-disclosure agreement signed before any data is shared with our team</li>
+                <li><strong>Step 3 — Sample Batch:</strong> A small sample batch is completed first so you can verify accuracy and format before full processing begins</li>
+                <li><strong>Step 4 — Data Entry & QC:</strong> Data entered by our team and independently verified through a double-entry quality control check</li>
+                <li><strong>Step 5 — Delivery:</strong> Final dataset delivered in your required format within the agreed deadline</li>
+                <li><strong>Step 6 — Review & Corrections:</strong> Any corrections or adjustments handled promptly at no extra charge</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="data-faq" role="tabpanel">
+              <h4>Frequently Asked Questions</h4>
+              <div class="accordion accordion-flush" id="dataFaq">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dafaq1">
+                      How do you ensure data accuracy?
+                    </button>
+                  </h2>
+                  <div id="dafaq1" class="accordion-collapse collapse" data-bs-parent="#dataFaq">
+                    <div class="accordion-body">We use a double-entry verification method where data is entered by one operator and independently verified by a second. This, combined with automated validation checks, ensures our 99.9% accuracy rate.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dafaq2">
+                      How is my data kept secure?
+                    </button>
+                  </h2>
+                  <div id="dafaq2" class="accordion-collapse collapse" data-bs-parent="#dataFaq">
+                    <div class="accordion-body">All data is handled under a signed NDA. Our team works in a controlled environment, data is transferred via encrypted channels, and all source files are permanently deleted after project completion upon your request.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dafaq3">
+                      Can you handle large volumes quickly?
+                    </button>
+                  </h2>
+                  <div id="dafaq3" class="accordion-collapse collapse" data-bs-parent="#dataFaq">
+                    <div class="accordion-body">Yes. We scale our team based on project volume. Whether you have 500 records or 500,000, we can deliver within your required timeline. Contact us with your volume and deadline for a custom quote.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dafaq4">
+                      Do you offer ongoing data entry services?
+                    </button>
+                  </h2>
+                  <div id="dafaq4" class="accordion-collapse collapse" data-bs-parent="#dataFaq">
+                    <div class="accordion-body">Yes. We support both one-time bulk projects and ongoing retainer arrangements where we process your data on a daily, weekly, or monthly basis with consistent quality and turnaround.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="project-showcase" data-aos="fade-up">
+          <h2>Data Entry in Action</h2>
+          <div class="showcase-grid">
+            <div class="showcase-item large">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Database Management">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">Database</span>
+                  <h4>Large-Scale Database Population</h4>
+                  <a href="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Document Digitisation">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">Digitisation</span>
+                  <h4>Document to Digital Conversion</h4>
+                  <a href="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="E-Commerce Data">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">E-Commerce</span>
+                  <h4>Product Catalogue Data Entry</h4>
+                  <a href="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Financial Records">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">Finance</span>
+                  <h4>Invoice & Financial Record Entry</h4>
+                  <a href="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-sidebar">
+
+          <div class="quick-info-card">
+            <div class="info-header">
+              <h3>Service Info</h3>
+              <span class="info-badge">Available</span>
+            </div>
+            <div class="info-content">
+              <div class="info-row">
+                <span class="label">Service Type</span>
+                <span class="value">Data Entry</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Accuracy Rate</span>
+                <span class="value">99.9%</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Turnaround</span>
+                <span class="value">Based on Volume</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Confidentiality</span>
+                <span class="value">NDA Signed</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Office Hours</span>
+                <span class="value">Sun–Fri, 9am–6pm</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-card">
+            <h3>Get a Quote</h3>
+            <p>Share your data volume and requirements and we'll respond within 24 hours.</p>
+            <div class="consultation-form">
+              <div class="form-group">
+                <input type="text" placeholder="Your Full Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Email Address" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" placeholder="Phone Number">
+              </div>
+              <div class="form-group">
+                <select>
+                  <option value="" disabled selected>Service Required</option>
+                  <option>Document Digitisation</option>
+                  <option>Form & Survey Processing</option>
+                  <option>Database Entry & Management</option>
+                  <option>Data Cleansing & Deduplication</option>
+                  <option>Product Data Entry</option>
+                  <option>Invoice & Financial Data Entry</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea rows="3" placeholder="Approximate volume and deadline"></textarea>
+              </div>
+              <button type="submit" class="btn-submit">
+                <i class="bi bi-send me-2"></i> Send Inquiry
+              </button>
+            </div>
+          </div>
+
+          <div class="expertise-highlights">
+            <h4>Why Choose Radiant Infotech?</h4>
+            <div class="expertise-grid">
+              <div class="expertise-item">
+                <i class="bi bi-check2-circle"></i>
+                <span>99.9% Accuracy</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-lock-fill"></i>
+                <span>NDA Protected</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-lightning-charge-fill"></i>
+                <span>Fast Delivery</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-arrows-fullscreen"></i>
+                <span>Any Volume</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-file-earmark-check-fill"></i>
+                <span>Any Format</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span>Naxal, KTM</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

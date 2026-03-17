@@ -1,235 +1,520 @@
 {% extends 'base/index.html' %}
 {% load static %}
 
-{% block title %}Our Projects - Radiant Infotech | Software Development & Digital Signature Portfolio{% endblock %}
-
+{% block title %}Gallery & Projects | Radiant Infotech Nepal{% endblock %}
 {% block body_class %}gallery-page{% endblock %}
 
-{% block content %}
+{% block extra_css %}
+<style>
+  .filter-btn {
+    background: transparent;
+    border: 1px solid #dee2e6;
+    padding: 8px 22px;
+    margin: 0 4px 10px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
 
-<!-- Page Title -->
-<div class="page-title dark-background" data-aos="fade" style="background-image: url({% static 'img/construction/showcase-2.webp' %});">
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: #0eaa28;
+    color: #ffffff;
+    border-color: #0eaa28;
+  }
+
+  .project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--surface-color);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    cursor: pointer;
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  }
+
+  .project-image {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .project-card:hover .project-image img {
+    transform: scale(1.06);
+  }
+
+  .project-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.68);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .project-card:hover .project-overlay {
+    opacity: 1;
+  }
+
+  .project-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    z-index: 2;
+  }
+
+  .project-info {
+    padding: 18px 20px 20px;
+  }
+
+  .project-info h5 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--heading-color);
+  }
+
+  .project-info .tech {
+    font-size: 13px;
+    color: color-mix(in srgb, var(--default-color), transparent 40%);
+    margin-bottom: 10px;
+  }
+
+  .gallery-item {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  /* ── Company Photo Gallery ── */
+  .photo-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 220px;
+    gap: 12px;
+  }
+
+  .photo-gallery-grid .photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .photo-gallery-grid .photo-item.wide {
+    grid-column: span 2;
+  }
+
+  .photo-gallery-grid .photo-item.tall {
+    grid-row: span 2;
+  }
+
+  .photo-gallery-grid .photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .photo-gallery-grid .photo-item:hover img {
+    transform: scale(1.06);
+  }
+
+  .photo-gallery-grid .photo-item .photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 18px;
+  }
+
+  .photo-gallery-grid .photo-item:hover .photo-overlay {
+    opacity: 1;
+  }
+
+  .photo-gallery-grid .photo-item .photo-overlay span {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  .photo-gallery-grid .photo-item .zoom-icon {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .photo-gallery-grid .photo-item:hover .zoom-icon {
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .photo-gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 160px;
+    }
+
+    .photo-gallery-grid .photo-item.wide {
+      grid-column: span 1;
+    }
+
+    .photo-gallery-grid .photo-item.tall {
+      grid-row: span 1;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .photo-gallery-grid {
+      grid-template-columns: 1fr;
+      grid-auto-rows: 200px;
+    }
+  }
+
+  /* ── Stats ── */
+  .stat-card {
+    background: var(--surface-color);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    padding: 2rem;
+    transition: transform 0.3s ease;
+  }
+
+  .stat-card:hover { transform: translateY(-5px); }
+
+  .stat-card h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 4px;
+  }
+
+  .stat-card p {
+    font-size: 14px;
+    color: color-mix(in srgb, var(--default-color), transparent 35%);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+
+  /* ── Testimonials ── */
+  .testimonial-card {
+    background: var(--surface-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    border-left: 4px solid #0eaa28;
+    height: 100%;
+  }
+
+  .testimonial-card .stars i { color: #f5c518; font-size: 14px; }
+  .testimonial-card .client-name { font-size: 16px; font-weight: 600; margin-bottom: 2px; color: var(--heading-color); }
+  .testimonial-card .client-role { font-size: 13px; color: color-mix(in srgb, var(--default-color), transparent 40%); }
+
+  /* ── Gallery nav tabs ── */
+  .gallery-nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 50px;
+  }
+
+  .gallery-nav a {
+    padding: 10px 28px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 15px;
+    border: 2px solid #dee2e6;
+    color: var(--default-color);
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .gallery-nav a.active,
+  .gallery-nav a:hover {
+    background: #0eaa28;
+    border-color: #0eaa28;
+    color: #ffffff;
+  }
+</style>
+{% endblock %}
+
+{% block page_title %}
+<div class="page-title dark-background" data-aos="fade"
+     style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80');">
   <div class="container position-relative">
-    <h1>Our Projects</h1>
-    <p>Explore our portfolio of successful software development and digital signature implementations across various industries.</p>
+    <h1>Gallery & Projects</h1>
+    <p>A look at our work, our team, and our journey — projects delivered and moments captured.</p>
     <nav class="breadcrumbs">
       <ol>
         <li><a href="{% url 'home' %}">Home</a></li>
-        <li class="current">Projects</li>
+        <li class="current">Gallery</li>
       </ol>
     </nav>
   </div>
 </div>
+{% endblock %}
 
-<!-- Gallery Filter Section -->
-<section class="gallery-filter-section section">
+{% block content %}
+
+<!-- ══ SECTION 1 — PROJECT PORTFOLIO ══ -->
+<section class="section" id="portfolio">
   <div class="container" data-aos="fade-up">
-    <div class="section-title text-center" data-aos="fade-up">
+
+    <div class="section-title">
       <h2>Our Portfolio</h2>
       <p>Showcasing our expertise across different domains and technologies</p>
     </div>
 
-    <!-- Filter Buttons -->
-    <div class="gallery-filters text-center mt-4" data-aos="fade-up" data-aos-delay="100">
-      <button class="filter-btn active" data-filter="*">All Projects</button>
+    <div class="text-center mt-4 mb-2" data-aos="fade-up" data-aos-delay="100">
+      <button class="filter-btn active" data-filter="*">All</button>
       <button class="filter-btn" data-filter=".web">Web Development</button>
       <button class="filter-btn" data-filter=".mobile">Mobile Apps</button>
       <button class="filter-btn" data-filter=".signature">Digital Signature</button>
       <button class="filter-btn" data-filter=".cloud">Cloud Solutions</button>
       <button class="filter-btn" data-filter=".enterprise">Enterprise</button>
     </div>
-  </div>
-</section>
 
-<!-- Gallery Grid Section -->
-<section class="gallery-section section light-background">
-  <div class="container">
-    <div class="row g-4 gallery-container" data-aos="fade-up" data-aos-delay="200">
+    <div class="row g-4 gallery-container mt-2" data-aos="fade-up" data-aos-delay="150">
 
-      <!-- Project 1 - Web Development -->
       <div class="col-lg-4 col-md-6 gallery-item web">
-        <div class="project-card h-100" data-aos="zoom-in" data-aos-delay="100">
-          <div class="project-image position-relative overflow-hidden rounded-3">
-            <img src="{% static 'img/construction/project-3.webp' %}" alt="E-Commerce Platform" class="img-fluid w-100">
+        <div class="project-card h-100">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="E-Commerce Platform">
             <div class="project-overlay">
-              <div class="overlay-content text-center">
-                <h4 class="text-white mb-2">E-Commerce Platform</h4>
+              <div class="text-center">
+                <h5 class="text-white mb-1">E-Commerce Platform</h5>
                 <p class="text-white-50 small mb-3">Web Development</p>
-                <div class="project-actions">
-                  <a href="#" class="btn btn-sm btn-light me-2" data-bs-toggle="modal" data-bs-target="#projectModal1">
-                    <i class="bi bi-arrows-fullscreen"></i>
-                  </a>
-                  <a href="#" class="btn btn-sm btn-light">
-                    <i class="bi bi-link-45deg"></i>
-                  </a>
-                </div>
+                <a href="#projectModal1" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal1"><i class="bi bi-arrows-fullscreen"></i></a>
               </div>
             </div>
-            <div class="project-badge bg-primary text-white">Featured</div>
+            <span class="project-badge bg-success text-white">Featured</span>
           </div>
-          <div class="project-info p-3">
-            <h5 class="mb-1">E-Commerce Platform</h5>
-            <p class="text-muted small mb-2">Django, React, PostgreSQL</p>
+          <div class="project-info">
+            <h5>E-Commerce Platform</h5>
+            <p class="tech">Django · React · PostgreSQL</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="badge bg-light text-dark">Retail</span>
-              <span class="text-primary small">View Details →</span>
+              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Retail</span>
+              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Project 2 - Mobile App -->
       <div class="col-lg-4 col-md-6 gallery-item mobile">
-        <div class="project-card h-100" data-aos="zoom-in" data-aos-delay="150">
-          <div class="project-image position-relative overflow-hidden rounded-3">
-            <img src="{% static 'img/construction/project-7.webp' %}" alt="Healthcare Mobile App" class="img-fluid w-100">
+        <div class="project-card h-100">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=600&q=80" alt="Healthcare Mobile App">
             <div class="project-overlay">
-              <div class="overlay-content text-center">
-                <h4 class="text-white mb-2">Healthcare Mobile App</h4>
+              <div class="text-center">
+                <h5 class="text-white mb-1">Healthcare Mobile App</h5>
                 <p class="text-white-50 small mb-3">Mobile Application</p>
-                <div class="project-actions">
-                  <a href="#" class="btn btn-sm btn-light me-2" data-bs-toggle="modal" data-bs-target="#projectModal2">
-                    <i class="bi bi-arrows-fullscreen"></i>
-                  </a>
-                  <a href="#" class="btn btn-sm btn-light">
-                    <i class="bi bi-link-45deg"></i>
-                  </a>
-                </div>
+                <a href="#projectModal2" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal2"><i class="bi bi-arrows-fullscreen"></i></a>
               </div>
             </div>
-            <div class="project-badge bg-success text-white">New</div>
+            <span class="project-badge bg-primary text-white">New</span>
           </div>
-          <div class="project-info p-3">
-            <h5 class="mb-1">Healthcare Mobile App</h5>
-            <p class="text-muted small mb-2">Flutter, Firebase, FHIR</p>
+          <div class="project-info">
+            <h5>Healthcare Mobile App</h5>
+            <p class="tech">Flutter · Firebase · FHIR</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="badge bg-light text-dark">Healthcare</span>
-              <span class="text-primary small">View Details →</span>
+              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Healthcare</span>
+              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Project 3 - Digital Signature -->
       <div class="col-lg-4 col-md-6 gallery-item signature">
-        <div class="project-card h-100" data-aos="zoom-in" data-aos-delay="200">
-          <div class="project-image position-relative overflow-hidden rounded-3">
-            <img src="#" alt="Digital Signature Platform" class="img-fluid w-100">
+        <div class="project-card h-100">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Digital Signature Platform">
             <div class="project-overlay">
-              <div class="overlay-content text-center">
-                <h4 class="text-white mb-2">Enterprise Digital Signature</h4>
-                <p class="text-white-50 small mb-3">Digital Signature Solution</p>
-                <div class="project-actions">
-                  <a href="#" class="btn btn-sm btn-light me-2" data-bs-toggle="modal" data-bs-target="#projectModal3">
-                    <i class="bi bi-arrows-fullscreen"></i>
-                  </a>
-                  <a href="#" class="btn btn-sm btn-light">
-                    <i class="bi bi-link-45deg"></i>
-                  </a>
-                </div>
+              <div class="text-center">
+                <h5 class="text-white mb-1">Enterprise Digital Signature</h5>
+                <p class="text-white-50 small mb-3">Digital Signature</p>
+                <a href="#projectModal3" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal3"><i class="bi bi-arrows-fullscreen"></i></a>
               </div>
             </div>
-            <div class="project-badge bg-warning text-dark">Award Winner</div>
+            <span class="project-badge bg-warning text-dark">Award Winner</span>
           </div>
-          <div class="project-info p-3">
-            <h5 class="mb-1">Enterprise Digital Signature</h5>
-            <p class="text-muted small mb-2">Python, Blockchain, AWS</p>
+          <div class="project-info">
+            <h5>Enterprise Digital Signature</h5>
+            <p class="tech">Python · PKI · AWS</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="badge bg-light text-dark">FinTech</span>
-              <span class="text-primary small">View Details →</span>
+              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">FinTech</span>
+              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Project 4 - Cloud Solutions -->
       <div class="col-lg-4 col-md-6 gallery-item cloud">
-        <div class="project-card h-100" data-aos="zoom-in" data-aos-delay="100">
-          <div class="project-image position-relative overflow-hidden rounded-3">
-            <img src="{% static 'img/construction/project-1.webp' %}" alt="Cloud Migration" class="img-fluid w-100">
+        <div class="project-card h-100">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" alt="Cloud Migration">
             <div class="project-overlay">
-              <div class="overlay-content text-center">
-                <h4 class="text-white mb-2">Cloud Migration Project</h4>
+              <div class="text-center">
+                <h5 class="text-white mb-1">Cloud Migration Project</h5>
                 <p class="text-white-50 small mb-3">Cloud Solutions</p>
-                <div class="project-actions">
-                  <a href="#" class="btn btn-sm btn-light me-2" data-bs-toggle="modal" data-bs-target="#projectModal4">
-                    <i class="bi bi-arrows-fullscreen"></i>
-                  </a>
-                  <a href="#" class="btn btn-sm btn-light">
-                    <i class="bi bi-link-45deg"></i>
-                  </a>
-                </div>
+                <a href="#projectModal4" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal4"><i class="bi bi-arrows-fullscreen"></i></a>
               </div>
             </div>
           </div>
-          <div class="project-info p-3">
-            <h5 class="mb-1">Cloud Migration Project</h5>
-            <p class="text-muted small mb-2">AWS, Docker, Kubernetes</p>
+          <div class="project-info">
+            <h5>Cloud Migration Project</h5>
+            <p class="tech">AWS · Docker · Kubernetes</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="badge bg-light text-dark">Enterprise</span>
-              <span class="text-primary small">View Details →</span>
+              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Enterprise</span>
+              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Project 5 - Enterprise -->
       <div class="col-lg-4 col-md-6 gallery-item enterprise">
-        <div class="project-card h-100" data-aos="zoom-in" data-aos-delay="150">
-          <div class="project-image position-relative overflow-hidden rounded-3">
-            <img src="{% static 'img/construction/project-5.webp' %}" alt="ERP System" class="img-fluid w-100">
+        <div class="project-card h-100">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=600&q=80" alt="ERP System">
             <div class="project-overlay">
-              <div class="overlay-content text-center">
-                <h4 class="text-white mb-2">ERP System Implementation</h4>
+              <div class="text-center">
+                <h5 class="text-white mb-1">ERP System Implementation</h5>
                 <p class="text-white-50 small mb-3">Enterprise Software</p>
-                <div class="project-actions">
-                  <a href="#" class="btn btn-sm btn-light me-2" data-bs-toggle="modal" data-bs-target="#projectModal5">
-                    <i class="bi bi-arrows-fullscreen"></i>
-                  </a>
-                  <a href="#" class="btn btn-sm btn-light">
-                    <i class="bi bi-link-45deg"></i>
-                  </a>
-                </div>
+                <a href="#projectModal5" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal5"><i class="bi bi-arrows-fullscreen"></i></a>
               </div>
             </div>
           </div>
-          <div class="project-info p-3">
-            <h5 class="mb-1">ERP System Implementation</h5>
-            <p class="text-muted small mb-2">Django, PostgreSQL, Redis</p>
+          <div class="project-info">
+            <h5>ERP System Implementation</h5>
+            <p class="tech">Django · PostgreSQL · Redis</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="badge bg-light text-dark">Manufacturing</span>
-              <span class="text-primary small">View Details →</span>
+              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Manufacturing</span>
+              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Project 6 - Web Development -->
       <div class="col-lg-4 col-md-6 gallery-item web">
-        <div class="project-card h-100" data-aos="zoom-in" data-aos-delay="200">
-          <div class="project-image position-relative overflow-hidden rounded-3">
-            <img src="{% static 'img/construction/project-9.webp' %}" alt="Educational Platform" class="img-fluid w-100">
+        <div class="project-card h-100">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&q=80" alt="Educational Platform">
             <div class="project-overlay">
-              <div class="overlay-content text-center">
-                <h4 class="text-white mb-2">Educational Platform</h4>
+              <div class="text-center">
+                <h5 class="text-white mb-1">Educational Platform</h5>
                 <p class="text-white-50 small mb-3">Web Development</p>
-                <div class="project-actions">
-                  <a href="#" class="btn btn-sm btn-light me-2" data-bs-toggle="modal" data-bs-target="#projectModal6">
-                    <i class="bi bi-arrows-fullscreen"></i>
-                  </a>
-                  <a href="#" class="btn btn-sm btn-light">
-                    <i class="bi bi-link-45deg"></i>
-                  </a>
-                </div>
+                <a href="#projectModal6" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal6"><i class="bi bi-arrows-fullscreen"></i></a>
               </div>
             </div>
           </div>
-          <div class="project-info p-3">
-            <h5 class="mb-1">Educational Platform</h5>
-            <p class="text-muted small mb-2">React, Node.js, MongoDB</p>
+          <div class="project-info">
+            <h5>Educational Platform</h5>
+            <p class="tech">React · Node.js · MongoDB</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="badge bg-light text-dark">Education</span>
-              <span class="text-primary small">View Details →</span>
+              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Education</span>
+              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 gallery-item mobile">
+        <div class="project-card h-100">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?w=600&q=80" alt="Fintech App">
+            <div class="project-overlay">
+              <div class="text-center">
+                <h5 class="text-white mb-1">Digital Payments App</h5>
+                <p class="text-white-50 small mb-3">Mobile Application</p>
+                <a href="#projectModal7" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal7"><i class="bi bi-arrows-fullscreen"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h5>Digital Payments App</h5>
+            <p class="tech">React Native · Node.js · Stripe</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Fintech</span>
+              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 gallery-item signature">
+        <div class="project-card h-100">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Legal Document Signing">
+            <div class="project-overlay">
+              <div class="text-center">
+                <h5 class="text-white mb-1">Legal Document Signing</h5>
+                <p class="text-white-50 small mb-3">Digital Signature</p>
+                <a href="#projectModal8" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal8"><i class="bi bi-arrows-fullscreen"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h5>Legal Document Signing</h5>
+            <p class="tech">Python · PKI · Django</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Legal</span>
+              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 gallery-item enterprise">
+        <div class="project-card h-100">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80" alt="Government Portal">
+            <div class="project-overlay">
+              <div class="text-center">
+                <h5 class="text-white mb-1">Government Web Portal</h5>
+                <p class="text-white-50 small mb-3">Enterprise · Web</p>
+                <a href="#projectModal9" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal9"><i class="bi bi-arrows-fullscreen"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h5>Government Web Portal</h5>
+            <p class="tech">Django · PostgreSQL · Bootstrap</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Government</span>
+              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
             </div>
           </div>
         </div>
@@ -239,86 +524,167 @@
   </div>
 </section>
 
-<!-- Stats Section -->
-<section class="stats-section section">
+<!-- ══ SECTION 2 — COMPANY PHOTO GALLERY ══ -->
+<section class="section light-background" id="company-gallery">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Inside Radiant Infotech</h2>
+      <p>Our office, our team, our events — a glimpse into who we are beyond our work</p>
+    </div>
+
+    <div class="photo-gallery-grid mt-4" data-aos="fade-up" data-aos-delay="100">
+
+      <a href="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&q=90"
+         class="photo-item wide glightbox" data-gallery="company" data-glightbox="title: Our Team">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Our Team">
+        <div class="photo-overlay"><span>Our Team</span></div>
+        <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+
+      <a href="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1400&q=90"
+         class="photo-item tall glightbox" data-gallery="company" data-glightbox="title: Office — Naxal, Kathmandu">
+        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&q=80" alt="Our Office">
+        <div class="photo-overlay"><span>Our Office — Naxal, Kathmandu</span></div>
+        <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+
+      <a href="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&q=90"
+         class="photo-item glightbox" data-gallery="company" data-glightbox="title: Team Meeting">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="Team Meeting">
+        <div class="photo-overlay"><span>Team Meeting</span></div>
+        <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+
+      <a href="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1400&q=90"
+         class="photo-item glightbox" data-gallery="company" data-glightbox="title: Development in Progress">
+        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80" alt="Development">
+        <div class="photo-overlay"><span>Development in Progress</span></div>
+        <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+
+      <a href="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1400&q=90"
+         class="photo-item wide glightbox" data-gallery="company" data-glightbox="title: Company Event">
+        <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80" alt="Company Event">
+        <div class="photo-overlay"><span>Company Event</span></div>
+        <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+
+      <a href="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1400&q=90"
+         class="photo-item glightbox" data-gallery="company" data-glightbox="title: Client Presentation">
+        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&q=80" alt="Client Presentation">
+        <div class="photo-overlay"><span>Client Presentation</span></div>
+        <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+
+      <a href="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1400&q=90"
+         class="photo-item glightbox" data-gallery="company" data-glightbox="title: Design Team at Work">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="Design Team">
+        <div class="photo-overlay"><span>Design Team at Work</span></div>
+        <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+
+      <a href="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1400&q=90"
+         class="photo-item glightbox" data-gallery="company" data-glightbox="title: Training Session">
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80" alt="Training Session">
+        <div class="photo-overlay"><span>Training Session</span></div>
+        <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+
+      <a href="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1400&q=90"
+         class="photo-item wide glightbox" data-gallery="company" data-glightbox="title: Year-End Celebration">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Celebration">
+        <div class="photo-overlay"><span>Year-End Celebration</span></div>
+        <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+
+    </div>
+
+    <p class="text-center mt-4" style="font-size:14px;color:color-mix(in srgb,var(--default-color),transparent 40%);">
+      Replace these placeholder images with actual photos of your office, team, and events by updating the <code>src</code> and <code>href</code> attributes.
+    </p>
+
+  </div>
+</section>
+
+<!-- ══ SECTION 3 — STATS ══ -->
+<section class="section">
   <div class="container">
-    <div class="row justify-content-center text-center">
-      <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="stat-card p-4 rounded-3 shadow-sm">
-          <div class="stat-icon mb-3">
-            <i class="bi bi-code-square fs-1 text-primary"></i>
-          </div>
-          <h2 class="display-4 fw-bold">100+</h2>
-          <p class="text-muted">Web Applications</p>
+    <div class="section-title" data-aos="fade-up">
+      <h2>By the Numbers</h2>
+      <p>Our track record across 15+ years of delivering technology solutions</p>
+    </div>
+    <div class="row g-4 mt-2 text-center">
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="stat-card">
+          <i class="bi bi-code-square d-block mb-3" style="font-size:2.2rem;color:var(--accent-color);"></i>
+          <h2>100+</h2>
+          <p>Web Applications</p>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="stat-card p-4 rounded-3 shadow-sm">
-          <div class="stat-icon mb-3">
-            <i class="bi bi-phone fs-1 text-primary"></i>
-          </div>
-          <h2 class="display-4 fw-bold">50+</h2>
-          <p class="text-muted">Mobile Apps</p>
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="stat-card">
+          <i class="bi bi-phone d-block mb-3" style="font-size:2.2rem;color:var(--accent-color);"></i>
+          <h2>50+</h2>
+          <p>Mobile Apps</p>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="stat-card p-4 rounded-3 shadow-sm">
-          <div class="stat-icon mb-3">
-            <i class="bi bi-pen fs-1 text-primary"></i>
-          </div>
-          <h2 class="display-4 fw-bold">200K+</h2>
-          <p class="text-muted">Digital Signatures</p>
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="stat-card">
+          <i class="bi bi-patch-check-fill d-block mb-3" style="font-size:2.2rem;color:var(--accent-color);"></i>
+          <h2>200K+</h2>
+          <p>Digital Signatures</p>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
-        <div class="stat-card p-4 rounded-3 shadow-sm">
-          <div class="stat-icon mb-3">
-            <i class="bi bi-cloud fs-1 text-primary"></i>
-          </div>
-          <h2 class="display-4 fw-bold">75+</h2>
-          <p class="text-muted">Cloud Deployments</p>
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="stat-card">
+          <i class="bi bi-cloud-fill d-block mb-3" style="font-size:2.2rem;color:var(--accent-color);"></i>
+          <h2>75+</h2>
+          <p>Cloud Deployments</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Testimonial Section -->
-<section class="testimonial-section section light-background">
+<!-- ══ SECTION 4 — TESTIMONIALS ══ -->
+<section class="section light-background">
   <div class="container">
-    <div class="section-title text-center" data-aos="fade-up">
+    <div class="section-title" data-aos="fade-up">
       <h2>Client Success Stories</h2>
       <p>Hear from our satisfied clients about their project experience</p>
     </div>
-    
-    <div class="row mt-5">
-      <div class="col-lg-6 mb-4" data-aos="fade-right" data-aos-delay="100">
-        <div class="testimonial-card p-4 bg-white rounded-3 shadow-sm h-100">
+    <div class="row g-4 mt-2">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <div class="testimonial-card">
           <div class="d-flex align-items-center mb-3">
-            <img src="{% static 'img/person/person-m-7.webp' %}" alt="Client" class="rounded-circle me-3" width="60" height="60">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80"
+                 alt="Rajesh Kumar" class="rounded-circle me-3"
+                 style="width:56px;height:56px;object-fit:cover;">
             <div>
-              <h5 class="mb-1">Rajesh Kumar</h5>
-              <p class="text-muted small mb-0">CTO, FinTech Solutions</p>
+              <p class="client-name mb-0">Rajesh Kumar</p>
+              <p class="client-role mb-0">CTO, FinTech Solutions</p>
             </div>
           </div>
-          <p class="mb-3">"Radiant Infotech delivered our digital signature platform ahead of schedule. The integration was seamless and our clients love the user experience. Truly a game-changer for our business."</p>
-          <div class="text-warning">
+          <p style="font-size:15px;line-height:1.7;">Radiant Infotech delivered our digital signature platform ahead of schedule. The integration was seamless and our clients love the user experience. Truly a game-changer for our business.</p>
+          <div class="stars mt-2">
             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
           </div>
         </div>
       </div>
-      
-      <div class="col-lg-6 mb-4" data-aos="fade-left" data-aos-delay="200">
-        <div class="testimonial-card p-4 bg-white rounded-3 shadow-sm h-100">
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+        <div class="testimonial-card">
           <div class="d-flex align-items-center mb-3">
-            <img src="{% static 'img/person/person-f-7.webp' %}" alt="Client" class="rounded-circle me-3" width="60" height="60">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80"
+                 alt="Priya Sharma" class="rounded-circle me-3"
+                 style="width:56px;height:56px;object-fit:cover;">
             <div>
-              <h5 class="mb-1">Priya Sharma</h5>
-              <p class="text-muted small mb-0">Director, HealthCare Plus</p>
+              <p class="client-name mb-0">Priya Sharma</p>
+              <p class="client-role mb-0">Director, HealthCare Plus</p>
             </div>
           </div>
-          <p class="mb-3">"The healthcare mobile app developed by Radiant Infotech has transformed how we connect with patients. Their attention to security and user experience is outstanding."</p>
-          <div class="text-warning">
+          <p style="font-size:15px;line-height:1.7;">The healthcare mobile app developed by Radiant Infotech has transformed how we connect with patients. Their attention to security and user experience is outstanding.</p>
+          <div class="stars mt-2">
             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
           </div>
         </div>
@@ -327,37 +693,35 @@
   </div>
 </section>
 
-<!-- CTA Section -->
-<section class="cta-section section">
+<!-- ══ SECTION 5 — CTA ══ -->
+<section class="section">
   <div class="container text-center" data-aos="fade-up">
-    <h2 class="mb-4">Ready to Start Your Project?</h2>
-    <p class="lead mb-4">Let's discuss how we can bring your vision to life with our expertise.</p>
+    <h2 class="mb-3">Ready to Start Your Project?</h2>
+    <p class="mb-4" style="font-size:17px;color:color-mix(in srgb,var(--default-color),transparent 25%);">Let's discuss how we can bring your vision to life.</p>
     <a href="{% url 'contact_us' %}" class="btn btn-primary btn-lg me-3">Contact Us</a>
-    <a href="{% url 'services' %}" class="btn btn-outline-primary btn-lg">Explore Services</a>
+    <a href="{% url 'services' %}" class="btn btn-outline-secondary btn-lg">Explore Services</a>
   </div>
 </section>
 
-<!-- Project Modals -->
-{% for i in "123456"|make_list %}
-<div class="modal fade" id="projectModal{{ i }}" tabindex="-1" aria-hidden="true">
+<!-- ══ PROJECT MODALS ══ -->
+{% for i in "123456789"|make_list %}
+<div class="modal fade" id="projectModal{{ forloop.counter }}" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header border-0 pb-0">
         <h5 class="modal-title">Project Details</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
-        <img src="{% static 'img/construction/project-'|add:forloop.counter|add:'.webp' %}" class="img-fluid mb-3" alt="Project">
-        <h4>Project Title</h4>
-        <p>Detailed description of the project, technologies used, challenges overcome, and results achieved.</p>
-        <ul class="list-unstyled">
-          <li><strong>Client:</strong> Client Name</li>
-          <li><strong>Technologies:</strong> Django, React, PostgreSQL</li>
-          <li><strong>Duration:</strong> 6 months</li>
-          <li><strong>Impact:</strong> 40% efficiency increase</li>
+        <p style="line-height:1.75;color:color-mix(in srgb,var(--default-color),transparent 20%);">Detailed project information will be updated here. Contact us to learn more about this specific project and how we can deliver a similar solution for your business.</p>
+        <ul class="list-unstyled mt-3" style="font-size:14px;">
+          <li class="mb-2"><strong>Technologies:</strong> Available on request</li>
+          <li class="mb-2"><strong>Duration:</strong> Available on request</li>
+          <li><strong>Enquire:</strong> <a href="{% url 'contact_us' %}">Get in touch</a> to discuss a similar project</li>
         </ul>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer border-0">
+        <a href="{% url 'contact_us' %}" class="btn btn-success">Discuss a Similar Project</a>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
@@ -365,112 +729,36 @@
 </div>
 {% endfor %}
 
-<style>
-  .gallery-filters {
-    margin-bottom: 30px;
-  }
-  .filter-btn {
-    background: transparent;
-    border: none;
-    padding: 8px 20px;
-    margin: 0 5px 10px;
-    border-radius: 30px;
-    font-weight: 500;
-    transition: all 0.3s;
-    border: 1px solid #dee2e6;
-  }
-  .filter-btn:hover,
-  .filter-btn.active {
-    background: var(--primary-color,#0eaa28;);
-    color: white;
-    border-color: var(--primary-color,#0eaa28;);
-  }
-  .project-card {
-    transition: transform 0.3s;
-    cursor: pointer;
-    border: none;
-    background: transparent;
-  }
-  .project-card:hover {
-    transform: translateY(-10px);
-  }
-  .project-image {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  }
-  .project-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  .project-card:hover .project-overlay {
-    opacity: 1;
-  }
-  .project-badge {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    z-index: 2;
-  }
-  .stat-card {
-    background: white;
-    transition: transform 0.3s;
-  }
-  .stat-card:hover {
-    transform: scale(1.05);
-  }
-  .testimonial-card {
-    border-left: 4px solid var(--primary-color,#0eaa28;);
-  }
-</style>
+{% endblock %}
 
+{% block extra_js %}
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
-    
-    filterButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        // Update active button
-        filterButtons.forEach(btn => btn.classList.remove('active'));
+
+    filterButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        filterButtons.forEach(function (btn) { btn.classList.remove('active'); });
         this.classList.add('active');
-        
-        // Get filter value
+
         const filterValue = this.getAttribute('data-filter');
-        
-        // Filter items
-        galleryItems.forEach(item => {
+
+        galleryItems.forEach(function (item) {
           if (filterValue === '*' || item.classList.contains(filterValue.substring(1))) {
             item.style.display = 'block';
-            setTimeout(() => {
+            setTimeout(function () {
               item.style.opacity = '1';
               item.style.transform = 'scale(1)';
-            }, 100);
+            }, 50);
           } else {
             item.style.opacity = '0';
-            item.style.transform = 'scale(0.8)';
-            setTimeout(() => {
-              item.style.display = 'none';
-            }, 300);
+            item.style.transform = 'scale(0.9)';
+            setTimeout(function () { item.style.display = 'none'; }, 300);
           }
         });
       });
     });
   });
 </script>
-
 {% endblock %}

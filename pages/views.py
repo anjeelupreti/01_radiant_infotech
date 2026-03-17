@@ -12,6 +12,26 @@ from django.utils import timezone
 import re
 from django.http import HttpResponse, JsonResponse, Http404
 
+
+SERVICE_TEMPLATES = {
+    'digital-signature':  'services/digital_signature.html',
+    'web-development':    'services/web_development.html',
+    'mobile-applications':'services/mobile_applications.html',
+    'cloud-services':     'services/cloud_services.html',
+    'graphics-designing': 'services/graphics_designing.html',
+    'data-entry':         'services/data_entry.html',
+}
+ 
+SERVICE_TITLES = {
+    'digital-signature':   'Digital Signature',
+    'web-development':     'Web Development',
+    'mobile-applications': 'Mobile Applications',
+    'cloud-services':      'Cloud Services',
+    'graphics-designing':  'Graphics Designing',
+    'data-entry':          'Data Entry',
+}
+ 
+
 def home(request):
     
     context = {
@@ -39,6 +59,16 @@ def services(request):
     }
     return render(request, 'pages/services.html', context)
 
+def service_detail(request, slug):
+    template = SERVICE_TEMPLATES.get(slug)
+    if not template:
+        raise Http404("Service not found.")
+ 
+    context = {
+        'service_slug':  slug,
+        'service_title': SERVICE_TITLES.get(slug, 'Service'),
+    }
+    return render(request, template, context)
 
 def gallery(request):
     

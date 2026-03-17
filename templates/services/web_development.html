@@ -1,0 +1,338 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block title %}Web Development Services | Radiant Infotech{% endblock %}
+{% block description %}Radiant Infotech builds high-performance, scalable websites and web applications for businesses across Nepal — from corporate portals to full-stack custom platforms.{% endblock %}
+{% block body_class %}service-details-page{% endblock %}
+
+{% block page_title %}
+<div class="page-title dark-background" data-aos="fade"
+     style="background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&q=80');">
+  <div class="container position-relative">
+    <h1>Web Development</h1>
+    <p>Modern, scalable, and high-performance websites and web applications built for results.</p>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'services' %}">Our Services</a></li>
+        <li class="current">Web Development</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="service-details section">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-lg-8" data-aos="fade-up">
+
+        <div class="service-header mb-5">
+          <div class="row align-items-center gy-4">
+            <div class="col-md-7">
+              <h1 class="service-title">Web Development <br><span style="color:var(--accent-color);">That Drives Growth</span></h1>
+              <p class="service-subtitle">From landing pages to complex enterprise platforms, we design and develop web solutions that are fast, secure, and built to scale — tailored precisely to your business goals.</p>
+            </div>
+            <div class="col-md-5">
+              <div class="service-stats">
+                <div class="stat-item">
+                  <div class="stat-number">80+</div>
+                  <div class="stat-label">Sites Delivered</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">8+</div>
+                  <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">100%</div>
+                  <div class="stat-label">Responsive Design</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-overview">
+          <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=900&q=80"
+               alt="Web Development — Radiant Infotech" class="service-image" data-aos="zoom-in">
+          <div class="overview-grid" data-aos="fade-up" data-aos-delay="100">
+            <div class="overview-item">
+              <i class="bi bi-laptop"></i>
+              <h3>Custom Web Applications</h3>
+              <p>We build bespoke web apps from scratch using modern frameworks — designed around your workflow, not the other way around.</p>
+            </div>
+            <div class="overview-item">
+              <i class="bi bi-phone"></i>
+              <h3>Fully Responsive</h3>
+              <p>Every project we deliver is pixel-perfect across all devices and screen sizes — mobile, tablet, and desktop.</p>
+            </div>
+            <div class="overview-item">
+              <i class="bi bi-speedometer2"></i>
+              <h3>Performance Optimised</h3>
+              <p>Fast load times, optimised assets, and clean code — because speed directly impacts your user experience and search rankings.</p>
+            </div>
+            <div class="overview-item">
+              <i class="bi bi-shield-check"></i>
+              <h3>Secure by Default</h3>
+              <p>SSL, secure authentication, input validation, and regular dependency audits are part of every project we ship.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="capabilities-section" data-aos="fade-up">
+          <h2>What We Build</h2>
+          <ul class="custom-tabs nav nav-tabs" id="webTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#web-types" type="button">Services</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#web-stack" type="button">Tech Stack</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#web-process" type="button">Our Process</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#web-faq" type="button">FAQ</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="webTabContent">
+
+            <div class="tab-pane fade show active" id="web-types" role="tabpanel">
+              <h4>Our Web Development Services</h4>
+              <p>We cover the full spectrum of web development needs for businesses of every size:</p>
+              <ul class="capability-features">
+                <li><strong>Corporate Websites</strong> — Professional, brand-aligned websites that make a strong first impression</li>
+                <li><strong>E-Commerce Platforms</strong> — Full-featured online stores with payment integration, inventory, and order management</li>
+                <li><strong>Custom Web Applications</strong> — Portals, dashboards, CRMs, ERPs, and workflow tools built to your specification</li>
+                <li><strong>CMS-Based Websites</strong> — WordPress, Django CMS, and headless CMS solutions for easy content management</li>
+                <li><strong>Government & NGO Portals</strong> — Secure, accessible portals built to public sector standards</li>
+                <li><strong>API Development & Integration</strong> — RESTful APIs and third-party service integrations</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="web-stack" role="tabpanel">
+              <h4>Technologies We Work With</h4>
+              <p>We use modern, battle-tested technologies to ensure reliability and long-term maintainability:</p>
+              <ul class="capability-features">
+                <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+), React.js, Vue.js, Bootstrap, Tailwind CSS</li>
+                <li><strong>Backend:</strong> Python / Django, Node.js, PHP / Laravel</li>
+                <li><strong>Databases:</strong> PostgreSQL, MySQL, MongoDB, SQLite</li>
+                <li><strong>CMS:</strong> WordPress, Django CMS, Wagtail</li>
+                <li><strong>DevOps & Hosting:</strong> Linux servers, Nginx, Docker, AWS, DigitalOcean</li>
+                <li><strong>Version Control:</strong> Git, GitHub, GitLab — clean branching and deployment workflows</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="web-process" role="tabpanel">
+              <h4>How We Work — Our Development Process</h4>
+              <p>A transparent, collaborative process from first meeting to final launch:</p>
+              <ul class="capability-features">
+                <li><strong>Step 1 — Discovery:</strong> We understand your goals, audience, and requirements through in-depth consultation</li>
+                <li><strong>Step 2 — Design:</strong> Wireframes and UI mockups shared for your approval before a single line of code is written</li>
+                <li><strong>Step 3 — Development:</strong> Agile sprints with regular demos so you always know where the project stands</li>
+                <li><strong>Step 4 — Testing:</strong> Cross-browser, cross-device, and performance testing before delivery</li>
+                <li><strong>Step 5 — Launch & Support:</strong> Smooth deployment and ongoing maintenance packages available</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="web-faq" role="tabpanel">
+              <h4>Frequently Asked Questions</h4>
+              <div class="accordion accordion-flush" id="webFaq">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wfaq1">
+                      How long does it take to build a website?
+                    </button>
+                  </h2>
+                  <div id="wfaq1" class="accordion-collapse collapse" data-bs-parent="#webFaq">
+                    <div class="accordion-body">A standard corporate website typically takes 2–4 weeks. Custom web applications range from 6–16 weeks depending on complexity. We provide a detailed timeline after the discovery phase.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wfaq2">
+                      Will I be able to update my website myself?
+                    </button>
+                  </h2>
+                  <div id="wfaq2" class="accordion-collapse collapse" data-bs-parent="#webFaq">
+                    <div class="accordion-body">Yes. We build with content management in mind. You'll receive a CMS-powered site and a training session so your team can manage content independently without any coding knowledge.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wfaq3">
+                      Do you provide hosting and domain services?
+                    </button>
+                  </h2>
+                  <div id="wfaq3" class="accordion-collapse collapse" data-bs-parent="#webFaq">
+                    <div class="accordion-body">Yes. We can handle domain registration, hosting setup, SSL certificates, and server management as part of our service package, or work alongside your existing provider.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wfaq4">
+                      Do you offer post-launch maintenance?
+                    </button>
+                  </h2>
+                  <div id="wfaq4" class="accordion-collapse collapse" data-bs-parent="#webFaq">
+                    <div class="accordion-body">Yes. We offer monthly maintenance plans covering security updates, backups, performance monitoring, and content updates so your site stays fast and secure long after launch.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="project-showcase" data-aos="fade-up">
+          <h2>Our Web Projects</h2>
+          <div class="showcase-grid">
+            <div class="showcase-item large">
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700&q=80" alt="Corporate Website">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">Corporate</span>
+                  <h4>Business Website Development</h4>
+                  <a href="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1400&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="E-Commerce">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">E-Commerce</span>
+                  <h4>Online Store Platform</h4>
+                  <a href="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=600&q=80" alt="Dashboard">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">Web Application</span>
+                  <h4>Admin Dashboard & Portal</h4>
+                  <a href="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=1200&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80" alt="NGO Portal">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">NGO / Government</span>
+                  <h4>Public Sector Web Portal</h4>
+                  <a href="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-sidebar">
+
+          <div class="quick-info-card">
+            <div class="info-header">
+              <h3>Service Info</h3>
+              <span class="info-badge">Available</span>
+            </div>
+            <div class="info-content">
+              <div class="info-row">
+                <span class="label">Service Type</span>
+                <span class="value">Web Development</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Delivery Time</span>
+                <span class="value">2 – 16 Weeks</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Tech Stack</span>
+                <span class="value">Django, React, WordPress</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Includes</span>
+                <span class="value">Design + Development</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Office Hours</span>
+                <span class="value">Sun–Fri, 9am–6pm</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-card">
+            <h3>Start Your Project</h3>
+            <p>Tell us about your project and we'll get back to you within 24 hours.</p>
+            <div class="consultation-form">
+              <div class="form-group">
+                <input type="text" placeholder="Your Full Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Email Address" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" placeholder="Phone Number">
+              </div>
+              <div class="form-group">
+                <select>
+                  <option value="" disabled selected>Project Type</option>
+                  <option>Corporate Website</option>
+                  <option>E-Commerce Store</option>
+                  <option>Custom Web Application</option>
+                  <option>CMS / Blog Website</option>
+                  <option>Government / NGO Portal</option>
+                  <option>API Development</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea rows="3" placeholder="Brief description of your project"></textarea>
+              </div>
+              <button type="submit" class="btn-submit">
+                <i class="bi bi-send me-2"></i> Send Inquiry
+              </button>
+            </div>
+          </div>
+
+          <div class="expertise-highlights">
+            <h4>Why Choose Radiant Infotech?</h4>
+            <div class="expertise-grid">
+              <div class="expertise-item">
+                <i class="bi bi-code-slash"></i>
+                <span>Clean Code</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-phone"></i>
+                <span>Mobile First</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-speedometer2"></i>
+                <span>Fast Delivery</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-shield-check"></i>
+                <span>Secure Build</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-headset"></i>
+                <span>Post-Launch Support</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span>Naxal, KTM</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

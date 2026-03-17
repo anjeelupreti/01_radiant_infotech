@@ -1,0 +1,339 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block title %}Graphics Designing Services | Radiant Infotech{% endblock %}
+{% block description %}Radiant Infotech delivers professional graphic design services — brand identity, UI/UX design, marketing materials, and social media visuals for businesses across Nepal.{% endblock %}
+{% block body_class %}service-details-page{% endblock %}
+
+{% block page_title %}
+<div class="page-title dark-background" data-aos="fade"
+     style="background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1920&q=80');">
+  <div class="container position-relative">
+    <h1>Graphics Designing</h1>
+    <p>Creative, professional design that communicates your brand with clarity and impact.</p>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'services' %}">Our Services</a></li>
+        <li class="current">Graphics Designing</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="service-details section">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-lg-8" data-aos="fade-up">
+
+        <div class="service-header mb-5">
+          <div class="row align-items-center gy-4">
+            <div class="col-md-7">
+              <h1 class="service-title">Design That <br><span style="color:var(--accent-color);">Makes an Impression</span></h1>
+              <p class="service-subtitle">From brand identity to marketing collateral, we create visuals that capture your brand's personality and communicate the right message to the right audience — every time.</p>
+            </div>
+            <div class="col-md-5">
+              <div class="service-stats">
+                <div class="stat-item">
+                  <div class="stat-number">200+</div>
+                  <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">50+</div>
+                  <div class="stat-label">Brands Designed</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">100%</div>
+                  <div class="stat-label">Original Work</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-overview">
+          <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=900&q=80"
+               alt="Graphics Designing — Radiant Infotech" class="service-image" data-aos="zoom-in">
+          <div class="overview-grid" data-aos="fade-up" data-aos-delay="100">
+            <div class="overview-item">
+              <i class="bi bi-brush-fill"></i>
+              <h3>Brand Identity</h3>
+              <p>Logo design, colour palettes, typography systems, and brand guidelines that give your business a consistent, recognisable identity across every platform.</p>
+            </div>
+            <div class="overview-item">
+              <i class="bi bi-layout-text-window-reverse"></i>
+              <h3>UI/UX Design</h3>
+              <p>Wireframes, mockups, and polished interface designs for websites and apps — user-centred, visually compelling, and ready for development handoff.</p>
+            </div>
+            <div class="overview-item">
+              <i class="bi bi-megaphone-fill"></i>
+              <h3>Marketing Materials</h3>
+              <p>Brochures, flyers, banners, posters, business cards, and presentation decks designed to make your marketing campaigns stand out.</p>
+            </div>
+            <div class="overview-item">
+              <i class="bi bi-instagram"></i>
+              <h3>Social Media Visuals</h3>
+              <p>Scroll-stopping graphics for Instagram, Facebook, LinkedIn, and other platforms — consistently branded and sized for each channel.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="capabilities-section" data-aos="fade-up">
+          <h2>What We Design</h2>
+          <ul class="custom-tabs nav nav-tabs" id="designTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#design-services" type="button">Services</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#design-tools" type="button">Tools We Use</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#design-process" type="button">Our Process</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#design-faq" type="button">FAQ</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="designTabContent">
+
+            <div class="tab-pane fade show active" id="design-services" role="tabpanel">
+              <h4>Our Design Services</h4>
+              <p>We offer a full range of graphic design services for businesses at every stage:</p>
+              <ul class="capability-features">
+                <li><strong>Logo & Brand Identity</strong> — Original logo design with full brand identity packages including guidelines, colour systems, and typography</li>
+                <li><strong>UI/UX Design</strong> — Website and mobile app interface design — wireframes, prototypes, and final visual designs</li>
+                <li><strong>Print Design</strong> — Business cards, letterheads, brochures, flyers, posters, banners, and packaging</li>
+                <li><strong>Social Media Design</strong> — Post templates, story graphics, cover images, and ad creatives for all major platforms</li>
+                <li><strong>Presentation Design</strong> — Professional PowerPoint and Keynote presentation decks for pitches, reports, and events</li>
+                <li><strong>Illustration & Infographics</strong> — Custom illustrations, icons, and data-driven infographics for reports and content marketing</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="design-tools" role="tabpanel">
+              <h4>Tools & Software We Work With</h4>
+              <p>We use industry-standard tools to ensure professional quality and easy file handoff:</p>
+              <ul class="capability-features">
+                <li><strong>Adobe Illustrator</strong> — Vector logo design, icons, and print-ready artwork</li>
+                <li><strong>Adobe Photoshop</strong> — Photo manipulation, digital art, and raster graphics</li>
+                <li><strong>Adobe InDesign</strong> — Multi-page layouts, brochures, magazines, and reports</li>
+                <li><strong>Figma</strong> — UI/UX design, prototyping, and design system creation</li>
+                <li><strong>Adobe XD</strong> — Interactive app and website prototyping</li>
+                <li><strong>Canva Pro</strong> — Social media templates and quick-turnaround marketing assets</li>
+                <li><strong>Deliverables:</strong> Print-ready PDFs, web-optimised PNGs/JPGs, SVG vectors, and Figma source files</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="design-process" role="tabpanel">
+              <h4>Our Design Process</h4>
+              <p>A collaborative process that puts your vision at the centre of every project:</p>
+              <ul class="capability-features">
+                <li><strong>Step 1 — Brief & Discovery:</strong> We understand your brand, audience, goals, and preferences through a detailed design brief</li>
+                <li><strong>Step 2 — Research & Concepts:</strong> We research your industry and competitors, then develop initial design concepts for your review</li>
+                <li><strong>Step 3 — First Presentation:</strong> 2–3 distinct design directions presented with rationale so you can choose a direction</li>
+                <li><strong>Step 4 — Refinement:</strong> We refine the chosen direction based on your feedback through revision rounds</li>
+                <li><strong>Step 5 — Final Delivery:</strong> All final files delivered in agreed formats — print-ready, web-ready, and source files included</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="design-faq" role="tabpanel">
+              <h4>Frequently Asked Questions</h4>
+              <div class="accordion accordion-flush" id="designFaq">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dfaq1">
+                      How many revisions are included?
+                    </button>
+                  </h2>
+                  <div id="dfaq1" class="accordion-collapse collapse" data-bs-parent="#designFaq">
+                    <div class="accordion-body">All projects include a minimum of 2 revision rounds. Logo and brand identity projects typically include 3 revision rounds. Additional rounds can be arranged at an agreed rate if needed.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dfaq2">
+                      What file formats will I receive?
+                    </button>
+                  </h2>
+                  <div id="dfaq2" class="accordion-collapse collapse" data-bs-parent="#designFaq">
+                    <div class="accordion-body">You will receive all files needed for both print and digital use — typically AI/EPS vector files, PDF, PNG (transparent background), JPG, and SVG. For UI/UX projects, Figma source files are included.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dfaq3">
+                      Do I own the final designs?
+                    </button>
+                  </h2>
+                  <div id="dfaq3" class="accordion-collapse collapse" data-bs-parent="#designFaq">
+                    <div class="accordion-body">Yes. Full ownership of all final designs is transferred to you upon project completion. You are free to use them in any way for your business with no ongoing licensing fees.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dfaq4">
+                      How long does a logo design project take?
+                    </button>
+                  </h2>
+                  <div id="dfaq4" class="accordion-collapse collapse" data-bs-parent="#designFaq">
+                    <div class="accordion-body">A logo design project typically takes 5–10 business days from brief to final delivery, depending on complexity and revision turnaround. Full brand identity packages take 2–3 weeks.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="project-showcase" data-aos="fade-up">
+          <h2>Our Design Work</h2>
+          <div class="showcase-grid">
+            <div class="showcase-item large">
+              <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=700&q=80" alt="Brand Identity">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">Brand Identity</span>
+                  <h4>Logo & Brand Guidelines</h4>
+                  <a href="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=1400&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=600&q=80" alt="UI Design">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">UI/UX Design</span>
+                  <h4>Mobile App Interface Design</h4>
+                  <a href="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=1200&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=600&q=80" alt="Print Design">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">Print Design</span>
+                  <h4>Brochure & Marketing Materials</h4>
+                  <a href="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=1200&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80" alt="Social Media">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">Social Media</span>
+                  <h4>Social Media Visual Templates</h4>
+                  <a href="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1200&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-sidebar">
+
+          <div class="quick-info-card">
+            <div class="info-header">
+              <h3>Service Info</h3>
+              <span class="info-badge">Available</span>
+            </div>
+            <div class="info-content">
+              <div class="info-row">
+                <span class="label">Service Type</span>
+                <span class="value">Graphics Designing</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Delivery Time</span>
+                <span class="value">3 – 21 Business Days</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Revisions</span>
+                <span class="value">2–3 Rounds Included</span>
+              </div>
+              <div class="info-row">
+                <span class="label">File Formats</span>
+                <span class="value">AI, PDF, PNG, SVG, Figma</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Office Hours</span>
+                <span class="value">Sun–Fri, 9am–6pm</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-card">
+            <h3>Start Your Design Project</h3>
+            <p>Tell us what you need and we'll get back to you within 24 hours.</p>
+            <div class="consultation-form">
+              <div class="form-group">
+                <input type="text" placeholder="Your Full Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Email Address" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" placeholder="Phone Number">
+              </div>
+              <div class="form-group">
+                <select>
+                  <option value="" disabled selected>Design Service Required</option>
+                  <option>Logo & Brand Identity</option>
+                  <option>UI/UX Design</option>
+                  <option>Print Design</option>
+                  <option>Social Media Visuals</option>
+                  <option>Presentation Design</option>
+                  <option>Illustration & Infographics</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea rows="3" placeholder="Brief description of your design needs"></textarea>
+              </div>
+              <button type="submit" class="btn-submit">
+                <i class="bi bi-send me-2"></i> Send Inquiry
+              </button>
+            </div>
+          </div>
+
+          <div class="expertise-highlights">
+            <h4>Why Choose Radiant Infotech?</h4>
+            <div class="expertise-grid">
+              <div class="expertise-item">
+                <i class="bi bi-brush-fill"></i>
+                <span>Original Work</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-palette-fill"></i>
+                <span>Brand Focused</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-lightning-charge-fill"></i>
+                <span>Fast Turnaround</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-file-earmark-check-fill"></i>
+                <span>All Formats</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-award-fill"></i>
+                <span>You Own It</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span>Naxal, KTM</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

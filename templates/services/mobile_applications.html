@@ -1,0 +1,341 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block title %}Mobile Application Development | Radiant Infotech{% endblock %}
+{% block description %}Radiant Infotech develops high-quality Android and iOS mobile applications for businesses across Nepal — from MVPs to full enterprise-grade apps.{% endblock %}
+{% block body_class %}service-details-page{% endblock %}
+
+{% block page_title %}
+<div class="page-title dark-background" data-aos="fade"
+     style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1920&q=80');">
+  <div class="container position-relative">
+    <h1>Mobile Applications</h1>
+    <p>Native and cross-platform mobile apps built for performance, usability, and growth.</p>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'services' %}">Our Services</a></li>
+        <li class="current">Mobile Applications</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="service-details section">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-lg-8" data-aos="fade-up">
+
+        <div class="service-header mb-5">
+          <div class="row align-items-center gy-4">
+            <div class="col-md-7">
+              <h1 class="service-title">Mobile Apps <br><span style="color:var(--accent-color);">Built for Real Users</span></h1>
+              <p class="service-subtitle">We design and develop mobile applications that people actually enjoy using — intuitive interfaces, smooth performance, and reliable functionality across Android and iOS platforms.</p>
+            </div>
+            <div class="col-md-5">
+              <div class="service-stats">
+                <div class="stat-item">
+                  <div class="stat-number">40+</div>
+                  <div class="stat-label">Apps Delivered</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">2</div>
+                  <div class="stat-label">Platforms Covered</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">98%</div>
+                  <div class="stat-label">Client Satisfaction</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-overview">
+          <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=900&q=80"
+               alt="Mobile Application Development — Radiant Infotech" class="service-image" data-aos="zoom-in">
+          <div class="overview-grid" data-aos="fade-up" data-aos-delay="100">
+            <div class="overview-item">
+              <i class="bi bi-phone-fill"></i>
+              <h3>Android & iOS</h3>
+              <p>We build for both major platforms — native Android, native iOS, or cross-platform using Flutter and React Native — whichever fits your budget and goals.</p>
+            </div>
+            <div class="overview-item">
+              <i class="bi bi-palette2"></i>
+              <h3>Intuitive UI/UX</h3>
+              <p>Every app we build starts with user experience. Clean navigation, thoughtful design, and interfaces that feel natural to your target audience.</p>
+            </div>
+            <div class="overview-item">
+              <i class="bi bi-cloud-arrow-up-fill"></i>
+              <h3>Backend & API Ready</h3>
+              <p>We build robust backend systems and APIs that power your app — real-time data, push notifications, authentication, and cloud storage all handled.</p>
+            </div>
+            <div class="overview-item">
+              <i class="bi bi-graph-up-arrow"></i>
+              <h3>Built to Scale</h3>
+              <p>Whether you have 100 users or 100,000, our apps are architected to handle growth without performance degradation or expensive rewrites.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="capabilities-section" data-aos="fade-up">
+          <h2>What We Offer</h2>
+          <ul class="custom-tabs nav nav-tabs" id="mobTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#mob-services" type="button">Services</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#mob-stack" type="button">Tech Stack</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#mob-process" type="button">Our Process</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#mob-faq" type="button">FAQ</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="mobTabContent">
+
+            <div class="tab-pane fade show active" id="mob-services" role="tabpanel">
+              <h4>Our Mobile Development Services</h4>
+              <p>We cover every type of mobile application your business may need:</p>
+              <ul class="capability-features">
+                <li><strong>Android App Development</strong> — Native Android apps built with Kotlin or Java for the full Google ecosystem</li>
+                <li><strong>iOS App Development</strong> — Native iPhone and iPad apps built with Swift for seamless Apple platform integration</li>
+                <li><strong>Cross-Platform Apps</strong> — Single codebase for both platforms using Flutter or React Native, reducing cost and time to market</li>
+                <li><strong>Business & Enterprise Apps</strong> — Internal tools, field apps, and employee-facing applications for operational efficiency</li>
+                <li><strong>E-Commerce Mobile Apps</strong> — Fully featured shopping apps with cart, payments, and order tracking</li>
+                <li><strong>App Maintenance & Upgrades</strong> — Updates, OS compatibility fixes, feature additions, and performance improvements for existing apps</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="mob-stack" role="tabpanel">
+              <h4>Technologies We Work With</h4>
+              <p>We use proven, widely supported technologies across all our mobile projects:</p>
+              <ul class="capability-features">
+                <li><strong>Cross-Platform:</strong> Flutter (Dart), React Native (JavaScript)</li>
+                <li><strong>Native Android:</strong> Kotlin, Java — Android Studio</li>
+                <li><strong>Native iOS:</strong> Swift, Objective-C — Xcode</li>
+                <li><strong>Backend / API:</strong> Django REST Framework, Node.js, Firebase</li>
+                <li><strong>Database:</strong> PostgreSQL, MySQL, Firebase Realtime DB, SQLite</li>
+                <li><strong>Cloud & Push:</strong> AWS, Google Cloud, Firebase Cloud Messaging (FCM), APNs</li>
+                <li><strong>App Stores:</strong> Google Play Store and Apple App Store submission and management</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="mob-process" role="tabpanel">
+              <h4>Our App Development Process</h4>
+              <p>A clear, structured process that keeps you informed and in control at every stage:</p>
+              <ul class="capability-features">
+                <li><strong>Step 1 — Discovery & Planning:</strong> Define features, user flows, platform targets, and project scope together</li>
+                <li><strong>Step 2 — UI/UX Design:</strong> Wireframes and interactive prototypes reviewed and approved before development begins</li>
+                <li><strong>Step 3 — Development:</strong> Sprint-based development with regular builds shared for your testing and feedback</li>
+                <li><strong>Step 4 — QA & Testing:</strong> Device testing, performance profiling, and bug fixes across real Android and iOS devices</li>
+                <li><strong>Step 5 — Store Submission:</strong> We handle the full Google Play and App Store submission process</li>
+                <li><strong>Step 6 — Post-Launch Support:</strong> Monitoring, crash reporting, and maintenance packages available</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="mob-faq" role="tabpanel">
+              <h4>Frequently Asked Questions</h4>
+              <div class="accordion accordion-flush" id="mobFaq">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mfaq1">
+                      Should I build a native or cross-platform app?
+                    </button>
+                  </h2>
+                  <div id="mfaq1" class="accordion-collapse collapse" data-bs-parent="#mobFaq">
+                    <div class="accordion-body">It depends on your budget and requirements. Cross-platform (Flutter or React Native) is cost-effective and covers both platforms from one codebase. Native is preferred when you need deep platform-specific features or maximum performance. We'll recommend the right approach after understanding your project.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mfaq2">
+                      How long does it take to build a mobile app?
+                    </button>
+                  </h2>
+                  <div id="mfaq2" class="accordion-collapse collapse" data-bs-parent="#mobFaq">
+                    <div class="accordion-body">A simple MVP typically takes 8–12 weeks. A full-featured app with backend integration, multiple user roles, and custom design usually takes 14–24 weeks. We provide a detailed timeline after the discovery phase.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mfaq3">
+                      Will you publish the app to the stores?
+                    </button>
+                  </h2>
+                  <div id="mfaq3" class="accordion-collapse collapse" data-bs-parent="#mobFaq">
+                    <div class="accordion-body">Yes. We handle the full submission process for both Google Play Store and Apple App Store, including store listing setup, screenshots, descriptions, and review management.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mfaq4">
+                      Do you provide source code ownership?
+                    </button>
+                  </h2>
+                  <div id="mfaq4" class="accordion-collapse collapse" data-bs-parent="#mobFaq">
+                    <div class="accordion-body">Yes. Full source code ownership is transferred to you upon project completion and final payment. You retain complete rights to the application and its codebase.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="project-showcase" data-aos="fade-up">
+          <h2>Our Mobile Projects</h2>
+          <div class="showcase-grid">
+            <div class="showcase-item large">
+              <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=700&q=80" alt="Business App">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">Business App</span>
+                  <h4>Enterprise Field Management App</h4>
+                  <a href="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1400&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80" alt="E-Commerce App">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">E-Commerce</span>
+                  <h4>Online Shopping Application</h4>
+                  <a href="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=600&q=80" alt="Healthcare App">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">Healthcare</span>
+                  <h4>Patient & Appointment Management</h4>
+                  <a href="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=1200&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?w=600&q=80" alt="Fintech App">
+              <div class="showcase-overlay">
+                <div class="showcase-content">
+                  <span class="project-type">Fintech</span>
+                  <h4>Digital Payments & Wallet App</h4>
+                  <a href="https://images.unsplash.com/photo-1542744094-24638eff58bb?w=1200&q=90" class="view-project glightbox"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-sidebar">
+
+          <div class="quick-info-card">
+            <div class="info-header">
+              <h3>Service Info</h3>
+              <span class="info-badge">Available</span>
+            </div>
+            <div class="info-content">
+              <div class="info-row">
+                <span class="label">Service Type</span>
+                <span class="value">Mobile Development</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Platforms</span>
+                <span class="value">Android & iOS</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Delivery Time</span>
+                <span class="value">8 – 24 Weeks</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Tech</span>
+                <span class="value">Flutter, React Native, Swift</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Office Hours</span>
+                <span class="value">Sun–Fri, 9am–6pm</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-card">
+            <h3>Start Your App Project</h3>
+            <p>Tell us about your app idea and we'll get back to you within 24 hours.</p>
+            <div class="consultation-form">
+              <div class="form-group">
+                <input type="text" placeholder="Your Full Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Email Address" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" placeholder="Phone Number">
+              </div>
+              <div class="form-group">
+                <select>
+                  <option value="" disabled selected>App Type</option>
+                  <option>Android App</option>
+                  <option>iOS App</option>
+                  <option>Cross-Platform (Flutter)</option>
+                  <option>Cross-Platform (React Native)</option>
+                  <option>Business / Enterprise App</option>
+                  <option>E-Commerce App</option>
+                  <option>App Maintenance / Upgrade</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea rows="3" placeholder="Brief description of your app idea"></textarea>
+              </div>
+              <button type="submit" class="btn-submit">
+                <i class="bi bi-send me-2"></i> Send Inquiry
+              </button>
+            </div>
+          </div>
+
+          <div class="expertise-highlights">
+            <h4>Why Choose Radiant Infotech?</h4>
+            <div class="expertise-grid">
+              <div class="expertise-item">
+                <i class="bi bi-phone-fill"></i>
+                <span>Android & iOS</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-palette2"></i>
+                <span>Great UI/UX</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-speedometer2"></i>
+                <span>Fast Performance</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-shop"></i>
+                <span>Store Submission</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-file-earmark-code"></i>
+                <span>Source Code Yours</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span>Naxal, KTM</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

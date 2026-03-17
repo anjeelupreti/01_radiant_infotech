@@ -1,25 +1,223 @@
 {% load static %}
+
+<style>
+  /* ════════════════════════════════════════════════════════════
+     NAVBAR — INITIAL VISIBILITY FIX
+     main.css starts the header fully transparent (rgba 0,0,0,0)
+     and only adds a background after scrolling 100px via JS.
+     This is fine on the homepage (dark video behind it), but on
+     every other page the body is white so the navbar disappears.
+
+     Fix: give the header a solid dark background by default, and
+     let the homepage override it back to transparent using the
+     .page-home body class.
+  ════════════════════════════════════════════════════════════ */
+
+  /* Default: solid dark background so navbar is always visible */
+  .header {
+    --background-color: rgba(22, 15, 9, 0.95) !important;
+  }
+
+  /* Homepage only: start transparent so hero video shows through */
+  body.page-home .header {
+    --background-color: rgba(255, 255, 255, 0) !important;
+  }
+
+  /* Scrolled state (all pages): same solid dark */
+  .scrolled .header {
+    --background-color: rgba(22, 15, 9, 0.97) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  /* ══ Yellow underline on desktop nav links ══ */
+  @media (min-width: 1200px) {
+    .navmenu a {
+      position: relative;
+    }
+
+    .navmenu > ul > li > a::after {
+      content: '';
+      position: absolute;
+      bottom: 10px;
+      left: 15px;
+      width: 0%;
+      height: 2px;
+      background-color: #f5c518;
+      transition: width 0.3s ease;
+    }
+
+    .navmenu > ul > li:hover > a::after,
+    .navmenu > ul > li > a.active::after {
+      width: calc(100% - 30px);
+    }
+
+    .navmenu > ul > li:last-child > a::after {
+      left: 15px;
+      width: 0%;
+    }
+
+    .navmenu > ul > li:last-child:hover > a::after,
+    .navmenu > ul > li:last-child > a.active::after {
+      width: calc(100% - 15px);
+    }
+
+    /* ══ Enhanced Dropdown Panel ══ */
+    .navmenu .dropdown ul {
+      background: #ffffff;
+      border-top: 3px solid #0eaa28;
+      border-radius: 0 0 8px 8px;
+      padding: 8px 0;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      min-width: 230px;
+    }
+
+    .navmenu .dropdown ul li {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .navmenu .dropdown ul li:last-child {
+      border-bottom: none;
+    }
+
+    .navmenu .dropdown ul a {
+      padding: 11px 20px 11px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #342c26;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-left: 3px solid transparent;
+      transition: all 0.25s ease;
+    }
+
+    .navmenu .dropdown ul li:hover > a {
+      color: #0eaa28;
+      background-color: #f4fdf5;
+      border-left-color: #f5c518;
+      padding-left: 20px;
+    }
+
+    .navmenu .dropdown ul a i {
+      font-size: 15px;
+      color: #0eaa28;
+      width: 20px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .navmenu .dropdown ul li:hover > a i {
+      color: #f5c518;
+    }
+
+    .navmenu .dropdown ul a::after {
+      content: '\F285';
+      font-family: "bootstrap-icons";
+      margin-left: auto;
+      font-size: 11px;
+      color: #ccc;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .navmenu .dropdown ul li:hover > a::after {
+      color: #0eaa28;
+      transform: translateX(3px);
+    }
+  }
+</style>
+
 <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+  <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto">
-        <!-- <img src="{% static 'img/logo.webp' %}" alt=""> -->
-        <h1 class="sitename">Radiant Infotech</h1>
-      </a>
+    <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto">
+      {# Swap comment below once logo image is ready #}
+      {# <img src="{% static 'img/logo.webp' %}" alt="Radiant Infotech"> #}
+      <h1 class="sitename">Radiant Infotech</h1>
+    </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a></li>
-          <li><a href="{% url 'about_us' %}" class="{% if request.resolver_match.url_name == 'about_us' %}active{% endif %}">About</a></li>
-          <li><a href="{% url 'services' %}" class="{% if request.resolver_match.url_name == 'services' %}active{% endif %}">Services</a></li>
-          <li><a href="{% url 'gallery' %}" class="{% if request.resolver_match.url_name == 'gallery' %}active{% endif %}">Gallery</a></li>
-          <li><a href="{% url 'career' %}" class="{% if request.resolver_match.url_name == 'gallery' %}active{% endif %}">Career</a></li>
-          <li><a href="{% url 'contact_us' %}" class="{% if request.resolver_match.url_name == 'contact_us' %}active{% endif %}">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+    <nav id="navmenu" class="navmenu">
+      <ul>
 
-      <a class="btn-getstarted d-none d-sm-block" href="{% url 'contact_us' %}">Request Quote</a>
+        <li>
+          <a href="{% url 'home' %}"
+             class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+            Home
+          </a>
+        </li>
 
-    </div>
+        <li>
+          <a href="{% url 'about_us' %}"
+             class="{% if request.resolver_match.url_name == 'about_us' %}active{% endif %}">
+            About Us
+          </a>
+        </li>
+
+        <li class="dropdown">
+          <a href="{% url 'services' %}"
+             class="{% if 'service' in request.resolver_match.url_name %}active{% endif %}">
+            <span>Our Services</span>
+            <i class="bi bi-chevron-down toggle-dropdown"></i>
+          </a>
+          <ul>
+            <li>
+              <a href="{% url 'service_detail' slug='digital-signature' %}">
+                <i class="bi bi-patch-check-fill"></i> Digital Signature
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'service_detail' slug='web-development' %}">
+                <i class="bi bi-code-slash"></i> Web Development
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'service_detail' slug='mobile-applications' %}">
+                <i class="bi bi-phone-fill"></i> Mobile Applications
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'service_detail' slug='cloud-services' %}">
+                <i class="bi bi-cloud-fill"></i> Cloud Services
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'service_detail' slug='graphics-designing' %}">
+                <i class="bi bi-palette-fill"></i> Graphics Designing
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'service_detail' slug='data-entry' %}">
+                <i class="bi bi-database-fill"></i> Data Entry
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="{% url 'gallery' %}"
+             class="{% if request.resolver_match.url_name == 'gallery' %}active{% endif %}">
+            Gallery
+          </a>
+        </li>
+
+        <li>
+          <a href="{% url 'career' %}"
+             class="{% if request.resolver_match.url_name == 'career' %}active{% endif %}">
+            Career
+          </a>
+        </li>
+
+        <li>
+          <a href="{% url 'contact_us' %}"
+             class="{% if request.resolver_match.url_name == 'contact_us' %}active{% endif %}">
+            Contact Us
+          </a>
+        </li>
+
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+
+    <a class="btn-getstarted d-none d-sm-block" href="{% url 'contact_us' %}">Get a Quote</a>
+
+  </div>
 </header>
