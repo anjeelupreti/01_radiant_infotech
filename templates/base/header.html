@@ -1,35 +1,44 @@
 {% load static %}
 
 <style>
-  /* ════════════════════════════════════════════════════════════
-     NAVBAR — INITIAL VISIBILITY FIX
-     main.css starts the header fully transparent (rgba 0,0,0,0)
-     and only adds a background after scrolling 100px via JS.
-     This is fine on the homepage (dark video behind it), but on
-     every other page the body is white so the navbar disappears.
-
-     Fix: give the header a solid dark background by default, and
-     let the homepage override it back to transparent using the
-     .page-home body class.
-  ════════════════════════════════════════════════════════════ */
-
-  /* Default: solid dark background so navbar is always visible */
   .header {
     --background-color: rgba(22, 15, 9, 0.95) !important;
   }
 
-  /* Homepage only: start transparent so hero video shows through */
   body.page-home .header {
     --background-color: rgba(255, 255, 255, 0) !important;
   }
 
-  /* Scrolled state (all pages): same solid dark */
   .scrolled .header {
     --background-color: rgba(22, 15, 9, 0.97) !important;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
   }
 
-  /* ══ Yellow underline on desktop nav links ══ */
+  .logo {
+    background-color: #ffffff;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+
+  .logo img {
+    max-height: 50px;
+    width: auto;
+    display: block;
+  }
+
+  .scrolled .logo {
+    padding: 6px 12px;
+  }
+
+  body.page-home .logo {
+    background-color: transparent;
+  }
+
+  body.page-home .scrolled .logo {
+    background-color: #ffffff;
+  }
+
   @media (min-width: 1200px) {
     .navmenu a {
       position: relative;
@@ -61,7 +70,6 @@
       width: calc(100% - 15px);
     }
 
-    /* ══ Enhanced Dropdown Panel ══ */
     .navmenu .dropdown ul {
       background: #ffffff;
       border-top: 3px solid #0eaa28;
@@ -124,15 +132,23 @@
       transform: translateX(3px);
     }
   }
+
+  @media (max-width: 768px) {
+    .logo {
+      padding: 5px 10px;
+    }
+    
+    .logo img {
+      max-height: 35px;
+    }
+  }
 </style>
 
 <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
     <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto">
-      {# Swap comment below once logo image is ready #}
-      {# <img src="{% static 'img/logo.webp' %}" alt="Radiant Infotech"> #}
-      <h1 class="sitename">Radiant Infotech</h1>
+      <img src="{% static 'img/logo.png' %}" alt="Radiant Infotech">
     </a>
 
     <nav id="navmenu" class="navmenu">

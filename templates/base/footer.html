@@ -1,20 +1,16 @@
 {% load static %}
 
 <style>
-  /* ── Green accent line at very top of footer ── */
   .footer {
     border-top: 3px solid #0eaa28 !important;
   }
 
-  /* ── Logo sitename in green ── */
-  .footer .footer-brand .logo .sitename {
-    color: #0eaa28 !important;
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
+  .footer .footer-brand .logo img {
+    max-height: 50px;
+    width: auto;
+    display: block;
   }
 
-  /* ── Section heading underline accent ── */
   .footer .footer-links-grid h5,
   .footer .footer-cta h5,
   .footer .footer-contact h5 {
@@ -32,10 +28,9 @@
     left: 0;
     width: 28px;
     height: 2px;
-    background: #f5c518; /* yellow underline */
+    background: #f5c518;
   }
 
-  /* ── Contact info block ── */
   .footer .footer-contact ul {
     list-style: none;
     padding: 0;
@@ -70,7 +65,6 @@
     color: #0eaa28;
   }
 
-  /* ── CTA button yellow outline style ── */
   .footer .footer-cta .btn-yellow {
     background: transparent;
     color: #f5c518;
@@ -86,6 +80,7 @@
     margin-bottom: 10px;
     width: 100%;
     text-align: center;
+    text-decoration: none;
   }
 
   .footer .footer-cta .btn-yellow:hover {
@@ -98,27 +93,111 @@
     width: 100%;
     text-align: center;
     margin-top: 8px;
+    display: inline-block;
+    padding: 8px 24px;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
   }
 
-  /* ── Social icons yellow on hover ── */
+  .footer .footer-cta .btn-outline:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: #f5c518;
+  }
+
+  .footer .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #ffffff;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+  }
+
   .footer .social-links a:hover {
     background-color: #f5c518 !important;
     border-color: #f5c518 !important;
     color: #1a1a1a !important;
+    transform: translateY(-3px);
   }
 
-  /* ── Footer bottom ── */
   .footer-bottom {
     background: rgba(0,0,0,0.2);
+    padding: 20px 0;
   }
 
-  /* ── Align headings left even on mobile for footer ── */
+  .footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .footer-bottom-content p {
+    margin: 0;
+    color: color-mix(in srgb, #ffffff, transparent 40%);
+    font-size: 14px;
+  }
+
+  .footer-bottom-content .credits {
+    color: color-mix(in srgb, #ffffff, transparent 40%);
+    font-size: 14px;
+  }
+
+  .footer-bottom-content .credits a {
+    color: #f5c518;
+    text-decoration: none;
+  }
+
+  .footer-bottom-content .credits a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-brand .tagline {
+    color: color-mix(in srgb, #ffffff, transparent 30%);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+
+  .footer-links-grid ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-links-grid ul li a {
+    color: color-mix(in srgb, #ffffff, transparent 30%);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links-grid ul li a:hover {
+    color: #f5c518;
+    padding-left: 5px;
+  }
+
   @media (max-width: 768px) {
     .footer .footer-links-grid h5::after,
     .footer .footer-cta h5::after,
     .footer .footer-contact h5::after {
       left: 50%;
       transform: translateX(-50%);
+    }
+    
+    .footer-bottom-content {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .footer .footer-brand .logo {
+      justify-content: center;
     }
   }
 </style>
@@ -128,12 +207,10 @@
   <div class="container">
     <div class="row gy-5">
 
-      <!-- ── Brand + Tagline + Social ── -->
       <div class="col-lg-3 col-md-6">
         <div class="footer-brand">
-          <a href="{% url 'home' %}" class="logo d-flex align-items-center mb-3">
-            <!-- <img src="{% static 'img/logo.webp' %}" alt="Radiant Infotech"> -->
-            <span class="sitename">Radiant Infotech</span>
+          <a href="{% url 'home' %}" class="logo d-flex align-items-center justify-content-center ">
+            <img src="{% static 'img/logo.png' %}" alt="Radiant Infotech">
           </a>
           <p class="tagline">
             Empowering businesses through innovative software development and 
@@ -148,7 +225,6 @@
         </div>
       </div>
 
-      <!-- ── Quick Links ── -->
       <div class="col-lg-5 col-md-6">
         <div class="footer-links-grid">
           <div class="row">
@@ -189,7 +265,6 @@
         </div>
       </div>
 
-      <!-- ── Contact Info + CTA ── -->
       <div class="col-lg-4 col-md-6">
         <div class="footer-contact mb-4">
           <h5>Get In Touch</h5>
@@ -215,14 +290,13 @@
 
         <div class="footer-cta">
           <a href="{% url 'contact_us' %}" class="btn-yellow">Request a Quote</a>
-          <a href="{% url 'services' %}" class="btn btn-outline">Explore Services</a>
+          <a href="{% url 'services' %}" class="btn-outline">Explore Services</a>
         </div>
       </div>
 
     </div>
   </div>
 
-  <!-- ── Footer Bottom Bar ── -->
   <div class="footer-bottom mt-5">
     <div class="container">
       <div class="footer-bottom-content">
