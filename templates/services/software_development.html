@@ -1,0 +1,606 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block title %}Software Solutions | Radiant Infotech Nepal{% endblock %}
+{% block description %}Radiant Infotech Nepal provides custom software development services including Lakshya Micro Banking Software, Finch School Management System, WorkForce Mini Accounting, and tailored applications using ASP, Java, .Net, C#, PHP, and various database systems.{% endblock %}
+{% block body_class %}service-details-page{% endblock %}
+
+{% block page_title %}
+<div class="page-title dark-background" data-aos="fade"
+     style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80');">
+  <div class="container position-relative">
+    <h1>Software Solutions</h1>
+    <p>Custom software development services tailored to automate your business processes and enhance operational efficiency.</p>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'services' %}">Our Services</a></li>
+        <li class="current">Software Solutions</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="service-details section">
+  <div class="container">
+    <div class="row g-5">
+
+      <div class="col-lg-8" data-aos="fade-up">
+
+        <div class="service-header mb-4">
+          <h1 class="service-title">Software <br><span style="color:var(--accent-color);">Solutions</span></h1>
+          <p class="service-subtitle mt-3">Radiant Infotech Nepal welcomes you with a boutique of professional software and application development services. Business is far more efficient when it uses automation to a considerable extent. We create offline and online computer and mobile software that cater to your business's specific needs.</p>
+        </div>
+
+        <div class="row text-center mb-5 g-4">
+          <div class="col-md-4">
+            <div class="stat-box p-3">
+              <div class="stat-number">22+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="stat-box p-3">
+              <div class="stat-number">ASP, Java, .Net</div>
+              <div class="stat-label">Technologies</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="stat-box p-3">
+              <div class="stat-number">MSSQL, MySQL</div>
+              <div class="stat-label">Databases</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-image-wrapper mb-5">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80"
+               alt="Software Solutions — Radiant Infotech Nepal" class="img-fluid rounded-3 w-100">
+        </div>
+
+        <div class="row g-4 mb-5">
+          <div class="col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-code-square"></i>
+              </div>
+              <h3>Custom Software Development</h3>
+              <p>Tailored software solutions designed to address your unique business challenges, built with modern technologies and best practices for scalability and performance.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-bank"></i>
+              </div>
+              <h3>Lakshya Micro Banking Software</h3>
+              <p>Comprehensive microfinance and micro-banking software for managing microfinance operations, loan disbursement, collection, repayment tracking, and customer accounts.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-mortarboard"></i>
+              </div>
+              <h3>Finch School Management System</h3>
+              <p>Complete school management solution covering student records, attendance, examinations, fee collection, and academic reporting.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-calculator"></i>
+              </div>
+              <h3>WorkForce Mini Accounting</h3>
+              <p>Specialized workforce and accounting solution for small to medium businesses, handling payroll, accounting, and financial management.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="capabilities-section">
+          <h2 class="mb-4">Our Software Development Services</h2>
+          
+          <ul class="nav nav-tabs" id="softwareTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#custom-software" type="button">Custom Software</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#banking-software" type="button">Banking & Finance</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#education-software" type="button">Education</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#business-software" type="button">Business Solutions</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tech-stack" type="button">Technology Stack</button>
+            </li>
+          </ul>
+          
+          <div class="tab-content mt-4" id="softwareTabContent">
+            <div class="tab-pane fade show active" id="custom-software" role="tabpanel">
+              <h4>Custom Software Development</h4>
+              <p>We develop custom software applications that automate your business processes and enhance operational efficiency.</p>
+              <ul>
+                <li><strong>Web Applications</strong> — Scalable web-based solutions using ASP, Java (J2EE), .Net, C#, PHP</li>
+                <li><strong>Desktop Applications</strong> — Robust offline software for business operations</li>
+                <li><strong>Mobile Applications</strong> — Native and cross-platform mobile apps for Android and iOS</li>
+                <li><strong>Enterprise Solutions</strong> — ERP, CRM, and custom business applications</li>
+                <li><strong>Database Design & Implementation</strong> — MSSQL Server, MySQL, Oracle database solutions</li>
+                <li><strong>Legacy System Modernization</strong> — Upgrading and migrating legacy systems to modern platforms</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="banking-software" role="tabpanel">
+              <h4>Banking & Finance Software</h4>
+              <p>Specialized software solutions for financial institutions.</p>
+              <ul>
+                <li><strong>Lakshya Micro Banking Software</strong> — Comprehensive management of microfinance operations including:
+                  <ul style="margin-top: 8px; margin-left: 20px;">
+                    <li>Loan disbursement, collection, and repayment tracking</li>
+                    <li>Savings and deposit management</li>
+                    <li>Customer account and credit history management</li>
+                    <li>Real-time reporting and financial analytics</li>
+                    <li>Branch-level operations with multi-user access</li>
+                    <li>Integration with mobile wallets and payment gateways</li>
+                  </ul>
+                </li>
+                <li><strong>Cooperative and Financial Institutions Management System</strong> — Member management, loan processing, savings accounts, and regulatory reporting</li>
+                <li><strong>Accounting System Management System</strong> — General ledger, accounts payable/receivable, and financial statements</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="education-software" role="tabpanel">
+              <h4>Education Software Solutions</h4>
+              <p>Complete software solutions for educational institutions.</p>
+              <ul>
+                <li><strong>Finch School Management System</strong> — Specialized school management software including:
+                  <ul style="margin-top: 8px; margin-left: 20px;">
+                    <li>Student registration and enrollment management</li>
+                    <li>Attendance tracking (manual and biometric)</li>
+                    <li>Examination management and result processing</li>
+                    <li>Fee collection and financial reporting</li>
+                    <li>Timetable and class scheduling</li>
+                    <li>Teacher and staff management</li>
+                    <li>Library management system</li>
+                    <li>Parent/guardian portal for student progress tracking</li>
+                  </ul>
+                </li>
+                <li><strong>School and College Management System</strong> — Comprehensive academic institution management</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="business-software" role="tabpanel">
+              <h4>Business Solutions</h4>
+              <p>Custom business software for various industries.</p>
+              <ul>
+                <li><strong>WorkForce Mini Accounting</strong> — Specialized workforce and accounting solution for payroll, attendance, and financial management</li>
+                <li><strong>Human Resource Attendance and Payroll Management System</strong> — Employee records, attendance tracking, leave management, payroll processing</li>
+                <li><strong>Inventory and Fixed Assets Management System</strong> — Stock tracking, asset lifecycle management, procurement</li>
+                <li><strong>Product and Chain Management System</strong> — Supply chain management, product tracking, distribution management</li>
+                <li><strong>Dealers and Distributions Management System</strong> — Dealer network management, commission tracking, order processing</li>
+                <li><strong>Small Office Management System</strong> — Integrated solutions for small business operations</li>
+                <li><strong>Hotel Management System</strong> — Reservation, billing, guest management, housekeeping integration</li>
+                <li><strong>Hospital Management System</strong> — Patient records, appointment scheduling, billing, pharmacy management</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="tech-stack" role="tabpanel">
+              <h4>Our Technology Stack</h4>
+              <p>We leverage a wide range of technologies to deliver robust software solutions.</p>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <h5>Programming Languages</h5>
+                  <ul>
+                    <li>ASP</li>
+                    <li>Java (J2EE)</li>
+                    <li>.Net / C#</li>
+                    <li>PHP</li>
+                    <li>Python / Django</li>
+                    <li>JavaScript</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h5>Database Systems</h5>
+                  <ul>
+                    <li>MSSQL Server</li>
+                    <li>MySQL</li>
+                    <li>Oracle</li>
+                    <li>PostgreSQL</li>
+                    <li>SQLite</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="additional-info mt-5 p-4 bg-light rounded-3">
+          <h4 class="mb-3">Why Automate Your Business?</h4>
+          <p>Automatic solutions in the form of customized offline and online software applications can increase the efficiency of any organization — small to large. Responding to the ever-increasing demands of our clients to automate their businesses, we create offline and online computer and mobile software that cater to their business's specific needs.</p>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <ul>
+                <li>Increased operational efficiency</li>
+                <li>Reduced manual errors</li>
+                <li>Better data management and reporting</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul>
+                <li>Improved decision making with real-time data</li>
+                <li>Scalable solutions that grow with your business</li>
+                <li>Enhanced security and compliance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-sidebar">
+
+          <div class="info-card mb-4">
+            <div class="card-header">
+              <h3>Service Information</h3>
+              <span class="badge">Available</span>
+            </div>
+            <div class="card-body">
+              <div class="info-row">
+                <span class="label">Service Type</span>
+                <span class="value">Software Development</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Platforms</span>
+                <span class="value">Web, Desktop, Mobile</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Technologies</span>
+                <span class="value">ASP, Java, .Net, PHP</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Databases</span>
+                <span class="value">MSSQL, MySQL, Oracle</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Office Hours</span>
+                <span class="value">Sunday – Friday, 9am–6pm</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card mb-4">
+            <h3>Discuss Your Software Requirements</h3>
+            <p>Tell us about your software needs and we'll recommend the right solution for your business.</p>
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Full Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email Address" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" class="form-control" placeholder="Phone Number">
+              </div>
+              <div class="form-group">
+                <select class="form-control">
+                  <option value="" disabled selected>Select Software Type</option>
+                  <option>Custom Software Development</option>
+                  <option>Lakshya Micro Banking Software</option>
+                  <option>Finch School Management System</option>
+                  <option>WorkForce Mini Accounting</option>
+                  <option>HR & Payroll System</option>
+                  <option>Inventory Management System</option>
+                  <option>Hotel Management System</option>
+                  <option>Hospital Management System</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea rows="4" class="form-control" placeholder="Brief description of your software requirements"></textarea>
+              </div>
+              <button type="submit" class="btn-submit">
+                <i class="bi bi-send me-2"></i> Send Inquiry
+              </button>
+            </form>
+          </div>
+
+          <div class="expertise-card mb-4">
+            <h4>Why Choose Radiant Infotech?</h4>
+            <div class="expertise-grid">
+              <div class="expertise-item">
+                <i class="bi bi-code-square"></i>
+                <span>Custom Solutions</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-bank"></i>
+                <span>Banking Software</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-mortarboard"></i>
+                <span>School Management</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-calculator"></i>
+                <span>Accounting Solutions</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-database"></i>
+                <span>Multiple Databases</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span>Bhatbhateni, Kathmandu</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-info">
+            <h5>Contact Our Software Team</h5>
+            <p><i class="bi bi-telephone me-2"></i>01-4545765 / 01-4524311</p>
+            <p><i class="bi bi-envelope me-2"></i>info@radiantnepal.com</p>
+            <p><i class="bi bi-geo-alt me-2"></i>Radiant Building, Bhatbhateni, Kathmandu, Nepal</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.stat-box {
+  background: var(--surface-color);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+.stat-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+  border-color: var(--accent-color);
+}
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 5px;
+}
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--default-color);
+  opacity: 0.8;
+}
+
+.feature-card {
+  background: var(--surface-color);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+  border-color: var(--accent-color);
+}
+.feature-icon {
+  width: 50px;
+  height: 50px;
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.feature-icon i {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+.feature-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.feature-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--default-color);
+  opacity: 0.8;
+  margin: 0;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  gap: 8px;
+}
+.nav-tabs .nav-link {
+  border: none;
+  padding: 10px 20px;
+  font-weight: 500;
+  color: var(--default-color);
+  background: transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.nav-tabs .nav-link:hover {
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+}
+.nav-tabs .nav-link.active {
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.tab-content ul {
+  padding-left: 20px;
+}
+.tab-content ul li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+.tab-content ul ul {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.info-card, .contact-card, .expertise-card {
+  background: var(--surface-color);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.info-card .card-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info-card .card-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+.info-card .card-header .badge {
+  background: var(--accent-color);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+.info-card .card-body {
+  padding: 20px;
+}
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.info-row:last-child {
+  border-bottom: none;
+}
+.info-row .label {
+  font-weight: 500;
+  color: var(--default-color);
+  opacity: 0.7;
+}
+.info-row .value {
+  font-weight: 500;
+  text-align: right;
+}
+
+.contact-card {
+  padding: 20px;
+}
+.contact-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.contact-card p {
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+.contact-card .form-group {
+  margin-bottom: 12px;
+}
+.contact-card .form-control {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+.contact-card select.form-control {
+  cursor: pointer;
+}
+.contact-card textarea.form-control {
+  resize: vertical;
+}
+.btn-submit {
+  width: 100%;
+  padding: 10px;
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.btn-submit:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.expertise-card {
+  padding: 20px;
+}
+.expertise-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.expertise-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: color-mix(in srgb, var(--accent-color), transparent 94%);
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+.expertise-item i {
+  color: var(--accent-color);
+  font-size: 1rem;
+}
+
+.contact-info {
+  background: color-mix(in srgb, var(--accent-color), transparent 94%);
+  padding: 16px;
+  border-radius: 12px;
+}
+.contact-info h5 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.contact-info p {
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+.contact-info p:last-child {
+  margin-bottom: 0;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.nav-link');
+    tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+            tabs.forEach(function(t) {
+                t.classList.remove('active');
+            });
+            this.classList.add('active');
+        });
+    });
+});
+</script>
+
+{% endblock %}

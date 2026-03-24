@@ -1,0 +1,596 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block title %}ICT & IT Support Services | Radiant Infotech Nepal{% endblock %}
+{% block description %}Radiant Infotech Nepal provides comprehensive ICT management including MIS system design, data center management, disaster recovery backup, ICT system audit, annual maintenance contracts, and technology training for businesses across Nepal.{% endblock %}
+{% block body_class %}service-details-page{% endblock %}
+
+{% block page_title %}
+<div class="page-title dark-background" data-aos="fade"
+     style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80');">
+  <div class="container position-relative">
+    <h1>ICT & IT Support Services</h1>
+    <p>Comprehensive information communication technology management, support, and consulting services for businesses, institutions, and government agencies.</p>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'services' %}">Our Services</a></li>
+        <li class="current">ICT & IT Support</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="service-details section">
+  <div class="container">
+    <div class="row g-5">
+
+      <div class="col-lg-8" data-aos="fade-up">
+
+        <div class="service-header mb-4">
+          <h1 class="service-title">ICT & IT Support <br><span style="color:var(--accent-color);">Services</span></h1>
+          <p class="service-subtitle mt-3">Radiant Infotech Nepal provides comprehensive ICT management including MIS system design, data center management, disaster recovery backup, ICT system audit, annual maintenance contracts (AMC), and technology training for businesses, institutions, and government agencies across Nepal.</p>
+        </div>
+
+        <div class="row text-center mb-5 g-4">
+          <div class="col-md-4">
+            <div class="stat-box p-3">
+              <div class="stat-number">22+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="stat-box p-3">
+              <div class="stat-number">PKI Enabled</div>
+              <div class="stat-label">Infrastructure</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="stat-box p-3">
+              <div class="stat-number">AMC</div>
+              <div class="stat-label">Support Available</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-image-wrapper mb-5">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&q=80"
+               alt="ICT & IT Support Services — Radiant Infotech Nepal" class="img-fluid rounded-3 w-100">
+        </div>
+
+        <div class="row g-4 mb-5">
+          <div class="col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-diagram-3-fill"></i>
+              </div>
+              <h3>ICT Management</h3>
+              <p>Information Communication Technology (ICT) system planning, advocacy, management, and support services for organizations of all sizes.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-database-check"></i>
+              </div>
+              <h3>Data Center Management</h3>
+              <p>Complete data center management and deployment services with disaster recovery and backup management for business continuity.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h3>ICT System Audit</h3>
+              <p>Comprehensive ICT system auditing and consulting support for security, compliance, and operational efficiency.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-file-earmark-check"></i>
+              </div>
+              <h3>Annual Maintenance Contract</h3>
+              <p>AMC services for every individual component of ICTs including hardware, software, website, emails, and content.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="capabilities-section">
+          <h2 class="mb-4">Our ICT Services</h2>
+          
+          <ul class="nav nav-tabs" id="ictTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#mis-systems" type="button">MIS Systems</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#ict-management" type="button">ICT Management</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#data-security" type="button">Data & Security</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#ict-consulting" type="button">Consulting & Training</button>
+            </li>
+          </ul>
+          
+          <div class="tab-content mt-4" id="ictTabContent">
+            <div class="tab-pane fade show active" id="mis-systems" role="tabpanel">
+              <h4>Management Information Systems (MIS)</h4>
+              <p>Comprehensive MIS solutions for various industries and business functions.</p>
+              <ul>
+                <li><strong>Management Information System</strong> — Complete MIS design, implementation, and support</li>
+                <li><strong>Hotel Management System</strong> — Reservation, billing, guest management, and housekeeping integration</li>
+                <li><strong>Travel Agent Management System</strong> — Tour packages, bookings, customer records, and itinerary management</li>
+                <li><strong>Hospital Management System</strong> — Patient records, appointment scheduling, billing, and pharmacy management</li>
+                <li><strong>Cooperative and Financial Institutions Management System</strong> — Member management, loan processing, savings accounts, and reporting</li>
+                <li><strong>School and College Management System</strong> — Student records, attendance, examination, fees, and academic reporting</li>
+                <li><strong>Human Resource Attendance and Payroll Management System</strong> — Employee records, attendance tracking, leave management, and payroll processing</li>
+                <li><strong>Inventory and Fixed Assets Management System</strong> — Stock tracking, asset lifecycle management, and procurement</li>
+                <li><strong>Accounting System Management System</strong> — Financial accounting, ledger management, and financial reporting</li>
+                <li><strong>Product and Chain Management System</strong> — Supply chain management, product tracking, and distribution management</li>
+                <li><strong>Dealers and Distributions Management System</strong> — Dealer network management, order processing, and commission tracking</li>
+                <li><strong>Security System Management System</strong> — Access control, surveillance integration, and security incident management</li>
+                <li><strong>Email and Content Management System</strong> — Enterprise email solutions and content management platforms</li>
+                <li><strong>Data Flow and Flow Control Management System</strong> — Workflow automation and data flow optimization</li>
+                <li><strong>Small Office Management System</strong> — Integrated solutions for small business operations</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="ict-management" role="tabpanel">
+              <h4>ICT Management & Support Services</h4>
+              <p>Information Communication and Entertainment Technologies (ICET) system planning and advocacy services.</p>
+              <ul>
+                <li><strong>ICT System Planning & Advocacy</strong> — Strategic planning and advocacy for technology implementation</li>
+                <li><strong>Information and Communication Technology (ICT) Management</strong> — End-to-end ICT infrastructure management</li>
+                <li><strong>MIS System Design, Implement and Support</strong> — Complete lifecycle management of MIS solutions</li>
+                <li><strong>Data Center Management and Deployment</strong> — Physical and virtual data center operations</li>
+                <li><strong>Disaster Recovery and Backup Management</strong> — Business continuity planning and data protection</li>
+                <li><strong>Technology Training</strong> — Customized training programs for staff and management</li>
+                <li><strong>Annual Maintenance Contract (AMC)</strong> — Comprehensive maintenance for hardware, software, website, emails, and content</li>
+                <li><strong>Branch Setups</strong> — Technology infrastructure setup for new branch locations</li>
+                <li><strong>Technology Based Services</strong> — Mobile application and SMS services for business operations</li>
+                <li><strong>Computer and Communication Hardware Sales and Services</strong> — Quality hardware procurement and support</li>
+                <li><strong>Software Sell Services and Support</strong> — Software licensing and ongoing support</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="data-security" role="tabpanel">
+              <h4>Data Security & Compliance Services</h4>
+              <p>Comprehensive security and compliance solutions for modern organizations.</p>
+              <ul>
+                <li><strong>ICT System Audit Support</strong> — Comprehensive security and compliance auditing</li>
+                <li><strong>Data Security Document Preparation</strong> — Drafting and consulting support for security documentation</li>
+                <li><strong>Card and Security Services</strong> — Physical and digital security solutions</li>
+                <li><strong>Disaster Recovery and Backup Management</strong> — Robust backup and recovery strategies</li>
+                <li><strong>PKI Technology Consulting</strong> — Public Key Infrastructure implementation and management</li>
+                <li><strong>Digital Signature Infrastructure Support</strong> — CA and RA infrastructure management</li>
+                <li><strong>Event Management Consultation Services</strong> — Security and technology planning for events</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane fade" id="ict-consulting" role="tabpanel">
+              <h4>ICT Consulting & Training</h4>
+              <p>Expert consulting and training services for technology adoption and optimization.</p>
+              <ul>
+                <li><strong>Consulting for e-Governance and ERP Systems</strong> — Strategic consulting for government and enterprise systems</li>
+                <li><strong>ICT related Survey and Report Management</strong> — Technology assessment and reporting services</li>
+                <li><strong>Research and Development of ICT</strong> — Innovation and technology research services</li>
+                <li><strong>Computer Education and Training</strong> — Professional IT training programs</li>
+                <li><strong>Rural Communication Center Support</strong> — Content and rural connectivity support services</li>
+                <li><strong>Information and Communication Technologies (ICT) Support Services</strong> — Individual component technology support</li>
+                <li><strong>Technology Training in Requirements</strong> — Customized training based on organizational needs</li>
+                <li><strong>Telecasting and Communication Setups</strong> — Broadcast and communication infrastructure setup</li>
+                <li><strong>Website Hosting, Development, Redesign and Maintenance</strong> — Complete web lifecycle services</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-management mt-5">
+          <div class="p-4 bg-light rounded">
+            <h4 class="mb-3">Project Management Capabilities</h4>
+            <p>Our directors and specialists have developed effective project management capacity to:</p>
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <ul>
+                  <li><strong>Understand project objectives</strong> — Clear definition and alignment of goals</li>
+                  <li><strong>Provide organizational setup</strong> — Structured framework for effective management</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul>
+                  <li><strong>Implement systems of control</strong> — Monitoring and quality assurance processes</li>
+                  <li><strong>Establish regular reporting</strong> — Transparent communication and progress tracking</li>
+                  <li><strong>Design sound planning</strong> — Strategic implementation and execution</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="coverage-section mt-4">
+          <h4 class="mb-3">ICT Implementation Across Nepal</h4>
+          <p>Our experts have undertaken various projects covering all five development regions of Nepal — Eastern, Central, Western, Mid-Western, and Far-Western.</p>
+        </div>
+
+      </div>
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-sidebar">
+
+          <div class="info-card mb-4">
+            <div class="card-header">
+              <h3>Service Information</h3>
+              <span class="badge">Available</span>
+            </div>
+            <div class="card-body">
+              <div class="info-row">
+                <span class="label">Service Type</span>
+                <span class="value">ICT & IT Support</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Coverage Areas</span>
+                <span class="value">All 5 Development Regions</span>
+              </div>
+              <div class="info-row">
+                <span class="label">AMC Available</span>
+                <span class="value">Hardware, Software, Website, Email</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Support Types</span>
+                <span class="value">On-site, Remote, Annual Contract</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Office Hours</span>
+                <span class="value">Sunday – Friday, 9am–6pm</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card mb-4">
+            <h3>Request ICT Support</h3>
+            <p>Tell us about your ICT requirements and we'll get back to you within 24 hours.</p>
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Full Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email Address" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" class="form-control" placeholder="Phone Number">
+              </div>
+              <div class="form-group">
+                <select class="form-control">
+                  <option value="" disabled selected>Select Service Required</option>
+                  <option>MIS System Design & Implementation</option>
+                  <option>Data Center Management</option>
+                  <option>ICT System Audit</option>
+                  <option>Annual Maintenance Contract (AMC)</option>
+                  <option>Disaster Recovery & Backup</option>
+                  <option>Technology Training</option>
+                  <option>ICT Consulting</option>
+                  <option>Hospital Management System</option>
+                  <option>School Management System</option>
+                  <option>Hotel Management System</option>
+                  <option>HR & Payroll System</option>
+                  <option>Cooperative Management System</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea rows="4" class="form-control" placeholder="Brief description of your ICT requirements"></textarea>
+              </div>
+              <button type="submit" class="btn-submit">
+                <i class="bi bi-send me-2"></i> Send Inquiry
+              </button>
+            </form>
+          </div>
+
+          <div class="expertise-card mb-4">
+            <h4>Why Choose Radiant Infotech?</h4>
+            <div class="expertise-grid">
+              <div class="expertise-item">
+                <i class="bi bi-diagram-3-fill"></i>
+                <span>MIS Expertise</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-database-check"></i>
+                <span>Data Center Mgmt</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-shield-check"></i>
+                <span>System Audit</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-file-earmark-check"></i>
+                <span>AMC Support</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-building"></i>
+                <span>Nationwide Coverage</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span>Bhatbhateni, Kathmandu</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-info">
+            <h5>Contact Our ICT Team</h5>
+            <p><i class="bi bi-telephone me-2"></i>01-4545765 / 01-4524311</p>
+            <p><i class="bi bi-envelope me-2"></i>info@radiantnepal.com</p>
+            <p><i class="bi bi-geo-alt me-2"></i>Radiant Building, Bhatbhateni, Kathmandu, Nepal</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.stat-box {
+  background: var(--surface-color);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+.stat-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+  border-color: var(--accent-color);
+}
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 5px;
+}
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--default-color);
+  opacity: 0.8;
+}
+
+.feature-card {
+  background: var(--surface-color);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+  border-color: var(--accent-color);
+}
+.feature-icon {
+  width: 50px;
+  height: 50px;
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.feature-icon i {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+.feature-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.feature-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--default-color);
+  opacity: 0.8;
+  margin: 0;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  gap: 8px;
+}
+.nav-tabs .nav-link {
+  border: none;
+  padding: 10px 20px;
+  font-weight: 500;
+  color: var(--default-color);
+  background: transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.nav-tabs .nav-link:hover {
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+}
+.nav-tabs .nav-link.active {
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.tab-content ul {
+  padding-left: 20px;
+}
+.tab-content ul li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.info-card, .contact-card, .expertise-card {
+  background: var(--surface-color);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.info-card .card-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info-card .card-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+.info-card .card-header .badge {
+  background: var(--accent-color);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+.info-card .card-body {
+  padding: 20px;
+}
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.info-row:last-child {
+  border-bottom: none;
+}
+.info-row .label {
+  font-weight: 500;
+  color: var(--default-color);
+  opacity: 0.7;
+}
+.info-row .value {
+  font-weight: 500;
+  text-align: right;
+}
+
+.contact-card {
+  padding: 20px;
+}
+.contact-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.contact-card p {
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+.contact-card .form-group {
+  margin-bottom: 12px;
+}
+.contact-card .form-control {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+.contact-card select.form-control {
+  cursor: pointer;
+}
+.contact-card textarea.form-control {
+  resize: vertical;
+}
+.btn-submit {
+  width: 100%;
+  padding: 10px;
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.btn-submit:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.expertise-card {
+  padding: 20px;
+}
+.expertise-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.expertise-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: color-mix(in srgb, var(--accent-color), transparent 94%);
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+.expertise-item i {
+  color: var(--accent-color);
+  font-size: 1rem;
+}
+
+.contact-info {
+  background: color-mix(in srgb, var(--accent-color), transparent 94%);
+  padding: 16px;
+  border-radius: 12px;
+}
+.contact-info h5 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.contact-info p {
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+.contact-info p:last-child {
+  margin-bottom: 0;
+}
+
+.project-management ul {
+  padding-left: 20px;
+}
+.project-management ul li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.coverage-section {
+  margin-top: 16px;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.nav-link');
+    tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+            tabs.forEach(function(t) {
+                t.classList.remove('active');
+            });
+            this.classList.add('active');
+        });
+    });
+});
+</script>
+
+{% endblock %}

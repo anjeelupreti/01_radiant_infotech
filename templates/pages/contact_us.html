@@ -7,11 +7,10 @@
 
 {% block content %}
 
-<!-- Page Title -->
 <div class="page-title dark-background" data-aos="fade" style="background-image: url({% static 'img/construction/showcase-2.webp' %});">
   <div class="container position-relative">
     <h1>Contact Us</h1>
-    <p>Get in touch with our team to discuss your software development and digital signature needs. We're here to help you transform your business.</p>
+    <p>Get in touch with our team to discuss your software development, digital signature, and ICT consulting needs. We're here to help transform your business since 2003.</p>
     <nav class="breadcrumbs">
       <ol>
         <li><a href="{% url 'home' %}">Home</a></li>
@@ -21,12 +20,11 @@
   </div>
 </div>
 
-<!-- Contact Section -->
 <section id="contact" class="contact section">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="contact-main-wrapper">
       <div class="map-wrapper">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.478924670143!2d85.3242075!3d27.716425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190c4e4a3f6b%3A0x8d0a5e8e3c2f5a1d!2sBhatbhateni%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1700000000000!5m2!1sen!2snp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
 
       <div class="contact-content">
@@ -37,7 +35,7 @@
             </div>
             <div class="contact-text">
               <h4>Visit Us</h4>
-              <p>123 Tech Innovation Hub, Electronic City, Naxal , Kathmandu - 560100, India</p>
+              <p>Radiant Building, Bhatbhateni<br>Kathmandu, Nepal</p>
             </div>
           </div>
 
@@ -47,8 +45,8 @@
             </div>
             <div class="contact-text">
               <h4>Email Us</h4>
-              <p>info@radiantinfotech.com</p>
-              <p>support@radiantinfotech.com</p>
+              <p>info@radiantnepal.com</p>
+              <p>admin@radiantnepal.com</p>
             </div>
           </div>
 
@@ -58,26 +56,26 @@
             </div>
             <div class="contact-text">
               <h4>Call Us</h4>
-              <p>+91 80 4123 4567</p>
-              <p>+91 98765 43210</p>
+              <p>01-4545765</p>
+              <p>01-4524311</p>
             </div>
           </div>
 
           <div class="contact-card">
             <div class="icon-box">
-              <i class="bi bi-clock"></i>
+              <i class="bi bi-shield-lock"></i>
             </div>
             <div class="contact-text">
-              <h4>Business Hours</h4>
-              <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-              <p>Saturday: 10:00 AM - 2:00 PM</p>
+              <h4>PKI Infrastructure</h4>
+              <p>Primary Site: Kathmandu</p>
+              <p>DR Site: Butwal</p>
             </div>
           </div>
         </div>
 
         <div class="contact-form-container" data-aos="fade-up" data-aos-delay="400">
           <h3>Send Us a Message</h3>
-          <p>Have a question about our software development services or digital signature solutions? Fill out the form below and our team will get back to you within 24 hours.</p>
+          <p>Have a question about our digital signature certificates, software development services, or ICT solutions? Fill out the form below and our team will get back to you within 24 hours.</p>
 
           <form action="{% url 'contact_submit' %}" method="post" class="php-email-form">
             {% csrf_token %}
@@ -118,7 +116,6 @@
   </div>
 </section>
 
-<!-- Additional Contact Info Section -->
 <section class="section light-background">
   <div class="container">
     <div class="row">
@@ -132,10 +129,10 @@
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
         <div class="card h-100 border-0 shadow-sm text-center p-4">
           <div class="card-body">
-            <i class="bi bi-chat-dots-fill" style="font-size: 3rem; color: var(--accent-color);"></i>
-            <h4 class="mt-3">Live Chat</h4>
-            <p>Chat with our support team for quick answers to your questions during business hours.</p>
-            <a href="#" class="btn btn-outline-primary btn-sm mt-2">Start Chat</a>
+            <i class="bi bi-shield-lock-fill" style="font-size: 3rem; color: var(--accent-color);"></i>
+            <h4 class="mt-3">Digital Signature Support</h4>
+            <p>Need assistance with Class 1, 2, or 3 digital signature certificates? Our team is ready to help.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm mt-2">Get Support</a>
           </div>
         </div>
       </div>
@@ -144,8 +141,8 @@
         <div class="card h-100 border-0 shadow-sm text-center p-4">
           <div class="card-body">
             <i class="bi bi-calendar-check-fill" style="font-size: 3rem; color: var(--accent-color);"></i>
-            <h4 class="mt-3">Schedule a Call</h4>
-            <p>Book a 30-minute consultation with our solutions expert to discuss your requirements.</p>
+            <h4 class="mt-3">Schedule a Consultation</h4>
+            <p>Book a consultation with our solutions expert to discuss your software or ICT requirements.</p>
             <a href="#" class="btn btn-outline-primary btn-sm mt-2">Schedule Now</a>
           </div>
         </div>
@@ -156,7 +153,7 @@
           <div class="card-body">
             <i class="bi bi-question-circle-fill" style="font-size: 3rem; color: var(--accent-color);"></i>
             <h4 class="mt-3">FAQ</h4>
-            <p>Find answers to commonly asked questions about our services and solutions.</p>
+            <p>Find answers to commonly asked questions about digital signatures, software development, and our services.</p>
             <a href="#" class="btn btn-outline-primary btn-sm mt-2">View FAQ</a>
           </div>
         </div>
@@ -165,40 +162,66 @@
   </div>
 </section>
 
-<!-- Office Locations Section -->
 <section class="section">
   <div class="container">
     <div class="section-title text-center" data-aos="fade-up">
-      <h2>Our Offices</h2>
-      <p>We're located in key technology hubs to serve you better</p>
+      <h2>Our Infrastructure</h2>
+      <p>PKI-enabled infrastructure serving Nepal with primary and disaster recovery sites</p>
     </div>
     
     <div class="row mt-5">
-      <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="office-card p-4 border rounded">
-          <h4><i class="bi bi-building me-2"></i>Naxal , Kathmandu (HQ)</h4>
-          <p class="mt-3 mb-2"><i class="bi bi-geo-alt me-2"></i>123 Tech Innovation Hub<br>Electronic City, Phase 2<br>Naxal , Kathmandu - 560100</p>
-          <p><i class="bi bi-telephone me-2"></i>+91 80 4123 4567</p>
+      <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="office-card p-4 border rounded h-100">
+          <div class="d-flex align-items-center mb-3">
+            <div style="width:50px;height:50px;background:color-mix(in srgb, var(--accent-color), transparent 88%);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-right:15px;">
+              <i class="bi bi-building" style="font-size:1.5rem;color:var(--accent-color);"></i>
+            </div>
+            <h4 class="mb-0">Primary Site</h4>
+          </div>
+          <p class="mb-2"><i class="bi bi-geo-alt me-2"></i>Radiant Building, Bhatbhateni, Kathmandu, Nepal</p>
+          <p><i class="bi bi-telephone me-2"></i>01-4545765 / 01-4524311</p>
+          <p class="mt-2 mb-0 text-muted small">Main PKI infrastructure and certifying authority operations</p>
         </div>
       </div>
       
-      <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="office-card p-4 border rounded">
-          <h4><i class="bi bi-building me-2"></i>Mumbai</h4>
-          <p class="mt-3 mb-2"><i class="bi bi-geo-alt me-2"></i>456 Business Bay<br>Andheri East<br>Mumbai - 400093</p>
-          <p><i class="bi bi-telephone me-2"></i>+91 22 6789 0123</p>
+      <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="office-card p-4 border rounded h-100">
+          <div class="d-flex align-items-center mb-3">
+            <div style="width:50px;height:50px;background:color-mix(in srgb, var(--accent-color), transparent 88%);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-right:15px;">
+              <i class="bi bi-database-check" style="font-size:1.5rem;color:var(--accent-color);"></i>
+            </div>
+            <h4 class="mb-0">Disaster Recovery Site</h4>
+          </div>
+          <p class="mb-2"><i class="bi bi-geo-alt me-2"></i>Butwal, Nepal</p>
+          <p class="mt-2 mb-0 text-muted small">Secondary PKI infrastructure for business continuity and disaster recovery</p>
         </div>
       </div>
-      
-      <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="office-card p-4 border rounded">
-          <h4><i class="bi bi-building me-2"></i>Delhi NCR</h4>
-          <p class="mt-3 mb-2"><i class="bi bi-geo-alt me-2"></i>789 Cyber City<br>Sector 65, Gurugram<br>Haryana - 122018</p>
-          <p><i class="bi bi-telephone me-2"></i>+91 124 456 7890</p>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="bg-light p-4 rounded text-center">
+          <h5 class="mb-3">Registration Authority (RA) Services</h5>
+          <p class="mb-0">For digital signature certificate issuance and renewal, visit our Registration Authority at the primary site. For inquiries about Class 1, Class 2, and Class 3 certificates, contact our support team.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const contactCards = document.querySelectorAll('.contact-card');
+    contactCards.forEach(function(card) {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+            this.style.transition = 'transform 0.3s ease';
+        });
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+});
+</script>
 
 {% endblock %}

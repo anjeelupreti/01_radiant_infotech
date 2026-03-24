@@ -104,7 +104,7 @@
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
-  /* ── Company Photo Gallery ── */
+  /* Photo Gallery Grid */
   .photo-gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -204,7 +204,7 @@
     }
   }
 
-  /* ── Stats ── */
+  /* Stats Cards */
   .stat-card {
     background: var(--surface-color);
     border-radius: 12px;
@@ -230,7 +230,7 @@
     margin: 0;
   }
 
-  /* ── Testimonials ── */
+  /* Testimonials */
   .testimonial-card {
     background: var(--surface-color);
     border-radius: 12px;
@@ -244,7 +244,7 @@
   .testimonial-card .client-name { font-size: 16px; font-weight: 600; margin-bottom: 2px; color: var(--heading-color); }
   .testimonial-card .client-role { font-size: 13px; color: color-mix(in srgb, var(--default-color), transparent 40%); }
 
-  /* ── Gallery nav tabs ── */
+  /* Gallery nav tabs */
   .gallery-nav {
     display: flex;
     justify-content: center;
@@ -277,7 +277,7 @@
      style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80');">
   <div class="container position-relative">
     <h1>Gallery & Projects</h1>
-    <p>A look at our work, our team, and our journey — projects delivered and moments captured.</p>
+    <p>A look at our work, our team, and our journey — delivering technology solutions since 2003.</p>
     <nav class="breadcrumbs">
       <ol>
         <li><a href="{% url 'home' %}">Home</a></li>
@@ -290,7 +290,7 @@
 
 {% block content %}
 
-<!-- ══ SECTION 1 — PROJECT PORTFOLIO ══ -->
+<!-- SECTION 1 — PROJECT PORTFOLIO -->
 <section class="section" id="portfolio">
   <div class="container" data-aos="fade-up">
 
@@ -301,11 +301,11 @@
 
     <div class="text-center mt-4 mb-2" data-aos="fade-up" data-aos-delay="100">
       <button class="filter-btn active" data-filter="*">All</button>
-      <button class="filter-btn" data-filter=".web">Web Development</button>
-      <button class="filter-btn" data-filter=".mobile">Mobile Apps</button>
+      <button class="filter-btn" data-filter=".web">Web Solutions</button>
+      <button class="filter-btn" data-filter=".software">Software Development</button>
       <button class="filter-btn" data-filter=".signature">Digital Signature</button>
-      <button class="filter-btn" data-filter=".cloud">Cloud Solutions</button>
-      <button class="filter-btn" data-filter=".enterprise">Enterprise</button>
+      <button class="filter-btn" data-filter=".mis">MIS Systems</button>
+      <button class="filter-btn" data-filter=".mobile">Mobile Apps</button>
     </div>
 
     <div class="row g-4 gallery-container mt-2" data-aos="fade-up" data-aos-delay="150">
@@ -316,16 +316,16 @@
             <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="E-Commerce Platform">
             <div class="project-overlay">
               <div class="text-center">
-                <h5 class="text-white mb-1">E-Commerce Platform</h5>
-                <p class="text-white-50 small mb-3">Web Development</p>
+                <h5 class="text-white mb-1">E-Commerce Website</h5>
+                <p class="text-white-50 small mb-3">Web Solutions</p>
                 <a href="#projectModal1" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal1"><i class="bi bi-arrows-fullscreen"></i></a>
               </div>
             </div>
             <span class="project-badge bg-success text-white">Featured</span>
           </div>
           <div class="project-info">
-            <h5>E-Commerce Platform</h5>
-            <p class="tech">Django · React · PostgreSQL</p>
+            <h5>E-Commerce Website</h5>
+            <p class="tech">PHP · MySQL · Bootstrap</p>
             <div class="d-flex justify-content-between align-items-center">
               <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Retail</span>
               <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
@@ -334,24 +334,24 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 gallery-item mobile">
+      <div class="col-lg-4 col-md-6 gallery-item software">
         <div class="project-card h-100">
           <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=600&q=80" alt="Healthcare Mobile App">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Lakshya Micro Banking">
             <div class="project-overlay">
               <div class="text-center">
-                <h5 class="text-white mb-1">Healthcare Mobile App</h5>
-                <p class="text-white-50 small mb-3">Mobile Application</p>
+                <h5 class="text-white mb-1">Lakshya Micro Banking</h5>
+                <p class="text-white-50 small mb-3">Software Development</p>
                 <a href="#projectModal2" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal2"><i class="bi bi-arrows-fullscreen"></i></a>
               </div>
             </div>
-            <span class="project-badge bg-primary text-white">New</span>
+            <span class="project-badge bg-primary text-white">Featured</span>
           </div>
           <div class="project-info">
-            <h5>Healthcare Mobile App</h5>
-            <p class="tech">Flutter · Firebase · FHIR</p>
+            <h5>Lakshya Micro Banking Software</h5>
+            <p class="tech">Java · MySQL · Spring Boot</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Healthcare</span>
+              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">FinTech</span>
               <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
             </div>
           </div>
@@ -361,88 +361,42 @@
       <div class="col-lg-4 col-md-6 gallery-item signature">
         <div class="project-card h-100">
           <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Digital Signature Platform">
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80" alt="Digital Signature Platform">
             <div class="project-overlay">
               <div class="text-center">
-                <h5 class="text-white mb-1">Enterprise Digital Signature</h5>
+                <h5 class="text-white mb-1">Digital Signature Platform</h5>
                 <p class="text-white-50 small mb-3">Digital Signature</p>
                 <a href="#projectModal3" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal3"><i class="bi bi-arrows-fullscreen"></i></a>
               </div>
             </div>
-            <span class="project-badge bg-warning text-dark">Award Winner</span>
+            <span class="project-badge bg-warning text-dark">PKI Enabled</span>
           </div>
           <div class="project-info">
-            <h5>Enterprise Digital Signature</h5>
-            <p class="tech">Python · PKI · AWS</p>
+            <h5>Digital Signature Platform</h5>
+            <p class="tech">Python · PKI · Django</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">FinTech</span>
+              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">E-Governance</span>
               <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 gallery-item cloud">
+      <div class="col-lg-4 col-md-6 gallery-item mis">
         <div class="project-card h-100">
           <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" alt="Cloud Migration">
+            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=600&q=80" alt="School Management System">
             <div class="project-overlay">
               <div class="text-center">
-                <h5 class="text-white mb-1">Cloud Migration Project</h5>
-                <p class="text-white-50 small mb-3">Cloud Solutions</p>
+                <h5 class="text-white mb-1">Finch School Management</h5>
+                <p class="text-white-50 small mb-3">MIS Systems</p>
                 <a href="#projectModal4" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal4"><i class="bi bi-arrows-fullscreen"></i></a>
               </div>
             </div>
           </div>
           <div class="project-info">
-            <h5>Cloud Migration Project</h5>
-            <p class="tech">AWS · Docker · Kubernetes</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Enterprise</span>
-              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 gallery-item enterprise">
-        <div class="project-card h-100">
-          <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=600&q=80" alt="ERP System">
-            <div class="project-overlay">
-              <div class="text-center">
-                <h5 class="text-white mb-1">ERP System Implementation</h5>
-                <p class="text-white-50 small mb-3">Enterprise Software</p>
-                <a href="#projectModal5" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal5"><i class="bi bi-arrows-fullscreen"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="project-info">
-            <h5>ERP System Implementation</h5>
-            <p class="tech">Django · PostgreSQL · Redis</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Manufacturing</span>
-              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 gallery-item web">
-        <div class="project-card h-100">
-          <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&q=80" alt="Educational Platform">
-            <div class="project-overlay">
-              <div class="text-center">
-                <h5 class="text-white mb-1">Educational Platform</h5>
-                <p class="text-white-50 small mb-3">Web Development</p>
-                <a href="#projectModal6" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal6"><i class="bi bi-arrows-fullscreen"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="project-info">
-            <h5>Educational Platform</h5>
-            <p class="tech">React · Node.js · MongoDB</p>
+            <h5>Finch School Management System</h5>
+            <p class="tech">PHP · MySQL · Laravel</p>
             <div class="d-flex justify-content-between align-items-center">
               <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Education</span>
               <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
@@ -454,20 +408,89 @@
       <div class="col-lg-4 col-md-6 gallery-item mobile">
         <div class="project-card h-100">
           <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?w=600&q=80" alt="Fintech App">
+            <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=600&q=80" alt="Mobile Application">
             <div class="project-overlay">
               <div class="text-center">
-                <h5 class="text-white mb-1">Digital Payments App</h5>
-                <p class="text-white-50 small mb-3">Mobile Application</p>
+                <h5 class="text-white mb-1">Healthcare Mobile App</h5>
+                <p class="text-white-50 small mb-3">Mobile Applications</p>
+                <a href="#projectModal5" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal5"><i class="bi bi-arrows-fullscreen"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h5>Healthcare Mobile App</h5>
+            <p class="tech">Flutter · Firebase · REST API</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Healthcare</span>
+              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 gallery-item software">
+        <div class="project-card h-100">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="WorkForce Accounting">
+            <div class="project-overlay">
+              <div class="text-center">
+                <h5 class="text-white mb-1">WorkForce Mini Accounting</h5>
+                <p class="text-white-50 small mb-3">Software Development</p>
+                <a href="#projectModal6" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal6"><i class="bi bi-arrows-fullscreen"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h5>WorkForce Mini Accounting</h5>
+            <p class="tech">C# · .NET · MSSQL</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Accounting</span>
+              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 gallery-item web">
+        <div class="project-card h-100">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&q=80" alt="CMS for Tours and Travels">
+            <div class="project-overlay">
+              <div class="text-center">
+                <h5 class="text-white mb-1">CMS for Tours & Travels</h5>
+                <p class="text-white-50 small mb-3">Web Solutions</p>
                 <a href="#projectModal7" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal7"><i class="bi bi-arrows-fullscreen"></i></a>
               </div>
             </div>
           </div>
           <div class="project-info">
-            <h5>Digital Payments App</h5>
-            <p class="tech">React Native · Node.js · Stripe</p>
+            <h5>CMS for Tours & Travels</h5>
+            <p class="tech">PHP · MySQL · Bootstrap</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Fintech</span>
+              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Travel & Tourism</span>
+              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 gallery-item mis">
+        <div class="project-card h-100">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" alt="Hospital Management System">
+            <div class="project-overlay">
+              <div class="text-center">
+                <h5 class="text-white mb-1">Hospital Management System</h5>
+                <p class="text-white-50 small mb-3">MIS Systems</p>
+                <a href="#projectModal8" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal8"><i class="bi bi-arrows-fullscreen"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h5>Hospital Management System</h5>
+            <p class="tech">Java · Oracle · Spring Boot</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Healthcare</span>
               <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
             </div>
           </div>
@@ -477,43 +500,20 @@
       <div class="col-lg-4 col-md-6 gallery-item signature">
         <div class="project-card h-100">
           <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Legal Document Signing">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="DSIGNER Component Tool">
             <div class="project-overlay">
               <div class="text-center">
-                <h5 class="text-white mb-1">Legal Document Signing</h5>
-                <p class="text-white-50 small mb-3">Digital Signature</p>
-                <a href="#projectModal8" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal8"><i class="bi bi-arrows-fullscreen"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="project-info">
-            <h5>Legal Document Signing</h5>
-            <p class="tech">Python · PKI · Django</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Legal</span>
-              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 gallery-item enterprise">
-        <div class="project-card h-100">
-          <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80" alt="Government Portal">
-            <div class="project-overlay">
-              <div class="text-center">
-                <h5 class="text-white mb-1">Government Web Portal</h5>
-                <p class="text-white-50 small mb-3">Enterprise · Web</p>
+                <h5 class="text-white mb-1">DSIGNER Component Tool</h5>
+                <p class="text-white-50 small mb-3">Digital Signature Product</p>
                 <a href="#projectModal9" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal9"><i class="bi bi-arrows-fullscreen"></i></a>
               </div>
             </div>
           </div>
           <div class="project-info">
-            <h5>Government Web Portal</h5>
-            <p class="tech">Django · PostgreSQL · Bootstrap</p>
+            <h5>DSIGNER Component Tool</h5>
+            <p class="tech">PKI · API · Windows</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Government</span>
+              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Document Signing</span>
               <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
             </div>
           </div>
@@ -524,7 +524,7 @@
   </div>
 </section>
 
-<!-- ══ SECTION 2 — COMPANY PHOTO GALLERY ══ -->
+<!-- SECTION 2 — COMPANY PHOTO GALLERY -->
 <section class="section light-background" id="company-gallery">
   <div class="container" data-aos="fade-up">
 
@@ -543,9 +543,9 @@
       </a>
 
       <a href="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1400&q=90"
-         class="photo-item tall glightbox" data-gallery="company" data-glightbox="title: Office — Naxal, Kathmandu">
+         class="photo-item tall glightbox" data-gallery="company" data-glightbox="title: Office — Bhatbhateni, Kathmandu">
         <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&q=80" alt="Our Office">
-        <div class="photo-overlay"><span>Our Office — Naxal, Kathmandu</span></div>
+        <div class="photo-overlay"><span>Our Office — Bhatbhateni, Kathmandu</span></div>
         <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
       </a>
 
@@ -591,13 +591,6 @@
         <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
       </a>
 
-      <a href="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1400&q=90"
-         class="photo-item wide glightbox" data-gallery="company" data-glightbox="title: Year-End Celebration">
-        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Celebration">
-        <div class="photo-overlay"><span>Year-End Celebration</span></div>
-        <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
-      </a>
-
     </div>
 
     <p class="text-center mt-4" style="font-size:14px;color:color-mix(in srgb,var(--default-color),transparent 40%);">
@@ -607,47 +600,47 @@
   </div>
 </section>
 
-<!-- ══ SECTION 3 — STATS ══ -->
+<!-- SECTION 3 — STATS -->
 <section class="section">
   <div class="container">
     <div class="section-title" data-aos="fade-up">
       <h2>By the Numbers</h2>
-      <p>Our track record across 15+ years of delivering technology solutions</p>
+      <p>Our track record across 22+ years of delivering technology solutions</p>
     </div>
     <div class="row g-4 mt-2 text-center">
       <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
         <div class="stat-card">
           <i class="bi bi-code-square d-block mb-3" style="font-size:2.2rem;color:var(--accent-color);"></i>
-          <h2>100+</h2>
-          <p>Web Applications</p>
+          <h2>22+</h2>
+          <p>Years Experience</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
         <div class="stat-card">
-          <i class="bi bi-phone d-block mb-3" style="font-size:2.2rem;color:var(--accent-color);"></i>
-          <h2>50+</h2>
-          <p>Mobile Apps</p>
+          <i class="bi bi-shield-lock d-block mb-3" style="font-size:2.2rem;color:var(--accent-color);"></i>
+          <h2>Class 1,2,3</h2>
+          <p>Digital Signatures</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
         <div class="stat-card">
-          <i class="bi bi-patch-check-fill d-block mb-3" style="font-size:2.2rem;color:var(--accent-color);"></i>
-          <h2>200K+</h2>
-          <p>Digital Signatures</p>
+          <i class="bi bi-building d-block mb-3" style="font-size:2.2rem;color:var(--accent-color);"></i>
+          <h2>15+</h2>
+          <p>MIS Solutions</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
         <div class="stat-card">
-          <i class="bi bi-cloud-fill d-block mb-3" style="font-size:2.2rem;color:var(--accent-color);"></i>
-          <h2>75+</h2>
-          <p>Cloud Deployments</p>
+          <i class="bi bi-diagram-3 d-block mb-3" style="font-size:2.2rem;color:var(--accent-color);"></i>
+          <h2>PKI Enabled</h2>
+          <p>Infrastructure</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ SECTION 4 — TESTIMONIALS ══ -->
+<!-- SECTION 4 — TESTIMONIALS -->
 <section class="section light-background">
   <div class="container">
     <div class="section-title" data-aos="fade-up">
@@ -659,14 +652,14 @@
         <div class="testimonial-card">
           <div class="d-flex align-items-center mb-3">
             <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80"
-                 alt="Rajesh Kumar" class="rounded-circle me-3"
+                 alt="Client" class="rounded-circle me-3"
                  style="width:56px;height:56px;object-fit:cover;">
             <div>
               <p class="client-name mb-0">Rajesh Kumar</p>
-              <p class="client-role mb-0">CTO, FinTech Solutions</p>
+              <p class="client-role mb-0">CEO, FinTech Solutions</p>
             </div>
           </div>
-          <p style="font-size:15px;line-height:1.7;">Radiant Infotech delivered our digital signature platform ahead of schedule. The integration was seamless and our clients love the user experience. Truly a game-changer for our business.</p>
+          <p style="font-size:15px;line-height:1.7;">Radiant Infotech delivered our digital signature platform with PKI infrastructure. The integration was seamless and our clients trust the security. Their 22 years of experience shows in the quality of work.</p>
           <div class="stars mt-2">
             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
           </div>
@@ -676,14 +669,48 @@
         <div class="testimonial-card">
           <div class="d-flex align-items-center mb-3">
             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80"
-                 alt="Priya Sharma" class="rounded-circle me-3"
+                 alt="Client" class="rounded-circle me-3"
                  style="width:56px;height:56px;object-fit:cover;">
             <div>
               <p class="client-name mb-0">Priya Sharma</p>
               <p class="client-role mb-0">Director, HealthCare Plus</p>
             </div>
           </div>
-          <p style="font-size:15px;line-height:1.7;">The healthcare mobile app developed by Radiant Infotech has transformed how we connect with patients. Their attention to security and user experience is outstanding.</p>
+          <p style="font-size:15px;line-height:1.7;">The hospital management system developed by Radiant Infotech has transformed how we manage patient records. Their attention to security and user experience is outstanding.</p>
+          <div class="stars mt-2">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="300">
+        <div class="testimonial-card">
+          <div class="d-flex align-items-center mb-3">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&q=80"
+                 alt="Client" class="rounded-circle me-3"
+                 style="width:56px;height:56px;object-fit:cover;">
+            <div>
+              <p class="client-name mb-0">Suresh Bhattarai</p>
+              <p class="client-role mb-0">Principal, Everest School</p>
+            </div>
+          </div>
+          <p style="font-size:15px;line-height:1.7;">Finch School Management System has streamlined our entire academic operations. From student records to fee collection, everything is now automated. Highly recommended!</p>
+          <div class="stars mt-2">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="400">
+        <div class="testimonial-card">
+          <div class="d-flex align-items-center mb-3">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&q=80"
+                 alt="Client" class="rounded-circle me-3"
+                 style="width:56px;height:56px;object-fit:cover;">
+            <div>
+              <p class="client-name mb-0">Anil Thapa</p>
+              <p class="client-role mb-0">Manager, Himalayan Travels</p>
+            </div>
+          </div>
+          <p style="font-size:15px;line-height:1.7;">The CMS for Tours and Travels developed by Radiant Infotech has helped us manage our tour packages efficiently. The booking system and customer management features are excellent.</p>
           <div class="stars mt-2">
             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
           </div>
@@ -693,17 +720,17 @@
   </div>
 </section>
 
-<!-- ══ SECTION 5 — CTA ══ -->
+<!-- SECTION 5 — CTA -->
 <section class="section">
   <div class="container text-center" data-aos="fade-up">
     <h2 class="mb-3">Ready to Start Your Project?</h2>
-    <p class="mb-4" style="font-size:17px;color:color-mix(in srgb,var(--default-color),transparent 25%);">Let's discuss how we can bring your vision to life.</p>
+    <p class="mb-4" style="font-size:17px;color:color-mix(in srgb,var(--default-color),transparent 25%);">Let's discuss how we can bring your vision to life with our technology solutions.</p>
     <a href="{% url 'contact_us' %}" class="btn btn-primary btn-lg me-3">Contact Us</a>
     <a href="{% url 'services' %}" class="btn btn-outline-secondary btn-lg">Explore Services</a>
   </div>
 </section>
 
-<!-- ══ PROJECT MODALS ══ -->
+<!-- PROJECT MODALS -->
 {% for i in "123456789"|make_list %}
 <div class="modal fade" id="projectModal{{ forloop.counter }}" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -713,7 +740,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
-        <p style="line-height:1.75;color:color-mix(in srgb,var(--default-color),transparent 20%);">Detailed project information will be updated here. Contact us to learn more about this specific project and how we can deliver a similar solution for your business.</p>
+        <p style="line-height:1.75;color:color-mix(in srgb,var(--default-color),transparent 20%);">For detailed project information, please contact our team. We'll be happy to share more about this project and how we can deliver a similar solution for your business.</p>
         <ul class="list-unstyled mt-3" style="font-size:14px;">
           <li class="mb-2"><strong>Technologies:</strong> Available on request</li>
           <li class="mb-2"><strong>Duration:</strong> Available on request</li>

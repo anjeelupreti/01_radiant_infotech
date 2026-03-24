@@ -1,14 +1,13 @@
 {% load static %}
 
 <style>
-  /* ── Typewriter / Rotating Text ── */
   .hero-rotating-wrapper {
     display: inline-block;
     position: relative;
   }
 
   .hero-rotating-text {
-    color: #f5c518; /* yellow */
+    color: #f5c518;
     display: inline-block;
     border-right: 3px solid #f5c518;
     white-space: nowrap;
@@ -22,17 +21,14 @@
     50%       { border-color: transparent; }
   }
 
-  /* ── Stat number accent ── */
   .hero .stat-item .stat-number {
     color: #f5c518;
   }
 
-  /* ── Stronger overlay for readability ── */
   .hero .hero-overlay {
     background: rgba(6, 6, 6, 0.62) !important;
   }
 
-  /* ── Scroll-down indicator ── */
   .hero-scroll-hint {
     position: absolute;
     bottom: 30px;
@@ -61,15 +57,12 @@
   }
 </style>
 
-<!-- ══ HERO SECTION ══ -->
 <section id="hero" class="hero section dark-background">
 
-  <!-- Background Video -->
   <div class="hero-video-container">
     <video autoplay muted loop playsinline>
       <source src="{% static 'video/hero-bg.mp4' %}" type="video/mp4">
     </video>
-    <!-- Fallback image if video fails -->
     <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80"
          alt="Technology background"
          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;">
@@ -81,7 +74,6 @@
       <div class="col-lg-9">
         <div class="hero-content">
 
-          <!-- ── Main Headline with rotating text ── -->
           <h1 data-aos="fade-up" data-aos-delay="200">
             Radiant for<br>
             <span class="hero-rotating-wrapper">
@@ -90,66 +82,61 @@
           </h1>
 
           <p data-aos="fade-up" data-aos-delay="300">
-            Radiant Infotech Pvt. Ltd. delivers secure digital signature solutions and
-            full-spectrum IT services to businesses across Nepal — trusted for quality,
-            speed, and reliability.
+            Radiant InfoTech Nepal Pvt. Ltd. is a leading boutique digital agency providing complete IT solutions including digital signature certificates, web development, software applications, and comprehensive technology support for businesses, institutions, and government organizations across Nepal.
           </p>
 
-          <!-- ── CTA Buttons ── -->
           <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
             <a href="{% url 'contact_us' %}" class="btn btn-primary">Get a Quote</a>
             <a href="{% url 'services' %}" class="btn btn-secondary">Explore Services</a>
           </div>
 
-          <!-- ── Stats Bar ── -->
           <div class="hero-stats" data-aos="fade-up" data-aos-delay="500">
             <div class="row">
               <div class="col-lg-3 col-6">
                 <div class="stat-item">
                   <span class="stat-number purecounter"
                         data-purecounter-start="0"
+                        data-purecounter-end="100"
+                        data-purecounter-duration="2">100 +</span>
+                  <span class="stat-label"> Projects Delivered</span>
+                </div>
+              </div>
+              <div class="col-lg-3 col-6">
+                <div class="stat-item">
+                  <span class="stat-number purecounter"
+                        data-purecounter-start="0"
+                        data-purecounter-end="22"
+                        data-purecounter-duration="2"
+                        id="yearsExperienceCounter">22</span>
+                  <span class="stat-label">Years in IT Solutions</span>
+                </div>
+              </div>
+              <div class="col-lg-3 col-6">
+                <div class="stat-item">
+                  <span class="stat-number purecounter"
+                        data-purecounter-start="0"
                         data-purecounter-end="500"
-                        data-purecounter-duration="2">500</span>
-                  <span class="stat-label">Clients Served</span>
+                        data-purecounter-duration="2">500 + </span>
+                  <span class="stat-label">Satisfied Clients</span>
                 </div>
               </div>
               <div class="col-lg-3 col-6">
                 <div class="stat-item">
                   <span class="stat-number purecounter"
                         data-purecounter-start="0"
-                        data-purecounter-end="8"
-                        data-purecounter-duration="2">8</span>
-                  <span class="stat-label">Years Experience</span>
-                </div>
-              </div>
-              <div class="col-lg-3 col-6">
-                <div class="stat-item">
-                  <span class="stat-number purecounter"
-                        data-purecounter-start="0"
-                        data-purecounter-end="98"
-                        data-purecounter-duration="2">98</span>
-                  <span class="stat-label">% Satisfaction Rate</span>
-                </div>
-              </div>
-              <div class="col-lg-3 col-6">
-                <div class="stat-item">
-                  <span class="stat-number purecounter"
-                        data-purecounter-start="0"
-                        data-purecounter-end="20"
-                        data-purecounter-duration="2">20</span>
+                        data-purecounter-end="40"
+                        data-purecounter-duration="2">40</span>
                   <span class="stat-label">Expert Team Members</span>
                 </div>
               </div>
             </div>
           </div>
-          <!-- /Stats Bar -->
 
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Scroll hint -->
   <div class="hero-scroll-hint">
     <span>Scroll</span>
     <i class="bi bi-chevron-double-down"></i>
@@ -157,43 +144,51 @@
 
 </section>
 
-<!-- ══ Typewriter JS ══ -->
+<script>
+  const ESTABLISHMENT_YEAR = 2003;
+  const currentYear = new Date().getFullYear();
+  const yearsOfExperience = currentYear - ESTABLISHMENT_YEAR;
+  
+  const yearsCounter = document.getElementById('yearsExperienceCounter');
+  if (yearsCounter) {
+    yearsCounter.setAttribute('data-purecounter-end', yearsOfExperience);
+    yearsCounter.textContent = yearsOfExperience;
+  }
+</script>
+
 <script>
   (function () {
     const words = [
       "Digital Signature",
       "Web Development",
+      "Software Solutions",
       "Mobile Applications",
-      "Cloud Services",
-      "Graphics Designing",
-      "Data Entry",
-      "Your Business",
+      "Graphic Designing",
+      "E-Commerce Platforms",
+      "Custom Applications",
     ];
 
     const el = document.getElementById("rotatingText");
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    const typingSpeed  = 80;   // ms per character typed
-    const deletingSpeed = 45;  // ms per character deleted
-    const pauseAfterWord = 1800; // pause at full word
+    const typingSpeed  = 80;
+    const deletingSpeed = 45;
+    const pauseAfterWord = 1800;
 
     function type() {
       const current = words[wordIndex];
 
       if (!isDeleting) {
-        // Typing forward
         el.textContent = current.substring(0, charIndex + 1);
         charIndex++;
         if (charIndex === current.length) {
-          // Full word shown — pause then start deleting
           isDeleting = true;
           setTimeout(type, pauseAfterWord);
           return;
         }
         setTimeout(type, typingSpeed);
       } else {
-        // Deleting
         el.textContent = current.substring(0, charIndex - 1);
         charIndex--;
         if (charIndex === 0) {
@@ -206,7 +201,6 @@
       }
     }
 
-    // Start after slight delay so AOS has settled
     setTimeout(type, 900);
   })();
 </script>

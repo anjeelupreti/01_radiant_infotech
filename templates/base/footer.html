@@ -1,14 +1,25 @@
 {% load static %}
 
 <style>
+  /* Light Theme Footer Styles */
   .footer {
-    border-top: 3px solid #0eaa28 !important;
+    background: #f8fafc !important;
+    border-top: 3px solid #2c9b6b !important;
+    color: #2c3e4e !important;
   }
 
   .footer .footer-brand .logo img {
     max-height: 50px;
     width: auto;
     display: block;
+    filter: brightness(1);
+  }
+
+  .footer .footer-brand .tagline {
+    color: #5a6e7c !important;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 10px;
   }
 
   .footer .footer-links-grid h5,
@@ -17,6 +28,9 @@
     position: relative;
     padding-bottom: 10px;
     margin-bottom: 20px;
+    color: #1a2c38 !important;
+    font-weight: 600;
+    font-size: 16px;
   }
 
   .footer .footer-links-grid h5::after,
@@ -28,7 +42,7 @@
     left: 0;
     width: 28px;
     height: 2px;
-    background: #f5c518;
+    background: #2c9b6b;
   }
 
   .footer .footer-contact ul {
@@ -43,36 +57,41 @@
     gap: 10px;
     margin-bottom: 14px;
     font-size: 14px;
-    color: color-mix(in srgb, #ffffff, transparent 30%);
-    font-weight: 300;
+    color: #5a6e7c !important;
+    font-weight: 400;
     line-height: 1.5;
   }
 
   .footer .footer-contact ul li i {
     font-size: 15px;
-    color: #0eaa28;
+    color: #2c9b6b !important;
     margin-top: 2px;
     flex-shrink: 0;
   }
 
   .footer .footer-contact ul li a {
-    color: color-mix(in srgb, #ffffff, transparent 30%);
+    color: #5a6e7c !important;
     text-decoration: none;
     transition: color 0.3s;
   }
 
   .footer .footer-contact ul li a:hover {
-    color: #0eaa28;
+    color: #2c9b6b !important;
   }
 
+  .footer .footer-contact ul li span {
+    color: #5a6e7c !important;
+  }
+
+  /* Button Styles - Light Theme */
   .footer .footer-cta .btn-yellow {
-    background: transparent;
-    color: #f5c518;
-    border: 1px solid #f5c518;
-    padding: 10px 24px;
+    background: #2c9b6b;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
     font-size: 14px;
     font-weight: 500;
-    border-radius: 4px;
+    border-radius: 8px;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.8px;
@@ -81,12 +100,14 @@
     width: 100%;
     text-align: center;
     text-decoration: none;
+    box-shadow: 0 2px 8px rgba(44, 155, 107, 0.2);
   }
 
   .footer .footer-cta .btn-yellow:hover {
-    background: #f5c518;
-    color: #1a1a1a;
+    background: #238b5e;
     transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(44, 155, 107, 0.3);
+    color: #ffffff;
   }
 
   .footer .footer-cta .btn-outline {
@@ -94,19 +115,25 @@
     text-align: center;
     margin-top: 8px;
     display: inline-block;
-    padding: 8px 24px;
-    border: 1px solid rgba(255,255,255,0.2);
-    color: #ffffff;
+    padding: 10px 24px;
+    border: 2px solid #e2e8f0;
+    color: #2c3e4e;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 8px;
     transition: all 0.3s ease;
+    background: transparent;
+    font-weight: 500;
+    font-size: 14px;
   }
 
   .footer .footer-cta .btn-outline:hover {
-    background: rgba(255,255,255,0.1);
-    border-color: #f5c518;
+    background: #2c9b6b;
+    border-color: #2c9b6b;
+    color: #ffffff;
+    transform: translateY(-2px);
   }
 
+  /* Social Links - Light Theme */
   .footer .social-links a {
     display: inline-flex;
     align-items: center;
@@ -114,21 +141,43 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.2);
-    color: #ffffff;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #2c9b6b;
     margin-right: 8px;
     transition: all 0.3s ease;
+    text-decoration: none;
   }
 
   .footer .social-links a:hover {
-    background-color: #f5c518 !important;
-    border-color: #f5c518 !important;
-    color: #1a1a1a !important;
+    background-color: #2c9b6b;
+    border-color: #2c9b6b;
+    color: #ffffff;
     transform: translateY(-3px);
   }
 
+  /* Footer Links - Light Theme */
+  .footer-links-grid ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-links-grid ul li a {
+    color: #5a6e7c;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .footer-links-grid ul li a:hover {
+    color: #2c9b6b;
+    transform: translateX(5px);
+  }
+
+  /* Footer Bottom - Light Theme */
   .footer-bottom {
-    background: rgba(0,0,0,0.2);
+    background: #ffffff;
+    border-top: 1px solid #e9edf2;
     padding: 20px 0;
   }
 
@@ -142,53 +191,45 @@
 
   .footer-bottom-content p {
     margin: 0;
-    color: color-mix(in srgb, #ffffff, transparent 40%);
+    color: #6c7f8f;
     font-size: 14px;
+  }
+
+  .footer-bottom-content p .sitename {
+    color: #1a2c38;
+    font-weight: 500;
   }
 
   .footer-bottom-content .credits {
-    color: color-mix(in srgb, #ffffff, transparent 40%);
-    font-size: 14px;
+    color: #6c7f8f;
+    font-size: 13px;
   }
 
   .footer-bottom-content .credits a {
-    color: #f5c518;
+    color: #2c9b6b;
     text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
   }
 
   .footer-bottom-content .credits a:hover {
+    color: #238b5e;
     text-decoration: underline;
   }
 
-  .footer-brand .tagline {
-    color: color-mix(in srgb, #ffffff, transparent 30%);
-    font-size: 14px;
-    line-height: 1.6;
-    margin-top: 10px;
-  }
-
-  .footer-links-grid ul li {
-    margin-bottom: 10px;
-  }
-
-  .footer-links-grid ul li a {
-    color: color-mix(in srgb, #ffffff, transparent 30%);
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-  }
-
-  .footer-links-grid ul li a:hover {
-    color: #f5c518;
-    padding-left: 5px;
-  }
-
+  /* Responsive Adjustments */
   @media (max-width: 768px) {
     .footer .footer-links-grid h5::after,
     .footer .footer-cta h5::after,
     .footer .footer-contact h5::after {
       left: 50%;
       transform: translateX(-50%);
+    }
+    
+    .footer .footer-links-grid h5,
+    .footer .footer-cta h5,
+    .footer .footer-contact h5 {
+      text-align: center;
     }
     
     .footer-bottom-content {
@@ -199,20 +240,51 @@
     .footer .footer-brand .logo {
       justify-content: center;
     }
+    
+    .footer .footer-brand .tagline {
+      text-align: center;
+    }
+    
+    .footer .social-links {
+      justify-content: center;
+    }
+    
+    .footer .footer-contact ul li {
+      justify-content: center;
+    }
+  }
+
+  /* Tablet Adjustments */
+  @media (min-width: 769px) and (max-width: 991px) {
+    .footer .footer-contact ul li {
+      justify-content: flex-start;
+    }
+    
+    .footer .footer-links-grid h5::after {
+      left: 0;
+      transform: none;
+    }
+  }
+
+  /* Dark mode detection - optional fallback */
+  @media (prefers-color-scheme: dark) {
+    .footer {
+      background: #f8fafc !important;
+    }
   }
 </style>
 
-<footer id="footer" class="footer dark-background">
+<footer id="footer" class="footer">
 
   <div class="container">
     <div class="row gy-5">
 
       <div class="col-lg-3 col-md-6">
         <div class="footer-brand">
-          <a href="{% url 'home' %}" class="logo d-flex align-items-center justify-content-center ">
+          <a href="{% url 'home' %}" class="logo d-flex align-items-center justify-content-start justify-content-md-start">
             <img src="{% static 'img/logo.png' %}" alt="Radiant Infotech">
           </a>
-          <p class="tagline">
+          <p class="tagline mt-3">
             Empowering businesses through innovative software development and 
             secure digital signature solutions — trusted across Nepal.
           </p>
@@ -221,6 +293,7 @@
             <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
             <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
             <a href="#" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
           </div>
         </div>
       </div>

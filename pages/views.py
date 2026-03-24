@@ -11,11 +11,16 @@ import json
 from django.utils import timezone
 import re
 from django.http import HttpResponse, JsonResponse, Http404
-
+from datetime import datetime
 
 SERVICE_TEMPLATES = {
+    'digital-marketing':  'services/digital_marketing.html',
     'digital-signature':  'services/digital_signature.html',
+    'ict-support':        'services/ict_support.html',
+    'mis-solutions':       'services/mis_solutions.html',
+
     'web-development':    'services/web_development.html',
+    'software-development':'services/software_development.html',
     'mobile-applications':'services/mobile_applications.html',
     'cloud-services':     'services/cloud_services.html',
     'graphics-designing': 'services/graphics_designing.html',
@@ -23,6 +28,10 @@ SERVICE_TEMPLATES = {
 }
  
 SERVICE_TITLES = {
+    'digital-marketing':   'Digital Marketing',
+    'mis-solutions':       'MIS Solutions',
+    'software-development':'Software Development',
+    'ict-support':        'ICT Support',
     'digital-signature':   'Digital Signature',
     'web-development':     'Web Development',
     'mobile-applications': 'Mobile Applications',
@@ -30,7 +39,8 @@ SERVICE_TITLES = {
     'graphics-designing':  'Graphics Designing',
     'data-entry':          'Data Entry',
 }
- 
+current_year = datetime.now().year
+years_of_experience = current_year - 2003 
 
 def home(request):
     
