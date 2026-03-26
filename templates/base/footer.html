@@ -6,13 +6,13 @@
     background: #f8fafc !important;
     border-top: 3px solid #2c9b6b !important;
     color: #2c3e4e !important;
+    margin-top: auto;
   }
 
   .footer .footer-brand .logo img {
     max-height: 50px;
     width: auto;
     display: block;
-    filter: brightness(1);
   }
 
   .footer .footer-brand .tagline {
@@ -24,7 +24,8 @@
 
   .footer .footer-links-grid h5,
   .footer .footer-cta h5,
-  .footer .footer-contact h5 {
+  .footer .footer-contact h5,
+  .footer .footer-certificates h5 {
     position: relative;
     padding-bottom: 10px;
     margin-bottom: 20px;
@@ -35,12 +36,13 @@
 
   .footer .footer-links-grid h5::after,
   .footer .footer-cta h5::after,
-  .footer .footer-contact h5::after {
+  .footer .footer-contact h5::after,
+  .footer .footer-certificates h5::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 28px;
+    width: 35px;
     height: 2px;
     background: #2c9b6b;
   }
@@ -54,8 +56,8 @@
   .footer .footer-contact ul li {
     display: flex;
     align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 14px;
+    gap: 12px;
+    margin-bottom: 12px;
     font-size: 14px;
     color: #5a6e7c !important;
     font-weight: 400;
@@ -63,10 +65,11 @@
   }
 
   .footer .footer-contact ul li i {
-    font-size: 15px;
+    font-size: 14px;
     color: #2c9b6b !important;
     margin-top: 2px;
     flex-shrink: 0;
+    width: 18px;
   }
 
   .footer .footer-contact ul li a {
@@ -83,68 +86,107 @@
     color: #5a6e7c !important;
   }
 
-  /* Button Styles - Light Theme */
-  .footer .footer-cta .btn-yellow {
+  /* Certificates Styles */
+  .footer .footer-certificates ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer .footer-certificates ul li {
+    margin-bottom: 12px;
+  }
+
+  .footer .footer-certificates ul li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #5a6e7c !important;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    padding: 4px 0;
+  }
+
+  .footer .footer-certificates ul li a i {
+    font-size: 16px;
+    color: #2c9b6b !important;
+    transition: all 0.3s ease;
+  }
+
+  .footer .footer-certificates ul li a:hover {
+    color: #2c9b6b !important;
+  }
+
+  .footer .footer-certificates ul li a:hover i {
+    color: #ffc107 !important;
+  }
+
+  .certificate-badge {
+    font-size: 10px;
+    background: #e8f0fe;
+    color: #2c9b6b;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: 8px;
+    font-weight: 500;
+  }
+
+  /* Button Styles */
+  .footer .footer-cta .btn-green {
     background: #2c9b6b;
     color: #ffffff;
     border: none;
-    padding: 12px 24px;
-    font-size: 14px;
+    padding: 10px 20px;
+    font-size: 13px;
     font-weight: 500;
-    border-radius: 8px;
+    border-radius: 6px;
     transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
     display: inline-block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     width: 100%;
     text-align: center;
     text-decoration: none;
-    box-shadow: 0 2px 8px rgba(44, 155, 107, 0.2);
   }
 
-  .footer .footer-cta .btn-yellow:hover {
+  .footer .footer-cta .btn-green:hover {
     background: #238b5e;
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(44, 155, 107, 0.3);
-    color: #ffffff;
   }
 
   .footer .footer-cta .btn-outline {
     width: 100%;
     text-align: center;
-    margin-top: 8px;
     display: inline-block;
-    padding: 10px 24px;
-    border: 2px solid #e2e8f0;
-    color: #2c3e4e;
+    padding: 8px 20px;
+    border: 1px solid #e2e8f0;
+    color: #5a6e7c;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 6px;
     transition: all 0.3s ease;
     background: transparent;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .footer .footer-cta .btn-outline:hover {
     background: #2c9b6b;
     border-color: #2c9b6b;
     color: #ffffff;
-    transform: translateY(-2px);
   }
 
-  /* Social Links - Light Theme */
+  /* Social Links */
   .footer .social-links a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     background: #ffffff;
     border: 1px solid #e2e8f0;
     color: #2c9b6b;
-    margin-right: 8px;
+    margin-right: 6px;
     transition: all 0.3s ease;
     text-decoration: none;
   }
@@ -153,32 +195,32 @@
     background-color: #2c9b6b;
     border-color: #2c9b6b;
     color: #ffffff;
-    transform: translateY(-3px);
+    transform: translateY(-2px);
   }
 
-  /* Footer Links - Light Theme */
+  /* Footer Links */
   .footer-links-grid ul li {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .footer-links-grid ul li a {
     color: #5a6e7c;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     transition: all 0.3s ease;
     display: inline-block;
   }
 
   .footer-links-grid ul li a:hover {
     color: #2c9b6b;
-    transform: translateX(5px);
+    transform: translateX(3px);
   }
 
-  /* Footer Bottom - Light Theme */
+  /* Footer Bottom */
   .footer-bottom {
     background: #ffffff;
     border-top: 1px solid #e9edf2;
-    padding: 20px 0;
+    padding: 18px 0;
   }
 
   .footer-bottom-content {
@@ -186,13 +228,13 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 12px;
   }
 
   .footer-bottom-content p {
     margin: 0;
     color: #6c7f8f;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .footer-bottom-content p .sitename {
@@ -202,33 +244,34 @@
 
   .footer-bottom-content .credits {
     color: #6c7f8f;
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .footer-bottom-content .credits a {
     color: #2c9b6b;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
   }
 
   .footer-bottom-content .credits a:hover {
     color: #238b5e;
-    text-decoration: underline;
   }
 
-  /* Responsive Adjustments */
+  /* Responsive */
   @media (max-width: 768px) {
     .footer .footer-links-grid h5::after,
     .footer .footer-cta h5::after,
-    .footer .footer-contact h5::after {
+    .footer .footer-contact h5::after,
+    .footer .footer-certificates h5::after {
       left: 50%;
       transform: translateX(-50%);
+      width: 40px;
     }
     
     .footer .footer-links-grid h5,
     .footer .footer-cta h5,
-    .footer .footer-contact h5 {
+    .footer .footer-contact h5,
+    .footer .footer-certificates h5 {
       text-align: center;
     }
     
@@ -252,24 +295,19 @@
     .footer .footer-contact ul li {
       justify-content: center;
     }
+    
+    .footer .footer-certificates ul li {
+      text-align: center;
+    }
+    
+    .footer .footer-certificates ul li a {
+      justify-content: center;
+    }
   }
 
-  /* Tablet Adjustments */
   @media (min-width: 769px) and (max-width: 991px) {
     .footer .footer-contact ul li {
       justify-content: flex-start;
-    }
-    
-    .footer .footer-links-grid h5::after {
-      left: 0;
-      transform: none;
-    }
-  }
-
-  /* Dark mode detection - optional fallback */
-  @media (prefers-color-scheme: dark) {
-    .footer {
-      background: #f8fafc !important;
     }
   }
 </style>
@@ -279,25 +317,26 @@
   <div class="container">
     <div class="row gy-5">
 
+      <!-- Column 1: Brand & Social -->
       <div class="col-lg-3 col-md-6">
         <div class="footer-brand">
-          <a href="{% url 'home' %}" class="logo d-flex align-items-center justify-content-start justify-content-md-start">
+          <a href="{% url 'home' %}" class="logo d-flex align-items-center">
             <img src="{% static 'img/logo.png' %}" alt="Radiant Infotech">
           </a>
           <p class="tagline mt-3">
             Empowering businesses through innovative software development and 
-            secure digital signature solutions — trusted across Nepal.
+            secure digital signature solutions — trusted across Nepal since 2003.
           </p>
-          <div class="social-links mt-4">
+          <div class="social-links mt-3">
             <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
             <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
             <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-            <a href="#" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
           </div>
         </div>
       </div>
 
+      <!-- Column 2: Company & Services Links -->
       <div class="col-lg-5 col-md-6">
         <div class="footer-links-grid">
           <div class="row">
@@ -312,25 +351,20 @@
               </ul>
             </div>
 
-            <div class="col-6 col-sm-4">
-              <h5>Services</h5>
-              <ul class="list-unstyled">
-                <li><a href="{% url 'service_detail' slug='digital-signature' %}">Digital Signature</a></li>
-                <li><a href="{% url 'service_detail' slug='web-development' %}">Web Development</a></li>
-                <li><a href="{% url 'service_detail' slug='mobile-applications' %}">Mobile Apps</a></li>
-                <li><a href="{% url 'service_detail' slug='cloud-services' %}">Cloud Services</a></li>
-                <li><a href="{% url 'service_detail' slug='graphics-designing' %}">Graphics Design</a></li>
-                <li><a href="{% url 'service_detail' slug='data-entry' %}">Data Entry</a></li>
-              </ul>
-            </div>
-
-            <div class="col-6 col-sm-4 mt-4 mt-sm-0">
-              <h5>Support</h5>
-              <ul class="list-unstyled">
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="{% url 'contact_us' %}">Get Support</a></li>
+            <div class="col-6 col-sm-8">
+              <h5>Our Services</h5>
+              <ul class="list-unstyled row">
+                <div class="col-12 col-md-6">
+                  <li><a href="{% url 'service_detail' slug='digital-signature' %}">Digital Signature</a></li>
+                  <li><a href="{% url 'service_detail' slug='web-development' %}">Web Development</a></li>
+                  <li><a href="{% url 'service_detail' slug='software-development' %}">Software Development</a></li>
+                  <li><a href="{% url 'service_detail' slug='ict-support' %}">ICT & IT Support</a></li>
+                </div>
+                <div class="col-12 col-md-6">
+                  <li><a href="{% url 'service_detail' slug='mis-solutions' %}">MIS Solutions</a></li>
+                  <li><a href="{% url 'service_detail' slug='digital-marketing' %}">SEO & Digital Marketing</a></li>
+                  <li><a href="{% url 'service_detail' slug='graphics-designing' %}">Graphics Designing</a></li>
+                </div>
               </ul>
             </div>
 
@@ -338,7 +372,31 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6">
+      <!-- Column 3: Certificates & Contact -->
+      <div class="col-lg-4 col-md-12">
+        
+        <!-- Certificates Section -->
+        <div class="footer-certificates mb-4">
+          <h5>Certificates & Licenses</h5>
+          <ul>
+            <li>
+              <a href="{% static 'certificates/NepalRootCA-2025.cer' %}" download>
+                <i class="bi bi-file-earmark-lock-fill"></i>
+                <span>Nepal Root CA 2025</span>
+                <span class="certificate-badge">Root CA</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% static 'certificates/Radiant InfoTech Nepal CA 2025.cer' %}" download>
+                <i class="bi bi-file-earmark-lock-fill"></i>
+                <span>Radiant Infotech Nepal CA 2025</span>
+                <span class="certificate-badge">CA License</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Information -->
         <div class="footer-contact mb-4">
           <h5>Get In Touch</h5>
           <ul>
@@ -348,11 +406,11 @@
             </li>
             <li>
               <i class="bi bi-telephone-fill"></i>
-              <a href="tel:+977XXXXXXXXX">+977-XX-XXXXXXX</a>
+              <span>01-4545765 / 01-4524311</span>
             </li>
             <li>
               <i class="bi bi-envelope-fill"></i>
-              <a href="mailto:info@radiantinfotech.com.np">info@radiantinfotech.com.np</a>
+              <span>info@radiantinfotech.com.np</span>
             </li>
             <li>
               <i class="bi bi-clock-fill"></i>
@@ -361,25 +419,25 @@
           </ul>
         </div>
 
+        <!-- CTA Buttons -->
         <div class="footer-cta">
-          <a href="{% url 'contact_us' %}" class="btn-yellow">Request a Quote</a>
-          <a href="{% url 'services' %}" class="btn-outline">Explore Services</a>
+          <a href="{% url 'contact_us' %}" class="btn-green">Request a Quote</a>
+          <a href="{% url 'services' %}" class="btn-outline">Explore All Services</a>
         </div>
       </div>
 
     </div>
   </div>
 
-  <div class="footer-bottom mt-5">
+  <!-- Footer Bottom -->
+  <div class="footer-bottom mt-4">
     <div class="container">
       <div class="footer-bottom-content">
-        <p class="mb-0">
+        <p>
           © {% now "Y" %} <span class="sitename">Radiant Infotech Pvt. Ltd.</span> All rights reserved.
         </p>
         <div class="credits">
-          Designed &amp; Developed by
-          <a href="#" target="_blank" rel="noopener">Anjeel Upreti</a> &nbsp;|&nbsp;
-          Powered by <a href="https://www.djangoproject.com/" target="_blank" rel="noopener">Django</a>
+          Designed &amp; Developed by <a href="#">Anjeel Upreti</a> | Powered by <a href="https://www.djangoproject.com/">Django</a>
         </div>
       </div>
     </div>

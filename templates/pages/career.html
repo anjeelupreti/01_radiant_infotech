@@ -6,180 +6,304 @@
 
 {% block extra_css %}
 <style>
+  /* CSS Variables - Green Theme #059652 */
+  :root {
+    --primary-green: #059652;
+    --primary-green-dark: #047a42;
+    --primary-green-light: #e6f4ed;
+    --primary-green-soft: #d0f0e0;
+    --hover-gold: #ffc107;
+    --hover-gold-dark: #e6a800;
+    --text-dark: #1a2c3e;
+    --text-muted: #5a6c7e;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --card-shadow-hover: 0 20px 40px rgba(5, 150, 82, 0.15);
+  }
+
   .benefit-card {
-    background: var(--surface-color);
-    border-radius: 14px;
+    background: white;
+    border-radius: 20px;
     padding: 2rem;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--card-shadow);
+    transition: all 0.4s ease;
     height: 100%;
+    border: 1px solid rgba(5, 150, 82, 0.1);
   }
 
   .benefit-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    box-shadow: var(--card-shadow-hover);
+    border-color: var(--hover-gold);
   }
 
-  .position-card {
-    background: var(--surface-color);
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    margin-bottom: 1rem;
-    overflow: hidden;
-    border-left: 4px solid transparent;
+  .benefit-card .benefit-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--primary-green-light);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.2rem;
+    transition: all 0.3s ease;
   }
 
-  .position-card:hover {
-    transform: translateX(6px);
-    box-shadow: 0 8px 28px rgba(0,0,0,0.1);
-    border-left-color: #0eaa28;
+  .benefit-card:hover .benefit-icon {
+    background: var(--hover-gold);
   }
 
-  .position-card .card-body {
-    padding: 1.6rem 1.8rem;
+  .benefit-card .benefit-icon i {
+    font-size: 2rem;
+    color: var(--primary-green);
+    transition: color 0.3s ease;
   }
 
-  .position-card h4 {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--heading-color);
-    margin-bottom: 4px;
+  .benefit-card:hover .benefit-icon i {
+    color: white;
   }
 
-  .position-card .meta {
-    font-size: 13px;
-    color: color-mix(in srgb, var(--default-color), transparent 40%);
-    margin-bottom: 8px;
+  .benefit-card h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
   }
 
-  .position-card .desc {
-    font-size: 14px;
-    color: color-mix(in srgb, var(--default-color), transparent 20%);
+  .benefit-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
     margin: 0;
     line-height: 1.6;
   }
 
-  .position-card .btn-outline-green {
-    color: #0eaa28;
-    border: 1px solid #0eaa28;
+  /* Position Cards */
+  .position-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.35s ease;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border-left: 4px solid var(--primary-green);
+    border: 1px solid rgba(5, 150, 82, 0.1);
+  }
+
+  .position-card:hover {
+    transform: translateX(8px);
+    box-shadow: var(--card-shadow-hover);
+    border-left-color: var(--hover-gold);
+    border-color: var(--hover-gold);
+  }
+
+  .position-card .card-body {
+    padding: 1.5rem;
+  }
+
+  .position-card h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+  }
+
+  .position-card .meta {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .position-card .meta i {
+    color: var(--primary-green);
+  }
+
+  .position-card .desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .badge-green {
+    background: var(--primary-green-light);
+    color: var(--primary-green);
+    padding: 4px 12px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .badge-gold {
+    background: var(--hover-gold);
+    color: var(--text-dark);
+    padding: 4px 12px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .btn-outline-green {
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
     background: transparent;
-    padding: 7px 18px;
-    border-radius: 6px;
+    padding: 8px 20px;
+    border-radius: 50px;
     font-size: 13px;
-    font-weight: 500;
-    transition: all 0.25s;
+    font-weight: 600;
+    transition: all 0.3s;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
   }
 
-  .position-card .btn-outline-green:hover {
-    background: #0eaa28;
-    color: #ffffff;
+  .btn-outline-green:hover {
+    background: var(--hover-gold);
+    border-color: var(--hover-gold);
+    color: white;
+    transform: translateY(-2px);
   }
 
-  .position-card .btn-green {
-    background: #0eaa28;
-    color: #ffffff;
+  .btn-green {
+    background: var(--primary-green);
+    color: white;
     border: none;
-    padding: 7px 18px;
-    border-radius: 6px;
+    padding: 8px 20px;
+    border-radius: 50px;
     font-size: 13px;
-    font-weight: 500;
-    transition: all 0.25s;
+    font-weight: 600;
+    transition: all 0.3s;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
   }
 
-  .position-card .btn-green:hover {
-    background: #09851f;
-    color: #ffffff;
+  .btn-green:hover {
+    background: var(--hover-gold);
+    color: white;
+    transform: translateY(-2px);
   }
 
   .filter-btn {
     background: transparent;
-    border: 1px solid #dee2e6;
-    padding: 7px 20px;
-    margin: 0 4px 8px;
-    border-radius: 30px;
+    border: 2px solid rgba(5, 150, 82, 0.2);
+    padding: 8px 24px;
+    margin: 0 4px 10px;
+    border-radius: 50px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
-    color: var(--default-color);
+    color: var(--text-dark);
   }
 
   .filter-btn:hover,
   .filter-btn.active {
-    background: #0eaa28;
-    color: #ffffff;
-    border-color: #0eaa28;
+    background: var(--primary-green);
+    color: white;
+    border-color: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(5, 150, 82, 0.3);
+  }
+
+  .process-step {
+    text-align: center;
   }
 
   .process-step .step-number {
-    width: 58px;
-    height: 58px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-    background: #0eaa28;
-    color: #ffffff;
+    background: var(--primary-green-light);
+    color: var(--primary-green);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: 800;
     margin: 0 auto 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .process-step:hover .step-number {
+    background: var(--hover-gold);
+    color: white;
+    transform: scale(1.1);
   }
 
   .process-step h5 {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
     margin-bottom: 8px;
-    color: var(--heading-color);
+    color: var(--text-dark);
   }
 
   .process-step p {
-    font-size: 14px;
-    color: color-mix(in srgb, var(--default-color), transparent 30%);
+    font-size: 13px;
+    color: var(--text-muted);
     margin: 0;
+    line-height: 1.5;
+  }
+
+  .life-check {
+    transition: all 0.3s ease;
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .life-check:hover {
+    background: var(--primary-green-light);
+    transform: translateX(5px);
   }
 
   .life-check i {
-    color: #0eaa28;
-    font-size: 1.1rem;
+    color: var(--primary-green);
+    font-size: 1.3rem;
     margin-top: 3px;
     flex-shrink: 0;
+    transition: color 0.3s ease;
+  }
+
+  .life-check:hover i {
+    color: var(--hover-gold);
   }
 
   .life-check h5 {
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
     margin-bottom: 4px;
-    color: var(--heading-color);
+    color: var(--text-dark);
   }
 
   .life-check p {
-    font-size: 14px;
-    color: color-mix(in srgb, var(--default-color), transparent 30%);
+    font-size: 13px;
+    color: var(--text-muted);
     margin: 0;
+    line-height: 1.5;
   }
 
   .pagination-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     margin-top: 2rem;
     flex-wrap: wrap;
   }
 
   .page-btn {
-    width: 38px;
-    height: 38px;
-    border-radius: 8px;
-    border: 1px solid #dee2e6;
-    background: var(--surface-color);
-    color: var(--default-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: 2px solid rgba(5, 150, 82, 0.2);
+    background: white;
+    color: var(--text-dark);
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.25s;
     display: flex;
@@ -189,9 +313,9 @@
 
   .page-btn:hover,
   .page-btn.active {
-    background: #0eaa28;
-    color: #ffffff;
-    border-color: #0eaa28;
+    background: var(--primary-green);
+    color: white;
+    border-color: var(--primary-green);
   }
 
   .page-btn.disabled {
@@ -201,14 +325,28 @@
 
   .positions-per-page-info {
     font-size: 13px;
-    color: color-mix(in srgb, var(--default-color), transparent 40%);
+    color: var(--text-muted);
     text-align: center;
-    margin-top: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .accordion-item {
+    border: 1px solid rgba(5, 150, 82, 0.1);
+    border-radius: 16px !important;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+
+  .accordion-button {
+    font-weight: 600;
+    color: var(--text-dark);
+    background: white;
+    padding: 1.2rem 1.5rem;
   }
 
   .accordion-button:not(.collapsed) {
-    background: #0eaa28;
-    color: #ffffff;
+    background: var(--primary-green);
+    color: white;
   }
 
   .accordion-button:not(.collapsed)::after {
@@ -217,87 +355,162 @@
 
   .accordion-button:focus {
     box-shadow: none;
+    border-color: var(--hover-gold);
+  }
+
+  .accordion-body {
+    padding: 1.2rem 1.5rem;
+    color: var(--text-muted);
+    background: #fafbfe;
+  }
+
+  .btn-primary-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--primary-green);
+    color: white;
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-green);
+  }
+
+  .btn-primary-large:hover {
+    background: transparent;
+    color: var(--hover-gold);
+    border-color: var(--hover-gold);
+    transform: translateY(-3px);
+  }
+
+  .btn-outline-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--text-dark);
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(5, 150, 82, 0.3);
+  }
+
+  .btn-outline-large:hover {
+    border-color: var(--hover-gold);
+    color: var(--hover-gold);
+    transform: translateY(-3px);
   }
 </style>
 {% endblock %}
 
 {% block page_title %}
-<div class="page-title dark-background" data-aos="fade"
-     style="background-image: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&q=80');">
-  <div class="container position-relative">
-    <h1>Join Our Team</h1>
-    <p>Build your career with Radiant Infotech and help shape the future of software development and digital signature solutions in Nepal.</p>
-    <nav class="breadcrumbs">
-      <ol>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li class="current">Careers</li>
-      </ol>
-    </nav>
+<!-- Redesigned Hero Section -->
+<div class="hero-section" data-aos="fade">
+  <div class="hero-background">
+    <div class="hero-overlay"></div>
+    <div class="hero-pattern"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge" data-aos="fade-up" data-aos-delay="100">
+        <span class="badge-dot"></span>
+        <span>Join Our Team</span>
+        <span class="badge-dot"></span>
+      </div>
+      <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+        Build Your <span class="highlight">Career</span>
+      </h1>
+      <div class="hero-divider" data-aos="fade-up" data-aos-delay="250">
+        <span></span>
+        <i class="bi bi-brightness-alt-high"></i>
+        <span></span>
+      </div>
+      <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+        Build your career with Radiant Infotech and help shape the future of software development and digital signature solutions in Nepal.
+      </p>
+      <div class="hero-breadcrumb" data-aos="fade-up" data-aos-delay="350">
+        <a href="{% url 'home' %}">
+          <i class="bi bi-house-door"></i>
+          Home
+        </a>
+        <i class="bi bi-chevron-right"></i>
+        <span>Careers</span>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
 
 {% block content %}
 
+<!-- Why Join Section -->
 <section class="section">
   <div class="container">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Why Join Radiant Infotech?</h2>
-      <p>We're not just building software — we're building careers, innovation, and future leaders</p>
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-subtitle">Why Work With Us</span>
+      <h2 class="section-title">Join Radiant Infotech</h2>
+      <div class="title-divider"></div>
+      <p class="section-description">We're not just building software — we're building careers, innovation, and future leaders</p>
     </div>
     <div class="row g-4 mt-2">
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
         <div class="benefit-card">
-          <i class="bi bi-rocket-takeoff d-block mb-3" style="font-size:2.5rem;color:var(--accent-color);"></i>
+          <div class="benefit-icon"><i class="bi bi-rocket-takeoff"></i></div>
           <h4>Innovation First</h4>
-          <p style="color:color-mix(in srgb,var(--default-color),transparent 30%);font-size:14px;margin:0;">Work with cutting-edge technologies and contribute to solutions that make a real impact across Nepal and beyond.</p>
+          <p>Work with cutting-edge technologies and contribute to solutions that make a real impact across Nepal and beyond.</p>
         </div>
       </div>
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
         <div class="benefit-card">
-          <i class="bi bi-graph-up-arrow d-block mb-3" style="font-size:2.5rem;color:var(--accent-color);"></i>
+          <div class="benefit-icon"><i class="bi bi-graph-up-arrow"></i></div>
           <h4>Growth Opportunities</h4>
-          <p style="color:color-mix(in srgb,var(--default-color),transparent 30%);font-size:14px;margin:0;">Continuous learning, mentorship programs, and clear career progression paths tailored to your goals.</p>
+          <p>Continuous learning, mentorship programs, and clear career progression paths tailored to your goals.</p>
         </div>
       </div>
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
         <div class="benefit-card">
-          <i class="bi bi-people-fill d-block mb-3" style="font-size:2.5rem;color:var(--accent-color);"></i>
+          <div class="benefit-icon"><i class="bi bi-people-fill"></i></div>
           <h4>Great Culture</h4>
-          <p style="color:color-mix(in srgb,var(--default-color),transparent 30%);font-size:14px;margin:0;">A collaborative, inclusive environment with team outings, hackathons, and celebrations throughout the year.</p>
+          <p>A collaborative, inclusive environment with team outings, hackathons, and celebrations throughout the year.</p>
         </div>
       </div>
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
         <div class="benefit-card">
-          <i class="bi bi-house-heart-fill d-block mb-3" style="font-size:2.5rem;color:var(--accent-color);"></i>
+          <div class="benefit-icon"><i class="bi bi-house-heart-fill"></i></div>
           <h4>Work-Life Balance</h4>
-          <p style="color:color-mix(in srgb,var(--default-color),transparent 30%);font-size:14px;margin:0;">Flexible work hours, hybrid/remote options, and wellness programmes so you thrive professionally and personally.</p>
+          <p>Flexible work hours, hybrid/remote options, and wellness programmes so you thrive professionally and personally.</p>
         </div>
       </div>
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
         <div class="benefit-card">
-          <i class="bi bi-award-fill d-block mb-3" style="font-size:2.5rem;color:var(--accent-color);"></i>
+          <div class="benefit-icon"><i class="bi bi-award-fill"></i></div>
           <h4>Competitive Benefits</h4>
-          <p style="color:color-mix(in srgb,var(--default-color),transparent 30%);font-size:14px;margin:0;">Attractive compensation, health insurance, retirement plans, and performance bonuses for all team members.</p>
+          <p>Attractive compensation, health insurance, retirement plans, and performance bonuses for all team members.</p>
         </div>
       </div>
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
         <div class="benefit-card">
-          <i class="bi bi-globe d-block mb-3" style="font-size:2.5rem;color:var(--accent-color);"></i>
+          <div class="benefit-icon"><i class="bi bi-globe"></i></div>
           <h4>Global Impact</h4>
-          <p style="color:color-mix(in srgb,var(--default-color),transparent 30%);font-size:14px;margin:0;">Work on projects serving clients across Nepal and internationally, solving real-world problems at scale.</p>
+          <p>Work on projects serving clients across Nepal and internationally, solving real-world problems at scale.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Life at Radiant Section -->
 <section class="section light-background">
   <div class="container">
     <div class="row align-items-center g-5">
       <div class="col-lg-6" data-aos="fade-right">
-        <h2 class="mb-3">Life at Radiant Infotech</h2>
-        <p class="lead-text mb-4">More than just a workplace — we're a community of innovators, creators, and problem-solvers.</p>
+        <span class="section-subtitle">Our Culture</span>
+        <h2 class="section-title mb-3">Life at Radiant Infotech</h2>
+        <p class="lead-text mb-4" style="font-size: 1rem;">More than just a workplace — we're a community of innovators, creators, and problem-solvers.</p>
         <div class="d-flex flex-column gap-3">
           <div class="d-flex gap-3 life-check">
             <i class="bi bi-check-circle-fill"></i>
@@ -333,19 +546,19 @@
         <div class="row g-3">
           <div class="col-6">
             <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=80"
-                 class="img-fluid rounded-3 w-100" style="height:180px;object-fit:cover;" alt="Team collaboration">
+                 class="img-fluid rounded-3 w-100" style="height: 180px; object-fit: cover;" alt="Team collaboration">
           </div>
           <div class="col-6">
             <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=400&q=80"
-                 class="img-fluid rounded-3 w-100" style="height:180px;object-fit:cover;" alt="Office celebration">
+                 class="img-fluid rounded-3 w-100" style="height: 180px; object-fit: cover;" alt="Office celebration">
           </div>
           <div class="col-6">
             <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80"
-                 class="img-fluid rounded-3 w-100" style="height:180px;object-fit:cover;" alt="Team meeting">
+                 class="img-fluid rounded-3 w-100" style="height: 180px; object-fit: cover;" alt="Team meeting">
           </div>
           <div class="col-6">
             <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80"
-                 class="img-fluid rounded-3 w-100" style="height:180px;object-fit:cover;" alt="Office culture">
+                 class="img-fluid rounded-3 w-100" style="height: 180px; object-fit: cover;" alt="Office culture">
           </div>
         </div>
       </div>
@@ -353,11 +566,14 @@
   </div>
 </section>
 
+<!-- Open Positions Section -->
 <section class="section" id="open-positions">
   <div class="container">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Open Positions</h2>
-      <p>Join us in building the future of technology in Nepal</p>
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-subtitle">Join Us</span>
+      <h2 class="section-title">Open Positions</h2>
+      <div class="title-divider"></div>
+      <p class="section-description">Join us in building the future of technology in Nepal</p>
     </div>
 
     <div class="text-center mb-4" data-aos="fade-up" data-aos-delay="100">
@@ -374,16 +590,19 @@
         <div class="card-body">
           <div class="row align-items-center">
             <div class="col-lg-8">
-              <div class="d-flex align-items-center gap-2 mb-1">
+              <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
                 <h4>Senior Python / Django Developer</h4>
-                <span class="badge" style="background:#0eaa28;color:#fff;font-size:11px;">Full-time</span>
+                <span class="badge-green">Full-time</span>
               </div>
-              <p class="meta"><i class="bi bi-geo-alt me-1"></i>Naxal, Kathmandu / Remote &nbsp;·&nbsp; 5+ years experience</p>
+              <div class="meta">
+                <span><i class="bi bi-geo-alt"></i> Naxal, Kathmandu / Remote</span>
+                <span><i class="bi bi-briefcase"></i> 5+ years experience</span>
+              </div>
               <p class="desc">Build robust web applications and REST APIs using Django, Python, and modern frameworks.</p>
             </div>
             <div class="col-lg-4 d-flex gap-2 justify-content-lg-end mt-3 mt-lg-0 flex-wrap">
-              <a href="#jobModal1" class="btn-outline-green" data-bs-toggle="modal" data-bs-target="#jobModal1">View Details</a>
-              <a href="{% url 'contact_us' %}" class="btn-green">Apply Now</a>
+              <a href="#jobModal1" class="btn-outline-green" data-bs-toggle="modal" data-bs-target="#jobModal1"><i class="bi bi-eye"></i> View Details</a>
+              <a href="{% url 'contact_us' %}" class="btn-green"><i class="bi bi-send"></i> Apply Now</a>
             </div>
           </div>
         </div>
@@ -393,16 +612,19 @@
         <div class="card-body">
           <div class="row align-items-center">
             <div class="col-lg-8">
-              <div class="d-flex align-items-center gap-2 mb-1">
+              <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
                 <h4>Frontend Developer (React)</h4>
-                <span class="badge" style="background:#0eaa28;color:#fff;font-size:11px;">Full-time</span>
+                <span class="badge-green">Full-time</span>
               </div>
-              <p class="meta"><i class="bi bi-geo-alt me-1"></i>Naxal, Kathmandu / Remote &nbsp;·&nbsp; 3+ years experience</p>
+              <div class="meta">
+                <span><i class="bi bi-geo-alt"></i> Naxal, Kathmandu / Remote</span>
+                <span><i class="bi bi-briefcase"></i> 3+ years experience</span>
+              </div>
               <p class="desc">Create responsive, performant user interfaces with React, Redux, and modern CSS frameworks.</p>
             </div>
             <div class="col-lg-4 d-flex gap-2 justify-content-lg-end mt-3 mt-lg-0 flex-wrap">
-              <a href="#jobModal2" class="btn-outline-green" data-bs-toggle="modal" data-bs-target="#jobModal2">View Details</a>
-              <a href="{% url 'contact_us' %}" class="btn-green">Apply Now</a>
+              <a href="#jobModal2" class="btn-outline-green" data-bs-toggle="modal" data-bs-target="#jobModal2"><i class="bi bi-eye"></i> View Details</a>
+              <a href="{% url 'contact_us' %}" class="btn-green"><i class="bi bi-send"></i> Apply Now</a>
             </div>
           </div>
         </div>
@@ -412,16 +634,19 @@
         <div class="card-body">
           <div class="row align-items-center">
             <div class="col-lg-8">
-              <div class="d-flex align-items-center gap-2 mb-1">
+              <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
                 <h4>Flutter Mobile App Developer</h4>
-                <span class="badge" style="background:#0eaa28;color:#fff;font-size:11px;">Full-time</span>
+                <span class="badge-green">Full-time</span>
               </div>
-              <p class="meta"><i class="bi bi-geo-alt me-1"></i>Naxal, Kathmandu &nbsp;·&nbsp; 2+ years experience</p>
+              <div class="meta">
+                <span><i class="bi bi-geo-alt"></i> Naxal, Kathmandu</span>
+                <span><i class="bi bi-briefcase"></i> 2+ years experience</span>
+              </div>
               <p class="desc">Develop and maintain cross-platform mobile applications using Flutter and Dart for Android and iOS.</p>
             </div>
             <div class="col-lg-4 d-flex gap-2 justify-content-lg-end mt-3 mt-lg-0 flex-wrap">
-              <a href="#jobModal3" class="btn-outline-green" data-bs-toggle="modal" data-bs-target="#jobModal3">View Details</a>
-              <a href="{% url 'contact_us' %}" class="btn-green">Apply Now</a>
+              <a href="#jobModal3" class="btn-outline-green" data-bs-toggle="modal" data-bs-target="#jobModal3"><i class="bi bi-eye"></i> View Details</a>
+              <a href="{% url 'contact_us' %}" class="btn-green"><i class="bi bi-send"></i> Apply Now</a>
             </div>
           </div>
         </div>
@@ -431,16 +656,19 @@
         <div class="card-body">
           <div class="row align-items-center">
             <div class="col-lg-8">
-              <div class="d-flex align-items-center gap-2 mb-1">
+              <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
                 <h4>Digital Signature Solutions Engineer</h4>
-                <span class="badge" style="background:#0eaa28;color:#fff;font-size:11px;">Full-time</span>
+                <span class="badge-green">Full-time</span>
               </div>
-              <p class="meta"><i class="bi bi-geo-alt me-1"></i>Naxal, Kathmandu &nbsp;·&nbsp; 3+ years experience</p>
+              <div class="meta">
+                <span><i class="bi bi-geo-alt"></i> Naxal, Kathmandu</span>
+                <span><i class="bi bi-briefcase"></i> 3+ years experience</span>
+              </div>
               <p class="desc">Develop and enhance our digital signature platform with PKI security and certificate management features.</p>
             </div>
             <div class="col-lg-4 d-flex gap-2 justify-content-lg-end mt-3 mt-lg-0 flex-wrap">
-              <a href="#jobModal4" class="btn-outline-green" data-bs-toggle="modal" data-bs-target="#jobModal4">View Details</a>
-              <a href="{% url 'contact_us' %}" class="btn-green">Apply Now</a>
+              <a href="#jobModal4" class="btn-outline-green" data-bs-toggle="modal" data-bs-target="#jobModal4"><i class="bi bi-eye"></i> View Details</a>
+              <a href="{% url 'contact_us' %}" class="btn-green"><i class="bi bi-send"></i> Apply Now</a>
             </div>
           </div>
         </div>
@@ -450,16 +678,19 @@
         <div class="card-body">
           <div class="row align-items-center">
             <div class="col-lg-8">
-              <div class="d-flex align-items-center gap-2 mb-1">
+              <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
                 <h4>UI/UX Designer</h4>
-                <span class="badge" style="background:#0eaa28;color:#fff;font-size:11px;">Full-time</span>
+                <span class="badge-green">Full-time</span>
               </div>
-              <p class="meta"><i class="bi bi-geo-alt me-1"></i>Naxal, Kathmandu / Remote &nbsp;·&nbsp; 3+ years experience</p>
+              <div class="meta">
+                <span><i class="bi bi-geo-alt"></i> Naxal, Kathmandu / Remote</span>
+                <span><i class="bi bi-briefcase"></i> 3+ years experience</span>
+              </div>
               <p class="desc">Design intuitive, beautiful interfaces for web and mobile applications with a user-centred approach.</p>
             </div>
             <div class="col-lg-4 d-flex gap-2 justify-content-lg-end mt-3 mt-lg-0 flex-wrap">
-              <a href="#jobModal5" class="btn-outline-green" data-bs-toggle="modal" data-bs-target="#jobModal5">View Details</a>
-              <a href="{% url 'contact_us' %}" class="btn-green">Apply Now</a>
+              <a href="#jobModal5" class="btn-outline-green" data-bs-toggle="modal" data-bs-target="#jobModal5"><i class="bi bi-eye"></i> View Details</a>
+              <a href="{% url 'contact_us' %}" class="btn-green"><i class="bi bi-send"></i> Apply Now</a>
             </div>
           </div>
         </div>
@@ -469,16 +700,19 @@
         <div class="card-body">
           <div class="row align-items-center">
             <div class="col-lg-8">
-              <div class="d-flex align-items-center gap-2 mb-1">
+              <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
                 <h4>Graphic Designer</h4>
-                <span class="badge" style="background:#f5c518;color:#1a1a1a;font-size:11px;">Part-time / Full-time</span>
+                <span class="badge-gold">Part-time / Full-time</span>
               </div>
-              <p class="meta"><i class="bi bi-geo-alt me-1"></i>Naxal, Kathmandu &nbsp;·&nbsp; 2+ years experience</p>
+              <div class="meta">
+                <span><i class="bi bi-geo-alt"></i> Naxal, Kathmandu</span>
+                <span><i class="bi bi-briefcase"></i> 2+ years experience</span>
+              </div>
               <p class="desc">Create brand identities, marketing materials, and social media visuals for internal and client projects.</p>
             </div>
             <div class="col-lg-4 d-flex gap-2 justify-content-lg-end mt-3 mt-lg-0 flex-wrap">
-              <a href="#jobModal6" class="btn-outline-green" data-bs-toggle="modal" data-bs-target="#jobModal6">View Details</a>
-              <a href="{% url 'contact_us' %}" class="btn-green">Apply Now</a>
+              <a href="#jobModal6" class="btn-outline-green" data-bs-toggle="modal" data-bs-target="#jobModal6"><i class="bi bi-eye"></i> View Details</a>
+              <a href="{% url 'contact_us' %}" class="btn-green"><i class="bi bi-send"></i> Apply Now</a>
             </div>
           </div>
         </div>
@@ -488,16 +722,19 @@
         <div class="card-body">
           <div class="row align-items-center">
             <div class="col-lg-8">
-              <div class="d-flex align-items-center gap-2 mb-1">
+              <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
                 <h4>Technical Project Manager</h4>
-                <span class="badge" style="background:#0eaa28;color:#fff;font-size:11px;">Full-time</span>
+                <span class="badge-green">Full-time</span>
               </div>
-              <p class="meta"><i class="bi bi-geo-alt me-1"></i>Naxal, Kathmandu &nbsp;·&nbsp; 7+ years experience</p>
+              <div class="meta">
+                <span><i class="bi bi-geo-alt"></i> Naxal, Kathmandu</span>
+                <span><i class="bi bi-briefcase"></i> 7+ years experience</span>
+              </div>
               <p class="desc">Lead cross-functional teams, manage client relationships, and deliver complex software projects on time.</p>
             </div>
             <div class="col-lg-4 d-flex gap-2 justify-content-lg-end mt-3 mt-lg-0 flex-wrap">
-              <a href="#jobModal7" class="btn-outline-green" data-bs-toggle="modal" data-bs-target="#jobModal7">View Details</a>
-              <a href="{% url 'contact_us' %}" class="btn-green">Apply Now</a>
+              <a href="#jobModal7" class="btn-outline-green" data-bs-toggle="modal" data-bs-target="#jobModal7"><i class="bi bi-eye"></i> View Details</a>
+              <a href="{% url 'contact_us' %}" class="btn-green"><i class="bi bi-send"></i> Apply Now</a>
             </div>
           </div>
         </div>
@@ -507,16 +744,19 @@
         <div class="card-body">
           <div class="row align-items-center">
             <div class="col-lg-8">
-              <div class="d-flex align-items-center gap-2 mb-1">
+              <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
                 <h4>Technical Support Engineer</h4>
-                <span class="badge" style="background:#0eaa28;color:#fff;font-size:11px;">Full-time</span>
+                <span class="badge-green">Full-time</span>
               </div>
-              <p class="meta"><i class="bi bi-geo-alt me-1"></i>Naxal, Kathmandu &nbsp;·&nbsp; 2+ years experience</p>
+              <div class="meta">
+                <span><i class="bi bi-geo-alt"></i> Naxal, Kathmandu</span>
+                <span><i class="bi bi-briefcase"></i> 2+ years experience</span>
+              </div>
               <p class="desc">Provide technical support for our digital signature platform and assist enterprise clients with onboarding and issues.</p>
             </div>
             <div class="col-lg-4 d-flex gap-2 justify-content-lg-end mt-3 mt-lg-0 flex-wrap">
-              <a href="#jobModal8" class="btn-outline-green" data-bs-toggle="modal" data-bs-target="#jobModal8">View Details</a>
-              <a href="{% url 'contact_us' %}" class="btn-green">Apply Now</a>
+              <a href="#jobModal8" class="btn-outline-green" data-bs-toggle="modal" data-bs-target="#jobModal8"><i class="bi bi-eye"></i> View Details</a>
+              <a href="{% url 'contact_us' %}" class="btn-green"><i class="bi bi-send"></i> Apply Now</a>
             </div>
           </div>
         </div>
@@ -526,16 +766,19 @@
         <div class="card-body">
           <div class="row align-items-center">
             <div class="col-lg-8">
-              <div class="d-flex align-items-center gap-2 mb-1">
+              <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
                 <h4>Data Entry Operator</h4>
-                <span class="badge" style="background:#f5c518;color:#1a1a1a;font-size:11px;">Contract / Full-time</span>
+                <span class="badge-gold">Contract / Full-time</span>
               </div>
-              <p class="meta"><i class="bi bi-geo-alt me-1"></i>Naxal, Kathmandu &nbsp;·&nbsp; Fresher welcome</p>
+              <div class="meta">
+                <span><i class="bi bi-geo-alt"></i> Naxal, Kathmandu</span>
+                <span><i class="bi bi-briefcase"></i> Fresher welcome</span>
+              </div>
               <p class="desc">Accurate and timely data entry, document digitisation, and database management for client projects.</p>
             </div>
             <div class="col-lg-4 d-flex gap-2 justify-content-lg-end mt-3 mt-lg-0 flex-wrap">
-              <a href="#jobModal9" class="btn-outline-green" data-bs-toggle="modal" data-bs-target="#jobModal9">View Details</a>
-              <a href="{% url 'contact_us' %}" class="btn-green">Apply Now</a>
+              <a href="#jobModal9" class="btn-outline-green" data-bs-toggle="modal" data-bs-target="#jobModal9"><i class="bi bi-eye"></i> View Details</a>
+              <a href="{% url 'contact_us' %}" class="btn-green"><i class="bi bi-send"></i> Apply Now</a>
             </div>
           </div>
         </div>
@@ -549,33 +792,35 @@
   </div>
 </section>
 
+<!-- Fresh Graduates Section -->
 <section class="section light-background">
   <div class="container">
     <div class="row align-items-center g-5">
       <div class="col-lg-8" data-aos="fade-right">
-        <h2 class="mb-3">Fresh Graduates &amp; Interns</h2>
-        <p class="lead-text mb-4">Kickstart your career at Radiant Infotech. We welcome passionate, enthusiastic freshers to join our team.</p>
+        <span class="section-subtitle">Start Your Journey</span>
+        <h2 class="section-title mb-3">Fresh Graduates & Interns</h2>
+        <p class="lead-text mb-4" style="font-size: 1rem;">Kickstart your career at Radiant Infotech. We welcome passionate, enthusiastic freshers to join our team.</p>
         <div class="row g-4">
           <div class="col-md-6">
-            <div class="d-flex gap-3">
-              <i class="bi bi-mortarboard-fill" style="font-size:1.6rem;color:var(--accent-color);flex-shrink:0;margin-top:3px;"></i>
+            <div class="d-flex gap-3 life-check">
+              <i class="bi bi-mortarboard-fill" style="font-size: 1.6rem;"></i>
               <div>
-                <h5 style="font-weight:600;margin-bottom:4px;">Software Trainee</h5>
-                <p style="font-size:14px;color:color-mix(in srgb,var(--default-color),transparent 30%);margin:0;">6-month paid internship with full-time opportunity upon completion</p>
+                <h5>Software Trainee</h5>
+                <p>6-month paid internship with full-time opportunity upon completion</p>
               </div>
             </div>
           </div>
           <div class="col-md-6">
-            <div class="d-flex gap-3">
-              <i class="bi bi-palette-fill" style="font-size:1.6rem;color:var(--accent-color);flex-shrink:0;margin-top:3px;"></i>
+            <div class="d-flex gap-3 life-check">
+              <i class="bi bi-palette-fill" style="font-size: 1.6rem;"></i>
               <div>
-                <h5 style="font-weight:600;margin-bottom:4px;">Design Intern</h5>
-                <p style="font-size:14px;color:color-mix(in srgb,var(--default-color),transparent 30%);margin:0;">Learn from experienced designers on real client projects from day one</p>
+                <h5>Design Intern</h5>
+                <p>Learn from experienced designers on real client projects from day one</p>
               </div>
             </div>
           </div>
         </div>
-        <a href="{% url 'contact_us' %}" class="btn mt-4" style="background:#0eaa28;color:#fff;border:none;padding:10px 26px;border-radius:6px;font-weight:500;">Apply for Internship</a>
+        <a href="{% url 'contact_us' %}" class="btn-primary-large mt-3">Apply for Internship <i class="bi bi-arrow-right"></i></a>
       </div>
       <div class="col-lg-4 text-center" data-aos="fade-left">
         <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&q=80"
@@ -585,13 +830,16 @@
   </div>
 </section>
 
+<!-- Hiring Process Section -->
 <section class="section">
   <div class="container">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Our Hiring Process</h2>
-      <p>Simple, transparent, and designed to bring out the best in you</p>
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-subtitle">How We Hire</span>
+      <h2 class="section-title">Our Hiring Process</h2>
+      <div class="title-divider"></div>
+      <p class="section-description">Simple, transparent, and designed to bring out the best in you</p>
     </div>
-    <div class="row g-4 mt-2 text-center">
+    <div class="row g-4 mt-2">
       <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
         <div class="process-step">
           <div class="step-number">1</div>
@@ -616,7 +864,7 @@
       <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
         <div class="process-step">
           <div class="step-number">4</div>
-          <h5>Offer &amp; Onboarding</h5>
+          <h5>Offer & Onboarding</h5>
           <p>Welcome to the team! Start your journey with us from day one.</p>
         </div>
       </div>
@@ -624,16 +872,19 @@
   </div>
 </section>
 
+<!-- FAQ Section -->
 <section class="section light-background">
   <div class="container">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Frequently Asked Questions</h2>
-      <p>Everything you need to know about joining Radiant Infotech</p>
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-subtitle">Questions</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="title-divider"></div>
+      <p class="section-description">Everything you need to know about joining Radiant Infotech</p>
     </div>
     <div class="row justify-content-center mt-2">
       <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
         <div class="accordion" id="careerFAQ">
-          <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+          <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq1">
                 What is the work culture like at Radiant Infotech?
@@ -643,7 +894,7 @@
               <div class="accordion-body">We foster a collaborative, innovative, and inclusive culture. Regular team events, flexible work hours, and open communication are at the heart of our workplace.</div>
             </div>
           </div>
-          <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+          <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq2">
                 Do you offer remote work options?
@@ -653,7 +904,7 @@
               <div class="accordion-body">Yes. We offer hybrid and remote work options for many positions with flexible hours to ensure a healthy work-life balance.</div>
             </div>
           </div>
-          <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+          <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq3">
                 What learning opportunities do you provide?
@@ -663,7 +914,7 @@
               <div class="accordion-body">We provide learning stipends, sponsor certifications, conduct weekly tech talks, and encourage participation in conferences and workshops.</div>
             </div>
           </div>
-          <div class="accordion-item border-0 shadow-sm rounded-3 overflow-hidden">
+          <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq4">
                 How long is the hiring process?
@@ -679,14 +930,18 @@
   </div>
 </section>
 
+<!-- CTA Section -->
 <section class="section">
   <div class="container text-center" data-aos="fade-up">
-    <h2 class="mb-3">Don't see the right position?</h2>
-    <p class="mb-4" style="font-size:17px;color:color-mix(in srgb,var(--default-color),transparent 25%);">We're always looking for talented individuals. Send us your CV and we'll keep you in mind for future openings.</p>
-    <a href="{% url 'contact_us' %}" class="btn  btn-lg">Send General Application</a>
+    <div class="cta-section">
+      <h2 class="mb-3">Don't see the right position?</h2>
+      <p class="mb-4" style="font-size: 1rem;">We're always looking for talented individuals. Send us your CV and we'll keep you in mind for future openings.</p>
+      <a href="{% url 'contact_us' %}" class="btn-primary-large">Send General Application <i class="bi bi-send"></i></a>
+    </div>
   </div>
 </section>
 
+<!-- Job Modals -->
 {% for i in "123456789"|make_list %}
 <div class="modal fade" id="jobModal{{ forloop.counter }}" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -696,22 +951,260 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
-        <p style="line-height:1.75;color:color-mix(in srgb,var(--default-color),transparent 20%);">Full job description, responsibilities, requirements, and benefit details will be published here. In the meantime, please contact us directly to express your interest in this role.</p>
-        <ul class="list-unstyled mt-3" style="font-size:14px;">
-          <li class="mb-2"><strong>Location:</strong> Naxal, Kathmandu (Hybrid / Remote options available)</li>
-          <li class="mb-2"><strong>Type:</strong> Full-time</li>
-          <li><strong>Apply:</strong> Send your CV to <a href="{% url 'contact_us' %}">our contact page</a> with the job title in the subject line</li>
+        <p style="line-height: 1.75; color: var(--text-muted);">Full job description, responsibilities, requirements, and benefit details will be published here. In the meantime, please contact us directly to express your interest in this role.</p>
+        <ul class="list-unstyled mt-3" style="font-size: 14px;">
+          <li class="mb-2"><strong><i class="bi bi-geo-alt text-success me-1"></i> Location:</strong> Naxal, Kathmandu (Hybrid / Remote options available)</li>
+          <li class="mb-2"><strong><i class="bi bi-briefcase text-success me-1"></i> Type:</strong> Full-time</li>
+          <li><strong><i class="bi bi-envelope text-success me-1"></i> Apply:</strong> Send your CV to <a href="{% url 'contact_us' %}" style="color: var(--primary-green);">our contact page</a> with the job title in the subject line</li>
         </ul>
       </div>
       <div class="modal-footer border-0">
-        <a href="{% url 'contact_us' %}" class="btn btn-success">Apply for This Role</a>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a href="{% url 'contact_us' %}" class="btn-green">Apply for This Role <i class="bi bi-arrow-right"></i></a>
+        <button type="button" class="btn-outline-green" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
 {% endfor %}
 
+<!-- Hero Section CSS -->
+<style>
+  .hero-section {
+    position: relative;
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 120px 0 80px;
+  }
+
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0a2a1a 0%, #0a3a1a 50%, #0a2a1a 100%);
+    z-index: 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(5, 150, 82, 0.3) 0%, transparent 70%);
+    z-index: 1;
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 50px;
+    margin-bottom: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: white;
+  }
+
+  .hero-badge .badge-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--hover-gold);
+    border-radius: 50%;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .hero-title .highlight {
+    color: var(--hover-gold);
+  }
+
+  .hero-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .hero-divider span {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--hover-gold), transparent);
+  }
+
+  .hero-divider i {
+    font-size: 1.2rem;
+    color: var(--hover-gold);
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    margin: 0 auto 32px;
+  }
+
+  .hero-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    padding: 10px 24px;
+    border-radius: 50px;
+    margin: 0 auto;
+    width: fit-content;
+    transition: all 0.3s ease;
+  }
+
+  .hero-breadcrumb:hover {
+    border-color: var(--hover-gold);
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .hero-breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
+  }
+
+  .hero-breadcrumb a:hover {
+    color: var(--hover-gold);
+  }
+
+  .hero-breadcrumb span {
+    color: var(--hover-gold);
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .light-background {
+    background: #fafbfe;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-subtitle {
+    display: inline-block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: var(--primary-green);
+    background: var(--primary-green-light);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .title-divider {
+    width: 60px;
+    height: 4px;
+    background: var(--primary-green);
+    border-radius: 2px;
+    margin: 1rem auto;
+    transition: width 0.3s ease, background 0.3s ease;
+  }
+
+  .section-header:hover .title-divider {
+    width: 100px;
+    background: var(--hover-gold);
+  }
+
+  .section-description {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-muted);
+    font-size: 1rem;
+  }
+
+  .lead-text {
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+    border-radius: 28px;
+    padding: 3rem;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  .cta-section p {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.2rem;
+    }
+    .hero-description {
+      font-size: 1rem;
+    }
+    .hero-section {
+      min-height: 55vh;
+      padding: 100px 0 60px;
+    }
+    .section {
+      padding: 60px 0;
+    }
+    .section-title {
+      font-size: 1.8rem;
+    }
+    .cta-section {
+      padding: 2rem;
+    }
+    .cta-section h2 {
+      font-size: 1.4rem;
+    }
+  }
+</style>
 {% endblock %}
 
 {% block extra_js %}
