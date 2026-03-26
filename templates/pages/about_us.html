@@ -5,23 +5,68 @@
 {% block body_class %}about-page{% endblock %}
 
 {% block page_title %}
-<div class="page-title dark-background" data-aos="fade"
-     style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80');">
-  <div class="container position-relative">
-    <h1>About Us</h1>
-    <p>Providing technology solutions for 22+ years — serving businesses, institutions, and government agencies across Nepal.</p>
-    <nav class="breadcrumbs">
-      <ol>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li class="current">About Us</li>
-      </ol>
-    </nav>
+<!-- Redesigned Hero Section with Modern Design -->
+<div class="hero-section" data-aos="fade">
+  <div class="hero-background">
+    <div class="hero-overlay"></div>
+    <div class="hero-pattern"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge" data-aos="fade-up" data-aos-delay="100">
+        <span class="badge-dot"></span>
+        <span>Est. 2003</span>
+        <span class="badge-dot"></span>
+      </div>
+      <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+        About <span class="highlight">Us</span>
+      </h1>
+      <div class="hero-divider" data-aos="fade-up" data-aos-delay="250">
+        <span></span>
+        <i class="bi bi-brightness-alt-high"></i>
+        <span></span>
+      </div>
+      <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+        Providing technology solutions for 22+ years — serving businesses, institutions, and government agencies across Nepal.
+      </p>
+      <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+        <div class="hero-stat">
+          <div class="hero-stat-number">22+</div>
+          <div class="hero-stat-label">Years of Excellence</div>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">500+</div>
+          <div class="hero-stat-label">Happy Clients</div>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">77</div>
+          <div class="hero-stat-label">Districts Covered</div>
+        </div>
+      </div>
+      <div class="hero-breadcrumb" data-aos="fade-up" data-aos-delay="450">
+        <a href="{% url 'home' %}">
+          <i class="bi bi-house-door"></i>
+          Home
+        </a>
+        <i class="bi bi-chevron-right"></i>
+        <span>About Us</span>
+      </div>
+      <div class="hero-scroll" data-aos="fade-up" data-aos-delay="500">
+        <a href="#about" class="scroll-link">
+          <span>Explore Our Story</span>
+          <i class="bi bi-arrow-down"></i>
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
 
 {% block content %}
 
+<!-- About Section -->
 <section id="about" class="about section">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row align-items-stretch g-5">
@@ -29,12 +74,12 @@
       <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
         <div class="content">
           <div class="d-flex align-items-center gap-2 mb-3" data-aos="fade-right" data-aos-delay="150">
-            <span style="display:inline-block;width:36px;height:2px;background:var(--accent-color);border-radius:2px;"></span>
-            <span style="font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--accent-color);font-family:var(--nav-font);">Who We Are</span>
+            <span class="section-badge-line"></span>
+            <span class="section-badge-text">Who We Are</span>
           </div>
           <h2 class="section-heading mb-3" data-aos="fade-right" data-aos-delay="200">
             Turning Ideas Into<br>
-            <span style="color:var(--accent-color);">Digital Reality</span>
+            <span class="highlight-text">Digital Reality</span>
           </h2>
           <p class="lead-text mb-3" data-aos="fade-right" data-aos-delay="250">
             Radiant InfoTech Nepal Pvt. Ltd. established in 2003, has been delivering end-to-end technology solutions for over 22 years — trusted by small and medium businesses, institutions, banks, hospitals, insurance companies, NGOs, and government agencies across Nepal.
@@ -42,25 +87,46 @@
           <p class="description-text mb-4" data-aos="fade-right" data-aos-delay="280">
             Our background is rooted in web and software development, providing a full range of web, desktop, and digital signature solutions. We believe information technology breaks the traditional boundaries of time and space — enabling businesses to grow commercially, socially, and economically. With expertise in ASP, Java (J2EE), PHP, MSSQL, MySQL, Oracle, and PKI technology, we serve every client with the same standard: excellence.
           </p>
-          <div class="stats-grid mb-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="stat-item">
-              <div class="stat-number">22+</div>
-              <div class="stat-label">Years Experience</div>
+          
+          <!-- Fixed Stats Grid - Properly Sized with No Overflow -->
+          <div class="stats-grid" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="bi bi-calendar-check"></i>
+              </div>
+              <div class="stat-content">
+                <div class="stat-number">22+</div>
+                <div class="stat-label">Years Experience</div>
+                <div class="stat-description">Serving since 2003</div>
+              </div>
             </div>
-            <div class="stat-item">
-              <div class="stat-number">Class 1,2,3</div>
-              <div class="stat-label">Digital Signatures</div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="bi bi-file-earmark-check"></i>
+              </div>
+              <div class="stat-content">
+                <div class="stat-number-small">Class 1,2,3</div>
+                <div class="stat-label">Digital Signatures</div>
+                <div class="stat-description">Government licensed</div>
+              </div>
             </div>
-            <div class="stat-item">
-              <div class="stat-number">PKI Enabled</div>
-              <div class="stat-label">Infrastructure</div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="bi bi-diagram-3"></i>
+              </div>
+              <div class="stat-content">
+                <div class="stat-number">PKI Enabled</div>
+                <div class="stat-label">Infrastructure</div>
+                <div class="stat-description">Primary & DR Sites</div>
+              </div>
             </div>
           </div>
+          
           <div class="cta-section d-flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="350">
-            <a href="{% url 'services' %}" class="cta-link">
+            <a href="{% url 'services' %}" class="cta-link-primary">
               Explore Our Services <i class="bi bi-arrow-right ms-2"></i>
             </a>
-            <a href="{% url 'contact_us' %}" class="cta-link" style="color:var(--heading-color);">
+            <a href="{% url 'contact_us' %}" class="cta-link-secondary">
               Get in Touch <i class="bi bi-arrow-right ms-2"></i>
             </a>
           </div>
@@ -68,15 +134,15 @@
       </div>
 
       <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="200">
-        <div class="image-section" style="padding-bottom:30px;padding-right:20px;">
+        <div class="image-section">
           <div class="main-image">
             <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
                  alt="Radiant Infotech Nepal team" class="img-fluid">
           </div>
           <div class="floating-badge" data-aos="zoom-in" data-aos-delay="500">
             <div class="badge-content">
-              <div style="width:44px;height:44px;border-radius:50%;background:color-mix(in srgb, var(--accent-color), transparent 88%);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <i class="bi bi-shield-lock-fill" style="color:var(--accent-color);font-size:1.3rem;"></i>
+              <div class="badge-icon">
+                <i class="bi bi-shield-lock-fill"></i>
               </div>
               <div class="badge-text">
                 <span class="badge-title">Licensed Certifying</span>
@@ -84,10 +150,9 @@
               </div>
             </div>
           </div>
-          <div data-aos="zoom-in" data-aos-delay="600"
-               style="position:absolute;top:20px;left:-15px;background:var(--accent-color);color:#fff;border-radius:12px;padding:16px 20px;box-shadow:0 8px 30px color-mix(in srgb, var(--accent-color), transparent 60%);text-align:center;">
-            <div style="font-size:1.8rem;font-weight:700;line-height:1;">22+</div>
-            <div style="font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-top:3px;opacity:0.9;">Years of IT<br>Excellence</div>
+          <div class="years-badge" data-aos="zoom-in" data-aos-delay="600">
+            <div class="years-number">22+</div>
+            <div class="years-label">Years of IT<br>Excellence</div>
           </div>
         </div>
       </div>
@@ -96,79 +161,66 @@
   </div>
 </section>
 
+<!-- Company Story Section -->
 <section id="company-story" class="section light-background">
   <div class="container" data-aos="fade-up">
     <div class="section-title">
       <h2>Our Journey</h2>
       <p>From a small team of innovators to a trusted technology partner in Nepal since 2003</p>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;">
-      <div style="position:relative;border-radius:16px;overflow:hidden;min-height:320px;" data-aos="fade-right" data-aos-delay="100"
-           onmouseover="this.querySelector('img').style.transform='scale(1.05)'"
-           onmouseout="this.querySelector('img').style.transform='scale(1)'">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="How We Started"
-             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
-        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(5,15,5,0.92) 0%, rgba(5,15,5,0.2) 60%, transparent 100%);"></div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:32px;">
-          <div style="display:inline-flex;align-items:center;gap:8px;background:var(--accent-color);color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:5px 14px;border-radius:20px;margin-bottom:14px;">
+    <div class="story-grid">
+      <div class="story-card" data-aos="fade-right" data-aos-delay="100">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="How We Started">
+        <div class="story-overlay">
+          <div class="story-badge">
             <i class="bi bi-flag"></i> How We Started
           </div>
-          <p style="color:rgba(255,255,255,0.88);font-size:0.95rem;line-height:1.75;margin:0;">Radiant Infotech Nepal was established in 2003 as a boutique digital agency committed to providing quality digital services. Starting with web application development and software solutions, the company has grown into a full-service technology provider serving individuals, firms, schools, banks, hospitals, insurance companies, NGOs, and government sectors across Nepal and beyond.</p>
+          <p>Radiant Infotech Nepal was established in 2003 as a boutique digital agency committed to providing quality digital services. Starting with web application development and software solutions, the company has grown into a full-service technology provider serving individuals, firms, schools, banks, hospitals, insurance companies, NGOs, and government sectors across Nepal and beyond.</p>
         </div>
       </div>
-      <div style="position:relative;border-radius:16px;overflow:hidden;min-height:320px;" data-aos="fade-left" data-aos-delay="200"
-           onmouseover="this.querySelector('img').style.transform='scale(1.05)'"
-           onmouseout="this.querySelector('img').style.transform='scale(1)'">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80" alt="Where We're Going"
-             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
-        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(5,15,5,0.92) 0%, rgba(5,15,5,0.2) 60%, transparent 100%);"></div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:32px;">
-          <div style="display:inline-flex;align-items:center;gap:8px;background:var(--accent-color);color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:5px 14px;border-radius:20px;margin-bottom:14px;">
+      <div class="story-card" data-aos="fade-left" data-aos-delay="200">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80" alt="Where We're Going">
+        <div class="story-overlay">
+          <div class="story-badge">
             <i class="bi bi-rocket"></i> Where We're Going
           </div>
-          <p style="color:rgba(255,255,255,0.88);font-size:0.95rem;line-height:1.75;margin:0;">Today, we stand at the forefront of digital transformation in Nepal — helping businesses with digital signature certificates, PKI technology, web solutions, software development, graphic design, and ICT consulting. We envision a future where technology seamlessly integrates with every business process across Nepal.</p>
+          <p>Today, we stand at the forefront of digital transformation in Nepal — helping businesses with digital signature certificates, PKI technology, web solutions, software development, graphic design, and ICT consulting. We envision a future where technology seamlessly integrates with every business process across Nepal.</p>
         </div>
       </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);margin-top:24px;border-radius:16px;overflow:hidden;border:1px solid color-mix(in srgb, var(--default-color), transparent 90%);" data-aos="fade-up" data-aos-delay="300">
-      <div style="padding:28px 20px;text-align:center;border-right:1px solid color-mix(in srgb, var(--default-color), transparent 90%);transition:all 0.3s ease;background:var(--surface-color);"
-           onmouseover="this.style.background='var(--accent-color)';this.querySelector('i').style.color='#fff';this.querySelector('h5').style.color='#fff';this.querySelector('small').style.color='rgba(255,255,255,0.85)';"
-           onmouseout="this.style.background='var(--surface-color)';this.querySelector('i').style.color='var(--accent-color)';this.querySelector('h5').style.color='var(--heading-color)';this.querySelector('small').style.color='color-mix(in srgb, var(--default-color), transparent 30%)';">
-        <i class="bi bi-hand-thumbs-up" style="font-size:1.8rem;color:var(--accent-color);margin-bottom:12px;display:block;transition:color 0.3s;"></i>
-        <h5 style="font-weight:700;font-size:0.85rem;color:var(--heading-color);margin-bottom:4px;transition:color 0.3s;text-transform:uppercase;letter-spacing:1px;">Honesty</h5>
-        <small style="font-size:0.75rem;color:color-mix(in srgb, var(--default-color), transparent 30%);line-height:1.5;display:block;transition:color 0.3s;">Transparent in every engagement</small>
+    <!-- Core Values Section with Yellow Hover Effects -->
+    <div class="values-grid" data-aos="fade-up" data-aos-delay="300">
+      <div class="value-item">
+        <i class="bi bi-hand-thumbs-up"></i>
+        <h5>Honesty</h5>
+        <small>Transparent in every engagement</small>
       </div>
-      <div style="padding:28px 20px;text-align:center;border-right:1px solid color-mix(in srgb, var(--default-color), transparent 90%);transition:all 0.3s ease;background:var(--surface-color);"
-           onmouseover="this.style.background='var(--accent-color)';this.querySelector('i').style.color='#fff';this.querySelector('h5').style.color='#fff';this.querySelector('small').style.color='rgba(255,255,255,0.85)';"
-           onmouseout="this.style.background='var(--surface-color)';this.querySelector('i').style.color='var(--accent-color)';this.querySelector('h5').style.color='var(--heading-color)';this.querySelector('small').style.color='color-mix(in srgb, var(--default-color), transparent 30%)';">
-        <i class="bi bi-arrow-up-short" style="font-size:1.8rem;color:var(--accent-color);margin-bottom:12px;display:block;transition:color 0.3s;"></i>
-        <h5 style="font-weight:700;font-size:0.85rem;color:var(--heading-color);margin-bottom:4px;transition:color 0.3s;text-transform:uppercase;letter-spacing:1px;">Fairness</h5>
-        <small style="font-size:0.75rem;color:color-mix(in srgb, var(--default-color), transparent 30%);line-height:1.5;display:block;transition:color 0.3s;">Equal commitment to every client</small>
+      <div class="value-item">
+        <i class="bi bi-arrow-up-short"></i>
+        <h5>Fairness</h5>
+        <small>Equal commitment to every client</small>
       </div>
-      <div style="padding:28px 20px;text-align:center;border-right:1px solid color-mix(in srgb, var(--default-color), transparent 90%);background:var(--accent-color);">
-        <i class="bi bi-patch-check" style="font-size:1.8rem;color:#fff;margin-bottom:12px;display:block;"></i>
-        <h5 style="font-weight:700;font-size:0.85rem;color:#fff;margin-bottom:4px;text-transform:uppercase;letter-spacing:1px;">Quality</h5>
-        <small style="font-size:0.75rem;color:rgba(255,255,255,0.85);line-height:1.5;display:block;">Uncompromising standards always</small>
+      <div class="value-item active">
+        <i class="bi bi-patch-check"></i>
+        <h5>Quality</h5>
+        <small>Uncompromising standards always</small>
       </div>
-      <div style="padding:28px 20px;text-align:center;border-right:1px solid color-mix(in srgb, var(--default-color), transparent 90%);transition:all 0.3s ease;background:var(--surface-color);"
-           onmouseover="this.style.background='var(--accent-color)';this.querySelector('i').style.color='#fff';this.querySelector('h5').style.color='#fff';this.querySelector('small').style.color='rgba(255,255,255,0.85)';"
-           onmouseout="this.style.background='var(--surface-color)';this.querySelector('i').style.color='var(--accent-color)';this.querySelector('h5').style.color='var(--heading-color)';this.querySelector('small').style.color='color-mix(in srgb, var(--default-color), transparent 30%)';">
-        <i class="bi bi-lightning-charge" style="font-size:1.8rem;color:var(--accent-color);margin-bottom:12px;display:block;transition:color 0.3s;"></i>
-        <h5 style="font-weight:700;font-size:0.85rem;color:var(--heading-color);margin-bottom:4px;transition:color 0.3s;text-transform:uppercase;letter-spacing:1px;">Dedication</h5>
-        <small style="font-size:0.75rem;color:color-mix(in srgb, var(--default-color), transparent 30%);line-height:1.5;display:block;transition:color 0.3s;">Fully invested in your success</small>
+      <div class="value-item">
+        <i class="bi bi-lightning-charge"></i>
+        <h5>Dedication</h5>
+        <small>Fully invested in your success</small>
       </div>
-      <div style="padding:28px 20px;text-align:center;transition:all 0.3s ease;background:var(--surface-color);"
-           onmouseover="this.style.background='var(--accent-color)';this.querySelector('i').style.color='#fff';this.querySelector('h5').style.color='#fff';this.querySelector('small').style.color='rgba(255,255,255,0.85)';"
-           onmouseout="this.style.background='var(--surface-color)';this.querySelector('i').style.color='var(--accent-color)';this.querySelector('h5').style.color='var(--heading-color)';this.querySelector('small').style.color='color-mix(in srgb, var(--default-color), transparent 30%)';">
-        <i class="bi bi-graph-up-arrow" style="font-size:1.8rem;color:var(--accent-color);margin-bottom:12px;display:block;transition:color 0.3s;"></i>
-        <h5 style="font-weight:700;font-size:0.85rem;color:var(--heading-color);margin-bottom:4px;transition:color 0.3s;text-transform:uppercase;letter-spacing:1px;">Results</h5>
-        <small style="font-size:0.75rem;color:color-mix(in srgb, var(--default-color), transparent 30%);line-height:1.5;display:block;transition:color 0.3s;">Measurable outcomes that matter</small>
+      <div class="value-item">
+        <i class="bi bi-graph-up-arrow"></i>
+        <h5>Results</h5>
+        <small>Measurable outcomes that matter</small>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Mission & Vision Section -->
 <section id="mission-vision" class="section">
   <div class="container">
     <div class="section-title" data-aos="fade-up">
@@ -177,34 +229,26 @@
     </div>
     <div class="row g-4 mt-2">
       <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-        <div style="border-radius:16px;overflow:hidden;height:100%;position:relative;min-height:320px;"
-             onmouseover="this.querySelector('img').style.transform='scale(1.05)'"
-             onmouseout="this.querySelector('img').style.transform='scale(1)'">
-          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80" alt="Our Mission"
-               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(14,170,40,0.88) 0%, rgba(5,40,10,0.94) 100%);"></div>
-          <div style="position:absolute;inset:0;padding:40px;display:flex;flex-direction:column;justify-content:center;">
-            <div style="width:56px;height:56px;background:rgba(255,255,255,0.15);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
-              <i class="bi bi-bullseye" style="font-size:1.8rem;color:#fff;"></i>
+        <div class="mission-card">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80" alt="Our Mission">
+          <div class="mission-overlay">
+            <div class="mission-icon">
+              <i class="bi bi-bullseye"></i>
             </div>
-            <h3 style="color:#fff;font-size:1.6rem;font-weight:700;margin-bottom:16px;">Our Mission</h3>
-            <p style="color:rgba(255,255,255,0.88);font-size:0.97rem;line-height:1.8;margin:0;">We measure our success by your satisfaction. Our goal is to help people, businesses, organizations, and governments develop solid, functional, and beneficial information-sharing systems through information technology — enabling commercial, social, and economic growth. We work with our clients for the long term to help achieve their goals through quality and consistent value.</p>
+            <h3>Our Mission</h3>
+            <p>We measure our success by your satisfaction. Our goal is to help people, businesses, organizations, and governments develop solid, functional, and beneficial information-sharing systems through information technology — enabling commercial, social, and economic growth. We work with our clients for the long term to help achieve their goals through quality and consistent value.</p>
           </div>
         </div>
       </div>
       <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
-        <div style="border-radius:16px;overflow:hidden;height:100%;position:relative;min-height:320px;"
-             onmouseover="this.querySelector('img').style.transform='scale(1.05)'"
-             onmouseout="this.querySelector('img').style.transform='scale(1)'">
-          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80" alt="Our Vision"
-               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(5,40,10,0.92) 0%, rgba(14,170,40,0.78) 100%);"></div>
-          <div style="position:absolute;inset:0;padding:40px;display:flex;flex-direction:column;justify-content:center;">
-            <div style="width:56px;height:56px;background:rgba(255,255,255,0.15);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
-              <i class="bi bi-eye" style="font-size:1.8rem;color:#fff;"></i>
+        <div class="vision-card">
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80" alt="Our Vision">
+          <div class="vision-overlay">
+            <div class="vision-icon">
+              <i class="bi bi-eye"></i>
             </div>
-            <h3 style="color:#fff;font-size:1.6rem;font-weight:700;margin-bottom:16px;">Our Vision</h3>
-            <p style="color:rgba(255,255,255,0.88);font-size:0.97rem;line-height:1.8;margin:0;">To be the leading technology solutions provider in Nepal, known for technological excellence, unwavering integrity, and transformative impact on businesses. We aim to bridge the gap between traditional business processes and modern technology, enabling organizations to thrive in the digital age.</p>
+            <h3>Our Vision</h3>
+            <p>To be the leading technology solutions provider in Nepal, known for technological excellence, unwavering integrity, and transformative impact on businesses. We aim to bridge the gap between traditional business processes and modern technology, enabling organizations to thrive in the digital age.</p>
           </div>
         </div>
       </div>
@@ -212,6 +256,7 @@
   </div>
 </section>
 
+<!-- Leadership Section -->
 <section id="leadership" class="team section light-background">
   <div class="container" data-aos="fade-up">
     <div class="section-title">
@@ -219,208 +264,1422 @@
       <p>The board of directors guides Radiant Infotech with vision, experience, and an unwavering commitment to client success</p>
     </div>
 
+    <!-- Chairman - Featured -->
     <div class="row justify-content-center mt-4" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-5 col-md-8">
-        <div style="border-radius:16px;overflow:hidden;background:var(--surface-color);border:1px solid color-mix(in srgb, var(--default-color), transparent 88%);transition:all 0.35s ease;"
-             onmouseover="this.style.boxShadow='0 20px 50px color-mix(in srgb, var(--default-color), transparent 82%)';this.style.borderColor='color-mix(in srgb, var(--accent-color), transparent 65%)';"
-             onmouseout="this.style.boxShadow='none';this.style.borderColor='color-mix(in srgb, var(--default-color), transparent 88%)';">
-          <div style="position:relative;overflow:hidden;height:260px;">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&q=80"
-                 alt="Mr. Bhashkar Bhandari — Chairman"
-                 style="width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform 0.5s ease;"
-                 onmouseover="this.style.transform='scale(1.06)'"
-                 onmouseout="this.style.transform='scale(1)'">
-            <div style="position:absolute;inset:0;background:linear-gradient(to top, var(--surface-color) 0%, transparent 55%);"></div>
-            <div style="position:absolute;top:16px;left:50%;transform:translateX(-50%);background:var(--accent-color);color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:5px 16px;border-radius:20px;white-space:nowrap;">Chairman</div>
+        <div class="leadership-card featured">
+          <div class="leadership-image">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&q=80" alt="Mr. Bhashkar Bhandari — Chairman">
+            <div class="leadership-badge">Chairman</div>
           </div>
-          <div style="padding:20px 28px 28px;text-align:center;position:relative;">
-            <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:60px;height:3px;background:var(--accent-color);border-radius:0 0 4px 4px;"></div>
-            <h4 style="font-size:1.2rem;font-weight:700;color:var(--heading-color);margin-bottom:4px;">Mr. Bhashkar Bhandari</h4>
-            <span style="display:block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent-color);margin-bottom:14px;font-family:var(--nav-font);">Chairman &amp; Founder</span>
-            <p style="font-style:italic;font-size:0.85rem;line-height:1.7;color:color-mix(in srgb, var(--default-color), transparent 20%);border-left:3px solid color-mix(in srgb, var(--accent-color), transparent 55%);padding-left:12px;text-align:left;margin-bottom:18px;">"Technology transforms how we think and work. For over two decades, our mission has been to bring enterprise-grade IT solutions to every business and institution in Nepal."</p>
-            <div class="d-flex justify-content-center gap-2">
-              <a href="#" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:color-mix(in srgb, var(--accent-color), transparent 90%);color:var(--accent-color);font-size:15px;text-decoration:none;transition:all 0.3s ease;"
-                 onmouseover="this.style.background='var(--accent-color)';this.style.color='#fff';"
-                 onmouseout="this.style.background='color-mix(in srgb, var(--accent-color), transparent 90%)';this.style.color='var(--accent-color)';"><i class="bi bi-linkedin"></i></a>
-              <a href="#" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:color-mix(in srgb, var(--accent-color), transparent 90%);color:var(--accent-color);font-size:15px;text-decoration:none;transition:all 0.3s ease;"
-                 onmouseover="this.style.background='var(--accent-color)';this.style.color='#fff';"
-                 onmouseout="this.style.background='color-mix(in srgb, var(--accent-color), transparent 90%)';this.style.color='var(--accent-color)';"><i class="bi bi-envelope"></i></a>
+          <div class="leadership-info">
+            <h4>Mr. Bhashkar Bhandari</h4>
+            <span class="designation">Chairman &amp; Founder</span>
+            <p class="quote">"Technology transforms how we think and work. For over two decades, our mission has been to bring enterprise-grade IT solutions to every business and institution in Nepal."</p>
+            <div class="social-links">
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+              <a href="#"><i class="bi bi-envelope"></i></a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div style="display:flex;align-items:center;justify-content:center;gap:0;margin:0 auto;max-width:460px;" data-aos="fade-up" data-aos-delay="150">
-      <div style="flex:1;height:1px;background:color-mix(in srgb, var(--accent-color), transparent 70%);"></div>
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--accent-color);margin:0 8px;flex-shrink:0;"></div>
-      <div style="flex:1;height:1px;background:color-mix(in srgb, var(--accent-color), transparent 70%);"></div>
-    </div>
+    <div class="leadership-divider"></div>
 
+    <!-- MD and Director -->
     <div class="row g-4 justify-content-center" data-aos="fade-up" data-aos-delay="200">
-
       <div class="col-lg-5 col-md-6">
-        <div style="border-radius:16px;overflow:hidden;background:var(--surface-color);border:1px solid color-mix(in srgb, var(--default-color), transparent 88%);transition:all 0.35s ease;"
-             onmouseover="this.style.boxShadow='0 20px 50px color-mix(in srgb, var(--default-color), transparent 82%)';this.style.borderColor='color-mix(in srgb, var(--accent-color), transparent 65%)';"
-             onmouseout="this.style.boxShadow='none';this.style.borderColor='color-mix(in srgb, var(--default-color), transparent 88%)';">
-          <div style="position:relative;overflow:hidden;height:220px;">
-            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=700&q=80"
-                 alt="Mr. Deepak Bhandari — Managing Director"
-                 style="width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform 0.5s ease;"
-                 onmouseover="this.style.transform='scale(1.06)'"
-                 onmouseout="this.style.transform='scale(1)'">
-            <div style="position:absolute;inset:0;background:linear-gradient(to top, var(--surface-color) 0%, transparent 55%);"></div>
-            <div style="position:absolute;top:16px;left:50%;transform:translateX(-50%);background:color-mix(in srgb, var(--accent-color), transparent 15%);color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:5px 16px;border-radius:20px;white-space:nowrap;">Managing Director</div>
+        <div class="leadership-card">
+          <div class="leadership-image">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=700&q=80" alt="Mr. Deepak Bhandari — Managing Director">
+            <div class="leadership-badge">Managing Director</div>
           </div>
-          <div style="padding:18px 24px 24px;text-align:center;position:relative;">
-            <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:50px;height:2px;background:var(--accent-color);border-radius:0 0 4px 4px;"></div>
-            <h4 style="font-size:1.1rem;font-weight:700;color:var(--heading-color);margin-bottom:4px;">Mr. Deepak Bhandari</h4>
-            <span style="display:block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent-color);margin-bottom:12px;font-family:var(--nav-font);">Managing Director</span>
-            <p style="font-style:italic;font-size:0.83rem;line-height:1.7;color:color-mix(in srgb, var(--default-color), transparent 20%);border-left:3px solid color-mix(in srgb, var(--accent-color), transparent 55%);padding-left:10px;text-align:left;margin-bottom:16px;">"Our strength lies in our people and the trust our clients place in us. Every project is an opportunity to deliver something better than expected — that standard has kept clients returning for over two decades."</p>
-            <div class="d-flex justify-content-center gap-2">
-              <a href="#" style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:7px;background:color-mix(in srgb, var(--accent-color), transparent 90%);color:var(--accent-color);font-size:14px;text-decoration:none;transition:all 0.3s ease;"
-                 onmouseover="this.style.background='var(--accent-color)';this.style.color='#fff';"
-                 onmouseout="this.style.background='color-mix(in srgb, var(--accent-color), transparent 90%)';this.style.color='var(--accent-color)';"><i class="bi bi-linkedin"></i></a>
-              <a href="#" style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:7px;background:color-mix(in srgb, var(--accent-color), transparent 90%);color:var(--accent-color);font-size:14px;text-decoration:none;transition:all 0.3s ease;"
-                 onmouseover="this.style.background='var(--accent-color)';this.style.color='#fff';"
-                 onmouseout="this.style.background='color-mix(in srgb, var(--accent-color), transparent 90%)';this.style.color='var(--accent-color)';"><i class="bi bi-envelope"></i></a>
+          <div class="leadership-info">
+            <h4>Mr. Deepak Bhandari</h4>
+            <span class="designation">Managing Director</span>
+            <p class="quote">"Our strength lies in our people and the trust our clients place in us. Every project is an opportunity to deliver something better than expected — that standard has kept clients returning for over two decades."</p>
+            <div class="social-links">
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+              <a href="#"><i class="bi bi-envelope"></i></a>
             </div>
           </div>
         </div>
       </div>
 
       <div class="col-lg-5 col-md-6">
-        <div style="border-radius:16px;overflow:hidden;background:var(--surface-color);border:1px solid color-mix(in srgb, var(--default-color), transparent 88%);transition:all 0.35s ease;"
-             onmouseover="this.style.boxShadow='0 20px 50px color-mix(in srgb, var(--default-color), transparent 82%)';this.style.borderColor='color-mix(in srgb, var(--accent-color), transparent 65%)';"
-             onmouseout="this.style.boxShadow='none';this.style.borderColor='color-mix(in srgb, var(--default-color), transparent 88%)';">
-          <div style="position:relative;overflow:hidden;height:220px;">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=700&q=80"
-                 alt="Mr. Rupendra Kumar Joshi — Director"
-                 style="width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform 0.5s ease;"
-                 onmouseover="this.style.transform='scale(1.06)'"
-                 onmouseout="this.style.transform='scale(1)'">
-            <div style="position:absolute;inset:0;background:linear-gradient(to top, var(--surface-color) 0%, transparent 55%);"></div>
-            <div style="position:absolute;top:16px;left:50%;transform:translateX(-50%);background:color-mix(in srgb, var(--accent-color), transparent 15%);color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:5px 16px;border-radius:20px;white-space:nowrap;">Director</div>
+        <div class="leadership-card">
+          <div class="leadership-image">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=700&q=80" alt="Mr. Rupendra Kumar Joshi — Director">
+            <div class="leadership-badge">Director</div>
           </div>
-          <div style="padding:18px 24px 24px;text-align:center;position:relative;">
-            <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:50px;height:2px;background:var(--accent-color);border-radius:0 0 4px 4px;"></div>
-            <h4 style="font-size:1.1rem;font-weight:700;color:var(--heading-color);margin-bottom:4px;">Mr. Rupendra Kumar Joshi</h4>
-            <span style="display:block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent-color);margin-bottom:12px;font-family:var(--nav-font);">Director</span>
-            <p style="font-style:italic;font-size:0.83rem;line-height:1.7;color:color-mix(in srgb, var(--default-color), transparent 20%);border-left:3px solid color-mix(in srgb, var(--accent-color), transparent 55%);padding-left:10px;text-align:left;margin-bottom:16px;">"Innovation is applying the right technology to solve real problems. At Radiant Infotech, we focus on practical, impactful solutions backed by years of experience."</p>
-            <div class="d-flex justify-content-center gap-2">
-              <a href="#" style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:7px;background:color-mix(in srgb, var(--accent-color), transparent 90%);color:var(--accent-color);font-size:14px;text-decoration:none;transition:all 0.3s ease;"
-                 onmouseover="this.style.background='var(--accent-color)';this.style.color='#fff';"
-                 onmouseout="this.style.background='color-mix(in srgb, var(--accent-color), transparent 90%)';this.style.color='var(--accent-color)';"><i class="bi bi-linkedin"></i></a>
-              <a href="#" style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:7px;background:color-mix(in srgb, var(--accent-color), transparent 90%);color:var(--accent-color);font-size:14px;text-decoration:none;transition:all 0.3s ease;"
-                 onmouseover="this.style.background='var(--accent-color)';this.style.color='#fff';"
-                 onmouseout="this.style.background='color-mix(in srgb, var(--accent-color), transparent 90%)';this.style.color='var(--accent-color)';"><i class="bi bi-envelope"></i></a>
+          <div class="leadership-info">
+            <h4>Mr. Rupendra Kumar Joshi</h4>
+            <span class="designation">Director</span>
+            <p class="quote">"Innovation is applying the right technology to solve real problems. At Radiant Infotech, we focus on practical, impactful solutions backed by years of experience."</p>
+            <div class="social-links">
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+              <a href="#"><i class="bi bi-envelope"></i></a>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
+<!-- Why Choose Us Section -->
 <section id="why-choose-us" class="section">
   <div class="container">
     <div class="section-title" data-aos="fade-up">
       <h2>Why Choose Radiant Infotech</h2>
       <p>What sets us apart in the digital solutions landscape of Nepal</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;">
-      <div data-aos="fade-up" data-aos-delay="100"
-           style="border-radius:14px;padding:32px 28px;border:1px solid color-mix(in srgb, var(--default-color), transparent 90%);background:var(--surface-color);transition:all 0.35s ease;"
-           onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 50px color-mix(in srgb, var(--default-color), transparent 86%)';this.style.borderColor='var(--accent-color)';"
-           onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.borderColor='color-mix(in srgb, var(--default-color), transparent 90%)';">
-        <div style="width:52px;height:52px;background:color-mix(in srgb, var(--accent-color), transparent 88%);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-          <i class="bi bi-shield-lock" style="font-size:1.5rem;color:var(--accent-color);"></i>
+    <div class="features-grid">
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-icon">
+          <i class="bi bi-shield-lock"></i>
         </div>
-        <h4 style="font-size:1.05rem;font-weight:700;color:var(--heading-color);margin-bottom:10px;">Licensed Certifying Authority</h4>
-        <p style="font-size:0.9rem;color:color-mix(in srgb, var(--default-color), transparent 25%);line-height:1.7;margin:0;">Government-licensed authority issuing Class 1, 2, and 3 digital signature certificates with PKI-enabled infrastructure.</p>
+        <h4>Licensed Certifying Authority</h4>
+        <p>Government-licensed authority issuing Class 1, 2, and 3 digital signature certificates with PKI-enabled infrastructure.</p>
       </div>
-      <div data-aos="fade-up" data-aos-delay="150"
-           style="border-radius:14px;padding:32px 28px;border:1px solid color-mix(in srgb, var(--default-color), transparent 90%);background:var(--surface-color);transition:all 0.35s ease;"
-           onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 50px color-mix(in srgb, var(--default-color), transparent 86%)';this.style.borderColor='var(--accent-color)';"
-           onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.borderColor='color-mix(in srgb, var(--default-color), transparent 90%)';">
-        <div style="width:52px;height:52px;background:color-mix(in srgb, var(--accent-color), transparent 88%);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-          <i class="bi bi-code-square" style="font-size:1.5rem;color:var(--accent-color);"></i>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="feature-icon">
+          <i class="bi bi-code-square"></i>
         </div>
-        <h4 style="font-size:1.05rem;font-weight:700;color:var(--heading-color);margin-bottom:10px;">Software & Web Development</h4>
-        <p style="font-size:0.9rem;color:color-mix(in srgb, var(--default-color), transparent 25%);line-height:1.7;margin:0;">Custom software solutions including Lakshya Micro Banking, Finch School Management, and web solutions with ASP, Java, PHP, MSSQL, MySQL, Oracle.</p>
+        <h4>Software & Web Development</h4>
+        <p>Custom software solutions including Lakshya Micro Banking, Finch School Management, and web solutions with ASP, Java, PHP, MSSQL, MySQL, Oracle.</p>
       </div>
-      <div data-aos="fade-up" data-aos-delay="200"
-           style="border-radius:14px;padding:32px 28px;border:1px solid color-mix(in srgb, var(--default-color), transparent 90%);background:var(--surface-color);transition:all 0.35s ease;"
-           onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 50px color-mix(in srgb, var(--default-color), transparent 86%)';this.style.borderColor='var(--accent-color)';"
-           onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.borderColor='color-mix(in srgb, var(--default-color), transparent 90%)';">
-        <div style="width:52px;height:52px;background:color-mix(in srgb, var(--accent-color), transparent 88%);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-          <i class="bi bi-diagram-3" style="font-size:1.5rem;color:var(--accent-color);"></i>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-icon">
+          <i class="bi bi-diagram-3"></i>
         </div>
-        <h4 style="font-size:1.05rem;font-weight:700;color:var(--heading-color);margin-bottom:10px;">PKI Enabled Infrastructure</h4>
-        <p style="font-size:0.9rem;color:color-mix(in srgb, var(--default-color), transparent 25%);line-height:1.7;margin:0;">Complete PKI setup with primary site in Kathmandu and disaster recovery site in Butwal for secure certificate management.</p>
+        <h4>PKI Enabled Infrastructure</h4>
+        <p>Complete PKI setup with primary site in Kathmandu and disaster recovery site in Butwal for secure certificate management.</p>
       </div>
-      <div data-aos="fade-up" data-aos-delay="250"
-           style="border-radius:14px;padding:32px 28px;border:1px solid color-mix(in srgb, var(--default-color), transparent 90%);background:var(--surface-color);transition:all 0.35s ease;"
-           onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 50px color-mix(in srgb, var(--default-color), transparent 86%)';this.style.borderColor='var(--accent-color)';"
-           onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.borderColor='color-mix(in srgb, var(--default-color), transparent 90%)';">
-        <div style="width:52px;height:52px;background:color-mix(in srgb, var(--accent-color), transparent 88%);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-          <i class="bi bi-building" style="font-size:1.5rem;color:var(--accent-color);"></i>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="250">
+        <div class="feature-icon">
+          <i class="bi bi-building"></i>
         </div>
-        <h4 style="font-size:1.05rem;font-weight:700;color:var(--heading-color);margin-bottom:10px;">Management Information Systems</h4>
-        <p style="font-size:0.9rem;color:color-mix(in srgb, var(--default-color), transparent 25%);line-height:1.7;margin:0;">Hotel, Hospital, Cooperative, School Management, HR Payroll, Inventory, and Accounting Systems for diverse industries.</p>
+        <h4>Management Information Systems</h4>
+        <p>Hotel, Hospital, Cooperative, School Management, HR Payroll, Inventory, and Accounting Systems for diverse industries.</p>
       </div>
-      <div data-aos="fade-up" data-aos-delay="300"
-           style="border-radius:14px;padding:32px 28px;border:1px solid color-mix(in srgb, var(--default-color), transparent 90%);background:var(--surface-color);transition:all 0.35s ease;"
-           onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 50px color-mix(in srgb, var(--default-color), transparent 86%)';this.style.borderColor='var(--accent-color)';"
-           onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.borderColor='color-mix(in srgb, var(--default-color), transparent 90%)';">
-        <div style="width:52px;height:52px;background:color-mix(in srgb, var(--accent-color), transparent 88%);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-          <i class="bi bi-palette" style="font-size:1.5rem;color:var(--accent-color);"></i>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="feature-icon">
+          <i class="bi bi-palette"></i>
         </div>
-        <h4 style="font-size:1.05rem;font-weight:700;color:var(--heading-color);margin-bottom:10px;">Graphic Designing</h4>
-        <p style="font-size:0.9rem;color:color-mix(in srgb, var(--default-color), transparent 25%);line-height:1.7;margin:0;">Corporate identity, logo design, brochure design, banner design, and multimedia presentations that make your brand stand out.</p>
+        <h4>Graphic Designing</h4>
+        <p>Corporate identity, logo design, brochure design, banner design, and multimedia presentations that make your brand stand out.</p>
       </div>
-      <div data-aos="fade-up" data-aos-delay="350"
-           style="border-radius:14px;padding:32px 28px;border:1px solid color-mix(in srgb, var(--default-color), transparent 90%);background:var(--surface-color);transition:all 0.35s ease;"
-           onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 50px color-mix(in srgb, var(--default-color), transparent 86%)';this.style.borderColor='var(--accent-color)';"
-           onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.borderColor='color-mix(in srgb, var(--default-color), transparent 90%)';">
-        <div style="width:52px;height:52px;background:color-mix(in srgb, var(--accent-color), transparent 88%);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-          <i class="bi bi-graph-up" style="font-size:1.5rem;color:var(--accent-color);"></i>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="350">
+        <div class="feature-icon">
+          <i class="bi bi-graph-up"></i>
         </div>
-        <h4 style="font-size:1.05rem;font-weight:700;color:var(--heading-color);margin-bottom:10px;">SEO & Digital Marketing</h4>
-        <p style="font-size:0.9rem;color:color-mix(in srgb, var(--default-color), transparent 25%);line-height:1.7;margin:0;">Search engine optimization, email marketing with mass mailing systems, and Facebook advertising to increase visibility.</p>
+        <h4>SEO & Digital Marketing</h4>
+        <p>Search engine optimization, email marketing with mass mailing systems, and Facebook advertising to increase visibility.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Call to Action Section -->
 <section class="call-to-action section dark-background"
          style="background-image:url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1920&q=80');background-size:cover;background-position:center;">
   <div class="container" data-aos="fade-up">
     <div class="row justify-content-center text-center">
       <div class="col-lg-7">
         <div class="action-panel">
-          <div class="panel-content">
-            <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
-              <span style="display:inline-block;width:28px;height:2px;background:var(--accent-color);border-radius:2px;"></span>
-              <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent-color);font-family:var(--nav-font);">Let's Work Together</span>
-              <span style="display:inline-block;width:28px;height:2px;background:var(--accent-color);border-radius:2px;"></span>
-            </div>
-            <h2 style="font-size:2rem;font-weight:700;margin-bottom:16px;">Ready to Transform<br>Your Business?</h2>
-            <p>Let's discuss how our technology solutions can help you achieve your goals. Online support is available for any query.</p>
-            <div class="action-buttons mt-4 d-flex justify-content-center gap-3 flex-wrap">
-              <a href="{% url 'contact_us' %}" class="btn-primary d-inline-flex align-items-center gap-2">
-                <i class="bi bi-telephone"></i> Get in Touch
-              </a>
-              <a href="{% url 'services' %}" class="btn-secondary d-inline-flex align-items-center gap-2">
-                <i class="bi bi-grid-3x3-gap"></i> Our Services
-              </a>
-            </div>
+          <div class="action-badge">
+            <span class="badge-line"></span>
+            <span>Let's Work Together</span>
+            <span class="badge-line"></span>
+          </div>
+          <h2>Ready to Transform<br>Your Business?</h2>
+          <p>Let's discuss how our technology solutions can help you achieve your goals. Online support is available for any query.</p>
+          <div class="action-buttons">
+            <a href="{% url 'contact_us' %}" class="btn-primary">
+              <i class="bi bi-telephone"></i> Get in Touch
+            </a>
+            <a href="{% url 'services' %}" class="btn-secondary">
+              <i class="bi bi-grid-3x3-gap"></i> Our Services
+            </a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Custom CSS with #059652 Green and Yellow/Gold Hover Effects -->
+<style>
+  /* CSS Variables - Green Theme #059652 */
+  :root {
+    --primary-green: #059652;
+    --primary-green-dark: #047a42;
+    --primary-green-light: #e6f4ed;
+    --primary-green-soft: #d0f0e0;
+    --hover-gold: #ffc107;
+    --hover-gold-dark: #e6a800;
+    --text-dark: #1a2c3e;
+    --text-muted: #5a6c7e;
+    --bg-light: #ffffff;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --card-shadow-hover: 0 20px 40px rgba(5, 150, 82, 0.15);
+  }
+
+  /* ============================================
+     REDESIGNED HERO SECTION
+     ============================================ */
+  .hero-section {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 120px 0 80px;
+  }
+
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0a2a1a 0%, #0a3a1a 50%, #0a2a1a 100%);
+    z-index: 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(5, 150, 82, 0.3) 0%, transparent 70%);
+    z-index: 1;
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 50px;
+    margin-bottom: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 1px;
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--hover-gold);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-title .highlight {
+    color: var(--hover-gold);
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero-title .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: rgba(255, 193, 7, 0.3);
+    border-radius: 4px;
+    z-index: -1;
+  }
+
+  .hero-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .hero-divider span {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--hover-gold), transparent);
+  }
+
+  .hero-divider i {
+    font-size: 1.2rem;
+    color: var(--hover-gold);
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+
+  .hero-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat {
+    text-align: center;
+  }
+
+  .hero-stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--hover-gold);
+    line-height: 1.2;
+  }
+
+  .hero-stat-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .hero-stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .hero-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    padding: 10px 24px;
+    border-radius: 50px;
+    margin: 0 auto;
+    width: fit-content;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hero-breadcrumb:hover {
+    border-color: var(--hover-gold);
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .hero-breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
+  }
+
+  .hero-breadcrumb a:hover {
+    color: var(--hover-gold);
+  }
+
+  .hero-breadcrumb i {
+    font-size: 0.9rem;
+  }
+
+  .hero-breadcrumb span {
+    color: var(--hover-gold);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+  }
+
+  .scroll-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+  }
+
+  .scroll-link:hover {
+    color: var(--hover-gold);
+    transform: translateY(5px);
+  }
+
+  .scroll-link i {
+    font-size: 1.2rem;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(10px);
+    }
+  }
+
+  /* ============================================
+     FIXED STATS GRID - NO OVERFLOW
+     ============================================ */
+  .stats-grid {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+  }
+
+  .stat-card {
+    flex: 1;
+    min-width: 150px;
+    background: white;
+    border-radius: 20px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(5, 150, 82, 0.1);
+    box-shadow: var(--card-shadow);
+    cursor: pointer;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--hover-gold);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .stat-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-green-light);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+  }
+
+  .stat-card:hover .stat-icon {
+    background: var(--hover-gold);
+  }
+
+  .stat-icon i {
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    transition: color 0.3s ease;
+  }
+
+  .stat-card:hover .stat-icon i {
+    color: white;
+  }
+
+  .stat-content {
+    width: 100%;
+  }
+
+  .stat-number {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary-green);
+    line-height: 1.3;
+    transition: color 0.3s ease;
+    word-break: keep-all;
+    white-space: normal;
+  }
+
+  .stat-number-small {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--primary-green);
+    line-height: 1.3;
+    transition: color 0.3s ease;
+    word-break: keep-all;
+    white-space: normal;
+  }
+
+  .stat-card:hover .stat-number,
+  .stat-card:hover .stat-number-small {
+    color: var(--hover-gold);
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .stat-description {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  /* Section Styles */
+  .section {
+    padding: 80px 0;
+  }
+
+  .light-background {
+    background: #fafbfe;
+  }
+
+  /* Section Title */
+  .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-title h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-title h2:after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--primary-green);
+    border-radius: 3px;
+    transition: width 0.3s ease, background 0.3s ease;
+  }
+
+  .section-title:hover h2:after {
+    width: 100px;
+    background: var(--hover-gold);
+  }
+
+  .section-title p {
+    max-width: 700px;
+    margin: 1.5rem auto 0;
+    color: var(--text-muted);
+    font-size: 1rem;
+  }
+
+  /* Section Badge */
+  .section-badge-line {
+    display: inline-block;
+    width: 36px;
+    height: 2px;
+    background: var(--primary-green);
+    border-radius: 2px;
+  }
+
+  .section-badge-text {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-green);
+  }
+
+  .section-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+
+  .highlight-text {
+    color: var(--primary-green);
+  }
+
+  .lead-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+  }
+
+  .description-text {
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* CTA Links */
+  .cta-link-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: var(--primary-green);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-green);
+  }
+
+  .cta-link-primary:hover {
+    background: transparent;
+    color: var(--primary-green);
+    transform: translateY(-2px);
+    border-color: var(--hover-gold);
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.2);
+  }
+
+  .cta-link-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: transparent;
+    color: var(--text-dark);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(5, 150, 82, 0.2);
+  }
+
+  .cta-link-secondary:hover {
+    border-color: var(--hover-gold);
+    color: var(--hover-gold);
+    transform: translateY(-2px);
+  }
+
+  /* Image Section */
+  .image-section {
+    position: relative;
+    padding-bottom: 30px;
+    padding-right: 20px;
+  }
+
+  .main-image {
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+  }
+
+  .main-image img {
+    width: 100%;
+    transition: transform 0.5s ease;
+  }
+
+  .main-image:hover img {
+    transform: scale(1.02);
+  }
+
+  .floating-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: white;
+    border-radius: 20px;
+    padding: 1rem 1.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(5, 150, 82, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .floating-badge:hover {
+    border-color: var(--hover-gold);
+    transform: translateY(-3px);
+  }
+
+  .badge-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .badge-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--primary-green-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .floating-badge:hover .badge-icon {
+    background: var(--hover-gold);
+  }
+
+  .badge-icon i {
+    font-size: 1.3rem;
+    color: var(--primary-green);
+    transition: color 0.3s ease;
+  }
+
+  .floating-badge:hover .badge-icon i {
+    color: white;
+  }
+
+  .badge-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    display: block;
+  }
+
+  .badge-subtitle {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+  }
+
+  .years-badge {
+    position: absolute;
+    top: 20px;
+    left: -15px;
+    background: var(--primary-green);
+    color: white;
+    border-radius: 16px;
+    padding: 16px 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(5, 150, 82, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .years-badge:hover {
+    background: var(--hover-gold);
+    transform: translateX(5px);
+    box-shadow: 0 8px 30px rgba(255, 193, 7, 0.4);
+  }
+
+  .years-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .years-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 3px;
+    opacity: 0.9;
+  }
+
+  /* Story Grid */
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .story-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    min-height: 320px;
+    cursor: pointer;
+  }
+
+  .story-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .story-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .story-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .story-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary-green);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    width: fit-content;
+    transition: all 0.3s ease;
+  }
+
+  .story-card:hover .story-badge {
+    background: var(--hover-gold);
+    transform: translateY(-2px);
+  }
+
+  .story-overlay p {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  /* Values Grid with Yellow Hover */
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 24px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(5, 150, 82, 0.1);
+  }
+
+  .value-item {
+    padding: 28px 20px;
+    text-align: center;
+    border-right: 1px solid rgba(5, 150, 82, 0.1);
+    background: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .value-item:last-child {
+    border-right: none;
+  }
+
+  .value-item i {
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    margin-bottom: 12px;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  .value-item h5 {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .value-item small {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  .value-item:hover,
+  .value-item.active {
+    background: var(--primary-green);
+  }
+
+  .value-item:hover i,
+  .value-item.active i {
+    color: var(--hover-gold);
+    transform: scale(1.1);
+  }
+
+  .value-item:hover h5,
+  .value-item.active h5,
+  .value-item:hover small,
+  .value-item.active small {
+    color: white;
+  }
+
+  /* Mission & Vision Cards */
+  .mission-card,
+  .vision-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    height: 100%;
+    min-height: 380px;
+  }
+
+  .mission-card img,
+  .vision-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .mission-card:hover img,
+  .vision-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .mission-overlay,
+  .vision-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(5, 150, 82, 0.92) 0%, rgba(4, 122, 66, 0.96) 100%);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .mission-card:hover .mission-overlay,
+  .vision-card:hover .vision-overlay {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.92) 0%, rgba(230, 168, 0, 0.96) 100%);
+  }
+
+  .mission-icon,
+  .vision-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+  }
+
+  .mission-card:hover .mission-icon,
+  .vision-card:hover .vision-icon {
+    background: rgba(0, 0, 0, 0.2);
+    transform: rotate(10deg);
+  }
+
+  .mission-icon i,
+  .vision-icon i {
+    font-size: 1.8rem;
+    color: white;
+  }
+
+  .mission-overlay h3,
+  .vision-overlay h3 {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .mission-overlay p,
+  .vision-overlay p {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.97rem;
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  /* Leadership Cards */
+  .leadership-card {
+    border-radius: 24px;
+    overflow: hidden;
+    background: white;
+    border: 1px solid rgba(5, 150, 82, 0.1);
+    transition: all 0.35s ease;
+    height: 100%;
+  }
+
+  .leadership-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
+    border-color: var(--hover-gold);
+  }
+
+  .leadership-card.featured {
+    border: 2px solid var(--primary-green);
+  }
+
+  .leadership-card.featured:hover {
+    border-color: var(--hover-gold);
+  }
+
+  .leadership-image {
+    position: relative;
+    overflow: hidden;
+    height: 280px;
+  }
+
+  .leadership-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.5s ease;
+  }
+
+  .leadership-card:hover .leadership-image img {
+    transform: scale(1.06);
+  }
+
+  .leadership-badge {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-green);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 5px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+  }
+
+  .leadership-card:hover .leadership-badge {
+    background: var(--hover-gold);
+    transform: translateX(-50%) translateY(-2px);
+  }
+
+  .leadership-info {
+    padding: 24px;
+    text-align: center;
+    position: relative;
+  }
+
+  .leadership-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--primary-green);
+    border-radius: 0 0 4px 4px;
+    transition: all 0.3s ease;
+  }
+
+  .leadership-card:hover .leadership-info::before {
+    background: var(--hover-gold);
+    width: 80px;
+  }
+
+  .leadership-info h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+
+  .leadership-info .designation {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--primary-green);
+    margin-bottom: 16px;
+    transition: color 0.3s ease;
+  }
+
+  .leadership-card:hover .designation {
+    color: var(--hover-gold);
+  }
+
+  .leadership-info .quote {
+    font-style: italic;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    border-left: 3px solid var(--primary-green-light);
+    padding-left: 12px;
+    text-align: left;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+  }
+
+  .leadership-card:hover .quote {
+    border-left-color: var(--hover-gold);
+  }
+
+  .leadership-info .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .leadership-info .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--primary-green-light);
+    color: var(--primary-green);
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .leadership-info .social-links a:hover {
+    background: var(--hover-gold);
+    color: white;
+    transform: translateY(-3px);
+  }
+
+  .leadership-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin: 2rem auto;
+    max-width: 460px;
+  }
+
+  .leadership-divider::before,
+  .leadership-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(5, 150, 82, 0.3);
+    transition: background 0.3s ease;
+  }
+
+  .leadership-divider:hover::before,
+  .leadership-divider:hover::after {
+    background: var(--hover-gold);
+  }
+
+  /* Features Grid */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .feature-card {
+    border-radius: 20px;
+    padding: 32px 28px;
+    border: 1px solid rgba(5, 150, 82, 0.1);
+    background: white;
+    transition: all 0.35s ease;
+    cursor: pointer;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--card-shadow-hover);
+    border-color: var(--hover-gold);
+  }
+
+  .feature-icon {
+    width: 52px;
+    height: 52px;
+    background: var(--primary-green-light);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover .feature-icon {
+    background: var(--hover-gold);
+    transform: scale(1.05);
+  }
+
+  .feature-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    transition: color 0.3s ease;
+  }
+
+  .feature-card:hover .feature-icon i {
+    color: white;
+  }
+
+  .feature-card h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+  }
+
+  .feature-card:hover h4 {
+    color: var(--hover-gold);
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* Call to Action */
+  .call-to-action {
+    position: relative;
+    padding: 80px 0;
+  }
+
+  .call-to-action::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+  }
+
+  .action-panel {
+    position: relative;
+    z-index: 1;
+  }
+
+  .action-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .action-badge .badge-line {
+    width: 30px;
+    height: 2px;
+    background: var(--primary-green);
+    transition: all 0.3s ease;
+  }
+
+  .action-panel:hover .badge-line {
+    background: var(--hover-gold);
+    width: 50px;
+  }
+
+  .action-badge span:not(.badge-line) {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-green);
+    transition: color 0.3s ease;
+  }
+
+  .action-panel:hover .action-badge span:not(.badge-line) {
+    color: var(--hover-gold);
+  }
+
+  .action-panel h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 16px;
+  }
+
+  .action-panel p {
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--primary-green);
+    color: white;
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-green);
+  }
+
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--hover-gold);
+    border-color: var(--hover-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(255, 193, 7, 0.3);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: white;
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--hover-gold);
+    color: var(--hover-gold);
+    transform: translateY(-3px);
+  }
+
+  /* Responsive */
+  @media (max-width: 991px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .hero-stats {
+      gap: 20px;
+    }
+    
+    .hero-stat-divider {
+      display: none;
+    }
+    
+    .section {
+      padding: 60px 0;
+    }
+    
+    .section-title h2 {
+      font-size: 1.8rem;
+    }
+    
+    .story-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .values-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .value-item {
+      border-right: none;
+      border-bottom: 1px solid rgba(5, 150, 82, 0.1);
+    }
+    
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stats-grid {
+      flex-direction: column;
+    }
+    
+    .stat-card {
+      min-width: auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      min-height: 70vh;
+      padding: 100px 0 60px;
+    }
+    
+    .hero-title {
+      font-size: 2rem;
+    }
+    
+    .hero-title .highlight::after {
+      bottom: 4px;
+      height: 6px;
+    }
+    
+    .hero-description {
+      font-size: 1rem;
+    }
+    
+    .hero-stats {
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .hero-stat-number {
+      font-size: 1.5rem;
+    }
+    
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .action-panel h2 {
+      font-size: 1.5rem;
+    }
+    
+    .action-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .leadership-image {
+      height: 240px;
+    }
+    
+    .hero-scroll {
+      bottom: -40px;
+    }
+  }
+</style>
 
 {% endblock %}
