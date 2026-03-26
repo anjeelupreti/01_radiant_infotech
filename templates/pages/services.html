@@ -7,241 +7,934 @@
 
 {% block content %}
 
-<!-- Page Title -->
-<div class="page-title dark-background" data-aos="fade" style="background-image: url({% static 'img/construction/showcase-2.webp' %});">
-  <div class="container position-relative">
-    <h1>Our Services</h1>
-    <p>Comprehensive software development and digital signature solutions tailored to transform your business operations.</p>
-    <nav class="breadcrumbs">
-      <ol>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li class="current">Services</li>
-      </ol>
-    </nav>
+<!-- Redesigned Hero Section for Services -->
+<div class="services-hero" data-aos="fade">
+  <div class="services-hero-background">
+    <div class="services-hero-overlay"></div>
+    <div class="services-hero-pattern"></div>
+  </div>
+  <div class="container">
+    <div class="services-hero-content">
+      <div class="services-hero-badge" data-aos="fade-up" data-aos-delay="100">
+        <span class="badge-dot"></span>
+        <span>What We Do</span>
+        <span class="badge-dot"></span>
+      </div>
+      <h1 class="services-hero-title" data-aos="fade-up" data-aos-delay="200">
+        Our <span class="highlight">Services</span>
+      </h1>
+      <div class="services-hero-divider" data-aos="fade-up" data-aos-delay="250">
+        <span></span>
+        <i class="bi bi-brightness-alt-high"></i>
+        <span></span>
+      </div>
+      <p class="services-hero-description" data-aos="fade-up" data-aos-delay="300">
+        Comprehensive software development and digital signature solutions tailored to transform your business operations.
+      </p>
+      <div class="services-hero-breadcrumb" data-aos="fade-up" data-aos-delay="350">
+        <a href="{% url 'home' %}">
+          <i class="bi bi-house-door"></i>
+          Home
+        </a>
+        <i class="bi bi-chevron-right"></i>
+        <span>Services</span>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- Services Section -->
-<section id="services" class="services section light-background">
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
+<!-- Main Services Section - All 7 Services -->
+<section id="services" class="services-section">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header text-center">
+      <span class="section-subtitle">Our Expertise</span>
+      <h2 class="section-title">What We Offer</h2>
+      <div class="title-divider"></div>
+      <p class="section-description">End-to-end technology solutions to power your business growth</p>
+    </div>
+
     <div class="services-grid">
-
-      <div class="service-item" data-aos="fade-up" data-aos-delay="150">
-        <div class="service-number">01</div>
-        <div class="service-icon">
-          <i class="bi bi-code-square"></i>
+      <!-- Service 1: Digital Signature -->
+      <div class="service-card featured" data-aos="fade-up" data-aos-delay="100">
+        <div class="featured-badge">
+          <i class="bi bi-star-fill"></i> Most Popular
         </div>
-        <h3>Custom Software Development</h3>
-        <p>Tailored software solutions designed to address your unique business challenges, built with modern technologies and best practices for scalability and performance.</p>
-        <a href="#" class="service-cta">
+        <div class="service-card-number">01</div>
+        <div class="service-card-icon">
+          <i class="bi bi-patch-check-fill"></i>
+        </div>
+        <h3>Digital Signature</h3>
+        <p>Legally compliant, secure digital signature platforms that streamline document workflows, reduce paper usage, and accelerate business processes with Class 1,2,3 certificates.</p>
+        <a href="{% url 'service_detail' slug='digital-signature' %}" class="service-card-link">
           <span>Explore Service</span>
           <i class="bi bi-arrow-right"></i>
         </a>
       </div>
 
-      <div class="service-item" data-aos="fade-up" data-aos-delay="200">
-        <div class="service-number">02</div>
-        <div class="service-icon">
-          <i class="bi bi-pen"></i>
+      <!-- Service 2: Web Development -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="service-card-number">02</div>
+        <div class="service-card-icon">
+          <i class="bi bi-code-slash"></i>
         </div>
-        <h3>Digital Signature Solutions</h3>
-        <p>Legally compliant, secure digital signature platforms that streamline document workflows, reduce paper usage, and accelerate business processes.</p>
-        <a href="#" class="service-cta">
+        <h3>Web Development</h3>
+        <p>From simple websites to complex web applications, we build responsive, high-performance solutions using modern frameworks like Django, React, and Vue.js.</p>
+        <a href="{% url 'service_detail' slug='web-development' %}" class="service-card-link">
           <span>Explore Service</span>
           <i class="bi bi-arrow-right"></i>
         </a>
       </div>
 
-      <div class="service-item featured" data-aos="fade-up" data-aos-delay="250">
-        <div class="featured-badge">Popular</div>
-        <div class="service-number">03</div>
-        <div class="service-icon">
-          <i class="bi bi-phone"></i>
+      <!-- Service 3: Software Development -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-card-number">03</div>
+        <div class="service-card-icon">
+          <i class="bi bi-phone-fill"></i>
         </div>
-        <h3>Mobile App Development</h3>
-        <p>Native and cross-platform mobile applications that deliver exceptional user experiences and help you connect with your customers on the go.</p>
-        <a href="{% url 'contact_us' %}" class="service-cta">
-          <span>Get Quote</span>
-          <i class="bi bi-arrow-right"></i>
-        </a>
-      </div>
-
-      <div class="service-item" data-aos="fade-up" data-aos-delay="300">
-        <div class="service-number">04</div>
-        <div class="service-icon">
-          <i class="bi bi-cloud"></i>
-        </div>
-        <h3>Cloud Solutions</h3>
-        <p>Scalable cloud infrastructure, migration services, and cloud-native application development to enhance flexibility and reduce operational costs.</p>
-        <a href="#" class="service-cta">
+        <h3>Software Development</h3>
+        <p>Custom desktop and enterprise software solutions designed to address your unique business challenges, built with modern technologies for scalability and performance.</p>
+        <a href="{% url 'service_detail' slug='software-development' %}" class="service-card-link">
           <span>Explore Service</span>
           <i class="bi bi-arrow-right"></i>
         </a>
       </div>
 
-      <div class="service-item" data-aos="fade-up" data-aos-delay="350">
-        <div class="service-number">05</div>
-        <div class="service-icon">
-          <i class="bi bi-shield-lock"></i>
+      <!-- Service 4: ICT & IT Support -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="250">
+        <div class="service-card-number">04</div>
+        <div class="service-card-icon">
+          <i class="bi bi-headset"></i>
         </div>
-        <h3>Cybersecurity & Compliance</h3>
-        <p>Comprehensive security assessments, implementation of security protocols, and compliance consulting to protect your digital assets.</p>
-        <a href="#" class="service-cta">
+        <h3>ICT & IT Support</h3>
+        <p>Comprehensive IT support services including help desk, network management, system administration, and proactive maintenance to keep your business running smoothly.</p>
+        <a href="{% url 'service_detail' slug='ict-support' %}" class="service-card-link">
           <span>Explore Service</span>
           <i class="bi bi-arrow-right"></i>
         </a>
       </div>
 
-      <div class="service-item" data-aos="fade-up" data-aos-delay="400">
-        <div class="service-number">06</div>
-        <div class="service-icon">
-          <i class="bi bi-diagram-3"></i>
+      <!-- Service 5: MIS Solutions -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-card-number">05</div>
+        <div class="service-card-icon">
+          <i class="bi bi-graph-up"></i>
         </div>
-        <h3>IT Consulting</h3>
-        <p>Strategic technology consulting to help you make informed decisions, optimize your IT infrastructure, and align technology with business goals.</p>
-        <a href="#" class="service-cta">
+        <h3>Management Information Systems</h3>
+        <p>Comprehensive MIS solutions for hotels, hospitals, cooperatives, schools, HR payroll, inventory, and accounting systems to streamline operations.</p>
+        <a href="{% url 'service_detail' slug='mis-solutions' %}" class="service-card-link">
           <span>Explore Service</span>
           <i class="bi bi-arrow-right"></i>
         </a>
       </div>
 
+      <!-- Service 6: SEO & Digital Marketing -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="350">
+        <div class="service-card-number">06</div>
+        <div class="service-card-icon">
+          <i class="bi bi-megaphone"></i>
+        </div>
+        <h3>SEO & Digital Marketing</h3>
+        <p>Search engine optimization, email marketing with mass mailing systems, and social media advertising to increase visibility and drive business growth.</p>
+        <a href="{% url 'service_detail' slug='digital-marketing' %}" class="service-card-link">
+          <span>Explore Service</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Service 7: Graphics Designing -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-card-number">07</div>
+        <div class="service-card-icon">
+          <i class="bi bi-palette-fill"></i>
+        </div>
+        <h3>Graphics Designing</h3>
+        <p>Corporate identity, logo design, brochure design, banner design, and multimedia presentations that make your brand stand out from the competition.</p>
+        <a href="{% url 'service_detail' slug='graphics-designing' %}" class="service-card-link">
+          <span>Explore Service</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Detailed Services Section -->
-<section id="services-alt" class="services-alt section">
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row g-5">
-
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="service-item">
-          <div class="service-visual">
-            <img src="#" alt="Web Development" class="img-fluid">
-          </div>
-          <div class="service-content">
-            <h3>Web Development</h3>
-            <p>From simple websites to complex web applications, we build responsive, high-performance solutions using modern frameworks like Django, React, and Vue.js. Our web development services ensure your online presence is robust, scalable, and engaging.</p>
-            <a href="#" class="service-link">
-              <span>Learn More</span>
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
-        <div class="service-item">
-          <div class="service-visual">
-            <img src="{% static 'img/construction/project-7.webp' %}" alt="Digital Signature Platform" class="img-fluid">
-          </div>
-          <div class="service-content">
-            <h3>Digital Signature Platform</h3>
-            <p>Our enterprise-grade digital signature solution offers legally binding e-signatures with advanced authentication, audit trails, and integration capabilities. Streamline your document workflows while ensuring compliance with global regulations.</p>
-            <a href="#" class="service-link">
-              <span>Learn More</span>
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-        <div class="service-item">
-          <div class="service-visual">
-            <img src="#" alt="Enterprise Solutions" class="img-fluid">
-          </div>
-          <div class="service-content">
-            <h3>Enterprise Solutions</h3>
-            <p>Comprehensive enterprise software solutions including ERP, CRM, and custom business applications designed to optimize operations, enhance productivity, and drive growth for large organizations.</p>
-            <a href="#" class="service-link">
-              <span>Learn More</span>
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="350">
-        <div class="service-item">
-          <div class="service-visual">
-            <img src="#" alt="UI/UX Design" class="img-fluid">
-          </div>
-          <div class="service-content">
-            <h3>UI/UX Design</h3>
-            <p>User-centered design services that create intuitive, engaging digital experiences. From wireframing to prototyping and user testing, we ensure your applications are not only functional but also delightful to use.</p>
-            <a href="#" class="service-link">
-              <span>Learn More</span>
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
+<section id="services-detailed" class="detailed-services light-background">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header text-center">
+      <span class="section-subtitle">In-Depth Solutions</span>
+      <h2 class="section-title">Explore Our Core Offerings</h2>
+      <div class="title-divider"></div>
+      <p class="section-description">Comprehensive technology solutions designed for modern businesses</p>
     </div>
 
-    <div class="row mt-5" data-aos="fade-up" data-aos-delay="400">
-      <div class="col-lg-12 text-center">
-        <div class="cta-section">
-          <h4>Ready to transform your business with technology?</h4>
-          <p>Get in touch with our team to discuss your requirements and receive a personalized quote for your project.</p>
-          <a href="{% url 'contact_us' %}" class="btn-primary">
-            <span>Get Free Quote</span>
+    <div class="detailed-grid">
+      <div class="detailed-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="detailed-icon">
+          <i class="bi bi-patch-check-fill"></i>
+        </div>
+        <div class="detailed-content">
+          <h3>Digital Signature Platform</h3>
+          <p>Our enterprise-grade digital signature solution offers legally binding e-signatures with advanced authentication, audit trails, and integration capabilities. We issue Class 1, Class 2, and Class 3 digital signature certificates with PKI-enabled infrastructure.</p>
+          <a href="{% url 'service_detail' slug='digital-signature' %}" class="detailed-link">
+            <span>Discover More</span>
             <i class="bi bi-arrow-right"></i>
           </a>
         </div>
+      </div>
+
+      <div class="detailed-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="detailed-icon">
+          <i class="bi bi-code-slash"></i>
+        </div>
+        <div class="detailed-content">
+          <h3>Web & Software Development</h3>
+          <p>From simple websites to complex web applications and enterprise software, we build responsive, high-performance solutions using modern frameworks like Django, React, Vue.js, ASP, Java, PHP, and more. Our custom solutions are built for scalability and performance.</p>
+          <a href="{% url 'service_detail' slug='web-development' %}" class="detailed-link">
+            <span>Discover More</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="detailed-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="detailed-icon">
+          <i class="bi bi-graph-up"></i>
+        </div>
+        <div class="detailed-content">
+          <h3>Management Information Systems</h3>
+          <p>Comprehensive MIS solutions including Lakshya Micro Banking, Finch School Management, Hotel Management, Hospital Management, Cooperative Management, HR Payroll, Inventory, and Accounting Systems for diverse industries.</p>
+          <a href="{% url 'service_detail' slug='mis-solutions' %}" class="detailed-link">
+            <span>Discover More</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="detailed-card" data-aos="fade-up" data-aos-delay="250">
+        <div class="detailed-icon">
+          <i class="bi bi-megaphone"></i>
+        </div>
+        <div class="detailed-content">
+          <h3>SEO & Digital Marketing</h3>
+          <p>Boost your online presence with our comprehensive digital marketing services. We offer search engine optimization, email marketing with mass mailing systems, and Facebook advertising to increase visibility and drive targeted traffic to your business.</p>
+          <a href="{% url 'service_detail' slug='digital-marketing' %}" class="detailed-link">
+            <span>Discover More</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="detailed-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="detailed-icon">
+          <i class="bi bi-headset"></i>
+        </div>
+        <div class="detailed-content">
+          <h3>ICT & IT Support</h3>
+          <p>Comprehensive IT support services including help desk, network management, system administration, hardware support, and proactive maintenance to keep your business running smoothly and efficiently.</p>
+          <a href="{% url 'service_detail' slug='ict-support' %}" class="detailed-link">
+            <span>Discover More</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="detailed-card" data-aos="fade-up" data-aos-delay="350">
+        <div class="detailed-icon">
+          <i class="bi bi-palette-fill"></i>
+        </div>
+        <div class="detailed-content">
+          <h3>Graphics Designing</h3>
+          <p>Professional graphic design services to elevate your brand identity. We specialize in corporate identity, logo design, brochure design, banner design, and multimedia presentations that make your brand stand out.</p>
+          <a href="{% url 'service_detail' slug='graphics-designing' %}" class="detailed-link">
+            <span>Discover More</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-banner" data-aos="fade-up" data-aos-delay="400">
+      <div class="cta-banner-content">
+        <h4>Ready to transform your business with technology?</h4>
+        <p>Get in touch with our team to discuss your requirements and receive a personalized quote for your project.</p>
+        <a href="{% url 'contact_us' %}" class="btn-primary-large">
+          <span>Get Free Quote</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Technology Stack Section -->
-<section class="section light-background">
-  <div class="container">
-    <div class="section-title text-center" data-aos="fade-up">
-      <h2>Our Technology Stack</h2>
-      <p>We work with cutting-edge technologies to deliver robust solutions</p>
+<section id="technology-stack" class="tech-stack">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header text-center">
+      <span class="section-subtitle">Our Toolkit</span>
+      <h2 class="section-title">Technology Stack</h2>
+      <div class="title-divider"></div>
+      <p class="section-description">We work with cutting-edge technologies to deliver robust solutions</p>
     </div>
 
-    <div class="row mt-5 text-center">
-      <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
-        <div class="tech-item p-3">
-          <i class="bi bi-filetype-py" style="font-size: 3rem; color: var(--accent-color);"></i>
-          <p class="mt-2 fw-bold">Python/Django</p>
+    <div class="tech-grid">
+      <div class="tech-item" data-aos="zoom-in" data-aos-delay="100">
+        <div class="tech-icon">
+          <i class="bi bi-filetype-py"></i>
         </div>
+        <h4>Python/Django</h4>
+        <span>Backend Development</span>
       </div>
-      <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="zoom-in" data-aos-delay="150">
-        <div class="tech-item p-3">
-          <i class="bi bi-filetype-js" style="font-size: 3rem; color: var(--accent-color);"></i>
-          <p class="mt-2 fw-bold">JavaScript/React</p>
+      <div class="tech-item" data-aos="zoom-in" data-aos-delay="150">
+        <div class="tech-icon">
+          <i class="bi bi-filetype-js"></i>
         </div>
+        <h4>JavaScript/React</h4>
+        <span>Frontend Development</span>
       </div>
-      <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
-        <div class="tech-item p-3">
-          <i class="bi bi-phone" style="font-size: 3rem; color: var(--accent-color);"></i>
-          <p class="mt-2 fw-bold">Flutter/React Native</p>
+      <div class="tech-item" data-aos="zoom-in" data-aos-delay="200">
+        <div class="tech-icon">
+          <i class="bi bi-filetype-java"></i>
         </div>
+        <h4>Java/J2EE</h4>
+        <span>Enterprise Solutions</span>
       </div>
-      <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="zoom-in" data-aos-delay="250">
-        <div class="tech-item p-3">
-          <i class="bi bi-cloud" style="font-size: 3rem; color: var(--accent-color);"></i>
-          <p class="mt-2 fw-bold">AWS/Azure/GCP</p>
+      <div class="tech-item" data-aos="zoom-in" data-aos-delay="250">
+        <div class="tech-icon">
+          <i class="bi bi-filetype-php"></i>
         </div>
+        <h4>PHP/Laravel</h4>
+        <span>Web Development</span>
       </div>
-      <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
-        <div class="tech-item p-3">
-          <i class="bi bi-database" style="font-size: 3rem; color: var(--accent-color);"></i>
-          <p class="mt-2 fw-bold">PostgreSQL/MongoDB</p>
+      <div class="tech-item" data-aos="zoom-in" data-aos-delay="300">
+        <div class="tech-icon">
+          <i class="bi bi-database"></i>
         </div>
+        <h4>MySQL/PostgreSQL</h4>
+        <span>Databases</span>
       </div>
-      <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="zoom-in" data-aos-delay="350">
-        <div class="tech-item p-3">
-          <i class="bi bi-shield-lock" style="font-size: 3rem; color: var(--accent-color);"></i>
-          <p class="mt-2 fw-bold">Blockchain/Smart Contracts</p>
+      <div class="tech-item" data-aos="zoom-in" data-aos-delay="350">
+        <div class="tech-icon">
+          <i class="bi bi-database"></i>
         </div>
+        <h4>MSSQL/Oracle</h4>
+        <span>Enterprise DB</span>
+      </div>
+      <div class="tech-item" data-aos="zoom-in" data-aos-delay="400">
+        <div class="tech-icon">
+          <i class="bi bi-shield-lock"></i>
+        </div>
+        <h4>PKI Infrastructure</h4>
+        <span>Digital Signatures</span>
+      </div>
+      <div class="tech-item" data-aos="zoom-in" data-aos-delay="450">
+        <div class="tech-icon">
+          <i class="bi bi-cloud"></i>
+        </div>
+        <h4>AWS/Azure/GCP</h4>
+        <span>Cloud Platforms</span>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Custom CSS -->
+<style>
+  /* CSS Variables - Green Theme #059652 */
+  :root {
+    --primary-green: #059652;
+    --primary-green-dark: #047a42;
+    --primary-green-light: #e6f4ed;
+    --primary-green-soft: #d0f0e0;
+    --hover-gold: #ffc107;
+    --hover-gold-dark: #e6a800;
+    --text-dark: #1a2c3e;
+    --text-muted: #5a6c7e;
+    --bg-light: #ffffff;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --card-shadow-hover: 0 20px 40px rgba(5, 150, 82, 0.15);
+  }
+
+  /* ============================================
+     HERO SECTION FOR SERVICES
+     ============================================ */
+  .services-hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 120px 0 80px;
+  }
+
+  .services-hero-background {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0a2a1a 0%, #0a3a1a 50%, #0a2a1a 100%);
+    z-index: 0;
+  }
+
+  .services-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(5, 150, 82, 0.3) 0%, transparent 70%);
+    z-index: 1;
+  }
+
+  .services-hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+  .services-hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .services-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 50px;
+    margin-bottom: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: white;
+  }
+
+  .services-hero-badge .badge-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--hover-gold);
+    border-radius: 50%;
+  }
+
+  .services-hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .services-hero-title .highlight {
+    color: var(--hover-gold);
+  }
+
+  .services-hero-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .services-hero-divider span {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--hover-gold), transparent);
+  }
+
+  .services-hero-divider i {
+    font-size: 1.2rem;
+    color: var(--hover-gold);
+  }
+
+  .services-hero-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    margin: 0 auto 32px;
+  }
+
+  .services-hero-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    padding: 10px 24px;
+    border-radius: 50px;
+    margin: 0 auto;
+    width: fit-content;
+    transition: all 0.3s ease;
+  }
+
+  .services-hero-breadcrumb:hover {
+    border-color: var(--hover-gold);
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .services-hero-breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
+  }
+
+  .services-hero-breadcrumb a:hover {
+    color: var(--hover-gold);
+  }
+
+  .services-hero-breadcrumb span {
+    color: var(--hover-gold);
+  }
+
+  /* ============================================
+     SECTION HEADER STYLES
+     ============================================ */
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-subtitle {
+    display: inline-block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: var(--primary-green);
+    background: var(--primary-green-light);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .title-divider {
+    width: 60px;
+    height: 4px;
+    background: var(--primary-green);
+    border-radius: 2px;
+    margin: 1rem auto;
+  }
+
+  .section-description {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-muted);
+    font-size: 1rem;
+  }
+
+  /* ============================================
+     SERVICES GRID
+     ============================================ */
+  .services-section {
+    padding: 80px 0;
+    background: white;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 24px;
+    padding: 2rem;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(5, 150, 82, 0.1);
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-green), var(--hover-gold));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--hover-gold);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .service-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .service-card-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-green-light);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .service-card-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-green-light);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .service-card:hover .service-card-icon {
+    background: var(--hover-gold);
+  }
+
+  .service-card-icon i {
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    transition: color 0.3s ease;
+  }
+
+  .service-card:hover .service-card-icon i {
+    color: white;
+  }
+
+  .service-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+
+  .service-card-link:hover {
+    gap: 12px;
+    color: var(--hover-gold);
+  }
+
+  .service-card.featured {
+    border: 2px solid var(--primary-green);
+    position: relative;
+  }
+
+  .service-card.featured:hover {
+    border-color: var(--hover-gold);
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--hover-gold);
+    color: var(--text-dark);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .featured-badge i {
+    font-size: 0.7rem;
+  }
+
+  /* ============================================
+     DETAILED SERVICES
+     ============================================ */
+  .detailed-services {
+    padding: 80px 0;
+    background: #fafbfe;
+  }
+
+  .detailed-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .detailed-card {
+    background: white;
+    border-radius: 24px;
+    padding: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(5, 150, 82, 0.1);
+    box-shadow: var(--card-shadow);
+  }
+
+  .detailed-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--hover-gold);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .detailed-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--primary-green-light);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+  }
+
+  .detailed-card:hover .detailed-icon {
+    background: var(--hover-gold);
+  }
+
+  .detailed-icon i {
+    font-size: 2rem;
+    color: var(--primary-green);
+    transition: color 0.3s ease;
+  }
+
+  .detailed-card:hover .detailed-icon i {
+    color: white;
+  }
+
+  .detailed-content h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .detailed-content p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .detailed-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+  }
+
+  .detailed-link:hover {
+    gap: 12px;
+    color: var(--hover-gold);
+  }
+
+  /* CTA Banner */
+  .cta-banner {
+    margin-top: 50px;
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+    border-radius: 28px;
+    padding: 3rem;
+    text-align: center;
+  }
+
+  .cta-banner-content h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-banner-content p {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-primary-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    color: var(--primary-green);
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary-large:hover {
+    background: var(--hover-gold);
+    color: white;
+    transform: translateY(-3px);
+    gap: 16px;
+  }
+
+  /* ============================================
+     TECHNOLOGY STACK
+     ============================================ */
+  .tech-stack {
+    padding: 80px 0;
+    background: white;
+  }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .tech-item {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(5, 150, 82, 0.1);
+    box-shadow: var(--card-shadow);
+    cursor: pointer;
+  }
+
+  .tech-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--hover-gold);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .tech-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--primary-green-light);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .tech-item:hover .tech-icon {
+    background: var(--hover-gold);
+  }
+
+  .tech-icon i {
+    font-size: 2rem;
+    color: var(--primary-green);
+    transition: color 0.3s ease;
+  }
+
+  .tech-item:hover .tech-icon i {
+    color: white;
+  }
+
+  .tech-item h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+  }
+
+  .tech-item span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 991px) {
+    .services-hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .detailed-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .tech-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .section-title {
+      font-size: 1.8rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .services-hero {
+      min-height: 60vh;
+      padding: 100px 0 60px;
+    }
+    
+    .services-hero-title {
+      font-size: 2rem;
+    }
+    
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .tech-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .detailed-card {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .detailed-icon {
+      margin: 0 auto;
+    }
+    
+    .cta-banner {
+      padding: 2rem;
+    }
+    
+    .cta-banner-content h4 {
+      font-size: 1.2rem;
+    }
+  }
+</style>
 
 {% endblock %}

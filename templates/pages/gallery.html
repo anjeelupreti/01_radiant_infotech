@@ -6,65 +6,84 @@
 
 {% block extra_css %}
 <style>
+  /* CSS Variables - Green Theme #059652 */
+  :root {
+    --primary-green: #059652;
+    --primary-green-dark: #047a42;
+    --primary-green-light: #e6f4ed;
+    --primary-green-soft: #d0f0e0;
+    --hover-gold: #ffc107;
+    --hover-gold-dark: #e6a800;
+    --text-dark: #1a2c3e;
+    --text-muted: #5a6c7e;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --card-shadow-hover: 0 20px 40px rgba(5, 150, 82, 0.15);
+  }
+
   .filter-btn {
     background: transparent;
-    border: 1px solid #dee2e6;
-    padding: 8px 22px;
+    border: 2px solid rgba(5, 150, 82, 0.2);
+    padding: 8px 24px;
     margin: 0 4px 10px;
-    border-radius: 30px;
-    font-weight: 500;
+    border-radius: 50px;
+    font-weight: 600;
     font-size: 14px;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     cursor: pointer;
+    color: var(--text-dark);
   }
 
   .filter-btn:hover,
   .filter-btn.active {
-    background: #0eaa28;
+    background: var(--primary-green);
     color: #ffffff;
-    border-color: #0eaa28;
+    border-color: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(5, 150, 82, 0.3);
   }
 
   .project-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 20px;
     overflow: hidden;
-    background: var(--surface-color);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    background: white;
+    box-shadow: var(--card-shadow);
     cursor: pointer;
+    border: 1px solid rgba(5, 150, 82, 0.1);
   }
 
   .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    transform: translateY(-10px);
+    box-shadow: var(--card-shadow-hover);
+    border-color: var(--hover-gold);
   }
 
   .project-image {
     position: relative;
     overflow: hidden;
-    height: 220px;
+    height: 240px;
   }
 
   .project-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    transition: transform 0.5s ease;
   }
 
   .project-card:hover .project-image img {
-    transform: scale(1.06);
+    transform: scale(1.08);
   }
 
   .project-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.68);
+    background: linear-gradient(135deg, rgba(5, 150, 82, 0.85) 0%, rgba(4, 122, 66, 0.85) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
   }
 
   .project-card:hover .project-overlay {
@@ -73,50 +92,81 @@
 
   .project-badge {
     position: absolute;
-    top: 14px;
-    right: 14px;
-    padding: 4px 14px;
-    border-radius: 20px;
+    top: 16px;
+    right: 16px;
+    padding: 5px 14px;
+    border-radius: 30px;
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.5px;
     z-index: 2;
+    background: var(--hover-gold);
+    color: var(--text-dark);
+  }
+
+  .project-badge.featured {
+    background: var(--primary-green);
+    color: white;
   }
 
   .project-info {
-    padding: 18px 20px 20px;
+    padding: 20px;
   }
 
   .project-info h5 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 4px;
-    color: var(--heading-color);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--text-dark);
   }
 
   .project-info .tech {
-    font-size: 13px;
-    color: color-mix(in srgb, var(--default-color), transparent 40%);
-    margin-bottom: 10px;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
   }
 
-  .gallery-item {
-    transition: opacity 0.3s ease, transform 0.3s ease;
+  .project-category-badge {
+    background: var(--primary-green-light);
+    color: var(--primary-green);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .project-view-link {
+    color: var(--primary-green);
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .project-card:hover .project-view-link {
+    color: var(--hover-gold);
+    gap: 8px;
   }
 
   /* Photo Gallery Grid */
   .photo-gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 220px;
-    gap: 12px;
+    grid-auto-rows: 240px;
+    gap: 20px;
   }
 
   .photo-gallery-grid .photo-item {
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+  }
+
+  .photo-gallery-grid .photo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
   }
 
   .photo-gallery-grid .photo-item.wide {
@@ -131,22 +181,22 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    transition: transform 0.5s ease;
   }
 
   .photo-gallery-grid .photo-item:hover img {
-    transform: scale(1.06);
+    transform: scale(1.08);
   }
 
   .photo-gallery-grid .photo-item .photo-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 60%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
     display: flex;
     align-items: flex-end;
-    padding: 18px;
+    padding: 20px;
   }
 
   .photo-gallery-grid .photo-item:hover .photo-overlay {
@@ -156,36 +206,285 @@
   .photo-gallery-grid .photo-item .photo-overlay span {
     color: #ffffff;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.3px;
   }
 
   .photo-gallery-grid .photo-item .zoom-icon {
     position: absolute;
-    top: 14px;
-    right: 14px;
-    width: 36px;
-    height: 36px;
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(4px);
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #ffffff;
-    font-size: 15px;
+    font-size: 18px;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
   }
 
   .photo-gallery-grid .photo-item:hover .zoom-icon {
     opacity: 1;
+    transform: scale(1.1);
+    background: var(--hover-gold);
   }
 
-  @media (max-width: 768px) {
+  /* Stats Cards */
+  .stat-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(5, 150, 82, 0.1);
+  }
+
+  .stat-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--hover-gold);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .stat-card .stat-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-green-light);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .stat-card:hover .stat-icon {
+    background: var(--hover-gold);
+  }
+
+  .stat-card .stat-icon i {
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    transition: color 0.3s ease;
+  }
+
+  .stat-card:hover .stat-icon i {
+    color: white;
+  }
+
+  .stat-card h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-green);
+    margin-bottom: 4px;
+    transition: color 0.3s ease;
+  }
+
+  .stat-card:hover h2 {
+    color: var(--hover-gold);
+  }
+
+  .stat-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  /* Testimonials */
+  .testimonial-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    border-left: 4px solid var(--primary-green);
+    height: 100%;
+    transition: all 0.4s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
+    border-left-color: var(--hover-gold);
+  }
+
+  .testimonial-card .stars i {
+    color: var(--hover-gold);
+    font-size: 14px;
+    margin-right: 2px;
+  }
+
+  .testimonial-card .client-name {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    color: var(--text-dark);
+  }
+
+  .testimonial-card .client-role {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .testimonial-card .client-image {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-green-light);
+    transition: border-color 0.3s ease;
+  }
+
+  .testimonial-card:hover .client-image {
+    border-color: var(--hover-gold);
+  }
+
+  /* Gallery nav tabs */
+  .gallery-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+  }
+
+  .gallery-nav a {
+    padding: 10px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    border: 2px solid rgba(5, 150, 82, 0.2);
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .gallery-nav a.active,
+  .gallery-nav a:hover {
+    background: var(--primary-green);
+    border-color: var(--primary-green);
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  /* Section Header */
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-subtitle {
+    display: inline-block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: var(--primary-green);
+    background: var(--primary-green-light);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .title-divider {
+    width: 60px;
+    height: 4px;
+    background: var(--primary-green);
+    border-radius: 2px;
+    margin: 1rem auto;
+    transition: width 0.3s ease, background 0.3s ease;
+  }
+
+  .section-header:hover .title-divider {
+    width: 100px;
+    background: var(--hover-gold);
+  }
+
+  .section-description {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-muted);
+    font-size: 1rem;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+    border-radius: 28px;
+    padding: 3rem;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .cta-section p {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-primary-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    color: var(--primary-green);
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary-custom:hover {
+    background: var(--hover-gold);
+    color: white;
+    transform: translateY(-3px);
+    gap: 15px;
+  }
+
+  .btn-outline-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: white;
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-outline-custom:hover {
+    border-color: var(--hover-gold);
+    color: var(--hover-gold);
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 991px) {
     .photo-gallery-grid {
       grid-template-columns: repeat(2, 1fr);
-      grid-auto-rows: 160px;
+      grid-auto-rows: 200px;
     }
 
     .photo-gallery-grid .photo-item.wide {
@@ -195,95 +494,68 @@
     .photo-gallery-grid .photo-item.tall {
       grid-row: span 1;
     }
-  }
 
-  @media (max-width: 480px) {
-    .photo-gallery-grid {
-      grid-template-columns: 1fr;
-      grid-auto-rows: 200px;
+    .section-title {
+      font-size: 1.8rem;
     }
   }
 
-  /* Stats Cards */
-  .stat-card {
-    background: var(--surface-color);
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-    padding: 2rem;
-    transition: transform 0.3s ease;
-  }
+  @media (max-width: 768px) {
+    .photo-gallery-grid {
+      grid-template-columns: 1fr;
+      grid-auto-rows: 220px;
+    }
 
-  .stat-card:hover { transform: translateY(-5px); }
+    .filter-btn {
+      padding: 6px 18px;
+      font-size: 12px;
+    }
 
-  .stat-card h2 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: var(--accent-color);
-    margin-bottom: 4px;
-  }
+    .cta-section {
+      padding: 2rem;
+    }
 
-  .stat-card p {
-    font-size: 14px;
-    color: color-mix(in srgb, var(--default-color), transparent 35%);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 0;
-  }
-
-  /* Testimonials */
-  .testimonial-card {
-    background: var(--surface-color);
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-    border-left: 4px solid #0eaa28;
-    height: 100%;
-  }
-
-  .testimonial-card .stars i { color: #f5c518; font-size: 14px; }
-  .testimonial-card .client-name { font-size: 16px; font-weight: 600; margin-bottom: 2px; color: var(--heading-color); }
-  .testimonial-card .client-role { font-size: 13px; color: color-mix(in srgb, var(--default-color), transparent 40%); }
-
-  /* Gallery nav tabs */
-  .gallery-nav {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 50px;
-  }
-
-  .gallery-nav a {
-    padding: 10px 28px;
-    border-radius: 30px;
-    font-weight: 500;
-    font-size: 15px;
-    border: 2px solid #dee2e6;
-    color: var(--default-color);
-    text-decoration: none;
-    transition: all 0.3s;
-  }
-
-  .gallery-nav a.active,
-  .gallery-nav a:hover {
-    background: #0eaa28;
-    border-color: #0eaa28;
-    color: #ffffff;
+    .cta-section h2 {
+      font-size: 1.4rem;
+    }
   }
 </style>
 {% endblock %}
 
 {% block page_title %}
-<div class="page-title dark-background" data-aos="fade"
-     style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80');">
-  <div class="container position-relative">
-    <h1>Gallery & Projects</h1>
-    <p>A look at our work, our team, and our journey — delivering technology solutions since 2003.</p>
-    <nav class="breadcrumbs">
-      <ol>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li class="current">Gallery</li>
-      </ol>
-    </nav>
+<!-- Redesigned Hero Section -->
+<div class="hero-section" data-aos="fade">
+  <div class="hero-background">
+    <div class="hero-overlay"></div>
+    <div class="hero-pattern"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge" data-aos="fade-up" data-aos-delay="100">
+        <span class="badge-dot"></span>
+        <span>Our Work</span>
+        <span class="badge-dot"></span>
+      </div>
+      <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+        Gallery & <span class="highlight">Projects</span>
+      </h1>
+      <div class="hero-divider" data-aos="fade-up" data-aos-delay="250">
+        <span></span>
+        <i class="bi bi-brightness-alt-high"></i>
+        <span></span>
+      </div>
+      <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+        A look at our work, our team, and our journey — delivering technology solutions since 2003.
+      </p>
+      <div class="hero-breadcrumb" data-aos="fade-up" data-aos-delay="350">
+        <a href="{% url 'home' %}">
+          <i class="bi bi-house-door"></i>
+          Home
+        </a>
+        <i class="bi bi-chevron-right"></i>
+        <span>Gallery</span>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
@@ -294,13 +566,15 @@
 <section class="section" id="portfolio">
   <div class="container" data-aos="fade-up">
 
-    <div class="section-title">
-      <h2>Our Portfolio</h2>
-      <p>Showcasing our expertise across different domains and technologies</p>
+    <div class="section-header text-center">
+      <span class="section-subtitle">Our Portfolio</span>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="title-divider"></div>
+      <p class="section-description">Showcasing our expertise across different domains and technologies</p>
     </div>
 
-    <div class="text-center mt-4 mb-2" data-aos="fade-up" data-aos-delay="100">
-      <button class="filter-btn active" data-filter="*">All</button>
+    <div class="text-center mt-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+      <button class="filter-btn active" data-filter="*">All Projects</button>
       <button class="filter-btn" data-filter=".web">Web Solutions</button>
       <button class="filter-btn" data-filter=".software">Software Development</button>
       <button class="filter-btn" data-filter=".signature">Digital Signature</button>
@@ -316,19 +590,19 @@
             <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="E-Commerce Platform">
             <div class="project-overlay">
               <div class="text-center">
-                <h5 class="text-white mb-1">E-Commerce Website</h5>
+                <h5 class="text-white mb-2">E-Commerce Website</h5>
                 <p class="text-white-50 small mb-3">Web Solutions</p>
-                <a href="#projectModal1" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal1"><i class="bi bi-arrows-fullscreen"></i></a>
+                <a href="#projectModal1" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal1"><i class="bi bi-arrows-fullscreen"></i> View</a>
               </div>
             </div>
-            <span class="project-badge bg-success text-white">Featured</span>
+            <span class="project-badge featured">Featured</span>
           </div>
           <div class="project-info">
             <h5>E-Commerce Website</h5>
             <p class="tech">PHP · MySQL · Bootstrap</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Retail</span>
-              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
+              <span class="project-category-badge">Retail</span>
+              <span class="project-view-link">View Details →</span>
             </div>
           </div>
         </div>
@@ -340,19 +614,19 @@
             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Lakshya Micro Banking">
             <div class="project-overlay">
               <div class="text-center">
-                <h5 class="text-white mb-1">Lakshya Micro Banking</h5>
+                <h5 class="text-white mb-2">Lakshya Micro Banking</h5>
                 <p class="text-white-50 small mb-3">Software Development</p>
-                <a href="#projectModal2" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal2"><i class="bi bi-arrows-fullscreen"></i></a>
+                <a href="#projectModal2" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal2"><i class="bi bi-arrows-fullscreen"></i> View</a>
               </div>
             </div>
-            <span class="project-badge bg-primary text-white">Featured</span>
+            <span class="project-badge featured">Featured</span>
           </div>
           <div class="project-info">
             <h5>Lakshya Micro Banking Software</h5>
             <p class="tech">Java · MySQL · Spring Boot</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">FinTech</span>
-              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
+              <span class="project-category-badge">FinTech</span>
+              <span class="project-view-link">View Details →</span>
             </div>
           </div>
         </div>
@@ -364,19 +638,19 @@
             <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80" alt="Digital Signature Platform">
             <div class="project-overlay">
               <div class="text-center">
-                <h5 class="text-white mb-1">Digital Signature Platform</h5>
+                <h5 class="text-white mb-2">Digital Signature Platform</h5>
                 <p class="text-white-50 small mb-3">Digital Signature</p>
-                <a href="#projectModal3" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal3"><i class="bi bi-arrows-fullscreen"></i></a>
+                <a href="#projectModal3" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal3"><i class="bi bi-arrows-fullscreen"></i> View</a>
               </div>
             </div>
-            <span class="project-badge bg-warning text-dark">PKI Enabled</span>
+            <span class="project-badge" style="background: var(--hover-gold); color: var(--text-dark);">PKI Enabled</span>
           </div>
           <div class="project-info">
             <h5>Digital Signature Platform</h5>
             <p class="tech">Python · PKI · Django</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">E-Governance</span>
-              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
+              <span class="project-category-badge">E-Governance</span>
+              <span class="project-view-link">View Details →</span>
             </div>
           </div>
         </div>
@@ -388,9 +662,9 @@
             <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=600&q=80" alt="School Management System">
             <div class="project-overlay">
               <div class="text-center">
-                <h5 class="text-white mb-1">Finch School Management</h5>
+                <h5 class="text-white mb-2">Finch School Management</h5>
                 <p class="text-white-50 small mb-3">MIS Systems</p>
-                <a href="#projectModal4" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal4"><i class="bi bi-arrows-fullscreen"></i></a>
+                <a href="#projectModal4" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal4"><i class="bi bi-arrows-fullscreen"></i> View</a>
               </div>
             </div>
           </div>
@@ -398,8 +672,8 @@
             <h5>Finch School Management System</h5>
             <p class="tech">PHP · MySQL · Laravel</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Education</span>
-              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
+              <span class="project-category-badge">Education</span>
+              <span class="project-view-link">View Details →</span>
             </div>
           </div>
         </div>
@@ -411,9 +685,9 @@
             <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=600&q=80" alt="Mobile Application">
             <div class="project-overlay">
               <div class="text-center">
-                <h5 class="text-white mb-1">Healthcare Mobile App</h5>
+                <h5 class="text-white mb-2">Healthcare Mobile App</h5>
                 <p class="text-white-50 small mb-3">Mobile Applications</p>
-                <a href="#projectModal5" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal5"><i class="bi bi-arrows-fullscreen"></i></a>
+                <a href="#projectModal5" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal5"><i class="bi bi-arrows-fullscreen"></i> View</a>
               </div>
             </div>
           </div>
@@ -421,8 +695,8 @@
             <h5>Healthcare Mobile App</h5>
             <p class="tech">Flutter · Firebase · REST API</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Healthcare</span>
-              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
+              <span class="project-category-badge">Healthcare</span>
+              <span class="project-view-link">View Details →</span>
             </div>
           </div>
         </div>
@@ -434,9 +708,9 @@
             <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="WorkForce Accounting">
             <div class="project-overlay">
               <div class="text-center">
-                <h5 class="text-white mb-1">WorkForce Mini Accounting</h5>
+                <h5 class="text-white mb-2">WorkForce Mini Accounting</h5>
                 <p class="text-white-50 small mb-3">Software Development</p>
-                <a href="#projectModal6" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal6"><i class="bi bi-arrows-fullscreen"></i></a>
+                <a href="#projectModal6" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal6"><i class="bi bi-arrows-fullscreen"></i> View</a>
               </div>
             </div>
           </div>
@@ -444,8 +718,8 @@
             <h5>WorkForce Mini Accounting</h5>
             <p class="tech">C# · .NET · MSSQL</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Accounting</span>
-              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
+              <span class="project-category-badge">Accounting</span>
+              <span class="project-view-link">View Details →</span>
             </div>
           </div>
         </div>
@@ -457,9 +731,9 @@
             <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&q=80" alt="CMS for Tours and Travels">
             <div class="project-overlay">
               <div class="text-center">
-                <h5 class="text-white mb-1">CMS for Tours & Travels</h5>
+                <h5 class="text-white mb-2">CMS for Tours & Travels</h5>
                 <p class="text-white-50 small mb-3">Web Solutions</p>
-                <a href="#projectModal7" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal7"><i class="bi bi-arrows-fullscreen"></i></a>
+                <a href="#projectModal7" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal7"><i class="bi bi-arrows-fullscreen"></i> View</a>
               </div>
             </div>
           </div>
@@ -467,8 +741,8 @@
             <h5>CMS for Tours & Travels</h5>
             <p class="tech">PHP · MySQL · Bootstrap</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Travel & Tourism</span>
-              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
+              <span class="project-category-badge">Travel & Tourism</span>
+              <span class="project-view-link">View Details →</span>
             </div>
           </div>
         </div>
@@ -480,9 +754,9 @@
             <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" alt="Hospital Management System">
             <div class="project-overlay">
               <div class="text-center">
-                <h5 class="text-white mb-1">Hospital Management System</h5>
+                <h5 class="text-white mb-2">Hospital Management System</h5>
                 <p class="text-white-50 small mb-3">MIS Systems</p>
-                <a href="#projectModal8" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal8"><i class="bi bi-arrows-fullscreen"></i></a>
+                <a href="#projectModal8" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal8"><i class="bi bi-arrows-fullscreen"></i> View</a>
               </div>
             </div>
           </div>
@@ -490,8 +764,8 @@
             <h5>Hospital Management System</h5>
             <p class="tech">Java · Oracle · Spring Boot</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Healthcare</span>
-              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
+              <span class="project-category-badge">Healthcare</span>
+              <span class="project-view-link">View Details →</span>
             </div>
           </div>
         </div>
@@ -503,9 +777,9 @@
             <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="DSIGNER Component Tool">
             <div class="project-overlay">
               <div class="text-center">
-                <h5 class="text-white mb-1">DSIGNER Component Tool</h5>
+                <h5 class="text-white mb-2">DSIGNER Component Tool</h5>
                 <p class="text-white-50 small mb-3">Digital Signature Product</p>
-                <a href="#projectModal9" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal9"><i class="bi bi-arrows-fullscreen"></i></a>
+                <a href="#projectModal9" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectModal9"><i class="bi bi-arrows-fullscreen"></i> View</a>
               </div>
             </div>
           </div>
@@ -513,8 +787,8 @@
             <h5>DSIGNER Component Tool</h5>
             <p class="tech">PKI · API · Windows</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="badge" style="background:color-mix(in srgb,var(--accent-color),transparent 85%);color:var(--accent-color);">Document Signing</span>
-              <span style="color:var(--accent-color);font-size:13px;font-weight:500;">View Details →</span>
+              <span class="project-category-badge">Document Signing</span>
+              <span class="project-view-link">View Details →</span>
             </div>
           </div>
         </div>
@@ -528,9 +802,11 @@
 <section class="section light-background" id="company-gallery">
   <div class="container" data-aos="fade-up">
 
-    <div class="section-title">
-      <h2>Inside Radiant Infotech</h2>
-      <p>Our office, our team, our events — a glimpse into who we are beyond our work</p>
+    <div class="section-header text-center">
+      <span class="section-subtitle">Behind the Scenes</span>
+      <h2 class="section-title">Inside Radiant Infotech</h2>
+      <div class="title-divider"></div>
+      <p class="section-description">Our office, our team, our events — a glimpse into who we are beyond our work</p>
     </div>
 
     <div class="photo-gallery-grid mt-4" data-aos="fade-up" data-aos-delay="100">
@@ -593,8 +869,8 @@
 
     </div>
 
-    <p class="text-center mt-4" style="font-size:14px;color:color-mix(in srgb,var(--default-color),transparent 40%);">
-      Replace these placeholder images with actual photos of your office, team, and events by updating the <code>src</code> and <code>href</code> attributes.
+    <p class="text-center mt-4 text-muted small">
+      <i class="bi bi-info-circle"></i> Replace these placeholder images with actual photos of your office, team, and events
     </p>
 
   </div>
@@ -603,35 +879,37 @@
 <!-- SECTION 3 — STATS -->
 <section class="section">
   <div class="container">
-    <div class="section-title" data-aos="fade-up">
-      <h2>By the Numbers</h2>
-      <p>Our track record across 22+ years of delivering technology solutions</p>
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-subtitle">Our Impact</span>
+      <h2 class="section-title">By the Numbers</h2>
+      <div class="title-divider"></div>
+      <p class="section-description">Our track record across 22+ years of delivering technology solutions</p>
     </div>
-    <div class="row g-4 mt-2 text-center">
+    <div class="row g-4 mt-2">
       <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
         <div class="stat-card">
-          <i class="bi bi-code-square d-block mb-3" style="font-size:2.2rem;color:var(--accent-color);"></i>
+          <div class="stat-icon"><i class="bi bi-calendar-check"></i></div>
           <h2>22+</h2>
           <p>Years Experience</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
         <div class="stat-card">
-          <i class="bi bi-shield-lock d-block mb-3" style="font-size:2.2rem;color:var(--accent-color);"></i>
+          <div class="stat-icon"><i class="bi bi-shield-lock"></i></div>
           <h2>Class 1,2,3</h2>
           <p>Digital Signatures</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
         <div class="stat-card">
-          <i class="bi bi-building d-block mb-3" style="font-size:2.2rem;color:var(--accent-color);"></i>
+          <div class="stat-icon"><i class="bi bi-building"></i></div>
           <h2>15+</h2>
           <p>MIS Solutions</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
         <div class="stat-card">
-          <i class="bi bi-diagram-3 d-block mb-3" style="font-size:2.2rem;color:var(--accent-color);"></i>
+          <div class="stat-icon"><i class="bi bi-diagram-3"></i></div>
           <h2>PKI Enabled</h2>
           <p>Infrastructure</p>
         </div>
@@ -643,23 +921,24 @@
 <!-- SECTION 4 — TESTIMONIALS -->
 <section class="section light-background">
   <div class="container">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Client Success Stories</h2>
-      <p>Hear from our satisfied clients about their project experience</p>
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-subtitle">Client Feedback</span>
+      <h2 class="section-title">Success Stories</h2>
+      <div class="title-divider"></div>
+      <p class="section-description">Hear from our satisfied clients about their project experience</p>
     </div>
     <div class="row g-4 mt-2">
       <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
         <div class="testimonial-card">
           <div class="d-flex align-items-center mb-3">
             <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80"
-                 alt="Client" class="rounded-circle me-3"
-                 style="width:56px;height:56px;object-fit:cover;">
+                 alt="Client" class="client-image me-3">
             <div>
               <p class="client-name mb-0">Rajesh Kumar</p>
               <p class="client-role mb-0">CEO, FinTech Solutions</p>
             </div>
           </div>
-          <p style="font-size:15px;line-height:1.7;">Radiant Infotech delivered our digital signature platform with PKI infrastructure. The integration was seamless and our clients trust the security. Their 22 years of experience shows in the quality of work.</p>
+          <p style="font-size: 15px; line-height: 1.7;">Radiant Infotech delivered our digital signature platform with PKI infrastructure. The integration was seamless and our clients trust the security. Their 22 years of experience shows in the quality of work.</p>
           <div class="stars mt-2">
             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
           </div>
@@ -669,14 +948,13 @@
         <div class="testimonial-card">
           <div class="d-flex align-items-center mb-3">
             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80"
-                 alt="Client" class="rounded-circle me-3"
-                 style="width:56px;height:56px;object-fit:cover;">
+                 alt="Client" class="client-image me-3">
             <div>
               <p class="client-name mb-0">Priya Sharma</p>
               <p class="client-role mb-0">Director, HealthCare Plus</p>
             </div>
           </div>
-          <p style="font-size:15px;line-height:1.7;">The hospital management system developed by Radiant Infotech has transformed how we manage patient records. Their attention to security and user experience is outstanding.</p>
+          <p style="font-size: 15px; line-height: 1.7;">The hospital management system developed by Radiant Infotech has transformed how we manage patient records. Their attention to security and user experience is outstanding.</p>
           <div class="stars mt-2">
             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
           </div>
@@ -686,14 +964,13 @@
         <div class="testimonial-card">
           <div class="d-flex align-items-center mb-3">
             <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&q=80"
-                 alt="Client" class="rounded-circle me-3"
-                 style="width:56px;height:56px;object-fit:cover;">
+                 alt="Client" class="client-image me-3">
             <div>
               <p class="client-name mb-0">Suresh Bhattarai</p>
               <p class="client-role mb-0">Principal, Everest School</p>
             </div>
           </div>
-          <p style="font-size:15px;line-height:1.7;">Finch School Management System has streamlined our entire academic operations. From student records to fee collection, everything is now automated. Highly recommended!</p>
+          <p style="font-size: 15px; line-height: 1.7;">Finch School Management System has streamlined our entire academic operations. From student records to fee collection, everything is now automated. Highly recommended!</p>
           <div class="stars mt-2">
             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
           </div>
@@ -703,14 +980,13 @@
         <div class="testimonial-card">
           <div class="d-flex align-items-center mb-3">
             <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&q=80"
-                 alt="Client" class="rounded-circle me-3"
-                 style="width:56px;height:56px;object-fit:cover;">
+                 alt="Client" class="client-image me-3">
             <div>
               <p class="client-name mb-0">Anil Thapa</p>
               <p class="client-role mb-0">Manager, Himalayan Travels</p>
             </div>
           </div>
-          <p style="font-size:15px;line-height:1.7;">The CMS for Tours and Travels developed by Radiant Infotech has helped us manage our tour packages efficiently. The booking system and customer management features are excellent.</p>
+          <p style="font-size: 15px; line-height: 1.7;">The CMS for Tours and Travels developed by Radiant Infotech has helped us manage our tour packages efficiently. The booking system and customer management features are excellent.</p>
           <div class="stars mt-2">
             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
           </div>
@@ -722,11 +998,19 @@
 
 <!-- SECTION 5 — CTA -->
 <section class="section">
-  <div class="container text-center" data-aos="fade-up">
-    <h2 class="mb-3">Ready to Start Your Project?</h2>
-    <p class="mb-4" style="font-size:17px;color:color-mix(in srgb,var(--default-color),transparent 25%);">Let's discuss how we can bring your vision to life with our technology solutions.</p>
-    <a href="{% url 'contact_us' %}" class="btn btn-primary btn-lg me-3">Contact Us</a>
-    <a href="{% url 'services' %}" class="btn btn-outline-secondary btn-lg">Explore Services</a>
+  <div class="container">
+    <div class="cta-section" data-aos="fade-up">
+      <h2>Ready to Start Your Project?</h2>
+      <p>Let's discuss how we can bring your vision to life with our technology solutions.</p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="{% url 'contact_us' %}" class="btn-primary-custom">
+          <i class="bi bi-chat-dots"></i> Contact Us
+        </a>
+        <a href="{% url 'services' %}" class="btn-outline-custom">
+          <i class="bi bi-grid-3x3-gap"></i> Explore Services
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -740,21 +1024,172 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
-        <p style="line-height:1.75;color:color-mix(in srgb,var(--default-color),transparent 20%);">For detailed project information, please contact our team. We'll be happy to share more about this project and how we can deliver a similar solution for your business.</p>
-        <ul class="list-unstyled mt-3" style="font-size:14px;">
+        <p style="line-height: 1.75; color: var(--text-muted);">For detailed project information, please contact our team. We'll be happy to share more about this project and how we can deliver a similar solution for your business.</p>
+        <ul class="list-unstyled mt-3" style="font-size: 14px;">
           <li class="mb-2"><strong>Technologies:</strong> Available on request</li>
           <li class="mb-2"><strong>Duration:</strong> Available on request</li>
-          <li><strong>Enquire:</strong> <a href="{% url 'contact_us' %}">Get in touch</a> to discuss a similar project</li>
+          <li><strong>Enquire:</strong> <a href="{% url 'contact_us' %}" style="color: var(--primary-green);">Get in touch</a> to discuss a similar project</li>
         </ul>
       </div>
       <div class="modal-footer border-0">
-        <a href="{% url 'contact_us' %}" class="btn btn-success">Discuss a Similar Project</a>
+        <a href="{% url 'contact_us' %}" class="btn btn-primary" style="background: var(--primary-green); border-color: var(--primary-green);">Discuss a Similar Project</a>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
 {% endfor %}
+
+<!-- Hero Section CSS -->
+<style>
+  .hero-section {
+    position: relative;
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 120px 0 80px;
+  }
+
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0a2a1a 0%, #0a3a1a 50%, #0a2a1a 100%);
+    z-index: 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(5, 150, 82, 0.3) 0%, transparent 70%);
+    z-index: 1;
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 50px;
+    margin-bottom: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: white;
+  }
+
+  .hero-badge .badge-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--hover-gold);
+    border-radius: 50%;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .hero-title .highlight {
+    color: var(--hover-gold);
+  }
+
+  .hero-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .hero-divider span {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--hover-gold), transparent);
+  }
+
+  .hero-divider i {
+    font-size: 1.2rem;
+    color: var(--hover-gold);
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    margin: 0 auto 32px;
+  }
+
+  .hero-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    padding: 10px 24px;
+    border-radius: 50px;
+    margin: 0 auto;
+    width: fit-content;
+    transition: all 0.3s ease;
+  }
+
+  .hero-breadcrumb:hover {
+    border-color: var(--hover-gold);
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .hero-breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
+  }
+
+  .hero-breadcrumb a:hover {
+    color: var(--hover-gold);
+  }
+
+  .hero-breadcrumb span {
+    color: var(--hover-gold);
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.2rem;
+    }
+    .hero-description {
+      font-size: 1rem;
+    }
+    .hero-section {
+      min-height: 55vh;
+      padding: 100px 0 60px;
+    }
+  }
+</style>
 
 {% endblock %}
 
