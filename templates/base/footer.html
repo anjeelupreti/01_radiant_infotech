@@ -47,6 +47,33 @@
     background: #2c9b6b;
   }
 
+  /* Services in Single Line */
+  .footer .services-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .footer .services-list li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer .services-list li a {
+    color: #5a6e7c;
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .footer .services-list li a:hover {
+    color: #2c9b6b;
+  }
+
   .footer .footer-contact ul {
     list-style: none;
     padding: 0;
@@ -57,8 +84,8 @@
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    margin-bottom: 12px;
-    font-size: 14px;
+    margin-bottom: 10px;
+    font-size: 13px;
     color: #5a6e7c !important;
     font-weight: 400;
     line-height: 1.5;
@@ -86,7 +113,7 @@
     color: #5a6e7c !important;
   }
 
-  /* Certificates Styles */
+  /* Certificates Styles - Compact Layout */
   .footer .footer-certificates ul {
     list-style: none;
     padding: 0;
@@ -94,56 +121,125 @@
   }
 
   .footer .footer-certificates ul li {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .footer .footer-certificates ul li a {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
+    gap: 12px;
     color: #5a6e7c !important;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     transition: all 0.3s ease;
-    padding: 4px 0;
-  }
-
-  .footer .footer-certificates ul li a i {
-    font-size: 16px;
-    color: #2c9b6b !important;
-    transition: all 0.3s ease;
+    padding: 8px 12px;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    white-space: nowrap;
   }
 
   .footer .footer-certificates ul li a:hover {
-    color: #2c9b6b !important;
+    background: #2c9b6b;
+    border-color: #2c9b6b;
+    transform: translateX(3px);
   }
 
-  .footer .footer-certificates ul li a:hover i {
-    color: #ffc107 !important;
+  .certificate-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .certificate-info i {
+    font-size: 16px;
+    color: #2c9b6b !important;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .footer .footer-certificates ul li a:hover .certificate-info i {
+    color: #ffffff !important;
+  }
+
+  .certificate-name {
+    font-weight: 500;
+    white-space: nowrap;
   }
 
   .certificate-badge {
-    font-size: 10px;
+    font-size: 9px;
     background: #e8f0fe;
     color: #2c9b6b;
-    padding: 2px 8px;
+    padding: 2px 6px;
     border-radius: 20px;
-    margin-left: 8px;
+    font-weight: 500;
+    margin-left: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .footer .footer-certificates ul li a:hover .certificate-badge {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+  }
+
+  .download-icon {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #f1f5f9;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    color: #2c9b6b;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .download-icon i {
+    font-size: 10px;
+    color: #2c9b6b !important;
+    margin: 0;
+  }
+
+  .download-icon span {
+    font-size: 10px;
     font-weight: 500;
   }
 
+  .footer .footer-certificates ul li a:hover .download-icon {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+  }
+
+  .footer .footer-certificates ul li a:hover .download-icon i {
+    color: #ffffff !important;
+  }
+
+  .footer .footer-certificates ul li a:hover .download-icon span {
+    color: #ffffff;
+  }
+
   /* Button Styles */
+  .footer .footer-cta {
+    margin-top: 5px;
+  }
+
   .footer .footer-cta .btn-green {
     background: #2c9b6b;
     color: #ffffff;
     border: none;
-    padding: 10px 20px;
-    font-size: 13px;
+    padding: 8px 16px;
+    font-size: 12px;
     font-weight: 500;
     border-radius: 6px;
     transition: all 0.3s ease;
     display: inline-block;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     width: 100%;
     text-align: center;
     text-decoration: none;
@@ -158,7 +254,7 @@
     width: 100%;
     text-align: center;
     display: inline-block;
-    padding: 8px 20px;
+    padding: 6px 16px;
     border: 1px solid #e2e8f0;
     color: #5a6e7c;
     text-decoration: none;
@@ -166,7 +262,7 @@
     transition: all 0.3s ease;
     background: transparent;
     font-weight: 500;
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .footer .footer-cta .btn-outline:hover {
@@ -180,13 +276,13 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: #ffffff;
     border: 1px solid #e2e8f0;
     color: #2c9b6b;
-    margin-right: 6px;
+    margin-right: 5px;
     transition: all 0.3s ease;
     text-decoration: none;
   }
@@ -199,8 +295,12 @@
   }
 
   /* Footer Links */
+  .footer-links-grid ul {
+    margin-bottom: 0;
+  }
+
   .footer-links-grid ul li {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   .footer-links-grid ul li a {
@@ -220,7 +320,7 @@
   .footer-bottom {
     background: #ffffff;
     border-top: 1px solid #e9edf2;
-    padding: 18px 0;
+    padding: 15px 0;
   }
 
   .footer-bottom-content {
@@ -228,13 +328,13 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
   }
 
   .footer-bottom-content p {
     margin: 0;
     color: #6c7f8f;
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .footer-bottom-content p .sitename {
@@ -244,7 +344,7 @@
 
   .footer-bottom-content .credits {
     color: #6c7f8f;
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .footer-bottom-content .credits a {
@@ -296,17 +396,27 @@
       justify-content: center;
     }
     
-    .footer .footer-certificates ul li {
-      text-align: center;
+    .footer .services-list {
+      justify-content: center;
     }
     
     .footer .footer-certificates ul li a {
+      flex-wrap: wrap;
       justify-content: center;
+      gap: 8px;
+    }
+    
+    .certificate-name {
+      white-space: normal;
     }
   }
 
   @media (min-width: 769px) and (max-width: 991px) {
     .footer .footer-contact ul li {
+      justify-content: flex-start;
+    }
+    
+    .footer .services-list {
       justify-content: flex-start;
     }
   }
@@ -315,7 +425,7 @@
 <footer id="footer" class="footer">
 
   <div class="container">
-    <div class="row gy-5">
+    <div class="row gy-4">
 
       <!-- Column 1: Brand & Social -->
       <div class="col-lg-3 col-md-6">
@@ -323,11 +433,11 @@
           <a href="{% url 'home' %}" class="logo d-flex align-items-center">
             <img src="{% static 'img/logo.png' %}" alt="Radiant Infotech">
           </a>
-          <p class="tagline mt-3">
+          <p class="tagline mt-2">
             Empowering businesses through innovative software development and 
             secure digital signature solutions — trusted across Nepal since 2003.
           </p>
-          <div class="social-links mt-3">
+          <div class="social-links mt-2">
             <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
             <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
             <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
@@ -336,7 +446,7 @@
         </div>
       </div>
 
-      <!-- Column 2: Company & Services Links -->
+      <!-- Column 2: Company & Services -->
       <div class="col-lg-5 col-md-6">
         <div class="footer-links-grid">
           <div class="row">
@@ -353,18 +463,14 @@
 
             <div class="col-6 col-sm-8">
               <h5>Our Services</h5>
-              <ul class="list-unstyled row">
-                <div class="col-12 col-md-6">
-                  <li><a href="{% url 'service_detail' slug='digital-signature' %}">Digital Signature</a></li>
-                  <li><a href="{% url 'service_detail' slug='web-development' %}">Web Development</a></li>
-                  <li><a href="{% url 'service_detail' slug='software-development' %}">Software Development</a></li>
-                  <li><a href="{% url 'service_detail' slug='ict-support' %}">ICT & IT Support</a></li>
-                </div>
-                <div class="col-12 col-md-6">
-                  <li><a href="{% url 'service_detail' slug='mis-solutions' %}">MIS Solutions</a></li>
-                  <li><a href="{% url 'service_detail' slug='digital-marketing' %}">SEO & Digital Marketing</a></li>
-                  <li><a href="{% url 'service_detail' slug='graphics-designing' %}">Graphics Designing</a></li>
-                </div>
+              <ul class="services-list">
+                <li><a href="{% url 'service_detail' slug='digital-signature' %}">Digital Signature</a></li>
+                <li><a href="{% url 'service_detail' slug='web-development' %}">Web Development</a></li>
+                <li><a href="{% url 'service_detail' slug='software-development' %}">Software Development</a></li>
+                <li><a href="{% url 'service_detail' slug='ict-support' %}">ICT & IT Support</a></li>
+                <li><a href="{% url 'service_detail' slug='mis-solutions' %}">MIS Solutions</a></li>
+                <li><a href="{% url 'service_detail' slug='digital-marketing' %}">SEO & Digital Marketing</a></li>
+                <li><a href="{% url 'service_detail' slug='graphics-designing' %}">Graphics Designing</a></li>
               </ul>
             </div>
 
@@ -375,29 +481,41 @@
       <!-- Column 3: Certificates & Contact -->
       <div class="col-lg-4 col-md-12">
         
-        <!-- Certificates Section -->
-        <div class="footer-certificates mb-4">
+        <!-- Certificates Section - Compact Layout -->
+        <div class="footer-certificates mb-3">
           <h5>Certificates & Licenses</h5>
           <ul>
             <li>
               <a href="{% static 'certificates/NepalRootCA-2025.cer' %}" download>
-                <i class="bi bi-file-earmark-lock-fill"></i>
-                <span>Nepal Root CA 2025</span>
-                <span class="certificate-badge">Root CA</span>
+                <div class="certificate-info">
+                  <i class="bi bi-file-earmark-lock-fill"></i>
+                  <span class="certificate-name">Nepal Root CA 2025</span>
+                  <span class="certificate-badge">Root CA</span>
+                </div>
+                <div class="download-icon">
+                  <i class="bi bi-download"></i>
+                  <span>Download</span>
+                </div>
               </a>
             </li>
             <li>
               <a href="{% static 'certificates/Radiant InfoTech Nepal CA 2025.cer' %}" download>
-                <i class="bi bi-file-earmark-lock-fill"></i>
-                <span>Radiant Infotech Nepal CA 2025</span>
-                <span class="certificate-badge">CA License</span>
+                <div class="certificate-info">
+                  <i class="bi bi-shield-check-fill"></i>
+                  <span class="certificate-name">Radiant Infotech CA 2025</span>
+                  <span class="certificate-badge">CA License</span>
+                </div>
+                <div class="download-icon">
+                  <i class="bi bi-download"></i>
+                  <span>Download</span>
+                </div>
               </a>
             </li>
           </ul>
         </div>
 
         <!-- Contact Information -->
-        <div class="footer-contact mb-4">
+        <div class="footer-contact mb-3">
           <h5>Get In Touch</h5>
           <ul>
             <li>
@@ -430,7 +548,7 @@
   </div>
 
   <!-- Footer Bottom -->
-  <div class="footer-bottom mt-4">
+  <div class="footer-bottom mt-3">
     <div class="container">
       <div class="footer-bottom-content">
         <p>

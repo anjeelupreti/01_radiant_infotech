@@ -1,6 +1,111 @@
 {% load static %}
 
 <style>
+  /* Hero Section Styles */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 100px 0;
+  }
+
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    display: none;
+  }
+
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.65) 100%);
+    z-index: 1;
+  }
+
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.3;
+    z-index: 1;
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+  }
+
+  .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .hero-badge span {
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 1px;
+  }
+
+  .hero-badge-dot {
+    width: 6px;
+    height: 6px;
+    background: #f5c518;
+    border-radius: 50%;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .hero-title .highlight {
+    color: #f5c518;
+    position: relative;
+    display: inline-block;
+  }
+
   .hero-rotating-wrapper {
     display: inline-block;
     position: relative;
@@ -14,142 +119,407 @@
     overflow: hidden;
     animation: blink-cursor 0.75s step-end infinite;
     vertical-align: bottom;
+    font-weight: 800;
   }
 
   @keyframes blink-cursor {
     0%, 100% { border-color: #f5c518; }
-    50%       { border-color: transparent; }
+    50% { border-color: transparent; }
   }
 
-  .hero .stat-item .stat-number {
+  .hero-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto 35px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #f5c518;
+    color: #1a2c3e;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #f5c518;
+  }
+
+  .btn-primary:hover {
+    background: transparent;
     color: #f5c518;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(245, 197, 24, 0.3);
   }
 
-  .hero .hero-overlay {
-    background: rgba(6, 6, 6, 0.62) !important;
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: white;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-secondary:hover {
+    border-color: #f5c518;
+    color: #f5c518;
+    transform: translateY(-3px);
+  }
+
+  /* Trust Indicators */
+  .trust-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .trust-item {
+    text-align: center;
+    padding: 0 15px;
+    position: relative;
+  }
+
+  .trust-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .trust-number {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #f5c518;
+    display: block;
+    line-height: 1.3;
+  }
+
+  .trust-label {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+
+  /* Services Preview Strip */
+  .services-preview {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 12px 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .services-marquee {
+    display: inline-flex;
+    gap: 40px;
+    animation: marquee 30s linear infinite;
+  }
+
+  .services-marquee span {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  .services-marquee span i {
+    color: #f5c518;
+    margin-right: 8px;
+    font-size: 16px;
+  }
+
+  .services-marquee span:hover {
+    color: #f5c518;
+    cursor: pointer;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 
   .hero-scroll-hint {
     position: absolute;
-    bottom: 30px;
+    bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
-    color: rgba(255,255,255,0.5);
-    font-size: 12px;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 11px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     animation: bounce-down 2s infinite;
   }
 
   .hero-scroll-hint i {
-    font-size: 22px;
+    font-size: 20px;
     color: #f5c518;
   }
 
   @keyframes bounce-down {
     0%, 100% { transform: translateX(-50%) translateY(0); }
-    50%       { transform: translateX(-50%) translateY(8px); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* Responsive */
+  @media (max-width: 991px) {
+    .hero {
+      padding: 80px 0;
+    }
+
+    .hero-title {
+      font-size: 2.8rem;
+    }
+
+    .hero-description {
+      font-size: 1rem;
+    }
+
+    .trust-indicators {
+      gap: 25px;
+    }
+
+    .trust-item:not(:last-child)::after {
+      right: -13px;
+      height: 25px;
+    }
+
+    .trust-number {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 60px 0;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-description {
+      font-size: 0.95rem;
+      padding: 0 15px;
+    }
+
+    .hero-actions {
+      gap: 12px;
+    }
+
+    .btn-primary, .btn-secondary {
+      padding: 10px 24px;
+      font-size: 14px;
+    }
+
+    .trust-indicators {
+      gap: 20px;
+    }
+
+    .trust-item:not(:last-child)::after {
+      display: none;
+    }
+
+    .trust-number {
+      font-size: 1rem;
+    }
+
+    .trust-label {
+      font-size: 0.6rem;
+    }
+
+    .services-marquee span {
+      font-size: 11px;
+    }
+
+    .hero-scroll-hint {
+      bottom: 80px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .trust-indicators {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 </style>
 
-<section id="hero" class="hero section dark-background">
+<section id="hero" class="hero">
 
-  <div class="hero-video-container">
-    <video autoplay muted loop playsinline>
+  <!-- Background with Video and Fallback Image -->
+  <div class="hero-background">
+    <video autoplay muted loop playsinline class="hero-bg-video" id="heroVideo">
       <source src="{% static 'video/hero-bg.mp4' %}" type="video/mp4">
     </video>
     <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80"
          alt="Technology background"
-         style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;">
-    <div class="hero-overlay"></div>
+         class="hero-bg-image"
+         id="heroFallbackImage">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-bg-pattern"></div>
   </div>
 
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row justify-content-center text-center">
-      <div class="col-lg-9">
-        <div class="hero-content">
-
-          <h1 data-aos="fade-up" data-aos-delay="200">
-            Radiant for<br>
-            <span class="hero-rotating-wrapper">
-              <span class="hero-rotating-text" id="rotatingText">Digital Signature</span>
-            </span>
-          </h1>
-
-          <p data-aos="fade-up" data-aos-delay="300">
-            Radiant InfoTech Nepal Pvt. Ltd. is a leading boutique digital agency providing complete IT solutions including digital signature certificates, web development, software applications, and comprehensive technology support for businesses, institutions, and government organizations across Nepal.
-          </p>
-
-          <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
-            <a href="{% url 'contact_us' %}" class="btn btn-primary">Get a Quote</a>
-            <a href="{% url 'services' %}" class="btn btn-secondary">Explore Services</a>
-          </div>
-
-          <div class="hero-stats" data-aos="fade-up" data-aos-delay="500">
-            <div class="row">
-              <div class="col-lg-3 col-6">
-                <div class="stat-item">
-                  <span class="stat-number purecounter"
-                        data-purecounter-start="0"
-                        data-purecounter-end="100"
-                        data-purecounter-duration="2">100 +</span>
-                  <span class="stat-label"> Projects Delivered</span>
-                </div>
-              </div>
-              <div class="col-lg-3 col-6">
-                <div class="stat-item">
-                  <span class="stat-number purecounter"
-                        data-purecounter-start="0"
-                        data-purecounter-end="22"
-                        data-purecounter-duration="2"
-                        id="yearsExperienceCounter">22</span>
-                  <span class="stat-label">Years in IT Solutions</span>
-                </div>
-              </div>
-              <div class="col-lg-3 col-6">
-                <div class="stat-item">
-                  <span class="stat-number purecounter"
-                        data-purecounter-start="0"
-                        data-purecounter-end="500"
-                        data-purecounter-duration="2">500 + </span>
-                  <span class="stat-label">Satisfied Clients</span>
-                </div>
-              </div>
-              <div class="col-lg-3 col-6">
-                <div class="stat-item">
-                  <span class="stat-number purecounter"
-                        data-purecounter-start="0"
-                        data-purecounter-end="40"
-                        data-purecounter-duration="2">40</span>
-                  <span class="stat-label">Expert Team Members</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
+  <div class="hero-container">
+    <div class="container">
+      <div class="hero-content" data-aos="fade-up" data-aos-delay="100">
+        
+        <!-- Badge -->
+        <div class="hero-badge" data-aos="fade-up" data-aos-delay="150">
+          <span class="hero-badge-dot"></span>
+          <span>Trusted Since 2003</span>
+          <span class="hero-badge-dot"></span>
         </div>
+
+        <!-- Title with Rotating Text -->
+        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+          Radiant for<br>
+          <span class="hero-rotating-wrapper">
+            <span class="hero-rotating-text" id="rotatingText">Digital Signature</span>
+          </span>
+        </h1>
+
+        <!-- Description -->
+        <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+          Radiant InfoTech Nepal Pvt. Ltd. is a leading technology solutions provider delivering digital signature certificates, web development, software applications, and comprehensive IT support for businesses, institutions, and government organizations across Nepal.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
+          <a href="{% url 'contact_us' %}" class="btn-primary">
+            <i class="bi bi-chat-dots"></i> Get a Quote
+          </a>
+          <a href="{% url 'services' %}" class="btn-secondary" style="border-color: gold;color:gold">
+            <i class="bi bi-grid-3x3-gap"></i> Explore Services
+          </a>
+        </div>
+
+        <!-- Trust Indicators (Compact Stats) -->
+        <div class="trust-indicators" data-aos="fade-up" data-aos-delay="500">
+          <div class="trust-item">
+            <span class="trust-number" id="yearsExperienceDisplay">22</span>
+            <span class="trust-label">Years Experience</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">500+</span>
+            <span class="trust-label">Satisfied Clients</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">7</span>
+            <span class="trust-label">Service Categories</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">40+</span>
+            <span class="trust-label">Expert Team</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 
+  <!-- Services Preview Marquee -->
+  <div class="services-preview">
+    <div class="services-marquee">
+      <span><i class="bi bi-patch-check-fill"></i> Digital Signature</span>
+      <span><i class="bi bi-code-slash"></i> Web Development</span>
+      <span><i class="bi bi-phone-fill"></i> Software Development</span>
+      <span><i class="bi bi-headset"></i> ICT & IT Support</span>
+      <span><i class="bi bi-graph-up"></i> MIS Solutions</span>
+      <span><i class="bi bi-megaphone"></i> SEO & Digital Marketing</span>
+      <span><i class="bi bi-palette-fill"></i> Graphics Designing</span>
+      <!-- Duplicate for seamless loop -->
+      <span><i class="bi bi-patch-check-fill"></i> Digital Signature</span>
+      <span><i class="bi bi-code-slash"></i> Web Development</span>
+      <span><i class="bi bi-phone-fill"></i> Software Development</span>
+      <span><i class="bi bi-headset"></i> ICT & IT Support</span>
+      <span><i class="bi bi-graph-up"></i> MIS Solutions</span>
+      <span><i class="bi bi-megaphone"></i> SEO & Digital Marketing</span>
+      <span><i class="bi bi-palette-fill"></i> Graphics Designing</span>
+    </div>
+  </div>
+
+  <!-- Scroll Hint -->
   <div class="hero-scroll-hint">
-    <span>Scroll</span>
+    <span>Scroll to explore</span>
     <i class="bi bi-chevron-double-down"></i>
   </div>
 
 </section>
 
 <script>
+  // Handle video fallback if video fails to load
+  document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('heroVideo');
+    const fallbackImage = document.getElementById('heroFallbackImage');
+    
+    if (video) {
+      video.addEventListener('error', function() {
+        video.style.display = 'none';
+        if (fallbackImage) {
+          fallbackImage.style.display = 'block';
+        }
+      });
+      
+      // Also handle if video can't play due to any reason
+      setTimeout(function() {
+        if (video.paused || video.readyState < 2) {
+          video.style.display = 'none';
+          if (fallbackImage) {
+            fallbackImage.style.display = 'block';
+          }
+        }
+      }, 2000);
+    }
+  });
+  
+  // Calculate years of experience dynamically
   const ESTABLISHMENT_YEAR = 2003;
   const currentYear = new Date().getFullYear();
   const yearsOfExperience = currentYear - ESTABLISHMENT_YEAR;
   
   const yearsCounter = document.getElementById('yearsExperienceCounter');
+  const yearsDisplay = document.getElementById('yearsExperienceDisplay');
+  if (yearsDisplay) {
+    yearsDisplay.textContent = yearsOfExperience;
+  }
   if (yearsCounter) {
     yearsCounter.setAttribute('data-purecounter-end', yearsOfExperience);
     yearsCounter.textContent = yearsOfExperience;
@@ -157,22 +527,23 @@
 </script>
 
 <script>
+  // Rotating Text Animation with all 7 Services
   (function () {
     const words = [
       "Digital Signature",
       "Web Development",
-      "Software Solutions",
-      "Mobile Applications",
-      "Graphic Designing",
-      "E-Commerce Platforms",
-      "Custom Applications",
+      "Software Development",
+      "ICT & IT Support",
+      "MIS Solutions",
+      "SEO & Digital Marketing",
+      "Graphics Designing",
     ];
 
     const el = document.getElementById("rotatingText");
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    const typingSpeed  = 80;
+    const typingSpeed = 80;
     const deletingSpeed = 45;
     const pauseAfterWord = 1800;
 
