@@ -7,161 +7,135 @@
     <div class="row align-items-end mb-5">
       <div class="col-lg-7" data-aos="fade-right" data-aos-delay="100">
         <div class="d-flex align-items-center gap-2 mb-3">
-          <span style="display:inline-block;width:36px;height:2px;background:var(--accent-color);border-radius:2px;"></span>
-          <span style="font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--accent-color);font-family:var(--nav-font);">What We Do</span>
+          <span class="section-line"></span>
+          <span class="section-badge">What We Do</span>
         </div>
-        <h2 style="font-size:2.3rem;font-weight:700;color:var(--heading-color);line-height:1.3;margin:0;">
+        <h2 class="section-main-heading">
           End-to-end IT solutions<br>
-          <span style="color:var(--accent-color);">built for real growth</span>
+          <span class="highlight-text">built for real growth</span>
         </h2>
       </div>
       <div class="col-lg-5 mt-4 mt-lg-0" data-aos="fade-left" data-aos-delay="100">
-        <p style="font-size:1rem;line-height:1.75;color:color-mix(in srgb, var(--default-color), transparent 25%);margin:0;">
+        <p class="section-description-text">
           22+ years of delivering trusted technology across Nepal — from digital signature certificates and custom software to web solutions, graphic design, and ICT consulting.
         </p>
       </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto auto;gap:20px;" data-aos="fade-up" data-aos-delay="150">
+    <!-- Responsive Services Grid -->
+    <div class="services-grid" data-aos="fade-up" data-aos-delay="150">
 
-      <div style="grid-column:1/3;grid-row:1/3;border-radius:18px;overflow:hidden;position:relative;min-height:520px;"
-           onmouseover="this.querySelector('img').style.transform='scale(1.06)'"
-           onmouseout="this.querySelector('img').style.transform='scale(1)'">
-        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=1200&q=80"
-             alt="Software Development & Web Solutions"
-             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;">
-        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(5,15,5,0.88) 0%, rgba(5,15,5,0.3) 60%, transparent 100%);"></div>
-        <div style="position:absolute;inset:0;padding:36px;display:flex;flex-direction:column;justify-content:flex-end;">
-          <div style="display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
-            <span style="background:var(--accent-color);color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:5px 14px;border-radius:20px;">Software Development</span>
-            <span style="background:rgba(255,255,255,0.15);color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:5px 14px;border-radius:20px;backdrop-filter:blur(4px);">Web Solutions</span>
+      <!-- Featured Large Card - Software & Web Development -->
+      <div class="service-card-large">
+        <div class="service-card-image">
+          <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=1200&q=80" alt="Software Development & Web Solutions">
+          <div class="service-card-overlay"></div>
+        </div>
+        <div class="service-card-content">
+          <div class="service-tags">
+            <span class="service-tag primary">Software Development</span>
+            <span class="service-tag secondary">Web Solutions</span>
           </div>
-          <h3 style="color:#fff;font-size:1.85rem;font-weight:700;margin-bottom:12px;line-height:1.3;">Software & Web Development</h3>
-          <p style="color:rgba(255,255,255,0.80);font-size:0.96rem;margin-bottom:22px;line-height:1.7;max-width:520px;">Custom software solutions including Lakshya Micro Banking Software, Finch School Management System, WorkForce Mini Accounting. Web development using ASP, Java (J2EE), .Net, C#, PHP with MSSQL, MySQL, and Oracle databases.</p>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;">
-            <a href="{% url 'service_detail' slug='software-development' %}"
-               style="display:inline-flex;align-items:center;gap:8px;background:var(--accent-color);color:#fff;padding:11px 22px;border-radius:7px;font-size:0.88rem;font-weight:600;text-decoration:none;transition:all 0.3s ease;"
-               onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(14,170,40,0.45)';"
-               onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+          <h3 class="service-title-large">Software & Web Development</h3>
+          <p class="service-description">Custom software solutions including Lakshya Micro Banking Software, Finch School Management System, WorkForce Mini Accounting. Web development using ASP, Java (J2EE), .Net, C#, PHP with MSSQL, MySQL, and Oracle databases.</p>
+          <div class="service-buttons">
+            <a href="{% url 'service_detail' slug='software-development' %}" class="btn-primary-sm">
               Software Dev <i class="bi bi-arrow-right"></i>
             </a>
-            <a href="{% url 'service_detail' slug='web-development' %}"
-               style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);color:#fff;padding:11px 22px;border-radius:7px;font-size:0.88rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,0.3);backdrop-filter:blur(4px);transition:all 0.3s ease;"
-               onmouseover="this.style.background='rgba(255,255,255,0.22)';"
-               onmouseout="this.style.background='rgba(255,255,255,0.12)';">
+            <a href="{% url 'service_detail' slug='web-development' %}" class="btn-secondary-sm">
               Web Solutions <i class="bi bi-arrow-right"></i>
             </a>
           </div>
         </div>
       </div>
 
-      <div style="grid-column:3/4;grid-row:1/2;border-radius:18px;overflow:hidden;position:relative;min-height:248px;"
-           onmouseover="this.querySelector('img').style.transform='scale(1.07)'"
-           onmouseout="this.querySelector('img').style.transform='scale(1)'">
-        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=700&q=80"
-             alt="Digital Signature Certificates"
-             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;">
-        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(5,15,5,0.90) 0%, rgba(5,15,5,0.25) 55%, transparent 100%);"></div>
-        <div style="position:absolute;inset:0;padding:26px;display:flex;flex-direction:column;justify-content:flex-end;">
-          <div style="width:40px;height:40px;background:var(--accent-color);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
-            <i class="bi bi-patch-check" style="color:#fff;font-size:1.2rem;"></i>
+      <!-- Digital Signature Card -->
+      <div class="service-card">
+        <div class="service-card-image">
+          <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=700&q=80" alt="Digital Signature Certificates">
+          <div class="service-card-overlay"></div>
+        </div>
+        <div class="service-card-content">
+          <div class="service-icon">
+            <i class="bi bi-patch-check"></i>
           </div>
-          <span style="background:var(--accent-color);color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:4px 10px;border-radius:20px;display:inline-block;width:fit-content;margin-bottom:8px;">Licensed Authority</span>
-          <h4 style="color:#fff;font-size:1.15rem;font-weight:700;margin-bottom:6px;line-height:1.3;">Digital Signature Certificates</h4>
-          <p style="color:rgba(255,255,255,0.78);font-size:0.83rem;line-height:1.55;margin-bottom:12px;">Issuing Class 1, Class 2, and Class 3 digital signatures with PKI-enabled infrastructure for secure e-mail, e-commerce, e-banking, and e-governance.</p>
-          <a href="{% url 'service_detail' slug='digital-signature' %}"
-             style="display:inline-flex;align-items:center;gap:6px;color:#fff;font-size:0.82rem;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.4);padding-bottom:1px;width:fit-content;transition:border-color 0.3s ease;"
-             onmouseover="this.style.borderBottomColor='#fff';"
-             onmouseout="this.style.borderBottomColor='rgba(255,255,255,0.4)';">
-            Learn More <i class="bi bi-arrow-right" style="font-size:0.78rem;"></i>
+          <span class="service-badge">Licensed Authority</span>
+          <h4 class="service-title">Digital Signature Certificates</h4>
+          <p class="service-description-small">Issuing Class 1, Class 2, and Class 3 digital signatures with PKI-enabled infrastructure for secure e-mail, e-commerce, e-banking, and e-governance.</p>
+          <a href="{% url 'service_detail' slug='digital-signature' %}" class="service-link">
+            Learn More <i class="bi bi-arrow-right"></i>
           </a>
         </div>
       </div>
 
-      <div style="grid-column:3/4;grid-row:2/3;border-radius:18px;overflow:hidden;position:relative;min-height:248px;"
-           onmouseover="this.querySelector('img').style.transform='scale(1.07)'"
-           onmouseout="this.querySelector('img').style.transform='scale(1)'">
-        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&q=80"
-             alt="ICT Consulting"
-             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;">
-        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(5,30,10,0.92) 0%, rgba(5,30,10,0.25) 55%, transparent 100%);"></div>
-        <div style="position:absolute;inset:0;padding:26px;display:flex;flex-direction:column;justify-content:flex-end;">
-          <div style="width:40px;height:40px;background:var(--accent-color);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
-            <i class="bi bi-diagram-3" style="color:#fff;font-size:1.2rem;"></i>
+      <!-- ICT & IT Support Card -->
+      <div class="service-card">
+        <div class="service-card-image">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&q=80" alt="ICT Consulting">
+          <div class="service-card-overlay"></div>
+        </div>
+        <div class="service-card-content">
+          <div class="service-icon">
+            <i class="bi bi-diagram-3"></i>
           </div>
-          <h4 style="color:#fff;font-size:1.15rem;font-weight:700;margin-bottom:6px;line-height:1.3;">ICT & IT Support Services</h4>
-          <p style="color:rgba(255,255,255,0.78);font-size:0.83rem;line-height:1.55;margin-bottom:12px;">MIS system design, data center management, disaster recovery backup, ICT system audit, annual maintenance contracts, and technology training.</p>
-          <a href="{% url 'service_detail' slug='ict-support' %}"
-             style="display:inline-flex;align-items:center;gap:6px;color:#fff;font-size:0.82rem;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.4);padding-bottom:1px;width:fit-content;transition:border-color 0.3s ease;"
-             onmouseover="this.style.borderBottomColor='#fff';"
-             onmouseout="this.style.borderBottomColor='rgba(255,255,255,0.4)';">
-            Learn More <i class="bi bi-arrow-right" style="font-size:0.78rem;"></i>
+          <h4 class="service-title">ICT & IT Support Services</h4>
+          <p class="service-description-small">MIS system design, data center management, disaster recovery backup, ICT system audit, annual maintenance contracts, and technology training.</p>
+          <a href="{% url 'service_detail' slug='ict-support' %}" class="service-link">
+            Learn More <i class="bi bi-arrow-right"></i>
           </a>
         </div>
       </div>
 
-      <div style="grid-column:1/2;grid-row:3/4;border-radius:18px;overflow:hidden;position:relative;min-height:260px;"
-           onmouseover="this.querySelector('img').style.transform='scale(1.07)'"
-           onmouseout="this.querySelector('img').style.transform='scale(1)'">
-        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=80"
-             alt="Graphic Designing"
-             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;">
-        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(5,15,5,0.90) 0%, rgba(5,15,5,0.2) 55%, transparent 100%);"></div>
-        <div style="position:absolute;inset:0;padding:26px;display:flex;flex-direction:column;justify-content:flex-end;">
-          <div style="width:40px;height:40px;background:var(--accent-color);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
-            <i class="bi bi-palette" style="color:#fff;font-size:1.2rem;"></i>
+      <!-- Graphic Designing Card -->
+      <div class="service-card">
+        <div class="service-card-image">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=80" alt="Graphic Designing">
+          <div class="service-card-overlay"></div>
+        </div>
+        <div class="service-card-content">
+          <div class="service-icon">
+            <i class="bi bi-palette"></i>
           </div>
-          <h4 style="color:#fff;font-size:1.15rem;font-weight:700;margin-bottom:6px;line-height:1.3;">Graphic Designing</h4>
-          <p style="color:rgba(255,255,255,0.78);font-size:0.83rem;line-height:1.55;margin-bottom:12px;">Corporate identity, logo design, brochure designing, banner design (static and animated), multimedia presentations, and stationery design.</p>
-          <a href="{% url 'service_detail' slug='graphics-designing' %}"
-             style="display:inline-flex;align-items:center;gap:6px;color:#fff;font-size:0.82rem;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.4);padding-bottom:1px;width:fit-content;transition:border-color 0.3s ease;"
-             onmouseover="this.style.borderBottomColor='#fff';"
-             onmouseout="this.style.borderBottomColor='rgba(255,255,255,0.4)';">
-            Learn More <i class="bi bi-arrow-right" style="font-size:0.78rem;"></i>
+          <h4 class="service-title">Graphic Designing</h4>
+          <p class="service-description-small">Corporate identity, logo design, brochure designing, banner design (static and animated), multimedia presentations, and stationery design.</p>
+          <a href="{% url 'service_detail' slug='graphics-designing' %}" class="service-link">
+            Learn More <i class="bi bi-arrow-right"></i>
           </a>
         </div>
       </div>
 
-      <div style="grid-column:2/3;grid-row:3/4;border-radius:18px;overflow:hidden;position:relative;min-height:260px;"
-           onmouseover="this.querySelector('img').style.transform='scale(1.07)'"
-           onmouseout="this.querySelector('img').style.transform='scale(1)'">
-        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=700&q=80"
-             alt="SEO & Digital Marketing"
-             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;">
-        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(5,15,5,0.90) 0%, rgba(5,15,5,0.2) 55%, transparent 100%);"></div>
-        <div style="position:absolute;inset:0;padding:26px;display:flex;flex-direction:column;justify-content:flex-end;">
-          <div style="width:40px;height:40px;background:var(--accent-color);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
-            <i class="bi bi-graph-up" style="color:#fff;font-size:1.2rem;"></i>
+      <!-- SEO & Digital Marketing Card -->
+      <div class="service-card">
+        <div class="service-card-image">
+          <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=700&q=80" alt="SEO & Digital Marketing">
+          <div class="service-card-overlay"></div>
+        </div>
+        <div class="service-card-content">
+          <div class="service-icon">
+            <i class="bi bi-graph-up"></i>
           </div>
-          <h4 style="color:#fff;font-size:1.15rem;font-weight:700;margin-bottom:6px;line-height:1.3;">SEO & Digital Marketing</h4>
-          <p style="color:rgba(255,255,255,0.78);font-size:0.83rem;line-height:1.55;margin-bottom:12px;">Search engine optimization, email marketing with mass mailing systems, and Facebook advertising to increase visibility and drive traffic.</p>
-          <a href="{% url 'service_detail' slug='digital-marketing' %}"
-             style="display:inline-flex;align-items:center;gap:6px;color:#fff;font-size:0.82rem;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.4);padding-bottom:1px;width:fit-content;transition:border-color 0.3s ease;"
-             onmouseover="this.style.borderBottomColor='#fff';"
-             onmouseout="this.style.borderBottomColor='rgba(255,255,255,0.4)';">
-            Learn More <i class="bi bi-arrow-right" style="font-size:0.78rem;"></i>
+          <h4 class="service-title">SEO & Digital Marketing</h4>
+          <p class="service-description-small">Search engine optimization, email marketing with mass mailing systems, and Facebook advertising to increase visibility and drive traffic.</p>
+          <a href="{% url 'service_detail' slug='digital-marketing' %}" class="service-link">
+            Learn More <i class="bi bi-arrow-right"></i>
           </a>
         </div>
       </div>
 
-      <div style="grid-column:3/4;grid-row:3/4;border-radius:18px;overflow:hidden;position:relative;min-height:260px;"
-           onmouseover="this.querySelector('img').style.transform='scale(1.07)'"
-           onmouseout="this.querySelector('img').style.transform='scale(1)'">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=700&q=80"
-             alt="Management Information Systems"
-             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;">
-        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(5,15,5,0.90) 0%, rgba(5,15,5,0.2) 55%, transparent 100%);"></div>
-        <div style="position:absolute;inset:0;padding:26px;display:flex;flex-direction:column;justify-content:flex-end;">
-          <div style="width:40px;height:40px;background:var(--accent-color);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
-            <i class="bi bi-building" style="color:#fff;font-size:1.2rem;"></i>
+      <!-- Management Information Systems Card -->
+      <div class="service-card">
+        <div class="service-card-image">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=700&q=80" alt="Management Information Systems">
+          <div class="service-card-overlay"></div>
+        </div>
+        <div class="service-card-content">
+          <div class="service-icon">
+            <i class="bi bi-building"></i>
           </div>
-          <h4 style="color:#fff;font-size:1.15rem;font-weight:700;margin-bottom:6px;line-height:1.3;">Management Information Systems</h4>
-          <p style="color:rgba(255,255,255,0.78);font-size:0.83rem;line-height:1.55;margin-bottom:12px;">Hotel, Hospital, Cooperative, School Management, HR Payroll, Inventory Management, and Accounting Systems.</p>
-          <a href="{% url 'service_detail' slug='mis-solutions' %}"
-             style="display:inline-flex;align-items:center;gap:6px;color:#fff;font-size:0.82rem;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.4);padding-bottom:1px;width:fit-content;transition:border-color 0.3s ease;"
-             onmouseover="this.style.borderBottomColor='#fff';"
-             onmouseout="this.style.borderBottomColor='rgba(255,255,255,0.4)';">
-            Learn More <i class="bi bi-arrow-right" style="font-size:0.78rem;"></i>
+          <h4 class="service-title">Management Information Systems</h4>
+          <p class="service-description-small">Hotel, Hospital, Cooperative, School Management, HR Payroll, Inventory Management, and Accounting Systems.</p>
+          <a href="{% url 'service_detail' slug='mis-solutions' %}" class="service-link">
+            Learn More <i class="bi bi-arrow-right"></i>
           </a>
         </div>
       </div>
@@ -171,3 +145,418 @@
   </div>
 
 </section>
+
+<style>
+  /* Services Section Styles */
+  .services-alt {
+    padding: 80px 0;
+  }
+
+  .section-line {
+    display: inline-block;
+    width: 36px;
+    height: 2px;
+    background: var(--accent-color, #059652);
+    border-radius: 2px;
+  }
+
+  .section-badge {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-color, #059652);
+  }
+
+  .section-main-heading {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--heading-color, #1a2c3e);
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .highlight-text {
+    color: var(--accent-color, #059652);
+  }
+
+  .section-description-text {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: color-mix(in srgb, var(--default-color, #5a6e7c), transparent 25%);
+    margin: 0;
+  }
+
+  /* Services Grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  /* Large Featured Card */
+  .service-card-large {
+    grid-column: span 2;
+    grid-row: span 2;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 500px;
+  }
+
+  .service-card-large .service-card-image {
+    position: absolute;
+    inset: 0;
+  }
+
+  .service-card-large .service-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .service-card-large:hover .service-card-image img {
+    transform: scale(1.06);
+  }
+
+  .service-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(5, 15, 5, 0.88) 0%, rgba(5, 15, 5, 0.3) 60%, transparent 100%);
+  }
+
+  .service-card-large .service-card-content {
+    position: absolute;
+    inset: 0;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .service-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+
+  .service-tag {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 5px 14px;
+    border-radius: 20px;
+  }
+
+  .service-tag.primary {
+    background: var(--accent-color, #059652);
+    color: #fff;
+  }
+
+  .service-tag.secondary {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    backdrop-filter: blur(4px);
+  }
+
+  .service-title-large {
+    color: #fff;
+    font-size: 1.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .service-card-large .service-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.96rem;
+    margin-bottom: 22px;
+    line-height: 1.7;
+    max-width: 520px;
+  }
+
+  .service-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary-sm {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-color, #059652);
+    color: #fff;
+    padding: 11px 22px;
+    border-radius: 7px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary-sm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(5, 150, 82, 0.45);
+  }
+
+  .btn-secondary-sm {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    padding: 11px 22px;
+    border-radius: 7px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary-sm:hover {
+    background: rgba(255, 255, 255, 0.22);
+  }
+
+  /* Regular Service Cards */
+  .service-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 320px;
+  }
+
+  .service-card .service-card-image {
+    position: absolute;
+    inset: 0;
+  }
+
+  .service-card .service-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .service-card:hover .service-card-image img {
+    transform: scale(1.07);
+  }
+
+  .service-card .service-card-content {
+    position: absolute;
+    inset: 0;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .service-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--accent-color, #059652);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+
+  .service-icon i {
+    color: #fff;
+    font-size: 1.2rem;
+  }
+
+  .service-badge {
+    background: var(--accent-color, #059652);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 8px;
+  }
+
+  .service-title {
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .service-description-small {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.83rem;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+
+  .service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    padding-bottom: 1px;
+    width: fit-content;
+    transition: border-color 0.3s ease;
+  }
+
+  .service-link:hover {
+    border-bottom-color: #fff;
+  }
+
+  /* Responsive Breakpoints */
+  @media (max-width: 1024px) {
+    .services-grid {
+      gap: 20px;
+    }
+    
+    .service-title-large {
+      font-size: 1.6rem;
+    }
+    
+    .service-card-large .service-description {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .services-alt {
+      padding: 60px 0;
+    }
+    
+    .section-main-heading {
+      font-size: 2rem;
+    }
+    
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .service-card-large {
+      grid-column: span 2;
+      min-height: 450px;
+    }
+    
+    .service-card {
+      min-height: 300px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .section-main-heading {
+      font-size: 1.8rem;
+    }
+    
+    .section-main-heading br {
+      display: none;
+    }
+    
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .service-card-large {
+      grid-column: span 1;
+      min-height: 400px;
+    }
+    
+    .service-card-large .service-card-content {
+      padding: 24px;
+    }
+    
+    .service-title-large {
+      font-size: 1.4rem;
+    }
+    
+    .service-card-large .service-description {
+      font-size: 0.85rem;
+      margin-bottom: 18px;
+    }
+    
+    .service-card {
+      min-height: 280px;
+    }
+    
+    .service-card .service-card-content {
+      padding: 20px;
+    }
+    
+    .service-title {
+      font-size: 1rem;
+    }
+    
+    .service-description-small {
+      font-size: 0.8rem;
+    }
+    
+    .btn-primary-sm, .btn-secondary-sm {
+      padding: 8px 18px;
+      font-size: 0.8rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-main-heading {
+      font-size: 1.5rem;
+    }
+    
+    .section-description-text {
+      font-size: 0.9rem;
+    }
+    
+    .service-card-large {
+      min-height: 380px;
+    }
+    
+    .service-title-large {
+      font-size: 1.2rem;
+    }
+    
+    .service-tags {
+      gap: 6px;
+    }
+    
+    .service-tag {
+      font-size: 9px;
+      padding: 4px 10px;
+    }
+    
+    .service-buttons {
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .btn-primary-sm, .btn-secondary-sm {
+      justify-content: center;
+    }
+    
+    .service-card {
+      min-height: 260px;
+    }
+    
+    .service-icon {
+      width: 32px;
+      height: 32px;
+    }
+    
+    .service-icon i {
+      font-size: 1rem;
+    }
+  }
+</style>

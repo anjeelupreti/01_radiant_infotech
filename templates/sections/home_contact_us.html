@@ -63,7 +63,7 @@
           <h3>Get in Touch</h3>
           <p>Have a project in mind or need IT support? Fill in the form below and our team will get back to you within 24 hours on business days.</p>
 
-          <form id="contactForm" class="php-email-form">
+          <form id="contactForm" class="php-email-form" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="row">
               <div class="col-md-6 form-group">
@@ -80,6 +80,21 @@
               <textarea name="message" class="form-control" rows="5" placeholder="Tell us about your project or inquiry..." required></textarea>
             </div>
 
+            <!-- File Upload Section -->
+            <div class="file-upload-wrapper mt-3">
+              <label for="attachment_home" class="file-upload-label">
+                <i class="bi bi-paperclip"></i>
+                <span>Attach File (Max 10MB)</span>
+                <span class="file-name"></span>
+              </label>
+              <input type="file" name="attachment" id="attachment_home" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.txt,.zip">
+              <div class="file-info">
+                <i class="bi bi-info-circle"></i>
+                <small>Allowed: PDF, DOC, DOCX, JPG, PNG, TXT, ZIP (Max 10MB)</small>
+                <span class="remove-file" style="display: none;">Remove file</span>
+              </div>
+            </div>
+
             <div class="my-3">
               <div class="loading">Sending your message...</div>
               <div class="error-message"></div>
@@ -87,8 +102,8 @@
             </div>
 
             <div class="form-submit">
-              <button type="submit">
-                Send Message
+              <button type="submit" id="submitBtn">
+                <i class="bi bi-send me-2"></i> Send Message
               </button>
               <div class="social-links">
                 <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
@@ -105,52 +120,210 @@
 
 </section>
 
+<style>
+/* File Upload Styles for Home Page */
+.file-upload-wrapper {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.file-upload-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background: white;
+  border: 2px dashed rgba(5, 150, 82, 0.3);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.file-upload-label:hover {
+  border-color: #059652;
+  background: #e6f4ed;
+}
+
+.file-upload-label i {
+  font-size: 1.2rem;
+  color: #059652;
+}
+
+.file-upload-label span {
+  color: #5a6c7e;
+  font-size: 0.9rem;
+}
+
+.file-upload-label .file-name {
+  color: #059652;
+  font-weight: 500;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.file-info {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: #5a6c7e;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.file-info i {
+  font-size: 0.8rem;
+}
+
+.remove-file {
+  color: #dc3545;
+  cursor: pointer;
+  margin-left: auto;
+  display: none;
+}
+
+.remove-file:hover {
+  text-decoration: underline;
+}
+
+.form-submit button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loading, .error-message, .sent-message {
+  display: none;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.loading {
+  background: #e3f2fd;
+  color: #0c5460;
+}
+
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.sent-message {
+  background: #d4edda;
+  color: #155724;
+}
+</style>
+
 {% block extra_js %}
 <script>
-  document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-
-    const form = this;
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const fileInput = document.getElementById('attachment_home');
+    const fileNameSpan = document.querySelector('.file-name');
+    const removeFileBtn = document.querySelector('.remove-file');
+    const submitBtn = document.getElementById('submitBtn');
     const loading = form.querySelector('.loading');
     const errorMsg = form.querySelector('.error-message');
     const sentMsg = form.querySelector('.sent-message');
 
-    loading.style.display = 'block';
-    errorMsg.style.display = 'none';
-    sentMsg.style.display = 'none';
-
-    const data = {
-      name:    form.querySelector('[name="name"]').value.trim(),
-      email:   form.querySelector('[name="email"]').value.trim(),
-      subject: form.querySelector('[name="subject"]').value.trim(),
-      message: form.querySelector('[name="message"]').value.trim(),
-    };
-
-    try {
-      const response = await fetch("{% url 'contact_submit' %}", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-CSRFToken': document.cookie.match(/csrftoken=([^;]+)/)?.[1] || '',
-        },
-        body: JSON.stringify(data),
-      });
-
-      const result = await response.json();
-      loading.style.display = 'none';
-
-      if (result.success) {
-        sentMsg.style.display = 'block';
-        form.reset();
+    // File upload handling
+    fileInput.addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (file) {
+        // Check file size (10MB limit)
+        if (file.size > 10 * 1024 * 1024) {
+          alert('File size must be less than 10MB');
+          fileInput.value = '';
+          fileNameSpan.textContent = '';
+          removeFileBtn.style.display = 'none';
+          return;
+        }
+        
+        // Check file type
+        const allowedTypes = ['pdf', 'doc', 'docx', 'jpg', 'jpeg', 'png', 'txt', 'zip'];
+        const fileExt = file.name.split('.').pop().toLowerCase();
+        if (!allowedTypes.includes(fileExt)) {
+          alert('File type not allowed. Please upload PDF, DOC, DOCX, JPG, PNG, TXT, or ZIP files.');
+          fileInput.value = '';
+          fileNameSpan.textContent = '';
+          removeFileBtn.style.display = 'none';
+          return;
+        }
+        
+        fileNameSpan.textContent = file.name;
+        removeFileBtn.style.display = 'inline-block';
       } else {
-        errorMsg.textContent = result.message || 'Something went wrong. Please try again.';
-        errorMsg.style.display = 'block';
+        fileNameSpan.textContent = '';
+        removeFileBtn.style.display = 'none';
       }
-    } catch (err) {
-      loading.style.display = 'none';
-      errorMsg.textContent = 'Network error. Please check your connection and try again.';
-      errorMsg.style.display = 'block';
-    }
+    });
+    
+    removeFileBtn.addEventListener('click', function() {
+      fileInput.value = '';
+      fileNameSpan.textContent = '';
+      removeFileBtn.style.display = 'none';
+    });
+
+    // Form submission handling
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      // Hide any previous messages
+      loading.style.display = 'block';
+      errorMsg.style.display = 'none';
+      sentMsg.style.display = 'none';
+      
+      // Disable submit button
+      submitBtn.disabled = true;
+
+      // Create FormData object for file upload
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("{% url 'contact_submit' %}", {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRFToken': document.cookie.match(/csrftoken=([^;]+)/)?.[1] || '',
+          },
+        });
+
+        const result = await response.json();
+        loading.style.display = 'none';
+
+        if (result.success) {
+          sentMsg.style.display = 'block';
+          form.reset();
+          fileNameSpan.textContent = '';
+          removeFileBtn.style.display = 'none';
+          
+          // Scroll to success message
+          sentMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+            sentMsg.style.display = 'none';
+          }, 5000);
+        } else {
+          errorMsg.textContent = result.message || 'Something went wrong. Please try again.';
+          errorMsg.style.display = 'block';
+          
+          // Scroll to error message
+          errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      } catch (err) {
+        console.error('Error:', err);
+        loading.style.display = 'none';
+        errorMsg.textContent = 'Network error. Please check your connection and try again.';
+        errorMsg.style.display = 'block';
+      } finally {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+      }
+    });
   });
 </script>
 {% endblock %}

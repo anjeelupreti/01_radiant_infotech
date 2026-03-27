@@ -2,7 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from django.db.models import Q
 import threading
-from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import send_mail, BadHeaderError, EmailMultiAlternatives
+from django.core.mail import EmailMessage
 from django.conf import settings
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -12,6 +13,7 @@ from django.utils import timezone
 import re
 from django.http import HttpResponse, JsonResponse, Http404
 from datetime import datetime
+import os
 
 SERVICE_TEMPLATES = {
     'digital-marketing':  'services/digital_marketing.html',
@@ -112,65 +114,75 @@ def contact_us(request):
 def view_404(request, exception=None):
     return render(request, 'pages/404.html', status=404)
 
-def send_contact_emails(form_data):
+def send_contact_email(form_data, file_data=None):
     """
-    Send emails to admin and user for Radiant Infotech Pvt. Ltd contact form
+    Send emails to admin and user for Radiant Infotech Pvt. Ltd contact form with attachment support
     """
     try:
-        # Email to admin
+        # Prepare admin email with attachment
         admin_subject = f"New Contact Form Inquiry - Radiant Infotech Pvt. Ltd Website"
         admin_message = f"""
-        New Contact Form Submission from Radiant Infotech Pvt. Ltd Website:
-        
-        Name: {form_data.get('name')}
-        Email: {form_data.get('email')}
-        Subject: {form_data.get('subject')}
-        
-        Message:
-        {form_data.get('message')}
-        
-        Submitted on: {form_data.get('timestamp', 'Now')}
-        
-        Product Inquiry from Distributor Website
+New Contact Form Submission from Radiant Infotech Pvt. Ltd Website:
+
+Name: {form_data.get('name')}
+Email: {form_data.get('email')}
+Subject: {form_data.get('subject')}
+
+Message:
+{form_data.get('message')}
+
+Submitted on: {form_data.get('timestamp', 'Now')}
+
+This inquiry was submitted through the Radiant Infotech website.
         """
         
-        send_mail(
+        # Create email with attachment for admin
+        admin_email = EmailMessage(
             subject=admin_subject,
-            message=admin_message,
+            body=admin_message,
             from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=[settings.ADMIN_EMAIL],
-            fail_silently=False,
+            to=[settings.ADMIN_EMAIL],
         )
         
-        # Email to user
+        if file_data:
+            admin_email.attach(
+                file_data['filename'],
+                file_data['content'],
+                file_data['content_type']
+            )
+        
+        admin_email.send(fail_silently=False)
+        
         user_subject = "Thank You for Your Inquiry - Radiant Infotech Pvt. Ltd"
         user_message = f"""
-        Dear {form_data.get('name')},
-        
-        Thank you for reaching out to Radiant Infotech Pvt. Ltd. We have received your inquiry and our team will get back to you within 24 hours on business days with pricing and availability information.
-        
-        Here's a summary of your inquiry:
-        - Subject: {form_data.get('subject')}
-        - Submitted: {form_data.get('timestamp', 'Now')}
-        
-        For urgent inquiries, please contact us at:
-        Email: support@sambhavitrading.com
-        Phone: +XX XXXXXXXX
-        
-        Best regards,
-        Radiant Infotech Pvt. Ltd Team
-        Your Trusted Distribution Partner
+Dear {form_data.get('name')},
+
+Thank you for reaching out to Radiant Infotech Pvt. Ltd. We have received your inquiry and our team will get back to you within 24 hours on business days.
+
+Here's a summary of your inquiry:
+- Subject: {form_data.get('subject')}
+- Submitted: {form_data.get('timestamp', 'Now')}
+
+{'Attached file: ' + file_data['filename'] if file_data else ''}
+
+For urgent inquiries, please contact us at:
+Email: {settings.DEFAULT_FROM_EMAIL}
+Phone: +91-XXXXXXXXXX
+
+Best regards,
+Radiant Infotech Pvt. Ltd Team
+Your Trusted Technology Partner
         """
         
-        user_email = form_data.get('email')
-        if user_email:
-            send_mail(
+        user_email_addr = form_data.get('email')
+        if user_email_addr:
+            user_email = EmailMessage(
                 subject=user_subject,
-                message=user_message,
+                body=user_message,
                 from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=[user_email],
-                fail_silently=False,
+                to=[user_email_addr],
             )
+            user_email.send(fail_silently=False)
             
     except BadHeaderError:
         print("Invalid header found.")
@@ -182,23 +194,20 @@ def send_contact_emails(form_data):
 @require_POST
 def contact_submit(request):
     """
-    Handle contact form submission and send emails for Radiant Infotech Pvt. Ltd
+    Handle contact form submission with file attachment and send emails for Radiant Infotech Pvt. Ltd
     """
     try:
-        # Decode request body with UTF-8 encoding
-        data = json.loads(request.body.decode('utf-8'))
+        name = request.POST.get('name', '').strip()
+        email = request.POST.get('email', '').strip()
+        subject = request.POST.get('subject', '').strip()
+        message = request.POST.get('message', '').strip()
         
-        # Validate required fields
-        required_fields = ['name', 'email', 'subject', 'message']
-        for field in required_fields:
-            if not data.get(field):
-                return JsonResponse({
-                    'success': False,
-                    'message': f'Please fill in the {field.replace("_", " ")} field.'
-                }, status=400)
+        if not all([name, email, subject, message]):
+            return JsonResponse({
+                'success': False,
+                'message': 'Please fill in all required fields.'
+            }, status=400)
         
-        # Validate email format with regex
-        email = data.get('email', '')
         email_regex = r'^[^\s@]+@[^\s@]+\.[^\s@]+$'
         if not re.match(email_regex, email):
             return JsonResponse({
@@ -206,33 +215,56 @@ def contact_submit(request):
                 'message': 'Please enter a valid email address.'
             }, status=400)
         
-        # Add timestamp
-        data['timestamp'] = timezone.now().strftime("%Y-%m-%d %H:%M:%S")
+        form_data = {
+            'name': name,
+            'email': email,
+            'subject': subject,
+            'message': message,
+            'timestamp': timezone.now().strftime("%Y-%m-%d %H:%M:%S"),
+            'company': "Radiant Infotech Pvt. Ltd"
+        }
         
-        # Add company info
-        data['company'] = "Radiant Infotech Pvt. Ltd"
+        file_data = None
+        if 'attachment' in request.FILES:
+            uploaded_file = request.FILES['attachment']
+            
+            if uploaded_file.size > 10 * 1024 * 1024:
+                return JsonResponse({
+                    'success': False,
+                    'message': 'File size must be less than 10MB.'
+                }, status=400)
+            
+            allowed_extensions = ['.pdf', '.doc', '.docx', '.jpg', '.jpeg', '.png', '.txt', '.zip']
+            file_ext = os.path.splitext(uploaded_file.name)[1].lower()
+            
+            if file_ext not in allowed_extensions:
+                return JsonResponse({
+                    'success': False,
+                    'message': 'File type not allowed. Please upload PDF, DOC, DOCX, JPG, PNG, TXT, or ZIP files.'
+                }, status=400)
+            
+            file_data = {
+                'filename': uploaded_file.name,
+                'content': uploaded_file.read(),
+                'content_type': uploaded_file.content_type or 'application/octet-stream'
+            }
         
-        # Send emails in background thread
-        email_thread = threading.Thread(target=send_contact_emails, args=(data,))
+        email_thread = threading.Thread(
+            target=send_contact_email,
+            args=(form_data, file_data)
+        )
+        email_thread.daemon = True
         email_thread.start()
         
         return JsonResponse({
             'success': True,
-            'message': 'Thank you for contacting Radiant Infotech Pvt. Ltd! We have received your inquiry and will get back to you within 24 hours with pricing and product information. A confirmation email has been sent to your email address.'
+            'message': 'Thank you for contacting Radiant Infotech Pvt. Ltd! We have received your inquiry and will get back to you within 24 hours. A confirmation email has been sent to your email address.'
         })
         
-    except json.JSONDecodeError:
-        return JsonResponse({
-            'success': False,
-            'message': 'Invalid form data.'
-        }, status=400)
-    except UnicodeDecodeError:
-        return JsonResponse({
-            'success': False,
-            'message': 'Invalid encoding in form data.'
-        }, status=400)
     except Exception as e:
+        print(f"Error in contact_submit: {e}")
         return JsonResponse({
             'success': False,
             'message': f'An error occurred: {str(e)}'
         }, status=500)
+    

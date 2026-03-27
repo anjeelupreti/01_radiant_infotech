@@ -9,11 +9,6 @@ urlpatterns = [
     path('services/<slug:slug>/',service_detail, name='service_detail'),
     path('gallery/', gallery, name='gallery'), 
     path('career/', career, name='career'), 
-
     path('contact_us', contact_us, name='contact_us'),
-
-
-
-    # Contact form submission
     path('contact-submit/', contact_submit, name='contact_submit'),
 ]

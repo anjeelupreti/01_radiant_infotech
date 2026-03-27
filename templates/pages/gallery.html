@@ -562,7 +562,7 @@
 
 {% block content %}
 
-<!-- SECTION 1 — PROJECT PORTFOLIO -->
+<!-- SECTION 1 — PROJECT PORTFOLIO (COMPLETELY UNCHANGED) -->
 <section class="section" id="portfolio">
   <div class="container" data-aos="fade-up">
 
@@ -798,7 +798,7 @@
   </div>
 </section>
 
-<!-- SECTION 2 — COMPANY PHOTO GALLERY -->
+<!-- SECTION 2 — COMPANY PHOTO GALLERY (MANUAL PATHS FOR ALL IMAGES) -->
 <section class="section light-background" id="company-gallery">
   <div class="container" data-aos="fade-up">
 
@@ -806,71 +806,108 @@
       <span class="section-subtitle">Behind the Scenes</span>
       <h2 class="section-title">Inside Radiant Infotech</h2>
       <div class="title-divider"></div>
-      <p class="section-description">Our office, our team, our events — a glimpse into who we are beyond our work</p>
+      <p class="section-description">Our team, office outings, events — a glimpse into who we are beyond our work</p>
     </div>
 
-    <div class="photo-gallery-grid mt-4" data-aos="fade-up" data-aos-delay="100">
-
-      <a href="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&q=90"
-         class="photo-item wide glightbox" data-gallery="company" data-glightbox="title: Our Team">
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Our Team">
-        <div class="photo-overlay"><span>Our Team</span></div>
-        <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+    <!-- Production Team Section (5 images) -->
+    <h3 class="text-center mb-4" style="color: var(--primary-green);">Production Team</h3>
+    <div class="photo-gallery-grid mt-4 mb-5" data-aos="fade-up" data-aos-delay="100">
+      <a href="{% static 'img/gallery/production-team/1.jpg' %}" class="photo-item wide glightbox" data-gallery="production" data-glightbox="title: Production Team Member 1">
+        <img src="{% static 'img/gallery/production-team/1.jpg' %}" alt="Production Team 1"><div class="photo-overlay"><span>Production Team</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
       </a>
-
-      <a href="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1400&q=90"
-         class="photo-item tall glightbox" data-gallery="company" data-glightbox="title: Office — Bhatbhateni, Kathmandu">
-        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&q=80" alt="Our Office">
-        <div class="photo-overlay"><span>Our Office — Bhatbhateni, Kathmandu</span></div>
-        <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      <a href="{% static 'img/gallery/production-team/2.jpg' %}" class="photo-item glightbox" data-gallery="production" data-glightbox="title: Production Team Member 2">
+        <img src="{% static 'img/gallery/production-team/2.jpg' %}" alt="Production Team 2"><div class="photo-overlay"><span>Production Team</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
       </a>
-
-      <a href="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&q=90"
-         class="photo-item glightbox" data-gallery="company" data-glightbox="title: Team Meeting">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="Team Meeting">
-        <div class="photo-overlay"><span>Team Meeting</span></div>
-        <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      <a href="{% static 'img/gallery/production-team/3.jpg' %}" class="photo-item tall glightbox" data-gallery="production" data-glightbox="title: Production Team Member 3">
+        <img src="{% static 'img/gallery/production-team/3.jpg' %}" alt="Production Team 3"><div class="photo-overlay"><span>Production Team</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
       </a>
-
-      <a href="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1400&q=90"
-         class="photo-item glightbox" data-gallery="company" data-glightbox="title: Development in Progress">
-        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80" alt="Development">
-        <div class="photo-overlay"><span>Development in Progress</span></div>
-        <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      <a href="{% static 'img/gallery/production-team/4.jpg' %}" class="photo-item glightbox" data-gallery="production" data-glightbox="title: Production Team Member 4">
+        <img src="{% static 'img/gallery/production-team/4.jpg' %}" alt="Production Team 4"><div class="photo-overlay"><span>Production Team</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
       </a>
-
-      <a href="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1400&q=90"
-         class="photo-item wide glightbox" data-gallery="company" data-glightbox="title: Company Event">
-        <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80" alt="Company Event">
-        <div class="photo-overlay"><span>Company Event</span></div>
-        <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      <a href="{% static 'img/gallery/production-team/5.jpg' %}" class="photo-item glightbox" data-gallery="production" data-glightbox="title: Production Team Member 5">
+        <img src="{% static 'img/gallery/production-team/5.jpg' %}" alt="Production Team 5"><div class="photo-overlay"><span>Production Team</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
       </a>
+    </div>
 
-      <a href="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1400&q=90"
-         class="photo-item glightbox" data-gallery="company" data-glightbox="title: Client Presentation">
-        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&q=80" alt="Client Presentation">
-        <div class="photo-overlay"><span>Client Presentation</span></div>
-        <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+    <!-- Office Outing Section (18 images) - MANUAL PATHS -->
+    <h3 class="text-center mb-4 mt-5" style="color: var(--primary-green);">Office Outings</h3>
+    <div class="photo-gallery-grid mt-4 mb-5" data-aos="fade-up" data-aos-delay="200">
+      <a href="{% static 'img/gallery/office-outing/1.jpeg' %}" class="photo-item glightbox" data-gallery="outing" data-glightbox="title: Office Outing 1">
+        <img src="{% static 'img/gallery/office-outing/1.jpeg' %}" alt="Office Outing 1"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
       </a>
-
-      <a href="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1400&q=90"
-         class="photo-item glightbox" data-gallery="company" data-glightbox="title: Design Team at Work">
-        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="Design Team">
-        <div class="photo-overlay"><span>Design Team at Work</span></div>
-        <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      <a href="{% static 'img/gallery/office-outing/2.jpeg' %}" class="photo-item wide glightbox" data-gallery="outing" data-glightbox="title: Office Outing 2">
+        <img src="{% static 'img/gallery/office-outing/2.jpeg' %}" alt="Office Outing 2"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
       </a>
-
-      <a href="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1400&q=90"
-         class="photo-item glightbox" data-gallery="company" data-glightbox="title: Training Session">
-        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80" alt="Training Session">
-        <div class="photo-overlay"><span>Training Session</span></div>
-        <div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      <a href="{% static 'img/gallery/office-outing/3.jpeg' %}" class="photo-item glightbox" data-gallery="outing" data-glightbox="title: Office Outing 3">
+        <img src="{% static 'img/gallery/office-outing/3.jpeg' %}" alt="Office Outing 3"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
       </a>
+      <a href="{% static 'img/gallery/office-outing/4.jpeg' %}" class="photo-item glightbox" data-gallery="outing" data-glightbox="title: Office Outing 4">
+        <img src="{% static 'img/gallery/office-outing/4.jpeg' %}" alt="Office Outing 4"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+      <a href="{% static 'img/gallery/office-outing/5.jpeg' %}" class="photo-item wide glightbox" data-gallery="outing" data-glightbox="title: Office Outing 5">
+        <img src="{% static 'img/gallery/office-outing/5.jpeg' %}" alt="Office Outing 5"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+      <a href="{% static 'img/gallery/office-outing/6.jpeg' %}" class="photo-item glightbox" data-gallery="outing" data-glightbox="title: Office Outing 6">
+        <img src="{% static 'img/gallery/office-outing/6.jpeg' %}" alt="Office Outing 6"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+      <a href="{% static 'img/gallery/office-outing/7.jpeg' %}" class="photo-item glightbox" data-gallery="outing" data-glightbox="title: Office Outing 7">
+        <img src="{% static 'img/gallery/office-outing/7.jpeg' %}" alt="Office Outing 7"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+      <a href="{% static 'img/gallery/office-outing/8.jpeg' %}" class="photo-item tall glightbox" data-gallery="outing" data-glightbox="title: Office Outing 8">
+        <img src="{% static 'img/gallery/office-outing/8.jpeg' %}" alt="Office Outing 8"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+      <a href="{% static 'img/gallery/office-outing/9.jpeg' %}" class="photo-item glightbox" data-gallery="outing" data-glightbox="title: Office Outing 9">
+        <img src="{% static 'img/gallery/office-outing/9.jpeg' %}" alt="Office Outing 9"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+      <a href="{% static 'img/gallery/office-outing/10.jpeg' %}" class="photo-item glightbox" data-gallery="outing" data-glightbox="title: Office Outing 10">
+        <img src="{% static 'img/gallery/office-outing/10.jpeg' %}" alt="Office Outing 10"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+      <a href="{% static 'img/gallery/office-outing/11.jpeg' %}" class="photo-item glightbox" data-gallery="outing" data-glightbox="title: Office Outing 11">
+        <img src="{% static 'img/gallery/office-outing/11.jpeg' %}" alt="Office Outing 11"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+      <a href="{% static 'img/gallery/office-outing/12.jpeg' %}" class="photo-item wide glightbox" data-gallery="outing" data-glightbox="title: Office Outing 12">
+        <img src="{% static 'img/gallery/office-outing/12.jpeg' %}" alt="Office Outing 12"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+      <a href="{% static 'img/gallery/office-outing/13.jpeg' %}" class="photo-item glightbox" data-gallery="outing" data-glightbox="title: Office Outing 13">
+        <img src="{% static 'img/gallery/office-outing/13.jpeg' %}" alt="Office Outing 13"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+      <a href="{% static 'img/gallery/office-outing/14.jpeg' %}" class="photo-item glightbox" data-gallery="outing" data-glightbox="title: Office Outing 14">
+        <img src="{% static 'img/gallery/office-outing/14.jpeg' %}" alt="Office Outing 14"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+      <a href="{% static 'img/gallery/office-outing/15.jpeg' %}" class="photo-item glightbox" data-gallery="outing" data-glightbox="title: Office Outing 15">
+        <img src="{% static 'img/gallery/office-outing/15.jpeg' %}" alt="Office Outing 15"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+      <a href="{% static 'img/gallery/office-outing/16.jpeg' %}" class="photo-item wide glightbox" data-gallery="outing" data-glightbox="title: Office Outing 16">
+        <img src="{% static 'img/gallery/office-outing/16.jpeg' %}" alt="Office Outing 16"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+     
+      <a href="{% static 'img/gallery/office-outing/18.jpeg' %}" class="photo-item glightbox" data-gallery="outing" data-glightbox="title: Office Outing 18">
+        <img src="{% static 'img/gallery/office-outing/18.jpeg' %}" alt="Office Outing 18"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+    </div>
 
+    <!-- Office Programme Section (5 images) -->
+    <h3 class="text-center mb-4 mt-5" style="color: var(--primary-green);">Office Programmes & Events</h3>
+    <div class="photo-gallery-grid mt-4 mb-5" data-aos="fade-up" data-aos-delay="300">
+      <a href="{% static 'img/gallery/office-programme/1.jpeg' %}" class="photo-item tall glightbox" data-gallery="programme" data-glightbox="title: Office Programme 1">
+        <img src="{% static 'img/gallery/office-programme/1.jpeg' %}" alt="Office Programme 1"><div class="photo-overlay"><span>Office Programme</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+      <a href="{% static 'img/gallery/office-programme/2.jpeg' %}" class="photo-item glightbox" data-gallery="programme" data-glightbox="title: Office Programme 2">
+        <img src="{% static 'img/gallery/office-programme/2.jpeg' %}" alt="Office Programme 2"><div class="photo-overlay"><span>Office Programme</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+      <a href="{% static 'img/gallery/office-programme/3.jpeg' %}" class="photo-item glightbox" data-gallery="programme" data-glightbox="title: Office Programme 3">
+        <img src="{% static 'img/gallery/office-programme/3.jpeg' %}" alt="Office Programme 3"><div class="photo-overlay"><span>Office Programme</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+      <a href="{% static 'img/gallery/office-programme/4.jpeg' %}" class="photo-item wide glightbox" data-gallery="programme" data-glightbox="title: Office Programme 4">
+        <img src="{% static 'img/gallery/office-programme/4.jpeg' %}" alt="Office Programme 4"><div class="photo-overlay"><span>Office Programme</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
+      <a href="{% static 'img/gallery/office-programme/5.jpeg' %}" class="photo-item glightbox" data-gallery="programme" data-glightbox="title: Office Programme 5">
+        <img src="{% static 'img/gallery/office-programme/5.jpeg' %}" alt="Office Programme 5"><div class="photo-overlay"><span>Office Programme</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
     </div>
 
     <p class="text-center mt-4 text-muted small">
-      <i class="bi bi-info-circle"></i> Replace these placeholder images with actual photos of your office, team, and events
+      <i class="bi bi-info-circle"></i> Our team, outings, and events — captured moments from Radiant Infotech
     </p>
 
   </div>
