@@ -6,7 +6,6 @@
 
 {% block extra_css %}
 <style>
-  /* CSS Variables - Green Theme #059652 */
   :root {
     --primary-green: #059652;
     --primary-green-dark: #047a42;
@@ -77,7 +76,6 @@
     line-height: 1.6;
   }
 
-  /* Position Cards */
   .position-card {
     background: white;
     border-radius: 16px;
@@ -408,7 +406,6 @@
 {% endblock %}
 
 {% block page_title %}
-<!-- Redesigned Hero Section -->
 <div class="hero-section" data-aos="fade">
   <div class="hero-background">
     <div class="hero-overlay"></div>
@@ -447,7 +444,6 @@
 
 {% block content %}
 
-<!-- Why Join Section -->
 <section class="section">
   <div class="container">
     <div class="section-header text-center" data-aos="fade-up">
@@ -503,7 +499,6 @@
   </div>
 </section>
 
-<!-- Life at Radiant Section -->
 <section class="section light-background">
   <div class="container">
     <div class="row align-items-center g-5">
@@ -566,7 +561,6 @@
   </div>
 </section>
 
-<!-- Open Positions Section -->
 <section class="section" id="open-positions">
   <div class="container">
     <div class="section-header text-center" data-aos="fade-up">
@@ -792,7 +786,6 @@
   </div>
 </section>
 
-<!-- Fresh Graduates Section -->
 <section class="section light-background">
   <div class="container">
     <div class="row align-items-center g-5">
@@ -830,7 +823,6 @@
   </div>
 </section>
 
-<!-- Hiring Process Section -->
 <section class="section">
   <div class="container">
     <div class="section-header text-center" data-aos="fade-up">
@@ -872,7 +864,6 @@
   </div>
 </section>
 
-<!-- FAQ Section -->
 <section class="section light-background">
   <div class="container">
     <div class="section-header text-center" data-aos="fade-up">
@@ -930,7 +921,6 @@
   </div>
 </section>
 
-<!-- CTA Section -->
 <section class="section">
   <div class="container text-center" data-aos="fade-up">
     <div class="cta-section">
@@ -941,7 +931,6 @@
   </div>
 </section>
 
-<!-- Job Modals -->
 {% for i in "123456789"|make_list %}
 <div class="modal fade" id="jobModal{{ forloop.counter }}" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -967,7 +956,6 @@
 </div>
 {% endfor %}
 
-<!-- Hero Section CSS -->
 <style>
   .hero-section {
     position: relative;
@@ -1209,6 +1197,25 @@
 
 {% block extra_js %}
 <script>
+  /*
+   * Job Positions Filtering and Pagination System
+   *
+   * This script handles two core functionalities for the careers page:
+   *
+   * 1. FILTERING:
+   *    - Users can filter job positions by category (All, Development, Design, Management, Support)
+   *    - Each position card has a data-filter class (development, design, management, support)
+   *    - Filter buttons toggle the active state and update which cards are visible
+   *
+   * 2. PAGINATION:
+   *    - Displays only 4 positions per page to improve user experience
+   *    - Dynamically generates pagination buttons based on total visible positions
+   *    - Shows "Showing X–Y of Z positions" info text
+   *    - Prev/Next buttons with disabled states at boundaries
+   *
+   * Important: Filtering and pagination work together - when filter changes,
+   *           pagination resets to page 1 and recalculates based on new visible set
+   */
   document.addEventListener('DOMContentLoaded', function () {
 
     const ITEMS_PER_PAGE = 4;

@@ -7,7 +7,6 @@
 
 {% block extra_css %}
 <style>
-  /* CSS Variables - Green Theme #059652 */
   :root {
     --primary-green: #059652;
     --primary-green-dark: #047a42;
@@ -158,7 +157,6 @@
     resize: vertical;
   }
 
-  /* File Upload Styles */
   .file-upload-wrapper {
     position: relative;
     margin-top: 1rem;
@@ -357,7 +355,6 @@
     color: var(--hover-gold) !important;
   }
 
-  /* Loading and Message Styles */
   .loading, .error-message, .sent-message {
     display: none;
     padding: 12px;
@@ -385,20 +382,20 @@
     .contact-main-wrapper {
       flex-direction: column;
     }
-    
+
     .map-wrapper {
       min-height: 350px;
     }
-    
+
     .contact-cards-container {
       grid-template-columns: 1fr;
     }
-    
+
     .form-submit {
       flex-direction: column;
       align-items: stretch;
     }
-    
+
     .social-links {
       justify-content: center;
     }
@@ -408,7 +405,7 @@
     .contact-content {
       padding: 1.5rem;
     }
-    
+
     .contact-form-container {
       padding: 1.5rem;
     }
@@ -417,7 +414,6 @@
 {% endblock %}
 
 {% block page_title %}
-<!-- Redesigned Hero Section -->
 <div class="hero-section" data-aos="fade">
   <div class="hero-background">
     <div class="hero-overlay"></div>
@@ -456,7 +452,6 @@
 
 {% block content %}
 
-<!-- Main Contact Section -->
 <section id="contact" class="section">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="section-header text-center">
@@ -537,8 +532,7 @@
             <div class="form-group mt-3">
               <textarea class="form-control" name="message" id="message" rows="5" placeholder="Tell us about your project or requirements" required></textarea>
             </div>
-            
-            <!-- File Upload Section -->
+
             <div class="file-upload-wrapper mt-3">
               <label for="attachment" class="file-upload-label">
                 <i class="bi bi-paperclip"></i>
@@ -581,7 +575,6 @@
   </div>
 </section>
 
-<!-- Other Ways to Connect Section -->
 <section class="section light-background">
   <div class="container">
     <div class="section-header text-center" data-aos="fade-up">
@@ -590,7 +583,7 @@
       <div class="title-divider"></div>
       <p class="section-description">Choose the channel that works best for you</p>
     </div>
-    
+
     <div class="row gy-4">
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
         <div class="card h-100 border-0 shadow-sm text-center p-4">
@@ -604,7 +597,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
         <div class="card h-100 border-0 shadow-sm text-center p-4">
           <div class="card-body">
@@ -617,7 +610,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
         <div class="card h-100 border-0 shadow-sm text-center p-4">
           <div class="card-body">
@@ -634,7 +627,6 @@
   </div>
 </section>
 
-<!-- Infrastructure Section -->
 <section class="section">
   <div class="container">
     <div class="section-header text-center" data-aos="fade-up">
@@ -643,7 +635,7 @@
       <div class="title-divider"></div>
       <p class="section-description">PKI-enabled infrastructure serving Nepal with primary and disaster recovery sites</p>
     </div>
-    
+
     <div class="row mt-4">
       <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
         <div class="office-card">
@@ -658,7 +650,7 @@
           <p class="mt-2 mb-0 text-muted small">Main PKI infrastructure and certifying authority operations</p>
         </div>
       </div>
-      
+
       <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
         <div class="office-card">
           <div class="d-flex align-items-center mb-3">
@@ -685,7 +677,6 @@
   </div>
 </section>
 
-<!-- Hero Section CSS -->
 <style>
   .hero-section {
     position: relative;
@@ -897,129 +888,137 @@
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Contact cards hover effect
+  /*
+   * Contact Page Functionality
+   *
+   * This script handles three main features:
+   *
+   * 1. CONTACT CARD HOVER EFFECT:
+   *    - Adds smooth hover animations to contact information cards
+   *    - Provides visual feedback with translateY transformation
+   *
+   * 2. FILE UPLOAD VALIDATION:
+   *    - Validates file size (max 10MB) before form submission
+   *    - Validates allowed file types (PDF, DOC, DOCX, JPG, PNG, TXT, ZIP)
+   *    - Shows selected file name and provides remove file option
+   *    - Prevents invalid files from being submitted
+   *
+   * 3. AJAX FORM SUBMISSION:
+   *    - Intercepts form submission to send data asynchronously
+   *    - Disables submit button during processing to prevent double submission
+   *    - Shows loading/error/success states to the user
+   *    - Uses FormData for file upload support
+   *    - Handles JSON response from backend and displays appropriate messages
+   *    - Automatically resets form and scrolls to feedback message on success
+   */
+  document.addEventListener('DOMContentLoaded', function() {
     const contactCards = document.querySelectorAll('.contact-card');
     contactCards.forEach(function(card) {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-            this.style.transition = 'transform 0.3s ease';
-        });
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px)';
+        this.style.transition = 'transform 0.3s ease';
+      });
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+      });
     });
 
-    // File upload handling
     const fileInput = document.getElementById('attachment');
     const fileNameSpan = document.querySelector('.file-name');
     const removeFileBtn = document.getElementById('removeFile');
-    
+
     fileInput.addEventListener('change', function(e) {
-        const file = e.target.files[0];
-        if (file) {
-            // Check file size (10MB limit)
-            if (file.size > 10 * 1024 * 1024) {
-                alert('File size must be less than 10MB');
-                fileInput.value = '';
-                fileNameSpan.textContent = '';
-                removeFileBtn.style.display = 'none';
-                return;
-            }
-            
-            // Check file type
-            const allowedTypes = ['pdf', 'doc', 'docx', 'jpg', 'jpeg', 'png', 'txt', 'zip'];
-            const fileExt = file.name.split('.').pop().toLowerCase();
-            if (!allowedTypes.includes(fileExt)) {
-                alert('File type not allowed. Please upload PDF, DOC, DOCX, JPG, PNG, TXT, or ZIP files.');
-                fileInput.value = '';
-                fileNameSpan.textContent = '';
-                removeFileBtn.style.display = 'none';
-                return;
-            }
-            
-            fileNameSpan.textContent = file.name;
-            removeFileBtn.style.display = 'inline-block';
-        } else {
-            fileNameSpan.textContent = '';
-            removeFileBtn.style.display = 'none';
+      const file = e.target.files[0];
+      if (file) {
+        if (file.size > 10 * 1024 * 1024) {
+          alert('File size must be less than 10MB');
+          fileInput.value = '';
+          fileNameSpan.textContent = '';
+          removeFileBtn.style.display = 'none';
+          return;
         }
-    });
-    
-    removeFileBtn.addEventListener('click', function() {
-        fileInput.value = '';
+
+        const allowedTypes = ['pdf', 'doc', 'docx', 'jpg', 'jpeg', 'png', 'txt', 'zip'];
+        const fileExt = file.name.split('.').pop().toLowerCase();
+        if (!allowedTypes.includes(fileExt)) {
+          alert('File type not allowed. Please upload PDF, DOC, DOCX, JPG, PNG, TXT, or ZIP files.');
+          fileInput.value = '';
+          fileNameSpan.textContent = '';
+          removeFileBtn.style.display = 'none';
+          return;
+        }
+
+        fileNameSpan.textContent = file.name;
+        removeFileBtn.style.display = 'inline-block';
+      } else {
         fileNameSpan.textContent = '';
         removeFileBtn.style.display = 'none';
+      }
     });
 
-    // Form submission handling
+    removeFileBtn.addEventListener('click', function() {
+      fileInput.value = '';
+      fileNameSpan.textContent = '';
+      removeFileBtn.style.display = 'none';
+    });
+
     const form = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
     const loadingMsg = document.getElementById('loadingMsg');
     const errorMsg = document.getElementById('errorMsg');
     const successMsg = document.getElementById('successMsg');
-    
+
     form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        // Hide any previous messages
-        loadingMsg.style.display = 'none';
-        errorMsg.style.display = 'none';
-        successMsg.style.display = 'none';
-        
-        // Disable submit button and show loading
-        submitBtn.disabled = true;
-        loadingMsg.style.display = 'block';
-        
-        // Create FormData object for file upload
-        const formData = new FormData(form);
-        
-        try {
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
-                }
-            });
-            
-            const data = await response.json();
-            
-            if (data.success) {
-                // Show success message
-                loadingMsg.style.display = 'none';
-                successMsg.style.display = 'block';
-                form.reset();
-                fileNameSpan.textContent = '';
-                removeFileBtn.style.display = 'none';
-                
-                // Scroll to success message
-                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    successMsg.style.display = 'none';
-                }, 5000);
-            } else {
-                // Show error message
-                loadingMsg.style.display = 'none';
-                errorMsg.textContent = data.message;
-                errorMsg.style.display = 'block';
-                
-                // Scroll to error message
-                errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            loadingMsg.style.display = 'none';
-            errorMsg.textContent = 'An error occurred. Please try again later.';
-            errorMsg.style.display = 'block';
-        } finally {
-            // Re-enable submit button
-            submitBtn.disabled = false;
+      e.preventDefault();
+
+      loadingMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+      successMsg.style.display = 'none';
+
+      submitBtn.disabled = true;
+      loadingMsg.style.display = 'block';
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+          }
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          loadingMsg.style.display = 'none';
+          successMsg.style.display = 'block';
+          form.reset();
+          fileNameSpan.textContent = '';
+          removeFileBtn.style.display = 'none';
+
+          successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+          setTimeout(function() {
+            successMsg.style.display = 'none';
+          }, 5000);
+        } else {
+          loadingMsg.style.display = 'none';
+          errorMsg.textContent = data.message;
+          errorMsg.style.display = 'block';
+          errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
+      } catch (error) {
+        console.error('Error:', error);
+        loadingMsg.style.display = 'none';
+        errorMsg.textContent = 'An error occurred. Please try again later.';
+        errorMsg.style.display = 'block';
+      } finally {
+        submitBtn.disabled = false;
+      }
     });
-});
+  });
 </script>
 
 {% endblock %}

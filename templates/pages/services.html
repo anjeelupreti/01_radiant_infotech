@@ -7,7 +7,6 @@
 
 {% block content %}
 
-<!-- Redesigned Hero Section for Services -->
 <div class="services-hero" data-aos="fade">
   <div class="services-hero-background">
     <div class="services-hero-overlay"></div>
@@ -43,7 +42,6 @@
   </div>
 </div>
 
-<!-- Main Services Section - All 7 Services -->
 <section id="services" class="services-section">
   <div class="container" data-aos="fade-up">
     <div class="section-header text-center">
@@ -54,7 +52,6 @@
     </div>
 
     <div class="services-grid">
-      <!-- Service 1: Digital Signature -->
       <div class="service-card featured" data-aos="fade-up" data-aos-delay="100">
         <div class="featured-badge">
           <i class="bi bi-star-fill"></i> Most Popular
@@ -71,7 +68,6 @@
         </a>
       </div>
 
-      <!-- Service 2: Web Development -->
       <div class="service-card" data-aos="fade-up" data-aos-delay="150">
         <div class="service-card-number">02</div>
         <div class="service-card-icon">
@@ -85,7 +81,6 @@
         </a>
       </div>
 
-      <!-- Service 3: Software Development -->
       <div class="service-card" data-aos="fade-up" data-aos-delay="200">
         <div class="service-card-number">03</div>
         <div class="service-card-icon">
@@ -99,7 +94,6 @@
         </a>
       </div>
 
-      <!-- Service 4: ICT & IT Support -->
       <div class="service-card" data-aos="fade-up" data-aos-delay="250">
         <div class="service-card-number">04</div>
         <div class="service-card-icon">
@@ -113,7 +107,6 @@
         </a>
       </div>
 
-      <!-- Service 5: MIS Solutions -->
       <div class="service-card" data-aos="fade-up" data-aos-delay="300">
         <div class="service-card-number">05</div>
         <div class="service-card-icon">
@@ -127,7 +120,6 @@
         </a>
       </div>
 
-      <!-- Service 6: SEO & Digital Marketing -->
       <div class="service-card" data-aos="fade-up" data-aos-delay="350">
         <div class="service-card-number">06</div>
         <div class="service-card-icon">
@@ -141,7 +133,6 @@
         </a>
       </div>
 
-      <!-- Service 7: Graphics Designing -->
       <div class="service-card" data-aos="fade-up" data-aos-delay="400">
         <div class="service-card-number">07</div>
         <div class="service-card-icon">
@@ -158,7 +149,6 @@
   </div>
 </section>
 
-<!-- Detailed Services Section -->
 <section id="services-detailed" class="detailed-services light-background">
   <div class="container" data-aos="fade-up">
     <div class="section-header text-center">
@@ -267,7 +257,6 @@
   </div>
 </section>
 
-<!-- Technology Stack Section -->
 <section id="technology-stack" class="tech-stack">
   <div class="container" data-aos="fade-up">
     <div class="section-header text-center">
@@ -338,9 +327,7 @@
   </div>
 </section>
 
-<!-- Custom CSS -->
 <style>
-  /* CSS Variables - Green Theme #059652 */
   :root {
     --primary-green: #059652;
     --primary-green-dark: #047a42;
@@ -355,9 +342,6 @@
     --card-shadow-hover: 0 20px 40px rgba(5, 150, 82, 0.15);
   }
 
-  /* ============================================
-     HERO SECTION FOR SERVICES
-     ============================================ */
   .services-hero {
     position: relative;
     min-height: 70vh;
@@ -493,9 +477,6 @@
     color: var(--hover-gold);
   }
 
-  /* ============================================
-     SECTION HEADER STYLES
-     ============================================ */
   .section-header {
     margin-bottom: 3rem;
   }
@@ -535,9 +516,6 @@
     font-size: 1rem;
   }
 
-  /* ============================================
-     SERVICES GRID
-     ============================================ */
   .services-section {
     padding: 80px 0;
     background: white;
@@ -676,9 +654,6 @@
     font-size: 0.7rem;
   }
 
-  /* ============================================
-     DETAILED SERVICES
-     ============================================ */
   .detailed-services {
     padding: 80px 0;
     background: #fafbfe;
@@ -764,7 +739,6 @@
     color: var(--hover-gold);
   }
 
-  /* CTA Banner */
   .cta-banner {
     margin-top: 50px;
     background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
@@ -805,9 +779,6 @@
     gap: 16px;
   }
 
-  /* ============================================
-     TECHNOLOGY STACK
-     ============================================ */
   .tech-stack {
     padding: 80px 0;
     background: white;
@@ -875,26 +846,23 @@
     color: var(--text-muted);
   }
 
-  /* ============================================
-     RESPONSIVE
-     ============================================ */
   @media (max-width: 991px) {
     .services-hero-title {
       font-size: 2.5rem;
     }
-    
+
     .services-grid {
       grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .detailed-grid {
       grid-template-columns: 1fr;
     }
-    
+
     .tech-grid {
       grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .section-title {
       font-size: 1.8rem;
     }
@@ -905,32 +873,32 @@
       min-height: 60vh;
       padding: 100px 0 60px;
     }
-    
+
     .services-hero-title {
       font-size: 2rem;
     }
-    
+
     .services-grid {
       grid-template-columns: 1fr;
     }
-    
+
     .tech-grid {
       grid-template-columns: 1fr;
     }
-    
+
     .detailed-card {
       flex-direction: column;
       text-align: center;
     }
-    
+
     .detailed-icon {
       margin: 0 auto;
     }
-    
+
     .cta-banner {
       padding: 2rem;
     }
-    
+
     .cta-banner-content h4 {
       font-size: 1.2rem;
     }

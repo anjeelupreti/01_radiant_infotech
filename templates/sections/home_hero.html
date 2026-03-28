@@ -1,7 +1,6 @@
 {% load static %}
 
 <style>
-  /* Hero Section Styles */
   .hero {
     position: relative;
     min-height: 100vh;
@@ -184,7 +183,6 @@
     transform: translateY(-3px);
   }
 
-  /* Trust Indicators */
   .trust-indicators {
     display: flex;
     justify-content: center;
@@ -226,7 +224,6 @@
     font-weight: 500;
   }
 
-  /* Services Preview Strip */
   .services-preview {
     position: absolute;
     bottom: 30px;
@@ -298,7 +295,6 @@
     50% { transform: translateX(-50%) translateY(8px); }
   }
 
-  /* Responsive */
   @media (max-width: 991px) {
     .hero {
       padding: 80px 0;
@@ -384,7 +380,6 @@
 
 <section id="hero" class="hero">
 
-  <!-- Background with Video and Fallback Image -->
   <div class="hero-background">
     <video autoplay muted loop playsinline class="hero-bg-video" id="heroVideo">
       <source src="{% static 'video/hero-bg.mp4' %}" type="video/mp4">
@@ -400,15 +395,13 @@
   <div class="hero-container">
     <div class="container">
       <div class="hero-content" data-aos="fade-up" data-aos-delay="100">
-        
-        <!-- Badge -->
+
         <div class="hero-badge" data-aos="fade-up" data-aos-delay="150">
           <span class="hero-badge-dot"></span>
           <span>Trusted Since 2003</span>
           <span class="hero-badge-dot"></span>
         </div>
 
-        <!-- Title with Rotating Text -->
         <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
           Radiant for<br>
           <span class="hero-rotating-wrapper">
@@ -416,12 +409,10 @@
           </span>
         </h1>
 
-        <!-- Description -->
         <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
           Radiant InfoTech Nepal Pvt. Ltd. is a leading technology solutions provider delivering digital signature certificates, web development, software applications, and comprehensive IT support for businesses, institutions, and government organizations across Nepal.
         </p>
 
-        <!-- CTA Buttons -->
         <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
           <a href="{% url 'contact_us' %}" class="btn-primary">
             <i class="bi bi-chat-dots"></i> Get a Quote
@@ -431,7 +422,6 @@
           </a>
         </div>
 
-        <!-- Trust Indicators (Compact Stats) -->
         <div class="trust-indicators" data-aos="fade-up" data-aos-delay="500">
           <div class="trust-item">
             <span class="trust-number" id="yearsExperienceDisplay">22</span>
@@ -455,7 +445,6 @@
     </div>
   </div>
 
-  <!-- Services Preview Marquee -->
   <div class="services-preview">
     <div class="services-marquee">
       <span><i class="bi bi-patch-check-fill"></i> Digital Signature</span>
@@ -465,7 +454,6 @@
       <span><i class="bi bi-graph-up"></i> MIS Solutions</span>
       <span><i class="bi bi-megaphone"></i> SEO & Digital Marketing</span>
       <span><i class="bi bi-palette-fill"></i> Graphics Designing</span>
-      <!-- Duplicate for seamless loop -->
       <span><i class="bi bi-patch-check-fill"></i> Digital Signature</span>
       <span><i class="bi bi-code-slash"></i> Web Development</span>
       <span><i class="bi bi-phone-fill"></i> Software Development</span>
@@ -476,7 +464,6 @@
     </div>
   </div>
 
-  <!-- Scroll Hint -->
   <div class="hero-scroll-hint">
     <span>Scroll to explore</span>
     <i class="bi bi-chevron-double-down"></i>
@@ -485,11 +472,24 @@
 </section>
 
 <script>
-  // Handle video fallback if video fails to load
+  /*
+   * Video Fallback Handler
+   *
+   * Purpose: Ensures the hero section has a visual background even if the
+   *          video fails to load or cannot play.
+   *
+   * Behavior:
+   *   - Listens for video 'error' event (network issues, file corruption, etc.)
+   *   - Also sets a 2-second timeout to check if video is still loading/paused
+   *   - On failure, hides the video element and shows the fallback image
+   *
+   * Use case: Mobile devices that don't autoplay videos, slow network
+   *           connections, or browsers with video restrictions.
+   */
   document.addEventListener('DOMContentLoaded', function() {
     const video = document.getElementById('heroVideo');
     const fallbackImage = document.getElementById('heroFallbackImage');
-    
+
     if (video) {
       video.addEventListener('error', function() {
         video.style.display = 'none';
@@ -497,8 +497,7 @@
           fallbackImage.style.display = 'block';
         }
       });
-      
-      // Also handle if video can't play due to any reason
+
       setTimeout(function() {
         if (video.paused || video.readyState < 2) {
           video.style.display = 'none';
@@ -509,12 +508,11 @@
       }, 2000);
     }
   });
-  
-  // Calculate years of experience dynamically
+
   const ESTABLISHMENT_YEAR = 2003;
   const currentYear = new Date().getFullYear();
   const yearsOfExperience = currentYear - ESTABLISHMENT_YEAR;
-  
+
   const yearsCounter = document.getElementById('yearsExperienceCounter');
   const yearsDisplay = document.getElementById('yearsExperienceDisplay');
   if (yearsDisplay) {
@@ -527,7 +525,26 @@
 </script>
 
 <script>
-  // Rotating Text Animation with all 7 Services
+  /*
+   * Rotating Text Animation (Typewriter Effect)
+   *
+   * Purpose: Creates a dynamic, animated headline that cycles through all
+   *          7 core services offered by Radiant Infotech.
+   *
+   * Features:
+   *   - Types out each word character by character (80ms per character)
+   *   - Pauses at the end of each word (1800ms)
+   *   - Deletes characters to transition to the next word (45ms per character)
+   *   - Cycles through the 7 services: Digital Signature, Web Development,
+   *     Software Development, ICT & IT Support, MIS Solutions,
+   *     SEO & Digital Marketing, Graphics Designing
+   *   - CSS cursor blinking animation is handled separately via keyframes
+   *
+   * Performance considerations:
+   *   - Uses setTimeout with recursive calls instead of setInterval for
+   *     better timing control between typing and deleting phases
+   *   - Word index wraps around to create continuous infinite loop
+   */
   (function () {
     const words = [
       "Digital Signature",

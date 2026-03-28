@@ -1,7 +1,6 @@
 {% load static %}
 
 <style>
-  /* Light Theme Footer Styles */
   .footer {
     background: #f8fafc !important;
     border-top: 3px solid #2c9b6b !important;
@@ -47,7 +46,6 @@
     background: #2c9b6b;
   }
 
-  /* Services in Single Line */
   .footer .services-list {
     display: flex;
     flex-wrap: wrap;
@@ -113,7 +111,6 @@
     color: #5a6e7c !important;
   }
 
-  /* Certificates Styles - Compact Layout */
   .footer .footer-certificates ul {
     list-style: none;
     padding: 0;
@@ -224,7 +221,6 @@
     color: #ffffff;
   }
 
-  /* Button Styles */
   .footer .footer-cta {
     margin-top: 5px;
   }
@@ -271,7 +267,6 @@
     color: #ffffff;
   }
 
-  /* Social Links */
   .footer .social-links a {
     display: inline-flex;
     align-items: center;
@@ -294,7 +289,6 @@
     transform: translateY(-2px);
   }
 
-  /* Footer Links */
   .footer-links-grid ul {
     margin-bottom: 0;
   }
@@ -316,7 +310,6 @@
     transform: translateX(3px);
   }
 
-  /* Footer Bottom */
   .footer-bottom {
     background: #ffffff;
     border-top: 1px solid #e9edf2;
@@ -357,7 +350,6 @@
     color: #238b5e;
   }
 
-  /* Responsive */
   @media (max-width: 768px) {
     .footer .footer-links-grid h5::after,
     .footer .footer-cta h5::after,
@@ -367,45 +359,45 @@
       transform: translateX(-50%);
       width: 40px;
     }
-    
+
     .footer .footer-links-grid h5,
     .footer .footer-cta h5,
     .footer .footer-contact h5,
     .footer .footer-certificates h5 {
       text-align: center;
     }
-    
+
     .footer-bottom-content {
       flex-direction: column;
       text-align: center;
     }
-    
+
     .footer .footer-brand .logo {
       justify-content: center;
     }
-    
+
     .footer .footer-brand .tagline {
       text-align: center;
     }
-    
+
     .footer .social-links {
       justify-content: center;
     }
-    
+
     .footer .footer-contact ul li {
       justify-content: center;
     }
-    
+
     .footer .services-list {
       justify-content: center;
     }
-    
+
     .footer .footer-certificates ul li a {
       flex-wrap: wrap;
       justify-content: center;
       gap: 8px;
     }
-    
+
     .certificate-name {
       white-space: normal;
     }
@@ -415,7 +407,7 @@
     .footer .footer-contact ul li {
       justify-content: flex-start;
     }
-    
+
     .footer .services-list {
       justify-content: flex-start;
     }
@@ -427,14 +419,13 @@
   <div class="container">
     <div class="row gy-4">
 
-      <!-- Column 1: Brand & Social -->
       <div class="col-lg-3 col-md-6">
         <div class="footer-brand">
           <a href="{% url 'home' %}" class="logo d-flex align-items-center">
             <img src="{% static 'img/logo.png' %}" alt="Radiant Infotech">
           </a>
           <p class="tagline mt-2">
-            Empowering businesses through innovative software development and 
+            Empowering businesses through innovative software development and
             secure digital signature solutions — trusted across Nepal since 2003.
           </p>
           <div class="social-links mt-2">
@@ -446,7 +437,6 @@
         </div>
       </div>
 
-      <!-- Column 2: Company & Services -->
       <div class="col-lg-5 col-md-6">
         <div class="footer-links-grid">
           <div class="row">
@@ -478,43 +468,8 @@
         </div>
       </div>
 
-      <!-- Column 3: Certificates & Contact -->
       <div class="col-lg-4 col-md-12">
-        
-        <!-- Certificates Section - Compact Layout -->
-        <div class="footer-certificates mb-3">
-          <h5>Certificates & Licenses</h5>
-          <ul>
-            <li>
-              <a href="{% static 'certificates/NepalRootCA-2025.cer' %}" download>
-                <div class="certificate-info">
-                  <i class="bi bi-file-earmark-lock-fill"></i>
-                  <span class="certificate-name">Nepal Root CA 2025</span>
-                  <span class="certificate-badge">Root CA</span>
-                </div>
-                <div class="download-icon">
-                  <i class="bi bi-download"></i>
-                  <span>Download</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="{% static 'certificates/Radiant InfoTech Nepal CA 2025.cer' %}" download>
-                <div class="certificate-info">
-                  <i class="bi bi-shield-check-fill"></i>
-                  <span class="certificate-name">Radiant Infotech CA 2025</span>
-                  <span class="certificate-badge">CA License</span>
-                </div>
-                <div class="download-icon">
-                  <i class="bi bi-download"></i>
-                  <span>Download</span>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
 
-        <!-- Contact Information -->
         <div class="footer-contact mb-3">
           <h5>Get In Touch</h5>
           <ul>
@@ -537,7 +492,6 @@
           </ul>
         </div>
 
-        <!-- CTA Buttons -->
         <div class="footer-cta">
           <a href="{% url 'contact_us' %}" class="btn-green">Request a Quote</a>
           <a href="{% url 'services' %}" class="btn-outline">Explore All Services</a>
@@ -547,7 +501,6 @@
     </div>
   </div>
 
-  <!-- Footer Bottom -->
   <div class="footer-bottom mt-3">
     <div class="container">
       <div class="footer-bottom-content">
@@ -562,3 +515,4 @@
   </div>
 
 </footer>
+

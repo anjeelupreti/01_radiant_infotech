@@ -6,18 +6,40 @@
 {% block body_class %}service-details-page{% endblock %}
 
 {% block page_title %}
-<div class="page-title dark-background" data-aos="fade"
-     style="background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1920&q=80');">
-  <div class="container position-relative">
-    <h1>Graphic Designing</h1>
-    <p>Specialized graphic design services with artistic ability to carry out all customized graphics design requirements ensuring best results for our clients.</p>
-    <nav class="breadcrumbs">
-      <ol>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'services' %}">Our Services</a></li>
-        <li class="current">Graphic Designing</li>
-      </ol>
-    </nav>
+<div class="hero-section" data-aos="fade">
+  <div class="hero-background">
+    <div class="hero-overlay"></div>
+    <div class="hero-pattern"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge" data-aos="fade-up" data-aos-delay="100">
+        <span class="badge-dot"></span>
+        <span>Creative Design Solutions</span>
+        <span class="badge-dot"></span>
+      </div>
+      <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+        Graphic <span class="highlight">Designing</span>
+      </h1>
+      <div class="hero-divider" data-aos="fade-up" data-aos-delay="250">
+        <span></span>
+        <i class="bi bi-brightness-alt-high"></i>
+        <span></span>
+      </div>
+      <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+        Specialized graphic design services with artistic ability to carry out all customized graphics design requirements ensuring best results for our clients.
+      </p>
+      <div class="hero-breadcrumb" data-aos="fade-up" data-aos-delay="350">
+        <a href="{% url 'home' %}">
+          <i class="bi bi-house-door"></i>
+          Home
+        </a>
+        <i class="bi bi-chevron-right"></i>
+        <a href="{% url 'services' %}">Our Services</a>
+        <i class="bi bi-chevron-right"></i>
+        <span>Graphic Designing</span>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
@@ -25,65 +47,87 @@
 {% block content %}
 <section class="service-details section">
   <div class="container">
-    <div class="row g-4">
+    <div class="row g-5">
 
       <div class="col-lg-8" data-aos="fade-up">
 
-        <div class="service-header mb-5">
-          <div class="row align-items-center gy-4">
-            <div class="col-md-7">
-              <h1 class="service-title">Design That <br><span style="color:var(--accent-color);">Makes an Impression</span></h1>
-              <p class="service-subtitle">Radiant Infotech Nepal specializes in graphic design with the artistic ability to carry out all customized graphics design requirements. Our services include website design, corporate branding, corporate identity, brochure designing, online interactive brochures, online catalog, motion graphics, and stationery design.</p>
+        <div class="service-header mb-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="section-badge-line"></span>
+            <span class="section-badge-text">Creative Excellence</span>
+          </div>
+          <h1 class="service-title">Design That <br><span class="highlight-text">Makes an Impression</span></h1>
+          <p class="service-subtitle mt-3">Radiant Infotech Nepal specializes in graphic design with the artistic ability to carry out all customized graphics design requirements. Our services include website design, corporate branding, corporate identity, brochure designing, online interactive brochures, online catalog, motion graphics, and stationery design.</p>
+        </div>
+
+        <div class="stats-grid mb-5">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="bi bi-calendar-check"></i>
             </div>
-            <div class="col-md-5">
-              <div class="service-stats">
-                <div class="stat-item">
-                  <div class="stat-number">22+</div>
-                  <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-number">100%</div>
-                  <div class="stat-label">Original Work</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-number">Custom</div>
-                  <div class="stat-label">Tailored Solutions</div>
-                </div>
-              </div>
+            <div class="stat-content">
+              <div class="stat-number">22+</div>
+              <div class="stat-label">Years Experience</div>
+              <div class="stat-description">Serving since 2003</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="bi bi-brush"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Original Work</div>
+              <div class="stat-description">Unique designs</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="bi bi-palette"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number">Custom</div>
+              <div class="stat-label">Tailored Solutions</div>
+              <div class="stat-description">Brand-specific</div>
             </div>
           </div>
         </div>
 
-        <div class="service-overview">
-          <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=900&q=80"
-               alt="Graphic Designing — Radiant Infotech Nepal" class="service-image" data-aos="zoom-in">
-          <div class="overview-grid" data-aos="fade-up" data-aos-delay="100">
-            <div class="overview-item">
+        <div class="overview-grid mb-5">
+          <div class="overview-card">
+            <div class="overview-icon">
               <i class="bi bi-brush-fill"></i>
-              <h3>Corporate Identity</h3>
-              <p>Logo design, corporate branding, photography, and stationery design that establish a consistent, professional brand presence across all platforms.</p>
             </div>
-            <div class="overview-item">
+            <h3>Corporate Identity</h3>
+            <p>Logo design, corporate branding, photography, and stationery design that establish a consistent, professional brand presence across all platforms.</p>
+          </div>
+          <div class="overview-card">
+            <div class="overview-icon">
               <i class="bi bi-file-earmark-text-fill"></i>
-              <h3>Print Materials</h3>
-              <p>Brochure designing, flyer designing, poster designing, cassette or CD cover designing — professional print materials for all your business needs.</p>
             </div>
-            <div class="overview-item">
+            <h3>Print Materials</h3>
+            <p>Brochure designing, flyer designing, poster designing, cassette or CD cover designing — professional print materials for all your business needs.</p>
+          </div>
+          <div class="overview-card">
+            <div class="overview-icon">
               <i class="bi bi-window-fullscreen"></i>
-              <h3>Banner Design</h3>
-              <p>Static banners, animated banners, static interactive banners, and animated interactive banners designed to increase click-through rates and attract more visitors.</p>
             </div>
-            <div class="overview-item">
+            <h3>Banner Design</h3>
+            <p>Static banners, animated banners, static interactive banners, and animated interactive banners designed to increase click-through rates and attract more visitors.</p>
+          </div>
+          <div class="overview-card">
+            <div class="overview-icon">
               <i class="bi bi-play-btn-fill"></i>
-              <h3>Multimedia Presentation</h3>
-              <p>Combined media productions integrating text, video, animated content, audio, and graphics into cohesive presentations for business, education, and entertainment.</p>
             </div>
+            <h3>Multimedia Presentation</h3>
+            <p>Combined media productions integrating text, video, animated content, audio, and graphics into cohesive presentations for business, education, and entertainment.</p>
           </div>
         </div>
 
-        <div class="capabilities-section" data-aos="fade-up">
-          <h2>Our Graphic Design Services</h2>
-          <ul class="custom-tabs nav nav-tabs" id="designTabs" role="tablist">
+        <div class="capabilities-section mb-5">
+          <h2 class="mb-4">Our Graphic Design Services</h2>
+
+          <ul class="nav nav-tabs" id="designTabs" role="tablist">
             <li class="nav-item" role="presentation">
               <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#design-services" type="button">Design Services</button>
             </li>
@@ -97,12 +141,12 @@
               <button class="nav-link" data-bs-toggle="tab" data-bs-target="#design-process" type="button">Our Process</button>
             </li>
           </ul>
-          <div class="tab-content" id="designTabContent">
 
+          <div class="tab-content mt-4" id="designTabContent">
             <div class="tab-pane fade show active" id="design-services" role="tabpanel">
               <h4>Our Design Services</h4>
               <p>Based on the company profile documentation, Radiant Infotech offers comprehensive graphic design services:</p>
-              <ul class="capability-features">
+              <ul>
                 <li><strong>Corporate Identity</strong> — Logo design, photography, and complete corporate identity development</li>
                 <li><strong>Brochure Designing</strong> — Professional brochures for product and service presentations</li>
                 <li><strong>Flyer Designing</strong> — Eye-catching flyers for promotions and events</li>
@@ -119,20 +163,22 @@
             <div class="tab-pane fade" id="banner-design" role="tabpanel">
               <h4>Banner Design Services</h4>
               <p>Quick and effective advertising solutions designed using proven principles for increasing click-through ratio and attracting more visitors to your website.</p>
-              <ul class="capability-features">
+              <ul>
                 <li><strong>Static Banner</strong> — Simple, clean banner designs that communicate your message effectively</li>
                 <li><strong>Animated Banners</strong> — Motion-enhanced banners that capture attention and drive engagement</li>
                 <li><strong>Static Interactive Banners</strong> — Banners with embedded interactive elements requiring user engagement</li>
                 <li><strong>Animated Interactive Banners</strong> — Combined motion graphics with interactive scripts for maximum impact</li>
                 <li><strong>Interactive Content Banners</strong> — Banners with embedded scripts, controls, or entry fields requiring custom programming</li>
               </ul>
-              <p class="mt-3">All banner designs are optimized for web performance and tested across different devices and platforms.</p>
+              <div class="mt-3 p-3 rounded" style="background: var(--primary-green-light);">
+                <p class="mb-0"><strong><i class="bi bi-info-circle-fill me-2" style="color: var(--primary-green);"></i>Optimized for Performance:</strong> All banner designs are optimized for web performance and tested across different devices and platforms.</p>
+              </div>
             </div>
 
             <div class="tab-pane fade" id="multimedia" role="tabpanel">
               <h4>Multimedia Presentations</h4>
               <p>Combined media productions that integrate different media types into cohesive presentations for educational or business-oriented purposes.</p>
-              <ul class="capability-features">
+              <ul>
                 <li><strong>Text & Typography</strong> — Professional typography and text animation for presentations</li>
                 <li><strong>Video Integration</strong> — Seamless incorporation of video content into presentations</li>
                 <li><strong>Animation</strong> — Custom animated elements that enhance storytelling</li>
@@ -141,13 +187,15 @@
                 <li><strong>Training Materials</strong> — Multimedia productions for employee training and orientation</li>
                 <li><strong>Business Presentations</strong> — Professional presentations for corporate meetings and events</li>
               </ul>
-              <p class="mt-3">Multimedia productions are tailored to your specific needs — whether educational, business-oriented, or entertainment-focused.</p>
+              <div class="mt-3 p-3 rounded" style="background: var(--primary-green-light);">
+                <p class="mb-0"><strong><i class="bi bi-info-circle-fill me-2" style="color: var(--primary-green);"></i>Tailored Productions:</strong> Multimedia productions are tailored to your specific needs — whether educational, business-oriented, or entertainment-focused.</p>
+              </div>
             </div>
 
             <div class="tab-pane fade" id="design-process" role="tabpanel">
               <h4>Our Design Process</h4>
               <p>A collaborative approach ensuring your vision is translated into effective design:</p>
-              <ul class="capability-features">
+              <ul>
                 <li><strong>Step 1 — Requirement Analysis:</strong> Understanding your brand, audience, and design objectives</li>
                 <li><strong>Step 2 — Concept Development:</strong> Creating initial design concepts based on your requirements</li>
                 <li><strong>Step 3 — Presentation & Feedback:</strong> Presenting concepts and incorporating your feedback</li>
@@ -155,12 +203,15 @@
                 <li><strong>Step 5 — Final Delivery:</strong> Delivering final files in required formats for print, web, or multimedia use</li>
               </ul>
             </div>
-
           </div>
         </div>
 
-        <div class="project-showcase" data-aos="fade-up">
-          <h2>Our Design Portfolio</h2>
+        <div class="project-showcase mt-5">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="section-badge-line"></span>
+            <span class="section-badge-text">Our Portfolio</span>
+          </div>
+          <h2 class="mb-4">Our Design Portfolio</h2>
           <div class="showcase-grid">
             <div class="showcase-item large">
               <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=700&q=80" alt="Corporate Identity">
@@ -210,12 +261,12 @@
       <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
         <div class="service-sidebar">
 
-          <div class="quick-info-card">
-            <div class="info-header">
+          <div class="info-card mb-4">
+            <div class="card-header">
               <h3>Service Information</h3>
-              <span class="info-badge">Available</span>
+              <span class="badge">Available</span>
             </div>
-            <div class="info-content">
+            <div class="card-body">
               <div class="info-row">
                 <span class="label">Service Type</span>
                 <span class="value">Graphic Designing</span>
@@ -235,41 +286,37 @@
             </div>
           </div>
 
-          <div class="contact-form-card">
-            <h3>Start Your Design Project</h3>
-            <p>Tell us about your graphic design requirements and we'll get back to you within 24 hours.</p>
-            <div class="consultation-form">
-              <div class="form-group">
-                <input type="text" placeholder="Your Full Name" required>
-              </div>
-              <div class="form-group">
-                <input type="email" placeholder="Email Address" required>
-              </div>
-              <div class="form-group">
-                <input type="tel" placeholder="Phone Number">
-              </div>
-              <div class="form-group">
-                <select>
-                  <option value="" disabled selected>Select Design Service</option>
-                  <option>Corporate Identity / Logo Design</option>
-                  <option>Brochure / Flyer / Poster Design</option>
-                  <option>Banner Design (Static / Animated)</option>
-                  <option>Multimedia Presentation</option>
-                  <option>Stationery Design</option>
-                  <option>Online Catalog / Interactive Brochure</option>
-                  <option>Motion Graphics</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <textarea rows="3" placeholder="Brief description of your design needs"></textarea>
-              </div>
-              <button type="submit" class="btn-submit">
-                <i class="bi bi-send me-2"></i> Send Inquiry
-              </button>
+          <div class="contact-card mb-4">
+            <div class="contact-icon">
+              <i class="bi bi-brush-fill"></i>
             </div>
+            <h3>Start Your Design Project</h3>
+            <p>Tell us about your graphic design requirements and our creative team will bring your vision to life.</p>
+            <div class="benefits-list">
+              <div class="benefit-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Free consultation on design requirements</span>
+              </div>
+              <div class="benefit-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Custom designs tailored to your brand</span>
+              </div>
+              <div class="benefit-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Unlimited revisions until satisfaction</span>
+              </div>
+              <div class="benefit-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Final files in all required formats</span>
+              </div>
+            </div>
+            <a href="{% url 'contact_us' %}" class="btn-primary-custom mt-3">
+              <i class="bi bi-chat-dots"></i> Discuss Your Design Needs
+              <i class="bi bi-arrow-right ms-2"></i>
+            </a>
           </div>
 
-          <div class="expertise-highlights">
+          <div class="expertise-card mb-4">
             <h4>Why Choose Radiant Infotech?</h4>
             <div class="expertise-grid">
               <div class="expertise-item">
@@ -299,10 +346,10 @@
             </div>
           </div>
 
-          <div class="mt-4 p-3 bg-light rounded">
-            <h5 class="mb-2">Contact Our Design Team</h5>
-            <p class="mb-1"><i class="bi bi-telephone me-2"></i>01-4545765 / 01-4524311</p>
-            <p class="mb-1"><i class="bi bi-envelope me-2"></i>info@radiantnepal.com</p>
+          <div class="contact-info">
+            <h5>Contact Our Design Team</h5>
+            <p><i class="bi bi-telephone me-2"></i>01-4545765 / 01-4524311</p>
+            <p><i class="bi bi-envelope me-2"></i>info@radiantnepal.com</p>
             <p><i class="bi bi-geo-alt me-2"></i>Radiant Building, Bhatbhateni, Kathmandu, Nepal</p>
           </div>
 
@@ -313,18 +360,804 @@
   </div>
 </section>
 
+<section class="call-to-action section dark-background mt-5"
+         style="background-image:url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1920&q=80');background-size:cover;background-position:center;">
+  <div class="container" data-aos="fade-up">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-7">
+        <div class="action-panel">
+          <div class="action-badge">
+            <span class="badge-line"></span>
+            <span>Get Started Today</span>
+            <span class="badge-line"></span>
+          </div>
+          <h2>Ready to Bring Your<br>Brand to Life?</h2>
+          <p>Let's create stunning designs that capture your brand's essence and make a lasting impression on your audience.</p>
+          <div class="action-buttons">
+            <a href="{% url 'contact_us' %}" class="btn-primary">
+              <i class="bi bi-chat-dots"></i> Start Your Design Project
+            </a>
+            <a href="{% url 'services' %}" class="btn-secondary">
+              <i class="bi bi-grid-3x3-gap"></i> Explore Other Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  :root {
+    --primary-green: #059652;
+    --primary-green-dark: #047a42;
+    --primary-green-light: #e6f4ed;
+    --hover-gold: #ffc107;
+    --text-dark: #1a2c3e;
+    --text-muted: #5a6c7e;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --card-shadow-hover: 0 20px 40px rgba(5, 150, 82, 0.15);
+  }
+
+  .hero-section {
+    position: relative;
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 120px 0 80px;
+  }
+
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0a2a1a 0%, #0a3a1a 50%, #0a2a1a 100%);
+    z-index: 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(5, 150, 82, 0.3) 0%, transparent 70%);
+    z-index: 1;
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 50px;
+    margin-bottom: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: white;
+  }
+
+  .hero-badge .badge-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--hover-gold);
+    border-radius: 50%;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .hero-title .highlight {
+    color: var(--hover-gold);
+  }
+
+  .hero-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .hero-divider span {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--hover-gold), transparent);
+  }
+
+  .hero-divider i {
+    font-size: 1.2rem;
+    color: var(--hover-gold);
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    margin: 0 auto 32px;
+  }
+
+  .hero-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    padding: 10px 24px;
+    border-radius: 50px;
+    margin: 0 auto;
+    width: fit-content;
+    transition: all 0.3s ease;
+  }
+
+  .hero-breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
+  }
+
+  .hero-breadcrumb a:hover {
+    color: var(--hover-gold);
+  }
+
+  .hero-breadcrumb span {
+    color: var(--hover-gold);
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .section-badge-line {
+    display: inline-block;
+    width: 36px;
+    height: 2px;
+    background: var(--primary-green);
+    border-radius: 2px;
+  }
+
+  .section-badge-text {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-green);
+  }
+
+  .highlight-text {
+    color: var(--primary-green);
+  }
+
+  .stats-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .stat-card {
+    flex: 1;
+    min-width: 150px;
+    background: white;
+    border-radius: 20px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(5, 150, 82, 0.1);
+    box-shadow: var(--card-shadow);
+    cursor: pointer;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--hover-gold);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .stat-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-green-light);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+  }
+
+  .stat-card:hover .stat-icon {
+    background: var(--hover-gold);
+  }
+
+  .stat-icon i {
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    transition: color 0.3s ease;
+  }
+
+  .stat-card:hover .stat-icon i {
+    color: white;
+  }
+
+  .stat-number {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary-green);
+    line-height: 1.3;
+  }
+
+  .stat-card:hover .stat-number {
+    color: var(--hover-gold);
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-top: 6px;
+    text-transform: uppercase;
+  }
+
+  .stat-description {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .overview-card {
+    background: white;
+    border: 1px solid rgba(5, 150, 82, 0.1);
+    border-radius: 20px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--card-shadow);
+  }
+
+  .overview-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--hover-gold);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .overview-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-green-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .overview-card:hover .overview-icon {
+    background: var(--hover-gold);
+  }
+
+  .overview-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-green);
+  }
+
+  .overview-card:hover .overview-icon i {
+    color: white;
+  }
+
+  .overview-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .overview-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .nav-tabs {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    gap: 8px;
+  }
+
+  .nav-tabs .nav-link {
+    border: none;
+    padding: 10px 20px;
+    font-weight: 500;
+    color: var(--text-dark);
+    background: transparent;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-tabs .nav-link:hover {
+    color: var(--primary-green);
+    background: var(--primary-green-light);
+  }
+
+  .nav-tabs .nav-link.active {
+    color: var(--primary-green);
+    background: var(--primary-green-light);
+    border-bottom: 2px solid var(--primary-green);
+  }
+
+  .tab-content ul {
+    padding-left: 20px;
+  }
+
+  .tab-content ul li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+
+  .showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .showcase-item {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    height: 200px;
+  }
+
+  .showcase-item.large {
+    grid-column: span 2;
+  }
+
+  .showcase-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .showcase-item:hover img {
+    transform: scale(1.05);
+  }
+
+  .showcase-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+  }
+
+  .showcase-item:hover .showcase-overlay {
+    opacity: 1;
+  }
+
+  .showcase-content {
+    color: white;
+  }
+
+  .project-type {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: var(--primary-green);
+    padding: 2px 8px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .showcase-content h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .view-project {
+    color: white;
+    font-size: 1rem;
+    display: inline-block;
+  }
+
+  .info-card, .contact-card, .expertise-card {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+  }
+
+  .info-card .card-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .info-card .card-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .info-card .card-header .badge {
+    background: var(--primary-green);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+  }
+
+  .info-card .card-body {
+    padding: 20px;
+  }
+
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .info-row:last-child {
+    border-bottom: none;
+  }
+
+  .info-row .label {
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .info-row .value {
+    font-weight: 500;
+    text-align: right;
+  }
+
+  .contact-card {
+    padding: 24px;
+    text-align: center;
+  }
+
+  .contact-card .contact-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--primary-green-light);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+  }
+
+  .contact-card .contact-icon i {
+    font-size: 2rem;
+    color: var(--primary-green);
+  }
+
+  .contact-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .contact-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .benefits-list {
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+
+  .benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: 0.85rem;
+  }
+
+  .benefit-item i {
+    color: var(--primary-green);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .btn-primary-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary-green);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-primary-custom:hover {
+    background: var(--hover-gold);
+    color: var(--text-dark);
+    transform: translateY(-2px);
+  }
+
+  .expertise-card {
+    padding: 20px;
+  }
+
+  .expertise-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .expertise-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: var(--primary-green-light);
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .expertise-item i {
+    color: var(--primary-green);
+  }
+
+  .contact-info {
+    background: var(--primary-green-light);
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .contact-info h5 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .contact-info p {
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .contact-info i {
+    color: var(--primary-green);
+    width: 20px;
+  }
+
+  .call-to-action {
+    position: relative;
+    padding: 80px 0;
+  }
+
+  .call-to-action::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+  }
+
+  .action-panel {
+    position: relative;
+    z-index: 1;
+  }
+
+  .action-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .action-badge .badge-line {
+    width: 30px;
+    height: 2px;
+    background: var(--primary-green);
+  }
+
+  .action-badge span:not(.badge-line) {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-green);
+  }
+
+  .action-panel h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 16px;
+  }
+
+  .action-panel p {
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--primary-green);
+    color: white;
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background: var(--hover-gold);
+    color: var(--text-dark);
+    transform: translateY(-3px);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: white;
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--hover-gold);
+    color: var(--hover-gold);
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 991px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    .section {
+      padding: 60px 0;
+    }
+    .stats-grid {
+      flex-direction: column;
+    }
+    .stat-card {
+      min-width: auto;
+    }
+    .overview-grid {
+      grid-template-columns: 1fr;
+    }
+    .showcase-grid {
+      grid-template-columns: 1fr;
+    }
+    .showcase-item.large {
+      grid-column: span 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+    .hero-description {
+      font-size: 1rem;
+    }
+    .hero-section {
+      min-height: 55vh;
+      padding: 100px 0 60px;
+    }
+    .action-panel h2 {
+      font-size: 1.5rem;
+    }
+    .action-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+  /*
+   * Tab Navigation Handler for Graphic Designing Services
+   *
+   * Purpose: Manages the active state of tab buttons in the Graphic Design
+   *          Services section (Design Services, Banner Design, Multimedia,
+   *          Our Process).
+   *
+   * Behavior:
+   *   - Listens for click events on all tab navigation buttons (.nav-link)
+   *   - When a tab is clicked:
+   *     1. Removes the 'active' class from ALL tabs (resets their state)
+   *     2. Adds the 'active' class ONLY to the clicked tab
+   *
+   * Note: Bootstrap 5 handles the actual tab content switching via
+   *       data-bs-toggle="tab". This script solely manages the visual
+   *       active state styling of the tab buttons to ensure proper
+   *       highlighting and user feedback.
+   *
+   * Dependencies: Requires Bootstrap 5 JS for tab content toggling
+   */
+  document.addEventListener('DOMContentLoaded', function() {
     const tabs = document.querySelectorAll('.nav-link');
+
     tabs.forEach(function(tab) {
-        tab.addEventListener('click', function() {
-            tabs.forEach(function(t) {
-                t.classList.remove('active');
-            });
-            this.classList.add('active');
+      tab.addEventListener('click', function() {
+        tabs.forEach(function(t) {
+          t.classList.remove('active');
         });
+        this.classList.add('active');
+      });
     });
-});
+  });
 </script>
 
 {% endblock %}

@@ -6,7 +6,6 @@
 
 {% block extra_css %}
 <style>
-  /* CSS Variables - Green Theme #059652 */
   :root {
     --primary-green: #059652;
     --primary-green-dark: #047a42;
@@ -147,7 +146,6 @@
     gap: 8px;
   }
 
-  /* Photo Gallery Grid */
   .photo-gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -234,7 +232,6 @@
     background: var(--hover-gold);
   }
 
-  /* Stats Cards */
   .stat-card {
     background: white;
     border-radius: 20px;
@@ -298,7 +295,6 @@
     font-weight: 600;
   }
 
-  /* Testimonials */
   .testimonial-card {
     background: white;
     border-radius: 20px;
@@ -346,7 +342,6 @@
     border-color: var(--hover-gold);
   }
 
-  /* Gallery nav tabs */
   .gallery-nav {
     display: flex;
     justify-content: center;
@@ -374,7 +369,6 @@
     transform: translateY(-2px);
   }
 
-  /* Section Header */
   .section-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -421,7 +415,6 @@
     font-size: 1rem;
   }
 
-  /* CTA Section */
   .cta-section {
     background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
     border-radius: 28px;
@@ -523,7 +516,6 @@
 {% endblock %}
 
 {% block page_title %}
-<!-- Redesigned Hero Section -->
 <div class="hero-section" data-aos="fade">
   <div class="hero-background">
     <div class="hero-overlay"></div>
@@ -562,7 +554,6 @@
 
 {% block content %}
 
-<!-- SECTION 1 — PROJECT PORTFOLIO (COMPLETELY UNCHANGED) -->
 <section class="section" id="portfolio">
   <div class="container" data-aos="fade-up">
 
@@ -798,7 +789,6 @@
   </div>
 </section>
 
-<!-- SECTION 2 — COMPANY PHOTO GALLERY (MANUAL PATHS FOR ALL IMAGES) -->
 <section class="section light-background" id="company-gallery">
   <div class="container" data-aos="fade-up">
 
@@ -809,7 +799,6 @@
       <p class="section-description">Our team, office outings, events — a glimpse into who we are beyond our work</p>
     </div>
 
-    <!-- Production Team Section (5 images) -->
     <h3 class="text-center mb-4" style="color: var(--primary-green);">Production Team</h3>
     <div class="photo-gallery-grid mt-4 mb-5" data-aos="fade-up" data-aos-delay="100">
       <a href="{% static 'img/gallery/production-team/1.jpg' %}" class="photo-item wide glightbox" data-gallery="production" data-glightbox="title: Production Team Member 1">
@@ -829,7 +818,6 @@
       </a>
     </div>
 
-    <!-- Office Outing Section (18 images) - MANUAL PATHS -->
     <h3 class="text-center mb-4 mt-5" style="color: var(--primary-green);">Office Outings</h3>
     <div class="photo-gallery-grid mt-4 mb-5" data-aos="fade-up" data-aos-delay="200">
       <a href="{% static 'img/gallery/office-outing/1.jpeg' %}" class="photo-item glightbox" data-gallery="outing" data-glightbox="title: Office Outing 1">
@@ -880,13 +868,12 @@
       <a href="{% static 'img/gallery/office-outing/16.jpeg' %}" class="photo-item wide glightbox" data-gallery="outing" data-glightbox="title: Office Outing 16">
         <img src="{% static 'img/gallery/office-outing/16.jpeg' %}" alt="Office Outing 16"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
       </a>
-     
+
       <a href="{% static 'img/gallery/office-outing/18.jpeg' %}" class="photo-item glightbox" data-gallery="outing" data-glightbox="title: Office Outing 18">
         <img src="{% static 'img/gallery/office-outing/18.jpeg' %}" alt="Office Outing 18"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
       </a>
     </div>
 
-    <!-- Office Programme Section (5 images) -->
     <h3 class="text-center mb-4 mt-5" style="color: var(--primary-green);">Office Programmes & Events</h3>
     <div class="photo-gallery-grid mt-4 mb-5" data-aos="fade-up" data-aos-delay="300">
       <a href="{% static 'img/gallery/office-programme/1.jpeg' %}" class="photo-item tall glightbox" data-gallery="programme" data-glightbox="title: Office Programme 1">
@@ -913,7 +900,6 @@
   </div>
 </section>
 
-<!-- SECTION 3 — STATS -->
 <section class="section">
   <div class="container">
     <div class="section-header text-center" data-aos="fade-up">
@@ -955,7 +941,6 @@
   </div>
 </section>
 
-<!-- SECTION 4 — TESTIMONIALS -->
 <section class="section light-background">
   <div class="container">
     <div class="section-header text-center" data-aos="fade-up">
@@ -1033,7 +1018,6 @@
   </div>
 </section>
 
-<!-- SECTION 5 — CTA -->
 <section class="section">
   <div class="container">
     <div class="cta-section" data-aos="fade-up">
@@ -1051,7 +1035,6 @@
   </div>
 </section>
 
-<!-- PROJECT MODALS -->
 {% for i in "123456789"|make_list %}
 <div class="modal fade" id="projectModal{{ forloop.counter }}" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -1077,7 +1060,6 @@
 </div>
 {% endfor %}
 
-<!-- Hero Section CSS -->
 <style>
   .hero-section {
     position: relative;
@@ -1232,6 +1214,24 @@
 
 {% block extra_js %}
 <script>
+  /*
+   * Portfolio Filtering System
+   *
+   * This script handles filtering of project gallery items by category.
+   *
+   * Functionality:
+   * - Listens for clicks on filter buttons (All Projects, Web Solutions, etc.)
+   * - When a filter is clicked, it becomes active and others are deactivated
+   * - Filters gallery items based on their CSS classes (data-filter attribute)
+   * - Uses visual transitions: items being filtered out fade and scale down,
+   *   then get hidden after animation completes
+   * - Items matching the filter appear with smooth transition
+   *
+   * Note: Filter values use Isotope-style selectors:
+   *   - "*" shows all items
+   *   - ".web" shows items with class "web"
+   *   - ".software" shows items with class "software", etc.
+   */
   document.addEventListener('DOMContentLoaded', function () {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');

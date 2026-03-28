@@ -68,9 +68,6 @@
     color: var(--accent-color) !important;
   }
 
-  /* =====================
-     DESKTOP (≥1200px) — unchanged
-  ===================== */
   @media (min-width: 1200px) {
     .navmenu > ul > li > a {
       position: relative;
@@ -144,26 +141,19 @@
     }
   }
 
-  /* =====================
-     MOBILE (<1200px)
-  ===================== */
   @media (max-width: 1199px) {
-
-    /* Logo: centered absolutely within the header bar */
     .header .logo {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
     }
 
-    /* Hamburger: sits at the right end of the flex row */
     .mobile-nav-toggle {
       color: #2c3e4e !important;
       font-size: 26px;
       margin-left: auto;
     }
 
-    /* Hide "Get a Quote" on mobile */
     .header .btn-getstarted {
       display: none !important;
     }
@@ -193,7 +183,6 @@
       color: #2c3e4e !important;
     }
 
-    /* Dropdown: icon + text tightly inline */
     .navmenu .dropdown ul a {
       display: flex;
       align-items: center;
@@ -214,9 +203,6 @@
     }
   }
 
-  /* =====================
-     GET A QUOTE (desktop only)
-  ===================== */
   .header .btn-getstarted,
   .header .btn-getstarted:focus {
     color: #ffffff !important;
@@ -240,9 +226,6 @@
     box-shadow: none;
   }
 
-  /* =====================
-     SOCIAL ICONS (desktop only)
-  ===================== */
   .header-social {
     display: flex;
     align-items: center;

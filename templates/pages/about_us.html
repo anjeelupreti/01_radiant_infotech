@@ -5,7 +5,6 @@
 {% block body_class %}about-page{% endblock %}
 
 {% block page_title %}
-<!-- Redesigned Hero Section with Modern Design -->
 <div class="hero-section" data-aos="fade">
   <div class="hero-background">
     <div class="hero-overlay"></div>
@@ -66,7 +65,6 @@
 
 {% block content %}
 
-<!-- About Section -->
 <section id="about" class="about section">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row align-items-stretch g-5">
@@ -87,8 +85,7 @@
           <p class="description-text mb-4" data-aos="fade-right" data-aos-delay="280">
             Our background is rooted in web and software development, providing a full range of web, desktop, and digital signature solutions. We believe information technology breaks the traditional boundaries of time and space — enabling businesses to grow commercially, socially, and economically. With expertise in ASP, Java (J2EE), PHP, MSSQL, MySQL, Oracle, and PKI technology, we serve every client with the same standard: excellence.
           </p>
-          
-          <!-- Fixed Stats Grid - Properly Sized with No Overflow -->
+
           <div class="stats-grid" data-aos="fade-up" data-aos-delay="300">
             <div class="stat-card">
               <div class="stat-icon">
@@ -121,7 +118,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="cta-section d-flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="350">
             <a href="{% url 'services' %}" class="cta-link-primary">
               Explore Our Services <i class="bi bi-arrow-right ms-2"></i>
@@ -161,7 +158,6 @@
   </div>
 </section>
 
-<!-- Company Story Section -->
 <section id="company-story" class="section light-background">
   <div class="container" data-aos="fade-up">
     <div class="section-title">
@@ -189,7 +185,6 @@
       </div>
     </div>
 
-    <!-- Core Values Section with Yellow Hover Effects -->
     <div class="values-grid" data-aos="fade-up" data-aos-delay="300">
       <div class="value-item">
         <i class="bi bi-hand-thumbs-up"></i>
@@ -220,7 +215,6 @@
   </div>
 </section>
 
-<!-- Mission & Vision Section -->
 <section id="mission-vision" class="section">
   <div class="container">
     <div class="section-title" data-aos="fade-up">
@@ -256,7 +250,6 @@
   </div>
 </section>
 
-<!-- Leadership Section -->
 <section id="leadership" class="team section light-background">
   <div class="container" data-aos="fade-up">
     <div class="section-title">
@@ -264,7 +257,6 @@
       <p>The board of directors guides Radiant Infotech with vision, experience, and an unwavering commitment to client success</p>
     </div>
 
-    <!-- Chairman - Featured -->
     <div class="row justify-content-center mt-4" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-5 col-md-8">
         <div class="leadership-card featured">
@@ -287,7 +279,6 @@
 
     <div class="leadership-divider"></div>
 
-    <!-- MD and Director -->
     <div class="row g-4 justify-content-center" data-aos="fade-up" data-aos-delay="200">
       <div class="col-lg-5 col-md-6">
         <div class="leadership-card">
@@ -328,7 +319,6 @@
   </div>
 </section>
 
-<!-- Why Choose Us Section -->
 <section id="why-choose-us" class="section">
   <div class="container">
     <div class="section-title" data-aos="fade-up">
@@ -382,7 +372,6 @@
   </div>
 </section>
 
-<!-- Call to Action Section -->
 <section class="call-to-action section dark-background"
          style="background-image:url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1920&q=80');background-size:cover;background-position:center;">
   <div class="container" data-aos="fade-up">
@@ -410,9 +399,7 @@
   </div>
 </section>
 
-<!-- Custom CSS with #059652 Green and Yellow/Gold Hover Effects -->
 <style>
-  /* CSS Variables - Green Theme #059652 */
   :root {
     --primary-green: #059652;
     --primary-green-dark: #047a42;
@@ -427,9 +414,6 @@
     --card-shadow-hover: 0 20px 40px rgba(5, 150, 82, 0.15);
   }
 
-  /* ============================================
-     REDESIGNED HERO SECTION
-     ============================================ */
   .hero-section {
     position: relative;
     min-height: 85vh;
@@ -658,9 +642,6 @@
     }
   }
 
-  /* ============================================
-     FIXED STATS GRID - NO OVERFLOW
-     ============================================ */
   .stats-grid {
     display: flex;
     gap: 1rem;
@@ -761,7 +742,6 @@
     font-weight: 500;
   }
 
-  /* Section Styles */
   .section {
     padding: 80px 0;
   }
@@ -770,7 +750,6 @@
     background: #fafbfe;
   }
 
-  /* Section Title */
   .section-title {
     text-align: center;
     margin-bottom: 3rem;
@@ -810,7 +789,6 @@
     font-size: 1rem;
   }
 
-  /* Section Badge */
   .section-badge-line {
     display: inline-block;
     width: 36px;
@@ -848,7 +826,6 @@
     line-height: 1.7;
   }
 
-  /* CTA Links */
   .cta-link-primary {
     display: inline-flex;
     align-items: center;
@@ -891,7 +868,6 @@
     transform: translateY(-2px);
   }
 
-  /* Image Section */
   .image-section {
     position: relative;
     padding-bottom: 30px;
@@ -1007,7 +983,6 @@
     opacity: 0.9;
   }
 
-  /* Story Grid */
   .story-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1073,7 +1048,6 @@
     margin: 0;
   }
 
-  /* Values Grid with Yellow Hover */
   .values-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -1140,7 +1114,6 @@
     color: white;
   }
 
-  /* Mission & Vision Cards */
   .mission-card,
   .vision-card {
     position: relative;
@@ -1221,7 +1194,6 @@
     margin: 0;
   }
 
-  /* Leadership Cards */
   .leadership-card {
     border-radius: 24px;
     overflow: hidden;
@@ -1396,7 +1368,6 @@
     background: var(--hover-gold);
   }
 
-  /* Features Grid */
   .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1465,7 +1436,6 @@
     margin: 0;
   }
 
-  /* Call to Action */
   .call-to-action {
     position: relative;
     padding: 80px 0;
@@ -1579,49 +1549,48 @@
     transform: translateY(-3px);
   }
 
-  /* Responsive */
   @media (max-width: 991px) {
     .hero-title {
       font-size: 2.5rem;
     }
-    
+
     .hero-stats {
       gap: 20px;
     }
-    
+
     .hero-stat-divider {
       display: none;
     }
-    
+
     .section {
       padding: 60px 0;
     }
-    
+
     .section-title h2 {
       font-size: 1.8rem;
     }
-    
+
     .story-grid {
       grid-template-columns: 1fr;
     }
-    
+
     .values-grid {
       grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .value-item {
       border-right: none;
       border-bottom: 1px solid rgba(5, 150, 82, 0.1);
     }
-    
+
     .features-grid {
       grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .stats-grid {
       flex-direction: column;
     }
-    
+
     .stat-card {
       min-width: auto;
     }
@@ -1632,54 +1601,93 @@
       min-height: 70vh;
       padding: 100px 0 60px;
     }
-    
+
     .hero-title {
       font-size: 2rem;
     }
-    
+
     .hero-title .highlight::after {
       bottom: 4px;
       height: 6px;
     }
-    
+
     .hero-description {
       font-size: 1rem;
     }
-    
+
     .hero-stats {
       flex-direction: column;
       gap: 16px;
     }
-    
+
     .hero-stat-number {
       font-size: 1.5rem;
     }
-    
+
     .features-grid {
       grid-template-columns: 1fr;
     }
-    
+
     .values-grid {
       grid-template-columns: 1fr;
     }
-    
+
     .action-panel h2 {
       font-size: 1.5rem;
     }
-    
+
     .action-buttons {
       flex-direction: column;
       align-items: center;
     }
-    
+
     .leadership-image {
       height: 240px;
     }
-    
+
     .hero-scroll {
       bottom: -40px;
     }
   }
 </style>
+
+<script>
+  /*
+   * Smooth scroll functionality for anchor links
+   *
+   * Target: All anchor links with href starting with '#'
+   * Behavior: Prevents default jump behavior and scrolls smoothly
+   *           to the target element with an offset to account for
+   *           fixed header height
+   *
+   * Offset calculation: header height + 20px for visual spacing
+   *
+   * Important: This ensures that when clicking on scroll links
+   *           (e.g., hero-scroll link to #about), the page scrolls
+   *           to the correct position without the content being
+   *           hidden behind the fixed header
+   */
+  document.addEventListener('DOMContentLoaded', function () {
+    var header = document.querySelector('#header');
+    var headerHeight = header ? header.offsetHeight : 80;
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+      anchor.addEventListener('click', function (e) {
+        var targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+
+        var targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          var targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  });
+</script>
 
 {% endblock %}

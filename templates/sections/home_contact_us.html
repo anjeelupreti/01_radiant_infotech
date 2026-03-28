@@ -80,7 +80,6 @@
               <textarea name="message" class="form-control" rows="5" placeholder="Tell us about your project or inquiry..." required></textarea>
             </div>
 
-            <!-- File Upload Section -->
             <div class="file-upload-wrapper mt-3">
               <label for="attachment_home" class="file-upload-label">
                 <i class="bi bi-paperclip"></i>
@@ -121,7 +120,6 @@
 </section>
 
 <style>
-/* File Upload Styles for Home Page */
 .file-upload-wrapper {
   position: relative;
   margin-top: 1rem;
@@ -218,6 +216,26 @@ input[type="file"] {
 
 {% block extra_js %}
 <script>
+  /*
+   * Contact Form Handler (Home Page)
+   *
+   * This script handles two main functionalities:
+   *
+   * 1. FILE UPLOAD VALIDATION:
+   *    - Validates file size (max 10MB) before form submission
+   *    - Validates allowed file types: PDF, DOC, DOCX, JPG, PNG, TXT, ZIP
+   *    - Shows selected file name and provides "Remove file" option
+   *    - Prevents invalid files from being submitted
+   *
+   * 2. AJAX FORM SUBMISSION:
+   *    - Intercepts form submission to send data asynchronously
+   *    - Disables submit button during processing to prevent double submission
+   *    - Shows loading/error/success states to the user
+   *    - Uses FormData for file upload support
+   *    - Extracts CSRF token from cookies for Django security
+   *    - Handles JSON response from backend and displays appropriate messages
+   *    - Automatically resets form and scrolls to feedback message on success
+   */
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contactForm');
     const fileInput = document.getElementById('attachment_home');
@@ -228,11 +246,9 @@ input[type="file"] {
     const errorMsg = form.querySelector('.error-message');
     const sentMsg = form.querySelector('.sent-message');
 
-    // File upload handling
     fileInput.addEventListener('change', function(e) {
       const file = e.target.files[0];
       if (file) {
-        // Check file size (10MB limit)
         if (file.size > 10 * 1024 * 1024) {
           alert('File size must be less than 10MB');
           fileInput.value = '';
@@ -240,8 +256,7 @@ input[type="file"] {
           removeFileBtn.style.display = 'none';
           return;
         }
-        
-        // Check file type
+
         const allowedTypes = ['pdf', 'doc', 'docx', 'jpg', 'jpeg', 'png', 'txt', 'zip'];
         const fileExt = file.name.split('.').pop().toLowerCase();
         if (!allowedTypes.includes(fileExt)) {
@@ -251,7 +266,7 @@ input[type="file"] {
           removeFileBtn.style.display = 'none';
           return;
         }
-        
+
         fileNameSpan.textContent = file.name;
         removeFileBtn.style.display = 'inline-block';
       } else {
@@ -259,26 +274,22 @@ input[type="file"] {
         removeFileBtn.style.display = 'none';
       }
     });
-    
+
     removeFileBtn.addEventListener('click', function() {
       fileInput.value = '';
       fileNameSpan.textContent = '';
       removeFileBtn.style.display = 'none';
     });
 
-    // Form submission handling
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
 
-      // Hide any previous messages
       loading.style.display = 'block';
       errorMsg.style.display = 'none';
       sentMsg.style.display = 'none';
-      
-      // Disable submit button
+
       submitBtn.disabled = true;
 
-      // Create FormData object for file upload
       const formData = new FormData(form);
 
       try {
@@ -299,19 +310,15 @@ input[type="file"] {
           form.reset();
           fileNameSpan.textContent = '';
           removeFileBtn.style.display = 'none';
-          
-          // Scroll to success message
+
           sentMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          
-          // Hide success message after 5 seconds
+
           setTimeout(() => {
             sentMsg.style.display = 'none';
           }, 5000);
         } else {
           errorMsg.textContent = result.message || 'Something went wrong. Please try again.';
           errorMsg.style.display = 'block';
-          
-          // Scroll to error message
           errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
       } catch (err) {
@@ -320,7 +327,6 @@ input[type="file"] {
         errorMsg.textContent = 'Network error. Please check your connection and try again.';
         errorMsg.style.display = 'block';
       } finally {
-        // Re-enable submit button
         submitBtn.disabled = false;
       }
     });
