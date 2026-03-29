@@ -329,17 +329,29 @@
     color: var(--text-muted);
   }
 
-  .testimonial-card .client-image {
+  .testimonial-card .client-icon {
     width: 56px;
     height: 56px;
+    background: var(--primary-green-light);
     border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--primary-green-light);
-    transition: border-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
   }
 
-  .testimonial-card:hover .client-image {
-    border-color: var(--hover-gold);
+  .testimonial-card:hover .client-icon {
+    background: var(--hover-gold);
+  }
+
+  .testimonial-card .client-icon i {
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    transition: color 0.3s ease;
+  }
+
+  .testimonial-card:hover .client-icon i {
+    color: white;
   }
 
   .gallery-nav {
@@ -554,6 +566,7 @@
 
 {% block content %}
 
+<!-- Portfolio Section -->
 <section class="section" id="portfolio">
   <div class="container" data-aos="fade-up">
 
@@ -789,6 +802,7 @@
   </div>
 </section>
 
+<!-- Company Photo Gallery Section -->
 <section class="section light-background" id="company-gallery">
   <div class="container" data-aos="fade-up">
 
@@ -868,7 +882,9 @@
       <a href="{% static 'img/gallery/office-outing/16.jpeg' %}" class="photo-item wide glightbox" data-gallery="outing" data-glightbox="title: Office Outing 16">
         <img src="{% static 'img/gallery/office-outing/16.jpeg' %}" alt="Office Outing 16"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
       </a>
-
+      <a href="{% static 'img/gallery/office-outing/17.jpeg' %}" class="photo-item glightbox" data-gallery="outing" data-glightbox="title: Office Outing 17">
+        <img src="{% static 'img/gallery/office-outing/17.jpeg' %}" alt="Office Outing 17"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
+      </a>
       <a href="{% static 'img/gallery/office-outing/18.jpeg' %}" class="photo-item glightbox" data-gallery="outing" data-glightbox="title: Office Outing 18">
         <img src="{% static 'img/gallery/office-outing/18.jpeg' %}" alt="Office Outing 18"><div class="photo-overlay"><span>Office Outing</span></div><div class="zoom-icon"><i class="bi bi-zoom-in"></i></div>
       </a>
@@ -900,6 +916,7 @@
   </div>
 </section>
 
+<!-- Stats Section -->
 <section class="section">
   <div class="container">
     <div class="section-header text-center" data-aos="fade-up">
@@ -941,6 +958,7 @@
   </div>
 </section>
 
+<!-- Testimonials Section - Updated with Nepali Names and Icons -->
 <section class="section light-background">
   <div class="container">
     <div class="section-header text-center" data-aos="fade-up">
@@ -950,65 +968,114 @@
       <p class="section-description">Hear from our satisfied clients about their project experience</p>
     </div>
     <div class="row g-4 mt-2">
+      <!-- Testimonial 1 -->
       <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
         <div class="testimonial-card">
-          <div class="d-flex align-items-center mb-3">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80"
-                 alt="Client" class="client-image me-3">
+          <div class="d-flex align-items-center mb-3 gap-3">
+            <div class="client-icon">
+              <i class="bi bi-person-badge-fill"></i>
+            </div>
             <div>
-              <p class="client-name mb-0">Rajesh Kumar</p>
-              <p class="client-role mb-0">CEO, FinTech Solutions</p>
+              <p class="client-name mb-0">Bikash Neupane</p>
+              <p class="client-role mb-0">CEO, Himalayan FinTech Pvt. Ltd.</p>
             </div>
           </div>
-          <p style="font-size: 15px; line-height: 1.7;">Radiant Infotech delivered our digital signature platform with PKI infrastructure. The integration was seamless and our clients trust the security. Their 22 years of experience shows in the quality of work.</p>
+          <p style="font-size: 15px; line-height: 1.7;">Radiant Infotech delivered our digital signature platform with PKI infrastructure. The integration was seamless and our clients trust the security. Their 22 years of experience shows in the quality of work. The team was responsive and professional throughout the project.</p>
           <div class="stars mt-2">
             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
           </div>
         </div>
       </div>
+      
+      <!-- Testimonial 2 -->
       <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
         <div class="testimonial-card">
-          <div class="d-flex align-items-center mb-3">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80"
-                 alt="Client" class="client-image me-3">
+          <div class="d-flex align-items-center mb-3 gap-3">
+            <div class="client-icon">
+              <i class="bi bi-person-badge-fill"></i>
+            </div>
             <div>
-              <p class="client-name mb-0">Priya Sharma</p>
-              <p class="client-role mb-0">Director, HealthCare Plus</p>
+              <p class="client-name mb-0">Sabina Shrestha</p>
+              <p class="client-role mb-0">Director, HealthCare Plus Hospital</p>
             </div>
           </div>
-          <p style="font-size: 15px; line-height: 1.7;">The hospital management system developed by Radiant Infotech has transformed how we manage patient records. Their attention to security and user experience is outstanding.</p>
+          <p style="font-size: 15px; line-height: 1.7;">The hospital management system developed by Radiant Infotech has transformed how we manage patient records. From appointment scheduling to billing and pharmacy management, everything is now streamlined. Their attention to security and user experience is outstanding.</p>
           <div class="stars mt-2">
             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
           </div>
         </div>
       </div>
+      
+      <!-- Testimonial 3 -->
       <div class="col-lg-6" data-aos="fade-right" data-aos-delay="300">
         <div class="testimonial-card">
-          <div class="d-flex align-items-center mb-3">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&q=80"
-                 alt="Client" class="client-image me-3">
+          <div class="d-flex align-items-center mb-3 gap-3">
+            <div class="client-icon">
+              <i class="bi bi-person-badge-fill"></i>
+            </div>
             <div>
-              <p class="client-name mb-0">Suresh Bhattarai</p>
-              <p class="client-role mb-0">Principal, Everest School</p>
+              <p class="client-name mb-0">Krishna Prasad Adhikari</p>
+              <p class="client-role mb-0">Principal, Everest English School</p>
             </div>
           </div>
-          <p style="font-size: 15px; line-height: 1.7;">Finch School Management System has streamlined our entire academic operations. From student records to fee collection, everything is now automated. Highly recommended!</p>
+          <p style="font-size: 15px; line-height: 1.7;">Finch School Management System has streamlined our entire academic operations. From student enrollment, attendance tracking, examination management to fee collection and report generation, everything is now automated. Highly recommended for any educational institution!</p>
           <div class="stars mt-2">
             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
           </div>
         </div>
       </div>
+      
+      <!-- Testimonial 4 -->
       <div class="col-lg-6" data-aos="fade-left" data-aos-delay="400">
         <div class="testimonial-card">
-          <div class="d-flex align-items-center mb-3">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&q=80"
-                 alt="Client" class="client-image me-3">
+          <div class="d-flex align-items-center mb-3 gap-3">
+            <div class="client-icon">
+              <i class="bi bi-person-badge-fill"></i>
+            </div>
             <div>
-              <p class="client-name mb-0">Anil Thapa</p>
-              <p class="client-role mb-0">Manager, Himalayan Travels</p>
+              <p class="client-name mb-0">Gyanendra Thapa</p>
+              <p class="client-role mb-0">Managing Director, Himalayan Holidays & Travels</p>
             </div>
           </div>
-          <p style="font-size: 15px; line-height: 1.7;">The CMS for Tours and Travels developed by Radiant Infotech has helped us manage our tour packages efficiently. The booking system and customer management features are excellent.</p>
+          <p style="font-size: 15px; line-height: 1.7;">The CMS for Tours and Travels developed by Radiant Infotech has helped us manage our tour packages efficiently. The booking system, customer management, and itinerary planning features are excellent. Our operational efficiency has improved significantly.</p>
+          <div class="stars mt-2">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 5 -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="500">
+        <div class="testimonial-card">
+          <div class="d-flex align-items-center mb-3 gap-3">
+            <div class="client-icon">
+              <i class="bi bi-person-badge-fill"></i>
+            </div>
+            <div>
+              <p class="client-name mb-0">Rameshwor Bhandari</p>
+              <p class="client-role mb-0">Chairman, Janasakhi Saving & Credit Cooperative</p>
+            </div>
+          </div>
+          <p style="font-size: 15px; line-height: 1.7;">Lakshya Micro Banking Software from Radiant Infotech has revolutionized our microfinance operations. Loan management, savings tracking, and customer account management are now seamless. Our staff finds the interface intuitive and easy to use.</p>
+          <div class="stars mt-2">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 6 -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="600">
+        <div class="testimonial-card">
+          <div class="d-flex align-items-center mb-3 gap-3">
+            <div class="client-icon">
+             <i class="bi bi-person-badge-fill"></i>
+            </div>
+            <div>
+              <p class="client-name mb-0">Sunita Karki</p>
+              <p class="client-role mb-0">Operations Manager, Hotel Himalayan Horizon</p>
+            </div>
+          </div>
+          <p style="font-size: 15px; line-height: 1.7;">The Hotel Management System developed by Radiant Infotech has transformed our daily operations. Reservation management, check-in/check-out, billing, and housekeeping coordination are now efficient and error-free. Great support team!</p>
           <div class="stars mt-2">
             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
           </div>
@@ -1018,6 +1085,7 @@
   </div>
 </section>
 
+<!-- CTA Section -->
 <section class="section">
   <div class="container">
     <div class="cta-section" data-aos="fade-up">
@@ -1035,6 +1103,7 @@
   </div>
 </section>
 
+<!-- Project Modals -->
 {% for i in "123456789"|make_list %}
 <div class="modal fade" id="projectModal{{ forloop.counter }}" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -1214,9 +1283,10 @@
 
 {% block extra_js %}
 <script>
-  /*
-   * Portfolio Filtering System
-   *
+  /**
+   * ============================================
+   * PORTFOLIO FILTERING SYSTEM
+   * ============================================
    * This script handles filtering of project gallery items by category.
    *
    * Functionality:
@@ -1233,26 +1303,37 @@
    *   - ".software" shows items with class "software", etc.
    */
   document.addEventListener('DOMContentLoaded', function () {
+    // Select all filter button elements
     const filterButtons = document.querySelectorAll('.filter-btn');
+    // Select all gallery item elements
     const galleryItems = document.querySelectorAll('.gallery-item');
 
+    // Add click event listener to each filter button
     filterButtons.forEach(function (button) {
       button.addEventListener('click', function () {
+        // Remove active class from all filter buttons
         filterButtons.forEach(function (btn) { btn.classList.remove('active'); });
+        // Add active class to clicked button
         this.classList.add('active');
 
+        // Get the filter value from data-filter attribute
         const filterValue = this.getAttribute('data-filter');
 
+        // Loop through each gallery item and apply filter
         galleryItems.forEach(function (item) {
+          // Check if item matches the filter criteria
           if (filterValue === '*' || item.classList.contains(filterValue.substring(1))) {
+            // Show matching items with fade-in animation
             item.style.display = 'block';
             setTimeout(function () {
               item.style.opacity = '1';
               item.style.transform = 'scale(1)';
             }, 50);
           } else {
+            // Hide non-matching items with fade-out animation
             item.style.opacity = '0';
             item.style.transform = 'scale(0.9)';
+            // Remove from DOM after animation completes
             setTimeout(function () { item.style.display = 'none'; }, 300);
           }
         });
