@@ -57,7 +57,7 @@
             <span class="section-badge-text">PKI Enabled Solutions</span>
           </div>
           <h1 class="service-title">Digital Signature <br><span class="highlight-text">Certificate Solutions</span></h1>
-          <p class="service-subtitle mt-3">Radiant Infotech Nepal Pvt. Ltd. is a licensed certifying authority established in 2003, authorized to issue Class 1, Class 2, and Class 3 digital signature certificates. Our PKI-enabled infrastructure with primary site in Kathmandu and disaster recovery site in Butwal ensures secure, authentic, and non-repudiation electronic transactions.</p>
+          <p class="service-subtitle mt-3">Radiant Infotech Nepal Pvt. Ltd. is a licensed certifying authority established in 2003, authorized to issue Class 1, Class 2, and Class 3 digital signature certificates. Our PKI-enabled infrastructure ensures secure, authentic, and non-repudiation electronic transactions.</p>
         </div>
 
         <div class="stats-grid mb-5">
@@ -88,7 +88,7 @@
             <div class="stat-content">
               <div class="stat-number">PKI Enabled</div>
               <div class="stat-label">Infrastructure</div>
-              <div class="stat-description">Primary & DR Sites</div>
+              <div class="stat-description">Primary Site</div>
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@
                 <i class="bi bi-diagram-3-fill"></i>
               </div>
               <h3>PKI Infrastructure</h3>
-              <p>Complete PKI setup with primary site in Kathmandu and disaster recovery site in Butwal ensuring business continuity and secure certificate management.</p>
+              <p>Complete PKI setup ensuring business continuity and secure certificate management from our Bhatbhateni, Kathmandu facility.</p>
             </div>
           </div>
           <div class="col-md-6">
@@ -210,7 +210,7 @@
           <div class="downloads-grid">
             <div class="download-card">
               <div class="download-icon">
-                <i class="bi bi-filetype-cer"></i>
+                <i class="bi bi-filetype-pdf"></i>
               </div>
               <div class="download-info">
                 <h4>Nepal Root Certificate Authority (2025)</h4>
@@ -246,7 +246,7 @@
 
             <div class="download-card">
               <div class="download-icon">
-                <i class="bi bi-filetype-cer"></i>
+                <i class="bi bi-filetype-pdf"></i>
               </div>
               <div class="download-info">
                 <h4>Radiant InfoTech CA Certificate (2025)</h4>
@@ -373,7 +373,7 @@
               </div>
               <div class="info-row">
                 <span class="label">Infrastructure</span>
-                <span class="value">PKI Enabled | Primary: KTM | DR: Butwal</span>
+                <span class="value">PKI Enabled</span>
               </div>
             </div>
           </div>
@@ -416,16 +416,16 @@
                 <span>PKI Infrastructure</span>
               </div>
               <div class="expertise-item">
-                <i class="bi bi-building-fill"></i>
-                <span>Primary & DR Sites</span>
-              </div>
-              <div class="expertise-item">
                 <i class="bi bi-shield-fill-check"></i>
                 <span>Class 1,2,3 Certificates</span>
               </div>
               <div class="expertise-item">
                 <i class="bi bi-arrow-repeat"></i>
                 <span>Easy Renewal</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-trophy-fill"></i>
+                <span>22+ Years Experience</span>
               </div>
               <div class="expertise-item">
                 <i class="bi bi-geo-alt-fill"></i>
@@ -435,10 +435,13 @@
           </div>
 
           <div class="contact-info">
-            <h5>Contact Registration Authority</h5>
-            <p><i class="bi bi-telephone me-2"></i>01-4545765 / 01-4524311</p>
-            <p><i class="bi bi-envelope me-2"></i>info@radiantnepal.com</p>
-            <p><i class="bi bi-geo-alt me-2"></i>Radiant Building, Bhatbhateni, Kathmandu, Nepal</p>
+            <h5>Visit Our Office</h5>
+            <p><i class="bi bi-building"></i> Radiant Building, Bhatbhateni, Naxal, Kathmandu, Nepal</p>
+            <p><i class="bi bi-telephone"></i> 01-4545765 / 01-4524311</p>
+            <p><i class="bi bi-envelope"></i> info@radiantnepal.com</p>
+            <div class="office-hours mt-3">
+              <p><i class="bi bi-clock"></i> Office Hours: Sun - Fri, 10:00 AM - 6:00 PM</p>
+            </div>
           </div>
 
         </div>
@@ -482,7 +485,7 @@
     --primary-green-light: #e6f4ed;
     --hover-gold: #ffc107;
     --text-dark: #1a2c3e;
-    --text-muted: #5a6c7e;
+    --text-muted: #5a6e7c;
     --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     --card-shadow-hover: 0 20px 40px rgba(5, 150, 82, 0.15);
   }
@@ -877,6 +880,7 @@
     display: flex;
     gap: 1rem;
     margin-bottom: 15px;
+    flex-wrap: wrap;
   }
 
   .download-meta span {
@@ -1139,6 +1143,12 @@
     width: 20px;
   }
 
+  .office-hours {
+    border-top: 1px solid rgba(5, 150, 82, 0.2);
+    padding-top: 10px;
+    margin-top: 5px;
+  }
+
   .call-to-action {
     position: relative;
     padding: 80px 0;
@@ -1280,6 +1290,9 @@
     }
     .note-icon {
       margin: 0 auto;
+    }
+    .expertise-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
