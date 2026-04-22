@@ -97,11 +97,12 @@
       border-radius: 0 0 10px 10px;
       padding: 6px 0;
       box-shadow: 0 10px 32px rgba(0, 0, 0, 0.09);
-      min-width: 240px;
+      min-width: 260px;
     }
 
     .navmenu .dropdown ul li {
       border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+      justify-items: left;
     }
 
     .navmenu .dropdown ul li:last-child {
@@ -130,8 +131,8 @@
     .navmenu .dropdown ul a i {
       font-size: 15px;
       color: var(--accent-color);
-      width: 18px;
-      text-align: center;
+      width: 20px;
+      text-align: left;
       flex-shrink: 0;
       line-height: 1;
     }
@@ -192,8 +193,8 @@
     .navmenu .dropdown ul a i {
       font-size: 15px;
       color: var(--accent-color);
-      width: 18px;
-      text-align: center;
+      width: 20px;
+      text-align: left;
       flex-shrink: 0;
       line-height: 1;
     }
@@ -330,6 +331,71 @@
             </li>
           </ul>
         </li>
+
+        <li class="dropdown">
+          <a href="{% url 'products' %}" class="{% if 'product' in request.resolver_match.url_name %}active{% endif %}">
+            <span>Our Products</span>
+            <i class="bi bi-chevron-down toggle-dropdown"></i>
+          </a>
+          <ul>
+            <li>
+              <a href="{% url 'product_detail' slug='dsigner-component-tool' %}">
+                <i class="bi bi-file-earmark-pdf-fill"></i><span>DSigner Component Tool</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'product_detail' slug='real-time-signing-tool' %}">
+                <i class="bi bi-clock-history"></i><span>Real Time Signing Tool</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'product_detail' slug='signing-verification-component' %}">
+                <i class="bi bi-shield-lock-fill"></i><span>Signing & Verification (Soft Token)</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'product_detail' slug='dsigner-crypto-token' %}">
+                <i class="bi bi-cpu"></i><span>DSigner (Crypto-Token)</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'product_detail' slug='encryption-signing-component' %}">
+                <i class="bi bi-lock-fill"></i><span>Encryption Signing Component</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'product_detail' slug='electronic-management-system' %}">
+                <i class="bi bi-folder2-open"></i><span>Electronic Management System</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'product_detail' slug='bulk-signing-component' %}">
+                <i class="bi bi-files"></i><span>Bulk Signing Component Tool</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'product_detail' slug='optical-character-recognition' %}">
+                <i class="bi bi-card-text"></i><span>Optical Character Recognition</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'product_detail' slug='lakshya-micro-banking' %}">
+                <i class="bi bi-bank2"></i><span>Lakshya Micro Banking Software</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'product_detail' slug='cms-tours-travels' %}">
+                <i class="bi bi-airplane-fill"></i><span>CMS for Tours and Travels</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'product_detail' slug='ecommerce-websites' %}">
+                <i class="bi bi-cart-fill"></i><span>Ecommerce Websites</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
         <li>
           <a href="{% url 'gallery' %}" class="{% if request.resolver_match.url_name == 'gallery' %}active{% endif %}">
             Gallery
@@ -357,16 +423,10 @@
         <a href="https://www.facebook.com/radiantnepal/" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="bi bi-facebook"></i>
         </a>
-        <!-- <a href="https://twitter.com/radiantinfotech" target="_blank" rel="noopener" aria-label="Twitter / X">
-          <i class="bi bi-twitter-x"></i>
-        </a> -->
         <a href="https://np.linkedin.com/company/radiant-infotech-nepal-pvt.-ltd" target="_blank" rel="noopener" aria-label="LinkedIn">
           <i class="bi bi-linkedin"></i>
         </a>
-        <!-- <a href="https://www.instagram.com/radiantinfotech" target="_blank" rel="noopener" aria-label="Instagram">
-          <i class="bi bi-instagram"></i>
-        </a> -->
-        <a href=" https://www.youtube.com/@radiantinfotechnepalpvt.lt452" target="_blank" rel="noopener" aria-label="YouTube">
+        <a href="https://www.youtube.com/@radiantinfotechnepalpvt.lt452" target="_blank" rel="noopener" aria-label="YouTube">
           <i class="bi bi-youtube"></i>
         </a>
       </div>

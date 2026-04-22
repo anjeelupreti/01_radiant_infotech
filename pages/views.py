@@ -42,7 +42,186 @@ SERVICE_TITLES = {
     'data-entry':          'Data Entry',
 }
 current_year = datetime.now().year
-years_of_experience = current_year - 2003 
+years_of_experience = current_year - 2003 # ========== PRODUCTS CONFIGURATION ==========
+
+PRODUCT_TEMPLATES = {
+    'dsigner-component-tool':           'products/dsigner_component_tool.html',
+    'real-time-signing-tool':           'products/real_time_signing_tool.html',
+    'signing-verification-component':   'products/signing_verification_component.html',
+    'dsigner-crypto-token':             'products/dsigner_crypto_token.html',
+    'encryption-signing-component':     'products/encryption_signing_component.html',
+    'electronic-management-system':     'products/electronic_management_system.html',
+    'bulk-signing-component':           'products/bulk_signing_component.html',
+    'optical-character-recognition':    'products/optical_character_recognition.html',
+    'lakshya-micro-banking':            'products/lakshya_micro_banking.html',
+    'cms-tours-travels':                'products/cms_tours_travels.html',
+    'ecommerce-websites':               'products/ecommerce_websites.html',
+}
+
+PRODUCT_TITLES = {
+    'dsigner-component-tool':           'DSigner Component Tool',
+    'real-time-signing-tool':           'Real Time Signing Tool for Insurance Online Policy',
+    'signing-verification-component':   'Signing and Verification Component (Soft Token)',
+    'dsigner-crypto-token':             'DSigner (Crypto-Token)',
+    'encryption-signing-component':     'Encryption Signing Component Tools',
+    'electronic-management-system':     'Electronic Management System',
+    'bulk-signing-component':           'Bulk Signing Component Tool',
+    'optical-character-recognition':    'Optical Character Recognition Tool',
+    'lakshya-micro-banking':            'Lakshya Micro Banking Software',
+    'cms-tours-travels':                'CMS for Tours and Travels',
+    'ecommerce-websites':               'Ecommerce Websites',
+}
+
+PRODUCT_DESCRIPTIONS = {
+    'dsigner-component-tool': 'Automates signing of PDF documents and embedded form data via API with support for dynamic form data input and field-level signing.',
+    'real-time-signing-tool': 'Fulfills scope for signing documents/data on real time using digital signature certificates for insurance policies.',
+    'signing-verification-component': 'Supports making any application PKI enabled for using DSc issued in Soft Token with secure digital identity verification.',
+    'dsigner-crypto-token': 'Supports making any application PKI enabled for using DSc issued in Crypto Token with blockchain integration.',
+    'encryption-signing-component': 'Makes application and business process compatible for using digital signature certificates with encryption/decryption.',
+    'electronic-management-system': 'Centralized storage and management of digital documents with version control and audit trails.',
+    'bulk-signing-component': 'Supports management of document flow and archival of documents with batch signing capabilities.',
+    'optical-character-recognition': 'Accurately converts scanned documents and images into editable text with AI-based algorithms.',
+    'lakshya-micro-banking': 'Comprehensive management of microfinance operations and customer accounts for loans, deposits, and reports.',
+    'cms-tours-travels': 'Complete control over tour packages, reservations, and customer records with integrated CRM.',
+    'ecommerce-websites': 'Advanced product management, seamless checkout, inventory management, and secure transactions.',
+}
+
+PRODUCT_FEATURES = {
+    'dsigner-component-tool': [
+        'Supports dynamic form data input and field-level signing within PDFs',
+        'Allows bulk signing of multiple documents in a single operation',
+        'Real-time status and feedback via API response',
+        'Securely integrates with external APIs',
+        'Handles static and interactive PDF forms efficiently',
+        'Configurable signature placement and appearance',
+        'Seamless integration with Windows environment',
+    ],
+    'real-time-signing-tool': [
+        'Automates signing of insurance documents and policy forms via API',
+        'Ensures compliance with regulatory standards',
+        'Supports dynamic form data input and field-level signing within insurance PDFs',
+        'Handles static and interactive insurance forms, including claims and policy documents',
+        'Allows bulk signing of multiple insurance documents',
+        'Customizable signature placement and appearance',
+        'Real-time status updates and feedback via API',
+        'Integrates with Windows and insurance management systems',
+        'Document validation and verification for authenticity',
+    ],
+    'signing-verification-component': [
+        'Streamlined online company registration with soft-token authentication',
+        'Secure digital identity verification and document signing',
+        'Easy integration with registration authorities and compliance systems',
+        'Supports digital signing of registration forms',
+        'Real-time validation and submission',
+        'Secure storage of digital certificates and soft-token credentials',
+        'Customizable workflows',
+        'User-friendly interface',
+    ],
+    'dsigner-crypto-token': [
+        'Online company registration with crypto-token-based authentication',
+        'Secure and decentralized identity verification',
+        'Integrates with blockchain technology',
+        'Supports digital signing of registration forms and compliance documents',
+        'Real-time application validation and submission using blockchain ledger',
+        'Secure management of crypto-tokens and digital assets',
+        'Customizable registration workflows',
+        'Advanced tracking and reporting features',
+    ],
+    'encryption-signing-component': [
+        'Encrypt and decrypt PDF files with advanced cryptography algorithms',
+        'Bulk processing of multiple PDFs',
+        'Supports AES-256 and RSA encryption standards',
+        'Easy integration with command-line or API-based operations',
+        'Enables digital signing of PDFs with secure key pairs',
+        'Seamless decryption of password-protected PDF files',
+        'Verify authenticity of signed documents',
+        'Detailed logs for tracking',
+        'Configurable signing position and encryption settings',
+    ],
+    'electronic-management-system': [
+        'Centralized storage and management of digital documents',
+        'Organizes files with metadata, tagging, and categories',
+        'Supports wide range of file formats (PDFs, Word documents, images)',
+        'Version control to track document changes',
+        'Compliance and audit trails',
+        'Access control and user permissions',
+        'Efficient search and filtering',
+        'Seamless integration with external systems and APIs',
+        'Automated backup and recovery',
+        'Document workflows for review, approval, and archiving',
+    ],
+    'bulk-signing-component': [
+        'Batch sign multiple PDF files simultaneously',
+        'Option to overlay signatures or watermark',
+        'Supports large PDF files up to 100MB',
+        'Detailed logging of signed documents',
+        'Integrates with digital certificates',
+        'Customizable signing position on each page',
+        'Fast processing times',
+        'User-friendly interface',
+    ],
+    'optical-character-recognition': [
+        'Supports PNG, JPEG, TIFF',
+        'Extracts text from complex documents, including multi-page PDFs',
+        'Recognizes multiple languages and scripts',
+        'Batch processing for OCR on multiple files',
+        'Configurable output formats (plain text, Word, searchable PDF)',
+        'Seamless integration with document management systems',
+        'Post-OCR editing and verification',
+        'Advanced AI-based algorithms for handwritten text recognition',
+    ],
+    'lakshya-micro-banking': [
+        'Supports loans, savings, and deposits',
+        'Automated loan disbursement, collection, and repayment tracking',
+        'Real-time reporting and analytics',
+        'Customizable workflow management for loan processing',
+        'Integrated customer management system',
+        'Supports branch-level operations with multi-user access and role-based permissions',
+        'Handles regulatory compliance and reporting',
+        'Seamless integration with third-party systems (mobile wallets, payment gateways)',
+        'Secure, cloud-based access for remote management',
+    ],
+    'cms-tours-travels': [
+        'Offers flights, hotels, and vacation packages',
+        'Automated booking confirmations, payment handling, itinerary updates',
+        'Live reporting and insights',
+        'Integrated CRM for client preferences and travel history',
+        'Supports multi-location operations with user-specific roles',
+        'Integration with payment systems and travel APIs',
+        'Customizable workflows',
+        'Cloud-based, secure platform',
+        'Ensures compliance with industry regulations',
+        'Responsive design on all platforms',
+        'No device detection needed (faster loading)',
+        'Manage content in one CMS',
+        'Accessible for users with disabilities',
+        'High performance technologies',
+    ],
+    'ecommerce-websites': [
+        'Advanced product management with categories, attributes, variants',
+        'Seamless checkout with multiple payment gateways',
+        'Real-time order tracking and customer notification',
+        'Customizable product catalogs and promotional campaigns',
+        'Robust inventory management with automated stock updates',
+        'Detailed sales analytics',
+        'Customer account management with order history and wish lists',
+        'Data encryption and secure transactions',
+        'Integration with shipping providers and third-party services',
+        'Scalable and customizable design',
+        'Flexible product management',
+        'Insightful sales reports and customer behavior analytics',
+        'Integrated shopping cart',
+        'Comprehensive order management',
+        'High-level security',
+        'Customizable user roles and permissions',
+        'Integration with external APIs',
+        'Advanced search functionality',
+        'Responsive and adaptive design',
+    ],
+}
+
+
+
 
 def home(request):
     
@@ -81,6 +260,45 @@ def service_detail(request, slug):
         'service_title': SERVICE_TITLES.get(slug, 'Service'),
     }
     return render(request, template, context)
+
+def products(request):
+    """
+    Products listing page showing all products
+    """
+    products_list = []
+    for slug, title in PRODUCT_TITLES.items():
+        products_list.append({
+            'slug': slug,
+            'title': title,
+            'description': PRODUCT_DESCRIPTIONS.get(slug, ''),
+            'features': PRODUCT_FEATURES.get(slug, [])[:3],  
+        })
+    
+    context = {
+        'title': 'Products - Radiant Infotech',
+        'description': 'Explore our comprehensive range of digital products including digital signature tools, document management systems, banking software, and more.',
+        'keywords': 'digital signature, document signing, OCR, micro banking, ecommerce, CMS, software products, Nepal',
+        'products': products_list,
+    }
+    return render(request, 'pages/products.html', context)
+
+def product_detail(request, slug):
+    """
+    Individual product detail page
+    """
+    template = PRODUCT_TEMPLATES.get(slug)
+    if not template:
+        raise Http404("Product not found.")
+    
+    context = {
+        'product_slug': slug,
+        'product_title': PRODUCT_TITLES.get(slug, 'Product'),
+        'product_description': PRODUCT_DESCRIPTIONS.get(slug, ''),
+        'product_features': PRODUCT_FEATURES.get(slug, []),
+        'product_name': PRODUCT_TITLES.get(slug, 'Product'),
+    }
+    return render(request, template, context)
+
 
 def gallery(request):
     
