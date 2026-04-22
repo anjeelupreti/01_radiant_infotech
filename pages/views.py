@@ -167,7 +167,7 @@ Here's a summary of your inquiry:
 
 For urgent inquiries, please contact us at:
 Email: {settings.DEFAULT_FROM_EMAIL}
-Phone: +91-XXXXXXXXXX
+Phone: 01-4545765 , 01-4524311
 
 Best regards,
 Radiant Infotech Pvt. Ltd Team
