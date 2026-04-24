@@ -175,6 +175,7 @@
   .trust-indicators {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 40px;
     flex-wrap: wrap;
     margin-top: 20px;
@@ -271,16 +272,16 @@
     }
 
     .trust-indicators {
-      gap: 25px;
+      gap: 30px;
     }
 
     .trust-item:not(:last-child)::after {
-      right: -13px;
+      right: -15px;
       height: 25px;
     }
 
     .trust-number {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
   }
 
@@ -308,11 +309,20 @@
     }
 
     .trust-indicators {
+      flex-direction: row;
+      justify-content: center;
       gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      padding: 0 10px;
     }
 
     .trust-item:not(:last-child)::after {
-      display: none;
+      display: block;
+      right: -10px;
+      height: 25px;
     }
 
     .trust-number {
@@ -320,7 +330,7 @@
     }
 
     .trust-label {
-      font-size: 0.6rem;
+      font-size: 0.65rem;
     }
 
     .services-marquee span {
@@ -329,9 +339,58 @@
   }
 
   @media (max-width: 480px) {
+    .hero {
+      padding: 50px 0;
+      min-height: auto;
+    }
+
+    .hero-title {
+      font-size: 1.8rem;
+    }
+
+    .hero-badge {
+      padding: 5px 15px;
+      margin-bottom: 20px;
+    }
+
+    .hero-badge span {
+      font-size: 11px;
+    }
+
+    .hero-description {
+      font-size: 0.85rem;
+      margin-bottom: 25px;
+    }
+
+    .hero-actions {
+      margin-bottom: 30px;
+    }
+
+    .btn-primary, .btn-secondary {
+      padding: 8px 20px;
+      font-size: 12px;
+    }
+
     .trust-indicators {
-      flex-direction: column;
-      gap: 10px;
+      gap: 15px;
+    }
+
+    .trust-item {
+      padding: 0 8px;
+    }
+
+    .trust-item:not(:last-child)::after {
+      right: -8px;
+      height: 20px;
+    }
+
+    .trust-number {
+      font-size: 0.9rem;
+    }
+
+    .trust-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.5px;
     }
   }
 </style>
@@ -376,7 +435,7 @@
           </a>
         </div>
 
-        <div class="trust-indicators" data-aos="fade-up" data-aos-delay="500">
+        <!-- <div class="trust-indicators" data-aos="fade-up" data-aos-delay="500">
           <div class="trust-item">
             <span class="trust-number" id="yearsExperienceDisplay">22</span>
             <span class="trust-label">Years Experience</span>
@@ -389,11 +448,7 @@
             <span class="trust-number">7</span>
             <span class="trust-label">Service Categories</span>
           </div>
-          <!-- <div class="trust-item">
-            <span class="trust-number">40+</span>
-            <span class="trust-label">Expert Team</span>
-          </div> -->
-        </div>
+        </div> -->
 
       </div>
     </div>
@@ -421,12 +476,6 @@
 </section>
 
 <script>
-  /*
-   * Years of Experience Calculator
-   *
-   * Purpose: Dynamically calculates and displays the number of years the
-   *          company has been in operation since establishment in 2003.
-   */
   const ESTABLISHMENT_YEAR = 2003;
   const currentYear = new Date().getFullYear();
   const yearsOfExperience = currentYear - ESTABLISHMENT_YEAR;
@@ -438,21 +487,6 @@
 </script>
 
 <script>
-  /*
-   * Rotating Text Animation (Typewriter Effect)
-   *
-   * Purpose: Creates a dynamic, animated headline that cycles through all
-   *          7 core services offered by Radiant Infotech.
-   *
-   * Features:
-   *   - Types out each word character by character (80ms per character)
-   *   - Pauses at the end of each word (1800ms)
-   *   - Deletes characters to transition to the next word (45ms per character)
-   *   - Cycles through the 7 services: Digital Signature, Web Development,
-   *     Software Development, ICT & IT Support, MIS Solutions,
-   *     SEO & Digital Marketing, Graphics Designing
-   *   - CSS cursor blinking animation is handled separately via keyframes
-   */
   (function () {
     const words = [
       "Digital Signature",
