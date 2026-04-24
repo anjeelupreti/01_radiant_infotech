@@ -1,5 +1,3 @@
-
-
 {% extends 'base/index.html' %}
 {% load static %}
 
@@ -347,9 +345,7 @@
   .mission-overlay h3, .vision-overlay h3 { color: white; font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; }
   .mission-overlay p, .vision-overlay p { color: rgba(255,255,255,0.88); font-size: 0.9rem; line-height: 1.7; margin: 0; }
 
-  /* ============================================ */
-  /* UPDATED LEADERSHIP SECTION STYLES - NO CROP  */
-  /* ============================================ */
+  /* Team Section Styles */
   .team-section {
     padding: 80px 0;
     background: #fafbfe;
@@ -395,7 +391,6 @@
     font-size: 1rem;
   }
 
-  /* Team Cards */
   .team-card {
     background: white;
     border-radius: 28px;
@@ -417,7 +412,6 @@
     position: relative;
   }
 
-  /* FIXED: Image wrapper with proper aspect ratio and no cropping */
   .team-image-wrapper {
     position: relative;
     overflow: hidden;
@@ -428,7 +422,7 @@
   .team-img {
     width: 100%;
     height: 100%;
-    object-fit: contain;  /* Shows FULL image without cropping */
+    object-fit: contain;
     object-position: center center;
     transition: transform 0.5s ease;
     background: linear-gradient(135deg, #f5f7fa 0%, #eef2f6 100%);
@@ -436,26 +430,6 @@
 
   .team-card:hover .team-img {
     transform: scale(1.03);
-  }
-
-  .team-badge {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: var(--primary-green);
-    color: white;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    padding: 6px 14px;
-    border-radius: 30px;
-    z-index: 2;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-
-  .team-badge.featured-badge {
-    background: linear-gradient(135deg, var(--primary-green), var(--primary-green-dark));
   }
 
   .team-overlay {
@@ -499,7 +473,6 @@
     transform: translateY(-3px);
   }
 
-  /* Team Info */
   .team-info {
     padding: 1.5rem;
     text-align: center;
@@ -579,7 +552,6 @@
     font-weight: 500;
   }
 
-  /* CTA Section */
   .cta-section {
     margin-top: 4rem;
   }
@@ -727,7 +699,6 @@
     .btn-primary, .btn-outline { width: 100%; justify-content: center; }
   }
 
-  /* Rest of existing styles remain unchanged */
   .features-grid {
     display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 24px; margin-top: 40px;
@@ -871,176 +842,6 @@
     transition: color 0.3s;
   }
 
-  .clients-tabs {
-    display: flex;
-    gap: 0.6rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 2.5rem;
-  }
-
-  .client-tab-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 9px 20px;
-    border-radius: 50px;
-    border: 2px solid rgba(5,150,82,0.15);
-    background: white;
-    color: var(--text-muted);
-    font-size: 0.82rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-  }
-
-  .client-tab-btn i { font-size: 0.95rem; }
-
-  .client-tab-btn:hover {
-    border-color: var(--hover-gold);
-    color: var(--hover-gold);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255,193,7,0.15);
-  }
-
-  .client-tab-btn.active {
-    background: var(--primary-green);
-    border-color: var(--primary-green);
-    color: white;
-    box-shadow: 0 8px 24px rgba(5,150,82,0.25);
-  }
-
-  .client-panel { display: none; }
-  .client-panel.active {
-    display: block;
-    animation: clientPanelIn 0.4s ease;
-  }
-
-  @keyframes clientPanelIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .client-logos-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem;
-    justify-content: center;
-  }
-
-  .client-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 9px 18px;
-    background: white;
-    border: 1.5px solid rgba(5,150,82,0.1);
-    border-radius: 50px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    transition: all 0.28s ease;
-    cursor: default;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  }
-
-  .client-pill i {
-    font-size: 0.9rem;
-    color: var(--primary-green);
-    transition: color 0.25s ease;
-    flex-shrink: 0;
-  }
-
-  .client-pill:hover {
-    background: var(--primary-green);
-    border-color: var(--primary-green);
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(5,150,82,0.2);
-  }
-
-  .client-pill:hover i { color: var(--hover-gold); }
-
-  .clients-marquee-wrapper {
-    margin-top: 3rem;
-    padding: 1.5rem 0;
-    overflow: hidden;
-    background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
-    border-radius: 20px;
-    position: relative;
-  }
-
-  .clients-marquee-label {
-    text-align: center;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: rgba(255,255,255,0.7);
-    margin-bottom: 1.2rem;
-  }
-
-  .marquee-track {
-    display: flex;
-    gap: 1rem;
-    width: max-content;
-    animation: marqueeScroll 30s linear infinite;
-  }
-
-  .marquee-track:hover { animation-play-state: paused; }
-
-  @keyframes marqueeScroll {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  .marquee-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 18px;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 50px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: white;
-    white-space: nowrap;
-    transition: all 0.25s ease;
-    backdrop-filter: blur(4px);
-    cursor: default;
-  }
-
-  .marquee-pill:hover {
-    background: var(--hover-gold);
-    border-color: var(--hover-gold);
-    color: var(--text-dark);
-  }
-
-  .marquee-pill i { font-size: 0.85rem; color: var(--hover-gold); transition: color 0.25s; }
-  .marquee-pill:hover i { color: var(--text-dark); }
-
-  .clients-marquee-wrapper::before,
-  .clients-marquee-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0; bottom: 0;
-    width: 80px;
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  .clients-marquee-wrapper::before {
-    left: 0;
-    background: linear-gradient(to right, var(--primary-green), transparent);
-  }
-
-  .clients-marquee-wrapper::after {
-    right: 0;
-    background: linear-gradient(to left, var(--primary-green-dark), transparent);
-  }
-
   .clients-trust-note {
     margin-top: 2.5rem;
     display: flex;
@@ -1074,13 +875,92 @@
     box-shadow: 0 6px 16px rgba(255,193,7,0.2);
   }
 
-  @media (max-width: 768px) {
-    .clients-stat-bar { border-radius: 16px; }
-    .clients-stat-item { min-width: 100px; padding: 1rem 0.75rem; }
-    .clients-marquee-wrapper { border-radius: 16px; }
-    .cs-num { font-size: 1.2rem; }
-    .clients-title { font-size: 1.8rem; }
+.clients-image-gallery {
+  margin: 2.5rem 0 2rem;
+}
+
+.client-logos-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.client-logo-card {
+  background: var(--surface-color, #ffffff);
+  border-radius: 20px;
+  padding: 1rem 2rem;
+  text-align: center;
+  transition: all 0.35s ease;
+  border: 1px solid rgba(5, 150, 82, 0.1);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: auto;
+}
+
+.client-logo-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color, #059652);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.client-logo-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 180px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.client-logo-card:hover .client-logo-img {
+  transform: scale(1.02);
+}
+
+/* Desktop: Single column, wider cards */
+@media (min-width: 1200px) {
+  .client-logos-row {
+    max-width: 900px;
+    gap: 2rem;
   }
+  .client-logo-img {
+    max-height: 200px;
+  }
+  .client-logo-card {
+    padding: 1.5rem 3rem;
+  }
+}
+
+/* Tablet: Single column, slightly narrower */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .client-logos-row {
+    max-width: 700px;
+    gap: 1.75rem;
+  }
+  .client-logo-img {
+    max-height: 160px;
+  }
+  .client-logo-card {
+    padding: 1.25rem 2.5rem;
+  }
+}
+
+/* Mobile: Single column */
+@media (max-width: 767px) {
+  .client-logos-row {
+    max-width: 100%;
+    gap: 1.5rem;
+  }
+  .client-logo-img {
+    max-height: 120px;
+  }
+  .client-logo-card {
+    padding: 1rem 1.5rem;
+  }
+}
 </style>
 {% endblock %}
 
@@ -1304,12 +1184,8 @@
 </section>
 
 
-<!-- ============================================ -->
-<!-- UPDATED LEADERSHIP SECTION - HOME PAGE STYLE -->
-<!-- ============================================ -->
 <section id="leadership" class="team-section">
   <div class="container" data-aos="fade-up">
-    <!-- Section Header -->
     <div class="section-header text-center mb-5">
       <span class="section-subtitle">Meet Our Leaders</span>
       <h2 class="section-title">Our Leadership</h2>
@@ -1317,14 +1193,11 @@
       <p class="section-description">The board of directors brings decades of collective experience, guiding Radiant Infotech with vision, integrity, and commitment to client success since 2003</p>
     </div>
 
-    <!-- Team Members Grid -->
     <div class="row gy-5 justify-content-center">
       
-      <!-- Member 1: Chairman -->
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
         <div class="team-card">
           <div class="team-image-wrapper">
-            <!-- <div class="team-badge">Executive Chairman</div> -->
             <img src="{% static 'img/chairman.jpeg' %}"
                  class="team-img" alt="Mr. Bhashkar Bhandari - Executive Chairman">
             <div class="team-overlay">
@@ -1356,11 +1229,9 @@
         </div>
       </div>
 
-      <!-- Member 2: Managing Director (Featured) -->
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
         <div class="team-card featured-card">
           <div class="team-image-wrapper">
-            <!-- <div class="team-badge featured-badge">Managing Director</div> -->
             <img src="{% static 'img/gallery/2.jpg' %}"
                  class="team-img" alt="Mr. Deepak Bhandari - Managing Director">
             <div class="team-overlay">
@@ -1395,11 +1266,9 @@
         </div>
       </div>
 
-      <!-- Member 3: Director -->
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
         <div class="team-card">
           <div class="team-image-wrapper">
-            <!-- <div class="team-badge">Director</div> -->
             <img src="{% static 'img/director.jpeg' %}"
                  class="team-img" alt="Mr. Rupendra Kumar Joshi - Director">
             <div class="team-overlay">
@@ -1433,7 +1302,6 @@
 
     </div>
 
-    <!-- Join Our Team CTA Section -->
     <div class="cta-section" data-aos="fade-up" data-aos-delay="500">
       <div class="cta-card">
         <div class="row align-items-center g-4">
@@ -1551,314 +1419,69 @@
       </div>
     </div>
 
-    <div class="clients-tabs" data-aos="fade-up" data-aos-delay="150">
-      <button class="client-tab-btn active" data-client-tab="government">
-        <i class="bi bi-building-fill-gear"></i> Government
-      </button>
-      <button class="client-tab-btn" data-client-tab="international">
-        <i class="bi bi-globe2"></i> UN &amp; Int'l
-      </button>
-      <button class="client-tab-btn" data-client-tab="banks">
-        <i class="bi bi-bank"></i> Banks &amp; Finance
-      </button>
-      <button class="client-tab-btn" data-client-tab="insurance">
-        <i class="bi bi-shield-check"></i> Insurance
-      </button>
-      <button class="client-tab-btn" data-client-tab="telecom">
-        <i class="bi bi-wifi"></i> Telecom &amp; ISPs
-      </button>
-      <button class="client-tab-btn" data-client-tab="airlines">
-        <i class="bi bi-airplane"></i> Airlines
-      </button>
-      <button class="client-tab-btn" data-client-tab="hospitals">
-        <i class="bi bi-hospital"></i> Hospitals
-      </button>
-      <button class="client-tab-btn" data-client-tab="media">
-        <i class="bi bi-tv"></i> Media
-      </button>
-      <button class="client-tab-btn" data-client-tab="ngos">
-        <i class="bi bi-people"></i> NGOs
-      </button>
-      <button class="client-tab-btn" data-client-tab="energy">
-        <i class="bi bi-lightning-charge"></i> Energy &amp; Others
-      </button>
-    </div>
-
-    <div class="client-panel active" id="cpanel-government" data-aos="fade-up" data-aos-delay="200">
-      <div class="client-logos-grid">
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> National Investigation Department</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> PPMO</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Office of the Prime Minister</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Ministry of Federal Affairs (MoFAGA)</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Ministry of Industry, Commerce &amp; Supplies</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Department of Industry</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Company Registrar Office</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Inland Revenue Department</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Investment Board Nepal</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Financial Comptroller General Office (FCGO)</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> National Planning Commission (NPC)</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Public Service Commission (PSC)</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> National IT Center (NITC)</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Nepal Telecommunications Authority (NTA)</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Nepal Police</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Armed Police Force Nepal (APF)</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Ministry of Home Affairs</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Ministry of Education, Science &amp; Technology</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Kathmandu Metropolitan City</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Lalitpur Metropolitan City</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Pokhara Metropolitan City</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Bharatpur Metropolitan City</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Biratnagar Metropolitan City</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Butwal Sub-Metropolitan City</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Nepalgunj Sub-Metro</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Hetauda Sub-Metro</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Dharan Sub-Metro</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Janakpur Sub-Metro</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Ministry of Health &amp; Population</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Department of Health Services</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Department of Roads</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Department of Transport Management</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Civil Aviation Authority of Nepal (CAAN)</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Tribhuvan International Airport (TIA)</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Department of Mines &amp; Geology</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Department of Hydrology &amp; Meteorology</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Nepal Bureau of Standards &amp; Metrology</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Immigration Department</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Department of Passports</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Department of Foreign Employment</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Foreign Employment Board</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Department of Revenue Investigation</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Central Investigation Bureau (CIB)</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Narcotics Control Bureau</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Office of the Auditor General</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> CIAA</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> National Vigilance Centre</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> Public Accounts Committee</span>
-        <span class="client-pill"><i class="bi bi-building-fill-gear"></i> District Administration Offices</span>
+    <div class="clients-image-gallery" data-aos="fade-up" data-aos-delay="150">
+      <div class="client-logos-row">
+        <div class="client-logo-card">
+          <img src="{% static 'img/clients/1.png' %}" alt="Client logo 1" class="client-logo-img" loading="lazy">
+        </div>
+        <div class="client-logo-card">
+          <img src="{% static 'img/clients/2.png' %}" alt="Client logo 2" class="client-logo-img" loading="lazy">
+        </div>
+        <div class="client-logo-card">
+          <img src="{% static 'img/clients/3.png' %}" alt="Client logo 3" class="client-logo-img" loading="lazy">
+        </div>
+        <div class="client-logo-card">
+          <img src="{% static 'img/clients/4.png' %}" alt="Client logo 4" class="client-logo-img" loading="lazy">
+        </div>
+        <div class="client-logo-card">
+          <img src="{% static 'img/clients/5.png' %}" alt="Client logo 5" class="client-logo-img" loading="lazy">
+        </div>
+        <div class="client-logo-card">
+          <img src="{% static 'img/clients/6.png' %}" alt="Client logo 6" class="client-logo-img" loading="lazy">
+        </div>
+        <div class="client-logo-card">
+          <img src="{% static 'img/clients/7.png' %}" alt="Client logo 7" class="client-logo-img" loading="lazy">
+        </div>
+        <div class="client-logo-card">
+          <img src="{% static 'img/clients/8.png' %}" alt="Client logo 8" class="client-logo-img" loading="lazy">
+        </div>
+        <div class="client-logo-card">
+          <img src="{% static 'img/clients/9.png' %}" alt="Client logo 9" class="client-logo-img" loading="lazy">
+        </div>
+        <div class="client-logo-card">
+          <img src="{% static 'img/clients/10.png' %}" alt="Client logo 10" class="client-logo-img" loading="lazy">
+        </div>
+        <div class="client-logo-card">
+          <img src="{% static 'img/clients/11.png' %}" alt="Client logo 11" class="client-logo-img" loading="lazy">
+        </div>
+        <div class="client-logo-card">
+          <img src="{% static 'img/clients/12.png' %}" alt="Client logo 12" class="client-logo-img" loading="lazy">
+        </div>
+        <div class="client-logo-card">
+          <img src="{% static 'img/clients/13.png' %}" alt="Client logo 13" class="client-logo-img" loading="lazy">
+        </div>
+        <div class="client-logo-card">
+          <img src="{% static 'img/clients/14.png' %}" alt="Client logo 14" class="client-logo-img" loading="lazy">
+        </div>
+        <div class="client-logo-card">
+          <img src="{% static 'img/clients/15.png' %}" alt="Client logo 15" class="client-logo-img" loading="lazy">
+        </div>
+        <div class="client-logo-card">
+          <img src="{% static 'img/clients/16.png' %}" alt="Client logo 16" class="client-logo-img" loading="lazy">
+        </div>
+        <div class="client-logo-card">
+          <img src="{% static 'img/clients/17.png' %}" alt="Client logo 17" class="client-logo-img" loading="lazy">
+        </div>
+        <div class="client-logo-card">
+          <img src="{% static 'img/clients/18.png' %}" alt="Client logo 18" class="client-logo-img" loading="lazy">
+        </div>
+        <div class="client-logo-card">
+          <img src="{% static 'img/clients/19.png' %}" alt="Client logo 19" class="client-logo-img" loading="lazy">
+        </div>
       </div>
     </div>
 
-    <div class="client-panel" id="cpanel-international">
-      <div class="client-logos-grid">
-        <span class="client-pill"><i class="bi bi-globe2"></i> Nepal Red Cross Society</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> WHO</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> UNDP</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> UNICEF</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> UNFPA</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> World Food Programme (WFP)</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> UNHCR</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> IOM</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> UNOPS</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> UN Women</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> UNESCO</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> UNIDO</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> UNODC</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> ILO</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> ICAO</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> Universal Postal Union (UPU)</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> ITU</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> WMO</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> IMO</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> WIPO</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> IAEA</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> IMF Nepal</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> World Bank Nepal</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> Asian Development Bank (ADB)</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> EBRD</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> International Finance Corporation (IFC)</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> UNCDF</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> IFAD</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> Helvetas Nepal</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> GIZ</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> DANIDA</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> DFID (UK)</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> Australian Aid</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> JICA</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> USAID</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> European Union (EU)</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> FAO</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> SAARC Secretariat</span>
-      </div>
-    </div>
-
-    <div class="client-panel" id="cpanel-banks">
-      <div class="client-logos-grid">
-        <span class="client-pill"><i class="bi bi-bank"></i> Nepal Bank Limited</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Rastriya Banijya Bank</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Agricultural Development Bank (ADBL)</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Nepal SBI Bank</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Everest Bank</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Nabil Bank</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Himalayan Bank</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Standard Chartered Bank</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Citizens Bank International</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Kumari Bank</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Laxmi Bank</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Siddhartha Bank</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Global IME Bank</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> NIC Asia Bank</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Machhapuchchhre Bank</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Sunrise Bank</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Prime Commercial Bank</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Sanima Bank</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Bank of Kathmandu</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> NCC Bank</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Civil Bank</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Century Commercial Bank</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Nepal Rastra Bank (Central Bank)</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Securities Board of Nepal (SEBON)</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> Nepal Stock Exchange (NEPSE)</span>
-        <span class="client-pill"><i class="bi bi-bank"></i> CDS and Clearing Limited</span>
-      </div>
-    </div>
-
-    <div class="client-panel" id="cpanel-insurance">
-      <div class="client-logos-grid">
-        <span class="client-pill"><i class="bi bi-shield-check"></i> Nepal Insurance Authority (Beema Samiti)</span>
-        <span class="client-pill"><i class="bi bi-shield-check"></i> LIC Nepal</span>
-        <span class="client-pill"><i class="bi bi-shield-check"></i> National Life Insurance Company</span>
-        <span class="client-pill"><i class="bi bi-shield-check"></i> Rastriya Beema Sansthan (RBS)</span>
-        <span class="client-pill"><i class="bi bi-shield-check"></i> Surya Life Insurance</span>
-        <span class="client-pill"><i class="bi bi-shield-check"></i> Himalayan Life Insurance</span>
-        <span class="client-pill"><i class="bi bi-shield-check"></i> MetLife Nepal</span>
-        <span class="client-pill"><i class="bi bi-shield-check"></i> Prime Life Insurance</span>
-        <span class="client-pill"><i class="bi bi-shield-check"></i> Asian Life Insurance</span>
-        <span class="client-pill"><i class="bi bi-shield-check"></i> Insurance Board of Nepal</span>
-      </div>
-    </div>
-
-    <div class="client-panel" id="cpanel-telecom">
-      <div class="client-logos-grid">
-        <span class="client-pill"><i class="bi bi-wifi"></i> Nepal Telecom (NT)</span>
-        <span class="client-pill"><i class="bi bi-wifi"></i> Ncell</span>
-        <span class="client-pill"><i class="bi bi-wifi"></i> Smart Telecom</span>
-        <span class="client-pill"><i class="bi bi-wifi"></i> WorldLink Communications</span>
-        <span class="client-pill"><i class="bi bi-wifi"></i> Subisu</span>
-        <span class="client-pill"><i class="bi bi-wifi"></i> CG Communications</span>
-        <span class="client-pill"><i class="bi bi-wifi"></i> Vianet Communications</span>
-        <span class="client-pill"><i class="bi bi-wifi"></i> Classic Tech</span>
-        <span class="client-pill"><i class="bi bi-wifi"></i> WebSurfer</span>
-      </div>
-    </div>
-
-    <div class="client-panel" id="cpanel-airlines">
-      <div class="client-logos-grid">
-        <span class="client-pill"><i class="bi bi-airplane"></i> Nepal Airlines Corporation</span>
-        <span class="client-pill"><i class="bi bi-airplane"></i> Buddha Air</span>
-        <span class="client-pill"><i class="bi bi-airplane"></i> Yeti Airlines</span>
-        <span class="client-pill"><i class="bi bi-airplane"></i> Simrik Airlines</span>
-        <span class="client-pill"><i class="bi bi-airplane"></i> Shree Airlines</span>
-        <span class="client-pill"><i class="bi bi-airplane"></i> Sita Air</span>
-        <span class="client-pill"><i class="bi bi-airplane"></i> Guna Airlines</span>
-        <span class="client-pill"><i class="bi bi-airplane"></i> Summit Air</span>
-        <span class="client-pill"><i class="bi bi-airplane"></i> Fishtail Air</span>
-        <span class="client-pill"><i class="bi bi-airplane"></i> Kailash Helicopter Services</span>
-        <span class="client-pill"><i class="bi bi-airplane"></i> Manang Air</span>
-        <span class="client-pill"><i class="bi bi-airplane"></i> Tara Air</span>
-        <span class="client-pill"><i class="bi bi-airplane"></i> Saurya Airlines</span>
-        <span class="client-pill"><i class="bi bi-airplane"></i> Himalaya Airlines</span>
-      </div>
-    </div>
-
-    <div class="client-panel" id="cpanel-hospitals">
-      <div class="client-logos-grid">
-        <span class="client-pill"><i class="bi bi-hospital"></i> Sukraraj Tropical &amp; Infectious Disease Hospital</span>
-        <span class="client-pill"><i class="bi bi-hospital"></i> Tribhuvan University Teaching Hospital (TUTH)</span>
-        <span class="client-pill"><i class="bi bi-hospital"></i> Patan Hospital</span>
-        <span class="client-pill"><i class="bi bi-hospital"></i> Bir Hospital</span>
-        <span class="client-pill"><i class="bi bi-hospital"></i> Nepal Police Hospital</span>
-        <span class="client-pill"><i class="bi bi-hospital"></i> Nepal APF Hospital</span>
-        <span class="client-pill"><i class="bi bi-hospital"></i> CIWEC Hospital</span>
-        <span class="client-pill"><i class="bi bi-hospital"></i> Norvic Hospital</span>
-      </div>
-    </div>
-
-    <div class="client-panel" id="cpanel-media">
-      <div class="client-logos-grid">
-        <span class="client-pill"><i class="bi bi-newspaper"></i> Kantipur Publications</span>
-        <span class="client-pill"><i class="bi bi-newspaper"></i> Himalayan Times</span>
-        <span class="client-pill"><i class="bi bi-newspaper"></i> Republica Media</span>
-        <span class="client-pill"><i class="bi bi-newspaper"></i> Nagarik Daily</span>
-        <span class="client-pill"><i class="bi bi-newspaper"></i> Annapurna Post</span>
-        <span class="client-pill"><i class="bi bi-newspaper"></i> Gorkhapatra Sansthan</span>
-        <span class="client-pill"><i class="bi bi-newspaper"></i> Rastriya Samachar Samiti (RSS)</span>
-        <span class="client-pill"><i class="bi bi-tv"></i> Nepal Television (NTV)</span>
-        <span class="client-pill"><i class="bi bi-tv"></i> Kantipur Television</span>
-        <span class="client-pill"><i class="bi bi-tv"></i> Himalaya Television</span>
-        <span class="client-pill"><i class="bi bi-tv"></i> AP1 Television</span>
-        <span class="client-pill"><i class="bi bi-tv"></i> Image Channel</span>
-        <span class="client-pill"><i class="bi bi-tv"></i> News24 Nepal</span>
-        <span class="client-pill"><i class="bi bi-broadcast"></i> Radio Nepal</span>
-        <span class="client-pill"><i class="bi bi-broadcast"></i> Ujyaalo 90 Network</span>
-        <span class="client-pill"><i class="bi bi-broadcast"></i> Sagarmatha FM</span>
-        <span class="client-pill"><i class="bi bi-broadcast"></i> Hits FM</span>
-        <span class="client-pill"><i class="bi bi-broadcast"></i> Image FM</span>
-        <span class="client-pill"><i class="bi bi-broadcast"></i> Capital FM</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> BBC Nepal</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> Reuters Nepal</span>
-        <span class="client-pill"><i class="bi bi-globe2"></i> AFP Nepal</span>
-      </div>
-    </div>
-
-    <div class="client-panel" id="cpanel-ngos">
-      <div class="client-logos-grid">
-        <span class="client-pill"><i class="bi bi-people"></i> Social Welfare Council</span>
-        <span class="client-pill"><i class="bi bi-people"></i> NGO Federation of Nepal</span>
-        <span class="client-pill"><i class="bi bi-people"></i> Association of International NGOs (AIN)</span>
-        <span class="client-pill"><i class="bi bi-people"></i> Plan International Nepal</span>
-        <span class="client-pill"><i class="bi bi-people"></i> Save the Children Nepal</span>
-        <span class="client-pill"><i class="bi bi-people"></i> World Vision Nepal</span>
-        <span class="client-pill"><i class="bi bi-people"></i> CARE Nepal</span>
-        <span class="client-pill"><i class="bi bi-people"></i> Oxfam Nepal</span>
-        <span class="client-pill"><i class="bi bi-people"></i> ActionAid Nepal</span>
-        <span class="client-pill"><i class="bi bi-people"></i> Mercy Corps Nepal</span>
-        <span class="client-pill"><i class="bi bi-people"></i> Practical Action Nepal</span>
-        <span class="client-pill"><i class="bi bi-people"></i> Winrock International Nepal</span>
-        <span class="client-pill"><i class="bi bi-people"></i> The Asia Foundation</span>
-        <span class="client-pill"><i class="bi bi-people"></i> SOS Children's Village Nepal</span>
-        <span class="client-pill"><i class="bi bi-people"></i> FNCCI</span>
-        <span class="client-pill"><i class="bi bi-people"></i> Nepal Chamber of Commerce</span>
-        <span class="client-pill"><i class="bi bi-people"></i> Hotel Association of Nepal (HAN)</span>
-        <span class="client-pill"><i class="bi bi-people"></i> TAAN</span>
-        <span class="client-pill"><i class="bi bi-people"></i> NATTA</span>
-        <span class="client-pill"><i class="bi bi-people"></i> Nepal Mountaineering Association</span>
-        <span class="client-pill"><i class="bi bi-people"></i> Women in Technology Nepal (WIT)</span>
-        <span class="client-pill"><i class="bi bi-people"></i> Samriddhi Foundation</span>
-        <span class="client-pill"><i class="bi bi-people"></i> National Human Rights Commission (NHRC)</span>
-        <span class="client-pill"><i class="bi bi-people"></i> National Women's Commission</span>
-      </div>
-    </div>
-
-    <div class="client-panel" id="cpanel-energy">
-      <div class="client-logos-grid">
-        <span class="client-pill"><i class="bi bi-lightning-charge"></i> Nepal Electricity Authority (NEA)</span>
-        <span class="client-pill"><i class="bi bi-droplet"></i> Nepal Oil Corporation (NOC)</span>
-        <span class="client-pill"><i class="bi bi-droplet"></i> Nepal Water Supply Corporation</span>
-        <span class="client-pill"><i class="bi bi-mortarboard"></i> Kathmandu University</span>
-        <span class="client-pill"><i class="bi bi-mortarboard"></i> Tribhuvan University</span>
-        <span class="client-pill"><i class="bi bi-mortarboard"></i> Purbanchal University</span>
-        <span class="client-pill"><i class="bi bi-mortarboard"></i> Pokhara University</span>
-        <span class="client-pill"><i class="bi bi-mortarboard"></i> Mid-Western University</span>
-        <span class="client-pill"><i class="bi bi-mortarboard"></i> Far-Western University</span>
-        <span class="client-pill"><i class="bi bi-mortarboard"></i> Nepal Engineering Council</span>
-        <span class="client-pill"><i class="bi bi-mortarboard"></i> Nepal Medical Council</span>
-        <span class="client-pill"><i class="bi bi-mortarboard"></i> Nepal Bar Council</span>
-        <span class="client-pill"><i class="bi bi-mortarboard"></i> Nepal Pharmacy Council</span>
-        <span class="client-pill"><i class="bi bi-mortarboard"></i> Nepal Agriculture Research Council (NARC)</span>
-        <span class="client-pill"><i class="bi bi-mortarboard"></i> Nepal Academy of Science &amp; Technology (NAST)</span>
-        <span class="client-pill"><i class="bi bi-cpu"></i> Computer Association of Nepal (CAN)</span>
-        <span class="client-pill"><i class="bi bi-cpu"></i> ISPAN</span>
-        <span class="client-pill"><i class="bi bi-cpu"></i> Software Development Association (SDAN)</span>
-        <span class="client-pill"><i class="bi bi-cpu"></i> eCommerce Association of Nepal (eCAN)</span>
-      </div>
-    </div>
-
-    <div class="clients-marquee-wrapper" data-aos="fade-up" data-aos-delay="250">
-      <div class="clients-marquee-label">Highlights from our trusted network</div>
-      <div class="marquee-track" id="marqueeTrack"></div>
-    </div>
-
-    <div class="clients-trust-note" data-aos="fade-up" data-aos-delay="300">
+    <div class="clients-trust-note" data-aos="fade-up" data-aos-delay="200">
       <span class="trust-badge"><i class="bi bi-shield-fill-check"></i> Government Licensed CA</span>
       <span class="trust-badge"><i class="bi bi-award-fill"></i> 22+ Years of Trust</span>
       <span class="trust-badge"><i class="bi bi-globe-americas"></i> UN & Bilateral Partners</span>
@@ -1902,21 +1525,6 @@
 
 {% block extra_js %}
 <script>
-  /*
-   * About Page Functionality
-   *
-   * This script handles two main features:
-   *
-   * 1. SMOOTH SCROLLING:
-   *    - Intercepts clicks on anchor links starting with "#"
-   *    - Calculates header height and scrolls to target element smoothly
-   *    - Prevents default jump behavior
-   *
-   * 2. CLIENT TABS & MARQUEE:
-   *    - Switches between client category tabs (Government, UN, Banks, etc.)
-   *    - Dynamically builds a marquee (auto-scrolling banner) from a curated list
-   *    - of client names and icons, duplicating the list for seamless looping
-   */
   document.addEventListener('DOMContentLoaded', function () {
     var header = document.querySelector('#header');
     var headerHeight = header ? header.offsetHeight : 80;
@@ -1931,65 +1539,6 @@
         }
       });
     });
-
-    var tabBtns  = document.querySelectorAll('.client-tab-btn');
-    var panels   = document.querySelectorAll('.client-panel');
-
-    tabBtns.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var target = this.dataset.clientTab;
-
-        tabBtns.forEach(function (b) { b.classList.remove('active'); });
-        panels.forEach(function (p)  { p.classList.remove('active'); });
-
-        this.classList.add('active');
-        var panel = document.getElementById('cpanel-' + target);
-        if (panel) panel.classList.add('active');
-      });
-    });
-
-    var highlights = [
-      { icon: 'bi-building-fill-gear', name: 'Office of the Prime Minister' },
-      { icon: 'bi-bank',               name: 'Nepal Rastra Bank' },
-      { icon: 'bi-globe2',             name: 'UNDP Nepal' },
-      { icon: 'bi-globe2',             name: 'World Bank Nepal' },
-      { icon: 'bi-globe2',             name: 'UNICEF Nepal' },
-      { icon: 'bi-airplane',           name: 'Nepal Airlines' },
-      { icon: 'bi-airplane',           name: 'Buddha Air' },
-      { icon: 'bi-building-fill-gear', name: 'Nepal Police' },
-      { icon: 'bi-bank',               name: 'Nabil Bank' },
-      { icon: 'bi-bank',               name: 'Standard Chartered Bank' },
-      { icon: 'bi-building-fill-gear', name: 'CIAA' },
-      { icon: 'bi-globe2',             name: 'Asian Development Bank' },
-      { icon: 'bi-building-fill-gear', name: 'Ministry of Home Affairs' },
-      { icon: 'bi-globe2',             name: 'WHO Nepal' },
-      { icon: 'bi-shield-check',       name: 'LIC Nepal' },
-      { icon: 'bi-newspaper',          name: 'Kantipur Publications' },
-      { icon: 'bi-wifi',               name: 'Nepal Telecom' },
-      { icon: 'bi-wifi',               name: 'Ncell' },
-      { icon: 'bi-building-fill-gear', name: 'Kathmandu Metro City' },
-      { icon: 'bi-globe2',             name: 'USAID Nepal' },
-      { icon: 'bi-globe2',             name: 'European Union' },
-      { icon: 'bi-bank',               name: 'Everest Bank' },
-      { icon: 'bi-hospital',           name: 'Tribhuvan University Hospital' },
-      { icon: 'bi-mortarboard',        name: 'Kathmandu University' },
-      { icon: 'bi-people',             name: 'FNCCI' },
-      { icon: 'bi-globe2',             name: 'JICA Nepal' },
-      { icon: 'bi-building-fill-gear', name: 'National Planning Commission' },
-      { icon: 'bi-building-fill-gear', name: 'Inland Revenue Department' },
-    ];
-
-    var allItems = highlights.concat(highlights);
-    var track = document.getElementById('marqueeTrack');
-    if (track) {
-      allItems.forEach(function (item) {
-        var pill = document.createElement('span');
-        pill.className = 'marquee-pill';
-        pill.innerHTML = '<i class="bi ' + item.icon + '"></i> ' + item.name;
-        track.appendChild(pill);
-      });
-    }
   });
 </script>
 {% endblock %}
-```
