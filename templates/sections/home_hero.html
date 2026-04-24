@@ -17,16 +17,6 @@
     z-index: 0;
   }
 
-  .hero-bg-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-  }
-
   .hero-bg-image {
     position: absolute;
     top: 0;
@@ -35,7 +25,6 @@
     height: 100%;
     object-fit: cover;
     z-index: 0;
-    display: none;
   }
 
   .hero-bg-overlay {
@@ -268,33 +257,6 @@
     100% { transform: translateX(-50%); }
   }
 
-  .hero-scroll-hint {
-    position: absolute;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    animation: bounce-down 2s infinite;
-  }
-
-  .hero-scroll-hint i {
-    font-size: 20px;
-    color: #f5c518;
-  }
-
-  @keyframes bounce-down {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(8px); }
-  }
-
   @media (max-width: 991px) {
     .hero {
       padding: 80px 0;
@@ -364,10 +326,6 @@
     .services-marquee span {
       font-size: 11px;
     }
-
-    .hero-scroll-hint {
-      bottom: 80px;
-    }
   }
 
   @media (max-width: 480px) {
@@ -381,13 +339,9 @@
 <section id="hero" class="hero">
 
   <div class="hero-background">
-    <video autoplay muted loop playsinline class="hero-bg-video" id="heroVideo">
-      <source src="{% static 'video/hero-bg.mp4' %}" type="video/mp4">
-    </video>
-    <img src="{% static 'img/gallery/1building.jpg' %}"
-         alt="Technology background"
-         class="hero-bg-image"
-         id="heroFallbackImage">
+    <img src="{% static 'img/gallery/10.jpg' %}"
+         alt="Radiant Infotech Nepal - Complete IT Solutions"
+         class="hero-bg-image">
     <div class="hero-bg-overlay"></div>
     <div class="hero-bg-pattern"></div>
   </div>
@@ -463,64 +417,23 @@
       <span><i class="bi bi-palette-fill"></i> Graphics Designing</span>
     </div>
   </div>
-<!-- 
-  <div class="hero-scroll-hint">
-    <span>Scroll to explore</span>
-    <i class="bi bi-chevron-double-down"></i>
-  </div> -->
 
 </section>
 
 <script>
   /*
-   * Video Fallback Handler
+   * Years of Experience Calculator
    *
-   * Purpose: Ensures the hero section has a visual background even if the
-   *          video fails to load or cannot play.
-   *
-   * Behavior:
-   *   - Listens for video 'error' event (network issues, file corruption, etc.)
-   *   - Also sets a 2-second timeout to check if video is still loading/paused
-   *   - On failure, hides the video element and shows the fallback image
-   *
-   * Use case: Mobile devices that don't autoplay videos, slow network
-   *           connections, or browsers with video restrictions.
+   * Purpose: Dynamically calculates and displays the number of years the
+   *          company has been in operation since establishment in 2003.
    */
-  document.addEventListener('DOMContentLoaded', function() {
-    const video = document.getElementById('heroVideo');
-    const fallbackImage = document.getElementById('heroFallbackImage');
-
-    if (video) {
-      video.addEventListener('error', function() {
-        video.style.display = 'none';
-        if (fallbackImage) {
-          fallbackImage.style.display = 'block';
-        }
-      });
-
-      setTimeout(function() {
-        if (video.paused || video.readyState < 2) {
-          video.style.display = 'none';
-          if (fallbackImage) {
-            fallbackImage.style.display = 'block';
-          }
-        }
-      }, 2000);
-    }
-  });
-
   const ESTABLISHMENT_YEAR = 2003;
   const currentYear = new Date().getFullYear();
   const yearsOfExperience = currentYear - ESTABLISHMENT_YEAR;
 
-  const yearsCounter = document.getElementById('yearsExperienceCounter');
   const yearsDisplay = document.getElementById('yearsExperienceDisplay');
   if (yearsDisplay) {
     yearsDisplay.textContent = yearsOfExperience;
-  }
-  if (yearsCounter) {
-    yearsCounter.setAttribute('data-purecounter-end', yearsOfExperience);
-    yearsCounter.textContent = yearsOfExperience;
   }
 </script>
 
@@ -539,11 +452,6 @@
    *     Software Development, ICT & IT Support, MIS Solutions,
    *     SEO & Digital Marketing, Graphics Designing
    *   - CSS cursor blinking animation is handled separately via keyframes
-   *
-   * Performance considerations:
-   *   - Uses setTimeout with recursive calls instead of setInterval for
-   *     better timing control between typing and deleting phases
-   *   - Word index wraps around to create continuous infinite loop
    */
   (function () {
     const words = [
